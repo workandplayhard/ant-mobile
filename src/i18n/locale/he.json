@@ -1,0 +1,11 @@
+{
+  "he": {
+    "currencyFormat": "{{value, currency(ILS), number(minimumFractionDigits: 2, maximumFractionDigits: 2)}}",
+    "signIn": "להתחבר",
+    "signOut": "התנתק",
+    "email": "אימייל",
+    "password": "סיסמה",
+    "changeLanguage": "שנה שפה",
+    "lorem": "לורם איפסום"
+  }
+}

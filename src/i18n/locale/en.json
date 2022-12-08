@@ -1,0 +1,11 @@
+{
+  "en": {
+    "currency": "{{value, currency(USD), number(minimumFractionDigits: 2, maximumFractionDigits: 2)}}",
+    "signIn": "Sign in",
+    "signOut": "Sign out",
+    "email": "Email",
+    "password": "Password",
+    "changeLanguage": "Change language",
+    "lorem": "lorem ipsum"
+  }
+}
