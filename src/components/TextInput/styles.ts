@@ -1,15 +1,17 @@
 import { StyleSheet } from 'react-native'
 
-import { font, RW, normalizePixel } from '@/theme/utils'
-import { SCREEN_WIDTH } from '@/constants'
+import { font, RW, RH } from '@/theme/utils'
+import { TEXT_INPUT_BG_COLOR, TEXT_INPUT_FONT_COLOR } from '@/theme'
 
 export default StyleSheet.create({
   input: {
     borderColor: 'gray',
-    width: SCREEN_WIDTH - RW(60),
-    borderRadius: normalizePixel(15),
-    padding: normalizePixel(20),
-    backgroundColor: '#2C2B30',
-    ...font('pp.thin', 16, '#5E626C', 24),
+    width: '100%',
+    borderRadius: RW(15),
+    paddingVertical: RH(18),
+    paddingHorizontal: RW(20),
+    backgroundColor: TEXT_INPUT_BG_COLOR,
+    textAlign: 'left',
+    ...font('pp.thin', 16, TEXT_INPUT_FONT_COLOR, 24),
   },
 })

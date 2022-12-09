@@ -4,20 +4,20 @@ import { TextInput as DefaultTextInput, StyleProp, TextStyle } from 'react-nativ
 import styles from './styles'
 
 interface ITextInput {
-  onChange(event: string): void
-  value: string
-  disabled: boolean
-  secureTextEntry: boolean
+  onChange(v: string): void
+  value?: Maybe<string | number>
+  disabled?: boolean
+  secureTextEntry?: boolean
   placeholder?: string
   style?: StyleProp<TextStyle>
 }
 
 export const TextInput: React.FC<ITextInput> = ({
   value,
-  disabled,
+  disabled = false,
   placeholder,
   onChange,
-  secureTextEntry,
+  secureTextEntry = false,
   style = {},
 }) => {
   return (
@@ -26,7 +26,7 @@ export const TextInput: React.FC<ITextInput> = ({
       style={[styles.input, style]}
       placeholder={placeholder}
       placeholderTextColor="#5E626C"
-      value={value}
+      value={value?.toString() || undefined}
       onChangeText={onChange}
       editable={disabled}
     />
