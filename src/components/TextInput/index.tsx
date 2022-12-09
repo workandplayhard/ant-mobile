@@ -1,6 +1,8 @@
 import React from 'react'
 import { TextInput as DefaultTextInput, StyleProp, TextStyle } from 'react-native'
 
+import { TEXT_INPUT_FONT_COLOR } from '@/theme'
+
 import styles from './styles'
 
 interface ITextInput {
@@ -25,7 +27,7 @@ export const TextInput: React.FC<ITextInput> = ({
       secureTextEntry={secureTextEntry}
       style={[styles.input, style]}
       placeholder={placeholder}
-      placeholderTextColor="#5E626C"
+      placeholderTextColor={TEXT_INPUT_FONT_COLOR}
       value={value?.toString() || undefined}
       onChangeText={onChange}
       editable={disabled}

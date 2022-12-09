@@ -5,7 +5,6 @@ import { TEXT_INPUT_BG_COLOR, TEXT_INPUT_FONT_COLOR } from '@/theme'
 
 export default StyleSheet.create({
   input: {
-    borderColor: 'gray',
     width: '100%',
     borderRadius: RW(15),
     paddingVertical: RH(18),
