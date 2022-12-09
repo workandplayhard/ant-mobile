@@ -8,6 +8,6 @@ interface ITextField {
   text: string
 }
 
-export const TextField: React.FC<ITextField> = ({ style = styles.text, text }) => {
-  return <Text style={style}>{text}</Text>
+export const TextField: React.FC<ITextField> = ({ style = {}, text }) => {
+  return <Text style={[styles.text, style]}>{text}</Text>
 }
