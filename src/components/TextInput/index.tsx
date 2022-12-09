@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput as DefaultTextInput } from 'react-native'
+import { TextInput as DefaultTextInput, StyleProp, TextStyle } from 'react-native'
 
 import styles from './styles'
 
@@ -9,6 +9,7 @@ interface ITextInput {
   disabled: boolean
   secureTextEntry: boolean
   placeholder?: string
+  style?: StyleProp<TextStyle>
 }
 
 export const TextInput: React.FC<ITextInput> = ({
@@ -17,11 +18,12 @@ export const TextInput: React.FC<ITextInput> = ({
   placeholder,
   onChange,
   secureTextEntry,
+  style = {},
 }) => {
   return (
     <DefaultTextInput
       secureTextEntry={secureTextEntry}
-      style={styles.input}
+      style={[styles.input, style]}
       placeholder={placeholder}
       placeholderTextColor="#5E626C"
       value={value}

@@ -1,17 +1,15 @@
-import { StyleSheet, Dimensions } from 'react-native'
+import { StyleSheet } from 'react-native'
+
+import { font, RW, normalizePixel } from '@/theme/utils'
+import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   input: {
     borderColor: 'gray',
-    width: Dimensions.get('window').width - 60,
-    borderRadius: 15,
-    padding: 20,
+    width: SCREEN_WIDTH - RW(60),
+    borderRadius: normalizePixel(15),
+    padding: normalizePixel(20),
     backgroundColor: '#2C2B30',
-    fontSize: 16,
-    color: '#5E626C',
-    lineHeight: 24,
-    fontWeight: '300',
-    marginLeft: 14,
-    marginRight: 14,
+    ...font('pp.thin', 16, '#5E626C', 24),
   },
 })
