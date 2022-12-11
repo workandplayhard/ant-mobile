@@ -10,7 +10,7 @@ interface IGap {
 }
 
 interface StyleObject {
-  [key: string]: any
+  [key: string]: boolean | number
 }
 
 export const Gap: React.FC<IGap> = ({ horizontal = false, gap, flex }) => {
