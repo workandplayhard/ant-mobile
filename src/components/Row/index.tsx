@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleProp, TextStyle, Text } from 'react-native'
+import { TextStyle, Text, StyleProp, View } from 'react-native'
 
 import styles from './styles'
 
@@ -9,5 +9,9 @@ interface IRow {
 }
 
 export const Row: React.FC<IRow> = ({ style = {}, children }) => {
-  return <Text style={[styles.container, style]}>{children}</Text>
+  return (
+    <View>
+      <Text style={[styles.container, style]}>{children}</Text>
+    </View>
+  )
 }
