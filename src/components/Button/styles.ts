@@ -9,7 +9,6 @@ export default StyleSheet.create({
   },
   textStyle: {
     ...font('rw.regular', 18, 'white', 30),
-    fontStyle: 'normal',
   },
   buttonStyle: {
     width: '100%',
