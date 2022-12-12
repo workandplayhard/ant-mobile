@@ -1,17 +1,18 @@
 import React from 'react'
-import { TextStyle, Text, StyleProp, View } from 'react-native'
+import { View, ViewStyle, StyleProp } from 'react-native'
 
 import styles from './styles'
 
 interface IRow {
+  style?: StyleProp<ViewStyle>
+  shouldWrap?: boolean
   children: React.ReactNode
-  style?: StyleProp<TextStyle>
 }
 
-export const Row: React.FC<IRow> = ({ style = {}, children }) => {
+export const Row: React.FC<IRow> = ({ style = {}, children, shouldWrap = false }) => {
   return (
-    <View>
-      <Text style={[styles.container, style]}>{children}</Text>
+    <View style={[styles.container, { flexWrap: shouldWrap ? 'wrap' : 'nowrap' }, style]}>
+      {children}
     </View>
   )
 }
