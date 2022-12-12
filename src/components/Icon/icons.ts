@@ -23,9 +23,11 @@ import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
-import notificationIcon from '@/assets/icons/ic_notification.svg'
 import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
+import notificationIcon from '@/assets/icons/ic_notification.svg'
+import toggleEnabledIcon from '@/assets/icons/ic_toggle_enabled.svg'
 import tvDefaultPlanIcon from '@/assets/icons/ic_tv_default_plan.svg'
+import toggleDisabledIcon from '@/assets/icons/ic_toggle_disabled.svg'
 import copyCardNumberIcon from '@/assets/icons/ic_copy_card_number.svg'
 import walletCreditCardIcon from '@/assets/icons/ic_wallet_credit_card.svg'
 import handsHoldingCircleIcon from '@/assets/icons/ic_hands_holding_circle.svg'
@@ -59,7 +61,9 @@ export default {
   balloonThinIcon,
   notificationIcon,
   tvDefaultPlanIcon,
+  toggleEnabledIcon,
   copyCardNumberIcon,
+  toggleDisabledIcon,
   walletCreditCardIcon,
   handsHoldingCircleIcon,
 }
