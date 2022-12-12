@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { TouchableOpacity, View } from 'react-native'
 
 import IconNames from '../Icon/icons'
@@ -7,17 +7,18 @@ import styles from './styles'
 
 interface ICheckBox {
   onChange: (e: boolean) => void
-  isChecked: boolean
+  isChecked?: boolean
 }
 
-export const CheckBox: React.FC<ICheckBox> = ({ onChange, isChecked }) => {
-  const CheckedComponent = isChecked ? IconNames.checkedIcon : IconNames.unCheckedIcon
+export const CheckBox: React.FC<ICheckBox> = ({ onChange, isChecked = false }) => {
+  const Icon = useMemo(
+    () => (isChecked ? IconNames.checkedIcon : IconNames.unCheckedIcon),
+    [isChecked],
+  )
 
   return (
-    <View>
-      <TouchableOpacity onPress={() => onChange(!isChecked)}>
-        <CheckedComponent style={styles.checkbox} />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={() => onChange(!isChecked)}>
+      <Icon style={styles.checkbox} />
+    </TouchableOpacity>
   )
 }
