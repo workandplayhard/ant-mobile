@@ -12,6 +12,8 @@ import closeIcon from '@/assets/icons/ic_close.svg'
 import musicIcon from '@/assets/icons/ic_music.svg'
 import energyIcon from '@/assets/icons/ic_energy.svg'
 import cuteTVIcon from '@/assets/icons/ic_cute_tv.svg'
+import checkedIcon from '@/assets/icons/ic_checked.svg'
+import unCheckedIcon from '@/assets/icons/ic_unchecked.svg'
 import messageIcon from '@/assets/icons/ic_message.svg'
 import accountIcon from '@/assets/icons/ic_account.svg'
 import arrowUpIcon from '@/assets/icons/ic_arrow_up.svg'
@@ -47,12 +49,14 @@ export default {
   musicIcon,
   energyIcon,
   cuteTVIcon,
+  checkedIcon,
   showCVVIcon,
   messageIcon,
   accountIcon,
   arrowUpIcon,
   settingsIcon,
   downloadIcon,
+  unCheckedIcon,
   arrowNextIcon,
   arrowPrevIcon,
   arrowDownIcon,
