@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { View, StyleProp, TextStyle } from 'react-native'
+import { View, StyleProp, ViewStyle } from 'react-native'
 
 import { RH, RW } from '@/theme'
 
@@ -14,7 +14,7 @@ interface StyleObject {
 }
 
 export const Gap: React.FC<IGap> = ({ horizontal = false, gap, flex }) => {
-  const style: StyleProp<TextStyle> = useMemo(() => {
+  const style: StyleProp<ViewStyle> = useMemo(() => {
     let _styles: StyleObject = {}
     if (gap !== undefined) {
       _styles = horizontal ? { width: RW(gap), height: 0 } : { width: 0, height: RH(gap) }
