@@ -3,6 +3,8 @@ import { TouchableOpacity, View } from 'react-native'
 
 import IconNames from '../Icon/icons'
 
+import styles from './styles'
+
 interface ICheckBox {
   onChange: (e: boolean) => void
   isChecked: boolean
@@ -14,7 +16,7 @@ export const CheckBox: React.FC<ICheckBox> = ({ onChange, isChecked }) => {
   return (
     <View>
       <TouchableOpacity onPress={() => onChange(!isChecked)}>
-        <CheckedComponent width={40} height={40} />
+        <CheckedComponent style={styles.checkbox} />
       </TouchableOpacity>
     </View>
   )
