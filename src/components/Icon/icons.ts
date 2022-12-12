@@ -1,5 +1,5 @@
 import tvIcon from '@/assets/icons/ic_tv.svg'
-☻import vipIcon from '@/assets/icons/ic_vip.svg'
+import vipIcon from '@/assets/icons/ic_vip.svg'
 import carIcon from '@/assets/icons/ic_car.svg'
 import bankIcon from '@/assets/icons/ic_bank.svg'
 import menuIcon from '@/assets/icons/ic_menu.svg'
