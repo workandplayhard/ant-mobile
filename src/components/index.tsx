@@ -1,6 +1,7 @@
 export * from './Col'
 export * from './Gap'
 export * from './Icon'
+export * from './Radio'
 export * from './TextField'
 export * from './TextInput'
 export * from './CheckBox'
