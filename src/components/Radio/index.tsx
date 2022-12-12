@@ -1,5 +1,5 @@
-import React from 'react'
-import { TouchableOpacity, View } from 'react-native'
+import React, { useMemo } from 'react'
+import { TouchableOpacity } from 'react-native'
 
 import IconNames from '../Icon/icons'
 import styles from './styles'
@@ -10,13 +10,14 @@ interface IRadioButton {
 }
 
 export const Radio: React.FC<IRadioButton> = ({ onChange, isEnabled }) => {
-  const RadioComponent = isEnabled ? IconNames.toggleDisabledIcon : IconNames.toggleEnabledIcon
+  const Icon = useMemo(
+    () => (isEnabled ? IconNames.toggleDisabledIcon : IconNames.toggleEnabledIcon),
+    [isEnabled],
+  )
 
   return (
-    <View>
-      <TouchableOpacity onPress={() => onChange(!isEnabled)}>
-        <RadioComponent style={styles.radio} />
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity onPress={() => onChange(!isEnabled)}>
+      <Icon style={styles.radio} />
+    </TouchableOpacity>
   )
 }
