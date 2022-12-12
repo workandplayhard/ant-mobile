@@ -12,6 +12,8 @@ import closeIcon from '@/assets/icons/ic_close.svg'
 import musicIcon from '@/assets/icons/ic_music.svg'
 import energyIcon from '@/assets/icons/ic_energy.svg'
 import cuteTVIcon from '@/assets/icons/ic_cute_tv.svg'
+import checkedIcon from '@/assets/icons/ic_checked.svg'
+import unCheckedIcon from '@/assets/icons/ic_unchecked.svg'
 import messageIcon from '@/assets/icons/ic_message.svg'
 import accountIcon from '@/assets/icons/ic_account.svg'
 import arrowUpIcon from '@/assets/icons/ic_arrow_up.svg'
@@ -23,9 +25,11 @@ import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
-import notificationIcon from '@/assets/icons/ic_notification.svg'
 import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
+import notificationIcon from '@/assets/icons/ic_notification.svg'
+import toggleEnabledIcon from '@/assets/icons/ic_toggle_enabled.svg'
 import tvDefaultPlanIcon from '@/assets/icons/ic_tv_default_plan.svg'
+import toggleDisabledIcon from '@/assets/icons/ic_toggle_disabled.svg'
 import copyCardNumberIcon from '@/assets/icons/ic_copy_card_number.svg'
 import walletCreditCardIcon from '@/assets/icons/ic_wallet_credit_card.svg'
 import handsHoldingCircleIcon from '@/assets/icons/ic_hands_holding_circle.svg'
@@ -45,12 +49,14 @@ export default {
   musicIcon,
   energyIcon,
   cuteTVIcon,
+  checkedIcon,
   showCVVIcon,
   messageIcon,
   accountIcon,
   arrowUpIcon,
   settingsIcon,
   downloadIcon,
+  unCheckedIcon,
   arrowNextIcon,
   arrowPrevIcon,
   arrowDownIcon,
@@ -59,7 +65,9 @@ export default {
   balloonThinIcon,
   notificationIcon,
   tvDefaultPlanIcon,
+  toggleEnabledIcon,
   copyCardNumberIcon,
+  toggleDisabledIcon,
   walletCreditCardIcon,
   handsHoldingCircleIcon,
 }
