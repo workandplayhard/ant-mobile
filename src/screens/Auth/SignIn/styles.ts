@@ -12,13 +12,13 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    ...font('bold', 18, WHITE, 28),
+    ...font('rw.bold', 18, WHITE, 28),
     textAlign: 'left',
     width: '100%',
     marginBottom: RH(20),
   },
   textField: {
-    ...font('regular', 16, WHITE),
+    ...font('rw.regular', 16, WHITE),
     width: '100%',
     borderWidth: RH(1),
     borderColor: WHITE,
@@ -39,7 +39,7 @@ export default StyleSheet.create({
     marginTop: RH(15),
   },
   buttonText: {
-    ...font('bold', 18, WHITE, 28),
+    ...font('rw.bold', 18, WHITE, 28),
     width: '100%',
     textAlign: 'center',
   },
