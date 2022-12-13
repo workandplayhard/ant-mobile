@@ -9,5 +9,10 @@ interface IUserAvatar {
 }
 
 export const UserAvatar: React.FC<IUserAvatar> = ({ url = '', placeholder = true, size = 50 }) => {
-  return <Image source={imageWithDefault(url, placeholder)} style={{ width: size, height: size }} />
+  return (
+    <Image
+      source={imageWithDefault(url, placeholder)}
+      style={{ width: size, height: size, borderRadius: size / 2 }}
+    />
+  )
 }
