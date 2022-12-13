@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'
 
+import { Button } from '@/components'
 import { t } from '@/i18n'
 import { useAuth, useApp } from '@/hooks'
 
@@ -31,9 +32,12 @@ const SignInScreen: React.FC = () => {
         value={password}
         onChangeText={setPassword}
       />
-      <TouchableOpacity style={styles.button} onPress={() => onSignIn({ email, password })}>
-        <Text style={styles.buttonText}>{t('signIn')}</Text>
-      </TouchableOpacity>
+      <Button
+        variant="primary"
+        size="xs"
+        text={t('signIn')}
+        onPress={() => onSignIn({ email, password })}
+      />
     </View>
   )
 }

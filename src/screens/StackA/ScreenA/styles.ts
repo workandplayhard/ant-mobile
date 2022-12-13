@@ -13,7 +13,7 @@ export default StyleSheet.create({
   },
   title: {
     textAlign: 'left',
-    ...font('bold', 18, 'white', 28),
+    ...font('rw.bold', 18, 'white', 28),
   },
   button: {
     width: '100%',
@@ -23,7 +23,7 @@ export default StyleSheet.create({
     marginTop: RH(15),
   },
   buttonText: {
-    ...font('bold', 18, WHITE, 28),
+    ...font('rw.bold', 18, WHITE, 28),
     width: '100%',
     textAlign: 'center',
   },

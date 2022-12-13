@@ -12,7 +12,7 @@ interface IIcon {
   wrapperStyle?: StyleProp<ViewProps>
   iconStyle?: SvgProps
   badgeColor?: string
-  onClick?: () => void
+  onPress?: () => void
 }
 
 export const Icon: React.FC<IIcon> = ({
@@ -21,7 +21,7 @@ export const Icon: React.FC<IIcon> = ({
   wrapperStyle = {},
   iconStyle = {},
   badgeColor,
-  onClick,
+  onPress,
 }) => {
   const IconComponent = IconNames[name]
 
@@ -30,7 +30,7 @@ export const Icon: React.FC<IIcon> = ({
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
       {!!badgeColor && <View style={[styles.badge, { backgroundColor: badgeColor }]} />}
-      <TouchableOpacity onPress={onClick}>
+      <TouchableOpacity onPress={onPress}>
         <IconComponent width={size} height={size} {...iconStyle} />
       </TouchableOpacity>
     </View>
