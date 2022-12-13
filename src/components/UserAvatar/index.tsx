@@ -1,9 +1,9 @@
-import { imageWithDefault } from '@/utils/image'
 import React from 'react'
+import { imageWithDefault } from '@/utils/image'
 import { Image } from 'react-native'
 
 interface IUserAvatar {
-  url?: string | number
+  url?: string
   placeholder?: boolean
   size?: number
 }
