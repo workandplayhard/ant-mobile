@@ -5,7 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 14 Pro'",
-    "iphone": "react-native run-ios --device \"Your iPhone\"",
+    "iphone": "react-native run-ios --device \"Che’s iPhone\"",
     "start": "react-native start",
     "test": "jest",
     "lint": "npx eslint src/**/*.{tsx,ts} --fix && npx prettier --check src/**/*.{tsx,ts} --write"
@@ -24,6 +24,7 @@
     "react-native-asset": "^2.0.1",
     "react-native-bootsplash": "^4.3.3",
     "react-native-gesture-handler": "^2.8.0",
+    "react-native-linear-gradient": "^2.6.2",
     "react-native-localize": "^2.2.4",
     "react-native-modalize": "^2.1.1",
     "react-native-portalize": "^1.0.7",

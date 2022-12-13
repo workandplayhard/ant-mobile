@@ -12,20 +12,20 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		21C5826DCE7F4726A85870B2 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F21BB0D8A4B248AD8D3B4400 /* Raleway-SemiBold.ttf */; };
+		2559475620B4460A8F64B9CC /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8614E90196274D36826C86EB /* Poppins-Bold.ttf */; };
+		66547737D65B4E9788D37666 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4E6053ECEF43A099211856 /* Raleway-Medium.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-Banking-BankingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-Banking-BankingTests.a */; };
+		7BA966460C8549D5AB7C320A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4BED71174124B5BB4B64752 /* Poppins-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8C0FF545FFC4464A9231547A /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 361EDB8141D74FDE95B9320B /* Raleway-Black.ttf */; };
 		916E844B1FD643E88B2876B8 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FBDFEB1ED37A4F109F3838D5 /* Raleway-Bold.ttf */; };
-		66547737D65B4E9788D37666 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4E6053ECEF43A099211856 /* Raleway-Medium.ttf */; };
-		9913C0A9BAD840CA8642545B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA7CF5D358D24960968F1A28 /* Raleway-Regular.ttf */; };
-		21C5826DCE7F4726A85870B2 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F21BB0D8A4B248AD8D3B4400 /* Raleway-SemiBold.ttf */; };
 		923DC888D1C54FF5BAB5A83A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7114E8749279416A93DB987D /* Raleway-Thin.ttf */; };
-		E1D6A2E0E96E461E863A43B5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC16891337324C3E81E64F32 /* Poppins-Black.ttf */; };
-		2559475620B4460A8F64B9CC /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8614E90196274D36826C86EB /* Poppins-Bold.ttf */; };
-		EF253FCC94A640A98464BEEE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE33C30E6994402BBE7D263F /* Poppins-Medium.ttf */; };
-		7BA966460C8549D5AB7C320A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4BED71174124B5BB4B64752 /* Poppins-Regular.ttf */; };
-		D3A92564EB74498DABE031E1 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F46CCFE7DFFE4166909814BB /* Poppins-SemiBold.ttf */; };
+		9913C0A9BAD840CA8642545B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA7CF5D358D24960968F1A28 /* Raleway-Regular.ttf */; };
 		D131CAB71D624C749CAC2A65 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFCB79E387EF4FE19E9E591E /* Poppins-Thin.ttf */; };
+		D3A92564EB74498DABE031E1 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F46CCFE7DFFE4166909814BB /* Poppins-SemiBold.ttf */; };
+		E1D6A2E0E96E461E863A43B5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC16891337324C3E81E64F32 /* Poppins-Black.ttf */; };
+		EF253FCC94A640A98464BEEE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE33C30E6994402BBE7D263F /* Poppins-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,25 +49,25 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Banking/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Banking/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-Banking-BankingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Banking-BankingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		361EDB8141D74FDE95B9320B /* Raleway-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Black.ttf"; path = "../src/assets/fonts/Raleway-Black.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-Banking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banking.debug.xcconfig"; path = "Target Support Files/Pods-Banking/Pods-Banking.debug.xcconfig"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-Banking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banking.release.xcconfig"; path = "Target Support Files/Pods-Banking/Pods-Banking.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-Banking-BankingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banking-BankingTests.debug.xcconfig"; path = "Target Support Files/Pods-Banking-BankingTests/Pods-Banking-BankingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-Banking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Banking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7114E8749279416A93DB987D /* Raleway-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Thin.ttf"; path = "../src/assets/fonts/Raleway-Thin.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Banking/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8614E90196274D36826C86EB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Banking-BankingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banking-BankingTests.release.xcconfig"; path = "Target Support Files/Pods-Banking-BankingTests/Pods-Banking-BankingTests.release.xcconfig"; sourceTree = "<group>"; };
+		AE33C30E6994402BBE7D263F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		C4BED71174124B5BB4B64752 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		DA7CF5D358D24960968F1A28 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Regular.ttf"; path = "../src/assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		DFCB79E387EF4FE19E9E591E /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		EC16891337324C3E81E64F32 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		361EDB8141D74FDE95B9320B /* Raleway-Black.ttf */ = {isa = PBXFileReference; name = "Raleway-Black.ttf"; path = "../src/assets/fonts/Raleway-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FBDFEB1ED37A4F109F3838D5 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; name = "Raleway-Bold.ttf"; path = "../src/assets/fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		ED4E6053ECEF43A099211856 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; name = "Raleway-Medium.ttf"; path = "../src/assets/fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DA7CF5D358D24960968F1A28 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; name = "Raleway-Regular.ttf"; path = "../src/assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F21BB0D8A4B248AD8D3B4400 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; name = "Raleway-SemiBold.ttf"; path = "../src/assets/fonts/Raleway-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7114E8749279416A93DB987D /* Raleway-Thin.ttf */ = {isa = PBXFileReference; name = "Raleway-Thin.ttf"; path = "../src/assets/fonts/Raleway-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EC16891337324C3E81E64F32 /* Poppins-Black.ttf */ = {isa = PBXFileReference; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8614E90196274D36826C86EB /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AE33C30E6994402BBE7D263F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C4BED71174124B5BB4B64752 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F46CCFE7DFFE4166909814BB /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DFCB79E387EF4FE19E9E591E /* Poppins-Thin.ttf */ = {isa = PBXFileReference; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ED4E6053ECEF43A099211856 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Medium.ttf"; path = "../src/assets/fonts/Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		F21BB0D8A4B248AD8D3B4400 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-SemiBold.ttf"; path = "../src/assets/fonts/Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		F46CCFE7DFFE4166909814BB /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../src/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		FBDFEB1ED37A4F109F3838D5 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Bold.ttf"; path = "../src/assets/fonts/Raleway-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +174,7 @@
 			sourceTree = "<group>";
 		};
 		DB4B9F3FBAAF4C7BADFF1A55 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				361EDB8141D74FDE95B9320B /* Raleway-Black.ttf */,
 				FBDFEB1ED37A4F109F3838D5 /* Raleway-Bold.ttf */,
@@ -190,8 +190,8 @@
 				DFCB79E387EF4FE19E9E591E /* Poppins-Thin.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -554,7 +554,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cyberfuze.banking";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyberfuze.banking;
 				PRODUCT_NAME = Banking;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -579,7 +579,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.cyberfuze.banking";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cyberfuze.banking;
 				PRODUCT_NAME = Banking;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
