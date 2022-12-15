@@ -15,3 +15,6 @@ export const BUTTON_DEFAULT_COLOR = '#2F333C'
 export const BUTTON_DISABLED_COLOR = '#E0E0E0'
 export const BUTTON_GRADIENT_START = '#FF7852'
 export const BUTTON_GRADIENT_END = '#FF423F'
+
+export const DROPBOX_BUTTON_COLOR = '#EEEEEE'
+export const DROPBOX_BORDER_COLOR = '#000033'
