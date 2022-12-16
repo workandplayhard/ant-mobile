@@ -1,8 +1,10 @@
 import React from 'react'
 import { StyleProp, ViewStyle, ScrollView, View } from 'react-native'
 
+import styles from './styles'
+
 interface IScrollContainer {
-  direction?: string
+  direction?: 'vertical' | 'horizontal'
   contentContainerStyle?: StyleProp<ViewStyle>
   style?: StyleProp<ViewStyle>
   children: React.ReactNode
@@ -15,11 +17,11 @@ export const ScrollContainer: React.FC<IScrollContainer> = ({
   children,
 }) => {
   return (
-    <View style={style}>
+    <View style={[styles.container, style]}>
       <ScrollView
         keyboardDismissMode="on-drag"
         keyboardShouldPersistTaps="handled"
-        style={contentContainerStyle}
+        style={[styles.contentContainerStyle, contentContainerStyle]}
         horizontal={direction === 'horizontal'}
       >
         {children}
