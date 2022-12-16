@@ -4,8 +4,8 @@ import { IFont } from '@/types'
 import { IS_IOS, SCREEN_HEIGHT, SCREEN_WIDTH } from '@/constants'
 import { FONT_MAP } from './fonts'
 
-const guidelineBaseWidth = 375 // Screen width that is used in Figma
-const guidelineBaseHeight = 667 // Screen height that is used in Figma
+const guidelineBaseWidth = 390 // Screen width that is used in Figma
+const guidelineBaseHeight = 844 // Screen height that is used in Figma
 
 export const RatioH = SCREEN_HEIGHT / guidelineBaseHeight
 export const RatioW = SCREEN_WIDTH / guidelineBaseWidth

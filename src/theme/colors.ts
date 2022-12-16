@@ -10,6 +10,7 @@ export const WARNING = '#FFC107'
 
 export const TEXT_INPUT_FONT_COLOR = '#5E626C'
 export const TEXT_INPUT_BG_COLOR = '#2C2B30'
+export const TEXT_INPUT_BORDER_ACTIVE_COLOR = '#000033'
 
 export const BUTTON_DEFAULT_COLOR = '#2F333C'
 export const BUTTON_DISABLED_COLOR = '#E0E0E0'
@@ -17,4 +18,3 @@ export const BUTTON_GRADIENT_START = '#FF7852'
 export const BUTTON_GRADIENT_END = '#FF423F'
 
 export const DROPBOX_BUTTON_COLOR = '#EEEEEE'
-export const DROPBOX_BORDER_COLOR = '#000033'

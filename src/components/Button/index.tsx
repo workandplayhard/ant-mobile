@@ -13,6 +13,7 @@ import {
 } from '@/theme'
 import IconNames from '../Icon/icons'
 import styles from './styles'
+import { TextStyle } from 'react-native'
 
 type TVariant = 'primary' | 'default' | 'pure'
 
@@ -25,7 +26,7 @@ interface IButton {
   borderColor?: string
   wrapperStyle?: StyleProp<ViewStyle>
   buttonStyle?: StyleProp<ViewStyle>
-  textStyle?: StyleProp<ViewStyle>
+  textStyle?: StyleProp<TextStyle>
   iconStyle?: SvgProps
   iconName?: keyof typeof IconNames
   disabled?: boolean

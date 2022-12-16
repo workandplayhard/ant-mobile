@@ -1,49 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SelectDropdown from 'react-native-select-dropdown'
-import { Text, Image } from 'react-native'
+import { ViewStyle } from 'react-native'
 
-import { Row } from '../Row'
-import { CheckBox } from '../CheckBox'
+import { IOption } from '@/types'
+import { RH } from '@/theme'
 
+import { Icon } from '../Icon'
 import styles from './styles'
 
-interface IDropdown {
-  onChange: (e: boolean) => void
-  value: string
-  renderItem: object[]
+interface IDropdown<T> {
+  data: IOption<T>[]
+  placeholder?: string
+  disabled?: boolean
+  buttonText?: string
+  onChange: (v: IOption<T>, index: number) => void
+  dropDownStyle?: ViewStyle
+  children: (item: IOption<T>, index: number) => React.ReactNode
 }
 
-export const Dropdown: React.FC<IDropdown> = ({ onChange, value, renderItem }) => {
+export const Dropdown = <T,>({
+  onChange,
+  buttonText,
+  placeholder,
+  disabled,
+  data,
+  dropDownStyle = {},
+  children,
+}: IDropdown<T>) => {
+  const [focused, setFocused] = useState<boolean>(false)
+
   return (
     <SelectDropdown
-      data={renderItem}
-      onSelect={(selectedItem, index) => {
-        selectedItem.isChecked = !selectedItem.isChecked
-        return selectedItem.title
-      }}
-      buttonTextAfterSelection={(selectedItem, index) => {
-        return selectedItem
-      }}
-      defaultButtonText={value}
-      buttonTextStyle={{ color: '#5E626C', textAlign: 'left' }}
-      dropdownStyle={styles.dropdownStyles}
-      rowStyle={styles.rowStyle}
+      data={data}
+      disabled={disabled}
+      onSelect={(item: IOption<T>, index: number) => onChange(item, index)}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+      buttonTextAfterSelection={() => buttonText || placeholder || ''}
+      defaultButtonText={buttonText || placeholder || ''}
       buttonStyle={styles.buttonStyle}
-      rowTextForSelection={(item, index) => {
-        return item
-      }}
-      renderCustomizedRowChild={(item, index) => {
-        return (
-          <Row style={{ justifyContent: 'space-between' }}>
-            <Image source={item.image} style={{ width: 30, height: 30 }} />
-            <Text style={styles.renderText}>{item.title}</Text>
-            <CheckBox onChange={onChange} isChecked={item.isChecked} />
-          </Row>
-        )
-      }}
-      renderCustomizedButtonChild={(selectedItem, index) => {
-        return <Text>{selectedItem ? selectedItem.title : 'Select'}</Text>
-      }}
+      buttonTextStyle={styles.buttonText}
+      dropdownStyle={{ ...styles.dropdownView, ...dropDownStyle }}
+      rowStyle={styles.row}
+      rowTextForSelection={(item) => item.label}
+      renderCustomizedRowChild={(item, index) => children(item, index)}
+      renderDropdownIcon={() => (
+        <Icon name={focused ? 'arrowUpIcon' : 'arrowDownIcon'} size={RH(20)} />
+      )}
     />
   )
 }

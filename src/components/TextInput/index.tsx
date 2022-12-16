@@ -6,12 +6,12 @@ import { TEXT_INPUT_FONT_COLOR } from '@/theme'
 import styles from './styles'
 
 interface ITextInput {
-  onChange(v: string): void
   value?: Maybe<string | number>
   disabled?: boolean
   secureTextEntry?: boolean
   placeholder?: string
   style?: StyleProp<TextStyle>
+  onChange(v: string): void
 }
 
 export const TextInput: React.FC<ITextInput> = ({
@@ -30,7 +30,7 @@ export const TextInput: React.FC<ITextInput> = ({
       placeholderTextColor={TEXT_INPUT_FONT_COLOR}
       value={value?.toString() || undefined}
       onChangeText={onChange}
-      editable={disabled}
+      editable={!disabled}
     />
   )
 }
