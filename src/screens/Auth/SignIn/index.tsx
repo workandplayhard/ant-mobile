@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { Text, View } from 'react-native'
 
-import { Button } from '@/components'
+import { Button, TextInput } from '@/components'
 import { t } from '@/i18n'
 import { useAuth, useApp } from '@/hooks'
 
@@ -11,8 +11,8 @@ const SignInScreen: React.FC = () => {
   const { onSignIn } = useAuth()
   const { isRTL } = useApp()
 
-  const [email, setEmail] = useState<string>('')
-  const [password, setPassword] = useState<string>('')
+  const [email, setEmail] = useState<string>('test@gmail.com')
+  const [password, setPassword] = useState<string>('test')
 
   return (
     <View style={styles.container}>
@@ -20,17 +20,15 @@ const SignInScreen: React.FC = () => {
       <TextInput
         style={[styles.textField, isRTL && styles.rtlInput]}
         placeholder={t('email')}
-        placeholderTextColor="white"
         value={email}
-        onChangeText={setEmail}
+        onChange={setEmail}
       />
       <TextInput
         secureTextEntry
         style={[styles.textField, isRTL && styles.rtlInput]}
         placeholder={t('password')}
-        placeholderTextColor="white"
         value={password}
-        onChangeText={setPassword}
+        onChange={setPassword}
       />
       <Button
         variant="primary"

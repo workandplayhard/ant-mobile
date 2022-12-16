@@ -19,12 +19,12 @@ interface ModalProps {
   closeOnOverlayTap?: boolean
 }
 
-const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<ModalProps> = ({
   children,
   modalStyle,
   isVisible = false,
   hasBackdrop = false,
-  swipeEnabled = true,
+  swipeEnabled = false,
   backdropColor,
   onClose = () => null,
   closeOnOverlayTap = true,
@@ -35,7 +35,7 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <Portal>
-      <View style={[styles.wrapper]}>
+      <View style={styles.wrapper}>
         <BAModal
           isVisible={isVisible}
           statusBarTranslucent
@@ -43,8 +43,8 @@ const Modal: React.FC<ModalProps> = ({
           hasBackdrop={hasBackdrop}
           backdropColor={backdropColor}
           onSwipeComplete={onClose}
-          animationIn="fadeIn"
-          animationOut="fadeOut"
+          animationIn={swipeEnabled ? 'slideInUp' : 'fadeIn'}
+          animationOut={swipeEnabled ? 'slideOutDown' : 'fadeOut'}
           deviceHeight={SCREEN_HEIGHT + 100}
           onBackdropPress={onBackdropPressed}
           swipeDirection={swipeEnabled ? ['down'] : undefined}
@@ -56,5 +56,3 @@ const Modal: React.FC<ModalProps> = ({
     </Portal>
   )
 }
-
-export default Modal
