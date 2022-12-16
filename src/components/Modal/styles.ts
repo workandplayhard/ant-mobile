@@ -8,9 +8,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    width: SCREEN_WIDTH,
     margin: 0,
-    height: SCREEN_HEIGHT + 100,
   },
   wrapper: {
     width: SCREEN_WIDTH,

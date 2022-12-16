@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { View, ViewStyle } from 'react-native'
+import { View, ViewStyle, StyleProp } from 'react-native'
 import { Portal } from 'react-native-portalize'
 import BAModal from 'react-native-modal'
 
@@ -13,7 +13,7 @@ interface ModalProps {
   hasBackdrop?: boolean
   backdropColor?: string
   swipeEnabled?: boolean
-  modalStyle?: ViewStyle
+  modalStyle?: StyleProp<ViewStyle>
   onClose?: () => void
   children: React.ReactNode
   closeOnOverlayTap?: boolean
