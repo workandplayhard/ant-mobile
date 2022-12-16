@@ -1,5 +1,12 @@
 export type TLang = 'en' | 'he'
 
+export interface IOption<T = string> {
+  label: string
+  value: T
+  image?: any
+  isSelected?: boolean
+}
+
 export type TPCallback = (...params: any[]) => void
 
 export type TCallback = () => void

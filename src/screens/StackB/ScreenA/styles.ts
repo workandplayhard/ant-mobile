@@ -7,11 +7,11 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: '#222126',
     paddingHorizontal: RW(16),
-    paddingVertical: RH(24),
+    paddingVertical: RH(50),
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
-    ...font('bold', 18, 'white', 28),
+    ...font('rw.bold', 18, 'white', 28),
   },
 })

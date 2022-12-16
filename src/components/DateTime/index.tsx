@@ -5,7 +5,7 @@ import moment from 'moment'
 import styles from './styles'
 
 interface IDateTime {
-  value: string
+  value: string | Date
   format?: string
   style?: StyleProp<TextStyle>
 }
