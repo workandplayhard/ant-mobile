@@ -17,4 +17,6 @@ export const BUTTON_DISABLED_COLOR = '#E0E0E0'
 export const BUTTON_GRADIENT_START = '#FF7852'
 export const BUTTON_GRADIENT_END = '#FF423F'
 
+export const OTP_COLOR = '#FF423F'
+export const OTP_BG_COLOR = 'rgba(255, 66, 63, 0.3)'
 export const DROPBOX_BUTTON_COLOR = '#EEEEEE'
