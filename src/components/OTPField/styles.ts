@@ -1,44 +1,39 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, I18nManager } from 'react-native'
 
-import { RW, font, RH } from '@/theme/utils'
-import { OTP_BG_COLOR, OTP_COLOR } from '@/theme'
+import { RW, font, GRAY, DARK_RED, LIGHT_RED, TEXT_RED, TRANSPARENT } from '@/theme'
 
-const styles = StyleSheet.create({
+export default StyleSheet.create({
   cell: {
-    backgroundColor: OTP_BG_COLOR,
-    width: RW(38),
-    height: RH(50),
-    textAlign: 'center',
-    justifyContent: 'center',
-    borderWidth: 1,
-    borderColor: OTP_COLOR,
-    borderRadius: 6,
-  },
-  emptyCell: {
     alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 6,
-    width: RW(38),
-    height: RH(50),
+    backgroundColor: GRAY,
+    borderRadius: RW(6),
+    height: RW(38),
     justifyContent: 'center',
+    borderWidth: RW(1),
+    borderColor: TRANSPARENT,
+    flex: 1,
+  },
+  focusedCell: {
+    borderColor: DARK_RED,
+    backgroundColor: LIGHT_RED,
+  },
+  middleCell: {
+    marginHorizontal: RW(4),
   },
   cellText: {
-    ...font('pp.regular', 24, OTP_COLOR, 26),
+    ...font('pp.semibold', 24, TEXT_RED),
+    paddingHorizontal: 0,
+    paddingVertical: 0,
     textAlign: 'center',
     width: '100%',
-  },
-  text: {
-    color: 'red',
+    backgroundColor: TRANSPARENT,
   },
   container: {
     width: '100%',
   },
   row: {
-    flexDirection: 'row',
-  },
-  rtlRow: {
-    flexDirection: 'row-reverse',
+    width: '100%',
+    justifyContent: 'space-between',
+    flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
   },
 })
-
-export default styles

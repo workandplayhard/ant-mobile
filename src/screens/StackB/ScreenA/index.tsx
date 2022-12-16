@@ -18,6 +18,7 @@ import {
   Dropdown,
   ImageView,
   TextInput,
+  OTPField,
 } from '@/components'
 import { RW, RH, font } from '@/theme'
 
@@ -28,6 +29,7 @@ const HomeScreenA: React.FC = () => {
   const [showModal, setShowModal] = useState<number>(0)
   const [checked, setChecked] = useState<boolean>(false)
   const [text, setText] = useState<string>('')
+  const [code, setCode] = useState<string>('')
   const [countries, setCountries] = useState<IOption<string>[]>([
     {
       label: 'United States',
@@ -132,10 +134,11 @@ const HomeScreenA: React.FC = () => {
               backgroundColor: 'white',
               borderRadius: RW(20),
               flexDirection: 'column',
-              justifyContent: 'flex-end',
+              justifyContent: 'space-around',
               padding: RH(30),
             }}
           >
+            <OTPField cellCount={6} value={code} setValue={setCode} />
             <Button variant="primary" size="xs" text="Close" onPress={closeModal} />
           </View>
         </Modal>
