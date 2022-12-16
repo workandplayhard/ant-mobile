@@ -1,25 +1,29 @@
 import { StyleSheet } from 'react-native'
 
-import { RW, font } from '@/theme/utils'
-import { BLACK, SILVER } from '@/theme/colors'
-import { DIM_H2, DIM_V5 } from '@/constants'
+import { RW, font, RH } from '@/theme/utils'
+import { OTP_BG_COLOR, OTP_COLOR } from '@/theme'
 
 const styles = StyleSheet.create({
   cell: {
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderRadius: 12,
-    height: RW(60),
+    backgroundColor: OTP_BG_COLOR,
+    width: RW(38),
+    height: RH(50),
+    textAlign: 'center',
     justifyContent: 'center',
-    width: RW(60),
+    borderWidth: 1,
+    borderColor: OTP_COLOR,
+    borderRadius: 6,
   },
   emptyCell: {
-    backgroundColor: 'red',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 6,
+    width: RW(38),
+    height: RH(50),
+    justifyContent: 'center',
   },
   cellText: {
-    ...font('rw.bold', 24, BLACK),
-    paddingHorizontal: 0,
-    paddingVertical: 0,
+    ...font('pp.regular', 24, OTP_COLOR, 26),
     textAlign: 'center',
     width: '100%',
   },
@@ -27,7 +31,6 @@ const styles = StyleSheet.create({
     color: 'red',
   },
   container: {
-    paddingBottom: DIM_V5,
     width: '100%',
   },
   row: {
@@ -39,6 +42,3 @@ const styles = StyleSheet.create({
 })
 
 export default styles
-
-// first i can't input number
-// second don't know how to control the cell;s style

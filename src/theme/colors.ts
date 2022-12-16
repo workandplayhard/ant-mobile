@@ -15,3 +15,6 @@ export const BUTTON_DEFAULT_COLOR = '#2F333C'
 export const BUTTON_DISABLED_COLOR = '#E0E0E0'
 export const BUTTON_GRADIENT_START = '#FF7852'
 export const BUTTON_GRADIENT_END = '#FF423F'
+
+export const OTP_COLOR = '#FF423F'
+export const OTP_BG_COLOR = 'rgba(255, 66, 63, 0.3)'

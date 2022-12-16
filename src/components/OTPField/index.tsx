@@ -16,7 +16,7 @@ interface OTPCodeProps {
   setValue: (text: string) => void
 }
 
-const OTPField: React.FC<OTPCodeProps> = ({
+const OTPCode: React.FC<OTPCodeProps> = ({
   cellCount = 5,
   value = '',
   setValue,
@@ -27,7 +27,6 @@ const OTPField: React.FC<OTPCodeProps> = ({
     setValue,
     value,
   })
-
   return (
     <View style={styles.container}>
       <CodeField
@@ -40,16 +39,18 @@ const OTPField: React.FC<OTPCodeProps> = ({
         keyboardType="number-pad"
         textContentType="oneTimeCode"
         rootStyle={[styles.row, isRTL && styles.rtlRow]}
-        renderCell={({ index, symbol, isFocused }) => (
-          <View key={index} style={styles.cell}>
-            <Text style={styles.cellText} onLayout={getCellOnLayoutHandler(index)}>
-              {symbol || (isFocused ? <Cursor /> : null)}
-            </Text>
-          </View>
-        )}
+        renderCell={({ index, symbol, isFocused }) => {
+          return (
+            <View key={index} style={index < value.length ? styles.cell : styles.emptyCell}>
+              <Text style={styles.cellText} onLayout={getCellOnLayoutHandler(index)}>
+                {symbol || (isFocused ? <Cursor /> : null)}
+              </Text>
+            </View>
+          )
+        }}
       />
     </View>
   )
 }
 
-export default OTPField
+export default OTPCode
