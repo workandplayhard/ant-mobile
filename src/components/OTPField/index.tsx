@@ -11,13 +11,13 @@ import { RW } from '@/theme'
 import { Gap } from '../Gap'
 import styles from './styles'
 
-interface OTPCodeProps {
+interface IOtpField {
   value?: string
   cellCount?: number
   setValue: (text: string) => void
 }
 
-export const OTPField: React.FC<OTPCodeProps> = ({ cellCount = 6, value = '', setValue }) => {
+export const OTPField: React.FC<IOtpField> = ({ cellCount = 6, value = '', setValue }) => {
   const codeField = useBlurOnFulfill({ cellCount, value })
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     setValue,

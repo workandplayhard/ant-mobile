@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useRef, useState, ElementRef } from 'react'
 import { Text, View } from 'react-native'
 
 import { t } from '@/i18n'
@@ -17,8 +17,10 @@ import {
   Button,
   Dropdown,
   ImageView,
+  TextField,
   TextInput,
   OTPField,
+  Signature,
 } from '@/components'
 import { RW, RH, font } from '@/theme'
 
@@ -26,10 +28,12 @@ import styles from './styles'
 import { IOption } from '@/types'
 
 const HomeScreenA: React.FC = () => {
+  const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [showModal, setShowModal] = useState<number>(0)
   const [checked, setChecked] = useState<boolean>(false)
   const [text, setText] = useState<string>('')
   const [code, setCode] = useState<string>('')
+  const [sign, setSign] = useState<string | undefined>()
   const [countries, setCountries] = useState<IOption<string>[]>([
     {
       label: 'United States',
@@ -66,19 +70,16 @@ const HomeScreenA: React.FC = () => {
     <View style={styles.container}>
       <ScrollContainer>
         <Col>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
-          <Text style={styles.title}>{`StackB-ScreenA-${t('lorem')}`}</Text>
+          <TextField style={styles.title} text={`StackB-ScreenA-${t('lorem')}`} />
+          <TextField style={styles.title} text={`StackB-ScreenA-${t('lorem')}`} />
+          <TextField style={styles.title} text={`StackB-ScreenA-${t('lorem')}`} />
+          <Gap horizontal={false} gap={20} />
+          <TextField
+            style={styles.title}
+            text={`Signature string: ${sign || ''}`}
+            numberOfLines={3}
+          />
+
           <Gap horizontal={false} gap={20} />
           <Row>
             <Icon name="balloonHotIcon" />
@@ -124,13 +125,13 @@ const HomeScreenA: React.FC = () => {
           isVisible
           hasBackdrop
           onClose={closeModal}
-          swipeEnabled
+          swipeEnabled={false}
           backdropColor="rgba(0,0,0,0.5)"
         >
           <View
             style={{
               width: RW(329),
-              height: RW(433),
+              minHeight: RW(433),
               backgroundColor: 'white',
               borderRadius: RW(20),
               flexDirection: 'column',
@@ -139,6 +140,16 @@ const HomeScreenA: React.FC = () => {
             }}
           >
             <OTPField cellCount={6} value={code} setValue={setCode} />
+            <Signature ref={signatureRef} onSign={(d: string) => setSign(d)} />
+            <Button
+              variant="pure"
+              size="xs"
+              text="Get Sign"
+              textStyle={{ color: 'red' }}
+              onPress={() => {
+                signatureRef.current?.getSignature()
+              }}
+            />
             <Button variant="primary" size="xs" text="Close" onPress={closeModal} />
           </View>
         </Modal>
