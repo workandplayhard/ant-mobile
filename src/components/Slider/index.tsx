@@ -9,14 +9,16 @@ import {
 } from 'react-native'
 
 import { SCREEN_WIDTH } from '@/constants'
-
-import styles from './styles'
+import { RW } from '@/theme'
+import { Gap } from '../Gap'
 import { ImageView } from '../ImageView'
 
+import styles from './styles'
+
 interface Props {
-  width: number
+  width?: number
   urls: string[]
-  height: string | number
+  height?: string | number
   paginatorStyle?: ViewStyle
   onItemPress?: () => void | undefined
 }
@@ -78,7 +80,10 @@ export const Slider: React.FC<Props> = ({
       </ScrollView>
       <View style={[styles.paginatorContainer, paginatorStyle]}>
         {Array.from(Array(urls.length).keys()).map((index) => (
-          <View key={index} style={[styles.paginator, activeIndex === index && styles.active]} />
+          <React.Fragment key={index}>
+            <View style={[styles.paginator, activeIndex === index && styles.active]} />
+            {index < urls.length - 1 && <Gap horizontal gap={RW(9)} />}
+          </React.Fragment>
         ))}
       </View>
     </View>

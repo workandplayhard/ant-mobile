@@ -2,7 +2,7 @@ import React, { useCallback, useRef, forwardRef, useImperativeHandle } from 'rea
 import { StyleProp, View, ViewProps } from 'react-native'
 import SignatureCapture, { SaveEventParams } from 'react-native-signature-capture'
 
-import { WHITE } from '@/theme'
+import { TRANSPARENT, WHITE } from '@/theme'
 
 import styles from './styles'
 
@@ -50,6 +50,9 @@ export const Signature = forwardRef<ISignatureControl, ISignature>(({ style, onS
         showBorder={false}
         // @ts-ignore
         strokeColor={WHITE}
+        minStrokeWidth={4}
+        maxStrokeWidth={4}
+        backgroundColor={TRANSPARENT}
         viewMode="portrait"
       />
     </View>

@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native'
 
-import { WHITE } from '@/theme/colors'
-import { RH, RW } from '@/theme'
+import { RH, RW, DOT_ACTIVE, DOT_INACTIVE } from '@/theme'
 
 const styles = StyleSheet.create({
   active: {
-    opacity: 1,
+    backgroundColor: DOT_ACTIVE,
   },
   container: {
     flex: 1,
@@ -14,20 +13,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   paginator: {
-    backgroundColor: WHITE,
+    backgroundColor: DOT_INACTIVE,
     borderRadius: RW(4),
-    height: RW(8),
-    marginHorizontal: RH(9),
+    height: RW(4),
     marginVertical: 0,
-    opacity: 0.4,
-    width: RW(8),
+    width: RW(4),
   },
   paginatorContainer: {
-    bottom: RH(50),
     flexDirection: 'row',
     justifyContent: 'center',
-    position: 'absolute',
-    width: '100%',
+    paddingTop: RH(20),
   },
   slider: {
     flex: 1,
