@@ -1,5 +1,5 @@
-import React, { useCallback, useRef, useState, ElementRef } from 'react'
 import { Text, View } from 'react-native'
+import React, { useCallback, useRef, useState, ElementRef } from 'react'
 
 import { t } from '@/i18n'
 
@@ -19,6 +19,7 @@ import {
   ImageView,
   TextField,
   TextInput,
+  Slider,
   OTPField,
   Signature,
 } from '@/components'
@@ -154,6 +155,16 @@ const HomeScreenA: React.FC = () => {
           </View>
         </Modal>
       )}
+      <Gap horizontal={false} gap={20} />
+      <Slider
+        width={329}
+        height={194}
+        urls={[
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+        ]}
+      />
     </View>
   )
 }
