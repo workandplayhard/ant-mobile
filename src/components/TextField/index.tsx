@@ -4,7 +4,7 @@ import { Text, TextProps } from 'react-native'
 import styles from './styles'
 
 interface ITextField extends TextProps {
-  text: string
+  text: string | number
 }
 
 export const TextField: React.FC<ITextField> = ({ style = {}, text, ...rest }) => {

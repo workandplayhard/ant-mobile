@@ -31,3 +31,9 @@ export interface IFont {
     any
   >
 }
+
+export interface IStep<T = string> {
+  label?: string
+  value: T
+  isCompleted?: boolean
+}

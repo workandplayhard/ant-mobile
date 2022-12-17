@@ -1,6 +1,6 @@
 import { RW } from '@/theme'
 import React from 'react'
-import { StyleProp, View, TouchableOpacity, ViewProps } from 'react-native'
+import { StyleProp, View, TouchableOpacity, ViewStyle } from 'react-native'
 import { SvgProps } from 'react-native-svg'
 
 import IconNames from './icons'
@@ -9,7 +9,7 @@ import styles from './styles'
 interface IIcon {
   name: keyof typeof IconNames
   size?: number
-  wrapperStyle?: StyleProp<ViewProps>
+  wrapperStyle?: StyleProp<ViewStyle>
   iconStyle?: SvgProps
   badgeColor?: string
   onPress?: () => void
@@ -30,9 +30,15 @@ export const Icon: React.FC<IIcon> = ({
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
       {!!badgeColor && <View style={[styles.badge, { backgroundColor: badgeColor }]} />}
-      <TouchableOpacity onPress={onPress}>
-        <IconComponent width={size} height={size} {...iconStyle} />
-      </TouchableOpacity>
+      {onPress ? (
+        <TouchableOpacity onPress={onPress}>
+          <IconComponent width={size} height={size} {...iconStyle} />
+        </TouchableOpacity>
+      ) : (
+        <View>
+          <IconComponent width={size} height={size} {...iconStyle} />
+        </View>
+      )}
     </View>
   )
 }
