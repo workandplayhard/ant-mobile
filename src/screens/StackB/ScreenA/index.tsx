@@ -22,6 +22,7 @@ import {
   Slider,
   OTPField,
   Signature,
+  Stepper,
 } from '@/components'
 import { RW, RH, font } from '@/theme'
 
@@ -156,6 +157,7 @@ const HomeScreenA: React.FC = () => {
         </Modal>
       )}
       <Gap horizontal={false} gap={20} />
+
       <Slider
         width={329}
         height={194}
@@ -163,6 +165,15 @@ const HomeScreenA: React.FC = () => {
           'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
           'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
           'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+        ]}
+      />
+
+      <Stepper
+        steps={[
+          { label: '1', isCompleted: true },
+          { label: '2', isCompleted: false },
+          { label: '3', isCompleted: false },
+          { label: '4', isCompleted: false },
         ]}
       />
     </View>

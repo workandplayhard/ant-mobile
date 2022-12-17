@@ -1,6 +1,6 @@
 import { RW } from '@/theme'
 import React from 'react'
-import { StyleProp, View, TouchableOpacity, ViewProps } from 'react-native'
+import { StyleProp, View, TouchableOpacity, ViewStyle } from 'react-native'
 import { SvgProps } from 'react-native-svg'
 
 import IconNames from './icons'
@@ -9,7 +9,7 @@ import styles from './styles'
 interface IIcon {
   name: keyof typeof IconNames
   size?: number
-  wrapperStyle?: StyleProp<ViewProps>
+  wrapperStyle?: StyleProp<ViewStyle>
   iconStyle?: SvgProps
   badgeColor?: string
   onPress?: () => void
