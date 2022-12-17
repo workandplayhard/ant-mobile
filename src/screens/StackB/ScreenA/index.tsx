@@ -3,9 +3,6 @@ import React, { useCallback, useRef, useState, ElementRef } from 'react'
 
 import { t } from '@/i18n'
 
-const picture2 = require('@/assets/images/2.jpg')
-const picture3 = require('@/assets/images/3.jpg')
-
 import Placeholder from '@/assets/images/placeholder.png'
 import {
   Modal,
@@ -159,7 +156,15 @@ const HomeScreenA: React.FC = () => {
         </Modal>
       )}
       <Gap horizontal={false} gap={20} />
-      <Slider width={329} height={194} urls={[picture2, picture3, picture2]} />
+      <Slider
+        width={329}
+        height={194}
+        urls={[
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+        ]}
+      />
     </View>
   )
 }
