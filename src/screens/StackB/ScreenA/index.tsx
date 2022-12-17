@@ -1,7 +1,10 @@
 import React, { useCallback, useState } from 'react'
-import { Text, View } from 'react-native'
+import { Image, Text, View } from 'react-native'
 
 import { t } from '@/i18n'
+
+const picture2 = require('@/assets/images/2.jpg')
+const picture3 = require('@/assets/images/3.jpg')
 
 import Placeholder from '@/assets/images/placeholder.png'
 import {
@@ -18,6 +21,7 @@ import {
   Dropdown,
   ImageView,
   TextInput,
+  Slider,
 } from '@/components'
 import { RW, RH, font } from '@/theme'
 
@@ -140,6 +144,8 @@ const HomeScreenA: React.FC = () => {
           </View>
         </Modal>
       )}
+      <Gap horizontal={false} gap={20} />
+      <Slider width={329} height={194} urls={[picture2, picture3, picture2]} />
     </View>
   )
 }
