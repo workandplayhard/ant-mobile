@@ -30,9 +30,15 @@ export const Icon: React.FC<IIcon> = ({
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
       {!!badgeColor && <View style={[styles.badge, { backgroundColor: badgeColor }]} />}
-      <TouchableOpacity onPress={onPress}>
-        <IconComponent width={size} height={size} {...iconStyle} />
-      </TouchableOpacity>
+      {onPress ? (
+        <TouchableOpacity onPress={onPress}>
+          <IconComponent width={size} height={size} {...iconStyle} />
+        </TouchableOpacity>
+      ) : (
+        <View>
+          <IconComponent width={size} height={size} {...iconStyle} />
+        </View>
+      )}
     </View>
   )
 }

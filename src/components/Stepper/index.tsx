@@ -1,74 +1,47 @@
-import React from 'react'
-import { Text, StyleProp, View, TouchableOpacity, ViewProps } from 'react-native'
+import React, { useMemo } from 'react'
+import { StyleProp, View, ViewStyle } from 'react-native'
 
-import { Icon } from '../Icon'
+import { IStep } from '@/types'
+import { Row } from '../Row'
 
-interface IStep {
-  index: number
-  label: string
-  isCompleted: boolean
-}
+import { Step } from './step'
+import { StepLine } from './stepLine'
+import styles from './styles'
 
-interface IStepper {
-  steps: IStep[]
+interface IStepper<T = string> {
+  style?: StyleProp<ViewStyle>
+  steps: IStep<T>[]
   currentStep?: number
-  onChangeStep?: () => void
   canJumpNext?: boolean
+  onChangeStep?: (s: number) => void
 }
 
-export const Stepper: React.FC<IStepper> = ({ steps, currentStep, onChangeStep, canJumpNext }) => {
+export const Stepper = <T,>({
+  steps,
+  currentStep = 0,
+  canJumpNext = false,
+  style = {},
+  onChangeStep,
+}: IStepper<T>) => {
+  const completed = useMemo(() => {
+    return 100 * (currentStep / Math.max(steps.length - 1, 1))
+  }, [currentStep, steps])
+
   return (
-    <View
-      style={{
-        display: 'flex',
-        flexDirection: 'row',
-      }}
-    >
-      {steps.map((step, index) => {
-        return (
-          <View>
-            {step.isCompleted ? (
-              <View style={{ display: 'flex', flexDirection: 'row' }}>
-                <Icon
-                  name="checkIcon"
-                  size={16}
-                  wrapperStyle={{
-                    width: 30,
-                    height: 30,
-                    backgroundColor: '#F15223',
-                    borderRadius: 15,
-                    alignItems: 'center',
-                    paddingTop: 6,
-                  }}
-                />
-                <View style={{ width: 66, height: 2, marginTop: 13, backgroundColor: '#F15223' }} />
-              </View>
-            ) : (
-              <View style={{ display: 'flex', flexDirection: 'row' }}>
-                <Text
-                  style={{
-                    width: 30,
-                    height: 30,
-                    backgroundColor: '#F4F5FC',
-                    borderRadius: 15,
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    paddingTop: 6,
-                    color: '#5E626C',
-                  }}
-                >
-                  {step.label}
-                </Text>
-                {index < 3 && (
-                  <View
-                    style={{ width: 66, height: 2, marginTop: 13, backgroundColor: '#F4F5FC' }}
-                  />
-                )}
-              </View>
-            )}
-          </View>
-        )
-      })}
+    <View style={[styles.container, style]}>
+      <Row style={{ justifyContent: 'space-between' }}>
+        {steps.map((step, index) => (
+          <Step
+            key={index}
+            index={index}
+            step={step}
+            currentStep={currentStep}
+            canJumpNext={canJumpNext}
+            onChangeStep={onChangeStep}
+          />
+        ))}
+        <StepLine completed={completed} />
+      </Row>
     </View>
   )
 }

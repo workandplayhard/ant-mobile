@@ -27,7 +27,7 @@ import {
 import { RW, RH, font } from '@/theme'
 
 import styles from './styles'
-import { IOption } from '@/types'
+import { IOption, IStep } from '@/types'
 
 const HomeScreenA: React.FC = () => {
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
@@ -51,6 +51,30 @@ const HomeScreenA: React.FC = () => {
     },
   ])
 
+  const [currentStep, setCurrentStep] = useState<number>(0)
+  const [steps, setSteps] = useState<IStep<number>[]>([
+    {
+      label: 'lorem ipsum',
+      value: 1,
+      isCompleted: false,
+    },
+    {
+      label: 'lorem ipsum',
+      value: 2,
+      isCompleted: false,
+    },
+    {
+      label: 'lorem ipsum',
+      value: 3,
+      isCompleted: false,
+    },
+    {
+      label: 'lorem ipsum',
+      value: 4,
+      isCompleted: false,
+    },
+  ])
+
   const onSelectCountry = useCallback(
     (index: number, isSelected: boolean) => {
       const _c = [...countries]
@@ -67,6 +91,16 @@ const HomeScreenA: React.FC = () => {
   const closeModal = useCallback(() => {
     setShowModal(0)
   }, [])
+
+  const onChangeStep = useCallback(
+    (step: number) => {
+      setCurrentStep(step)
+      const _steps = [...steps]
+      _steps[Math.max(0, step - 1)].isCompleted = true
+      setSteps(_steps)
+    },
+    [steps],
+  )
 
   return (
     <View style={styles.container}>
@@ -170,7 +204,6 @@ const HomeScreenA: React.FC = () => {
 
       <Slider
         width={329}
-        height={194}
         urls={[
           'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
           'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
@@ -178,14 +211,7 @@ const HomeScreenA: React.FC = () => {
         ]}
       />
 
-      <Stepper
-        steps={[
-          { label: '1', isCompleted: true },
-          { label: '2', isCompleted: false },
-          { label: '3', isCompleted: false },
-          { label: '4', isCompleted: false },
-        ]}
-      />
+      <Stepper canJumpNext steps={steps} currentStep={currentStep} onChangeStep={onChangeStep} />
     </View>
   )
 }

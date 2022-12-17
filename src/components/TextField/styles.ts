@@ -1,3 +1,7 @@
 import { StyleSheet } from 'react-native'
 
-export default StyleSheet.create({ text: { textAlign: 'left' } })
+export default StyleSheet.create({
+  text: {
+    textAlign: 'left',
+  },
+})
