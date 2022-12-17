@@ -119,6 +119,16 @@ const HomeScreenA: React.FC = () => {
           <TextInput value={text} placeholder="Your name" onChange={setText} />
           <Gap horizontal={false} gap={20} />
           <Button variant="default" size="xs" text="Open" onPress={() => openModal(1)} />
+          <Gap horizontal={false} gap={20} />
+          <Slider
+            width={329}
+            height={194}
+            urls={[
+              'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+              'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+              'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+            ]}
+          />
         </Col>
       </ScrollContainer>
       {showModal === 1 && (
@@ -155,16 +165,6 @@ const HomeScreenA: React.FC = () => {
           </View>
         </Modal>
       )}
-      <Gap horizontal={false} gap={20} />
-      <Slider
-        width={329}
-        height={194}
-        urls={[
-          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-        ]}
-      />
     </View>
   )
 }
