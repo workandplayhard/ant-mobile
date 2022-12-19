@@ -6,10 +6,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Text, View } from 'react-native'
 
 import { NAV_HEADER_OPTION } from '@/constants'
-import StackA from '@/screens/StackA'
-import StackB from '@/screens/StackB'
-import StackC from '@/screens/StackC'
-import StackD from '@/screens/StackD'
+import Menu from '@/screens/Menu'
+import Settings from '@/screens/Settings'
+import Home from '@/screens/Home'
+import MyAccount from '@/screens/MyAccount'
 import { Icon } from '@/components'
 import IconNames from '@/components/Icon/icons'
 import {
@@ -79,10 +79,10 @@ const TabNavigator = () => {
       })}
       initialRouteName="StackA"
     >
-      <Tab.Screen name="Menu" component={StackA} />
-      <Tab.Screen name="Settings" component={StackB} />
-      <Tab.Screen name="Home" component={StackC} />
-      <Tab.Screen name="My account" component={StackD} />
+      <Tab.Screen name="Menu" component={Menu} />
+      <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="My account" component={MyAccount} />
     </Tab.Navigator>
   )
 }
