@@ -26,3 +26,5 @@ export const DOT_INACTIVE = '#C4C4C4'
 export const STEP_ACTIVE_BG_COLOR = '#F15223'
 export const STEP_INACTIVE_BG_COLOR = '#F4F5FC'
 export const STEP_SHADOW_COLOR = '#F15223A1'
+
+export const MENU_FOCUS = '#898B94'

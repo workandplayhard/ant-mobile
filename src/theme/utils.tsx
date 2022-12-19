@@ -1,7 +1,7 @@
 import { PixelRatio } from 'react-native'
 
 import { IFont } from '@/types'
-import { IS_IOS, SCREEN_HEIGHT, SCREEN_WIDTH } from '@/constants'
+import { IS_IOS, SCREEN_HEIGHT, SCREEN_WIDTH, TAB_NAVIGATOR } from '@/constants'
 import { FONT_MAP } from './fonts'
 
 const guidelineBaseWidth = 390 // Screen width that is used in Figma
@@ -54,3 +54,30 @@ export const font: IFont = (fontWeight, fontSize, color, lineHeight) => {
  */
 export const RW = (value: number) => RatioW * value
 export const RH = (value: number) => RatioH * value
+
+/**
+ * Get route name
+ * @param {*} routeName: Menu | Settings | Lorem | My account
+ * @returns icon name
+ */
+
+export const getIconName = (routeName: string) => {
+  let iconName
+
+  switch (routeName) {
+    case 'Menu':
+      iconName = TAB_NAVIGATOR.MENU_ICON
+      break
+    case 'Settings':
+      iconName = TAB_NAVIGATOR.SETTINGS_ICON
+      break
+    case 'Home':
+      iconName = TAB_NAVIGATOR.BALLOON_HOT_ICON
+      break
+    default:
+      iconName = TAB_NAVIGATOR.ACCOUNT_ICON
+      break
+  }
+
+  return iconName
+}

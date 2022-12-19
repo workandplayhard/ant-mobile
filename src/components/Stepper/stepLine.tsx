@@ -10,7 +10,6 @@ interface Prop {
 }
 
 export const StepLine: React.FC<Prop> = ({ completed }) => {
-  console.log('completed: >>', completed)
   const animatedStyle = useAnimatedStyle(() => ({
     width: withTiming(completed + '%', { duration: 1000 }),
   }))
