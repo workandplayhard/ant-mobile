@@ -1,7 +1,7 @@
 import { PixelRatio } from 'react-native'
 
 import { IFont } from '@/types'
-import { IS_IOS, SCREEN_HEIGHT, SCREEN_WIDTH } from '@/constants'
+import { IS_IOS, SCREEN_HEIGHT, SCREEN_WIDTH, TAB_NAVIGATOR } from '@/constants'
 import { FONT_MAP } from './fonts'
 
 const guidelineBaseWidth = 390 // Screen width that is used in Figma

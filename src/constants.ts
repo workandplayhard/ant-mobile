@@ -1,5 +1,4 @@
 import { Dimensions, Platform } from 'react-native'
-
 import { TLang } from './types'
 
 export const SERVER_ENDPOINT = __DEV__ ? 'http://localhost:4001' : 'http://localhost:4001'
@@ -20,5 +19,6 @@ export const NAV_HEADER_OPTION = {
   headerTransparent: true,
 }
 
+export const PAGE_HORIZONTAL_PADDING = 30
 export const SCREEN_HEIGHT = Dimensions.get('window').height
 export const SCREEN_WIDTH = Dimensions.get('window').width
