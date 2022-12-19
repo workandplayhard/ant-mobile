@@ -50,7 +50,7 @@ const TabNavigator = () => {
                   wrapperStyle={{
                     opacity: focused ? 1 : 0.5,
                   }}
-                  size={24}
+                  size={RW(24)}
                 />
                 <Text
                   style={{
