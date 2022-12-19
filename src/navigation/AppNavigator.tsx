@@ -36,12 +36,7 @@ const TabNavigator = () => {
 
           return (
             <>
-              <View
-                style={{
-                  alignItems: 'center',
-                  top: RH(5),
-                }}
-              >
+              <View style={styles.container}>
                 {focused && (
                   <LinearGradient
                     colors={[BUTTON_GRADIENT_START, BUTTON_GRADIENT_END]}

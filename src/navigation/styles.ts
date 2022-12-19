@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native'
 
-import { font, RW, RH } from '@/theme/utils'
-import { TEXT_INPUT_BG_COLOR, TEXT_INPUT_FONT_COLOR } from '@/theme'
+import { RW, RH } from '@/theme/utils'
 
 export default StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    top: RH(5),
+  },
   border: {
     position: 'absolute',
     width: RW(80),
