@@ -20,12 +20,5 @@ export const NAV_HEADER_OPTION = {
   headerTransparent: true,
 }
 
-export const TAB_NAVIGATOR = {
-  MENU_ICON : 'menuIcon',
-  SETTINGS_ICON: 'settingsIcon',
-  BALLOON_HOT_ICON: 'balloonHotIcon',
-  ACCOUNT_ICON: 'accountIcon',
-}
-
 export const SCREEN_HEIGHT = Dimensions.get('window').height
 export const SCREEN_WIDTH = Dimensions.get('window').width

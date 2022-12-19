@@ -54,30 +54,3 @@ export const font: IFont = (fontWeight, fontSize, color, lineHeight) => {
  */
 export const RW = (value: number) => RatioW * value
 export const RH = (value: number) => RatioH * value
-
-/**
- * Get route name
- * @param {*} routeName: Menu | Settings | Lorem | My account
- * @returns icon name
- */
-
-export const getIconName = (routeName: string) => {
-  let iconName
-
-  switch (routeName) {
-    case 'Menu':
-      iconName = TAB_NAVIGATOR.MENU_ICON
-      break
-    case 'Settings':
-      iconName = TAB_NAVIGATOR.SETTINGS_ICON
-      break
-    case 'Home':
-      iconName = TAB_NAVIGATOR.BALLOON_HOT_ICON
-      break
-    default:
-      iconName = TAB_NAVIGATOR.ACCOUNT_ICON
-      break
-  }
-
-  return iconName
-}

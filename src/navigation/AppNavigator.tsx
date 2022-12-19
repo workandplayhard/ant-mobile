@@ -3,25 +3,30 @@ import React from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 import { createNativeStackNavigator as createStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
-import { NAV_HEADER_OPTION } from '@/constants'
-import Menu from '@/screens/Menu'
-import Settings from '@/screens/Settings'
-import Home from '@/screens/Home'
-import MyAccount from '@/screens/MyAccount'
-import { Icon } from '@/components'
+import MenuStack from '@/screens/MenuStack'
+import SettingsStack from '@/screens/SettingsStack'
+import HomeStack from '@/screens/HomeStack'
+import MyAccountStack from '@/screens/MyAccountStack'
+import { Icon, TextField } from '@/components'
 import IconNames from '@/components/Icon/icons'
 import {
-  BUTTON_GRADIENT_END,
-  BUTTON_GRADIENT_START,
-  MENU_FOCUS,
   RH,
   RW,
-  WHITE,
   font,
-  getIconName,
+  WHITE,
+  TAB_BG_COLOR,
+  BUTTON_GRADIENT_END,
+  TAB_MENU_ACTIVE_COLOR,
+  BUTTON_GRADIENT_START,
+  TAB_ACTIVE_TINT_COLOR,
+  TAB_INACTIVE_TINT_COLOR,
 } from '@/theme'
+import { getIconName } from '@/utils'
+import { NAV_SCREENS } from './constants'
+import { NAV_HEADER_OPTION } from '@/constants'
+
 import styles from './styles'
 
 const AppStack = createStackNavigator()
@@ -52,37 +57,36 @@ const TabNavigator = () => {
                   }}
                   size={RW(24)}
                 />
-                <Text
+                <TextField
+                  text={route.name}
                   style={{
-                    ...font('pp.regular', RW(12), focused ? WHITE : MENU_FOCUS, RW(18)),
+                    ...font('pp.regular', RW(12), focused ? WHITE : TAB_MENU_ACTIVE_COLOR, RW(18)),
                     paddingVertical: RH(7),
                   }}
-                >
-                  {route.name}
-                </Text>
+                />
               </View>
             </>
           )
         },
         tabBarVisible: true,
         headerShown: false,
-        tabBarActiveTintColor: 'grey',
-        tabBarInactiveTintColor: 'red',
+        tabBarActiveTintColor: TAB_ACTIVE_TINT_COLOR,
+        tabBarInactiveTintColor: TAB_INACTIVE_TINT_COLOR,
         tabBarHideOnKeyboard: true,
         tabBarShowLabel: false,
         tabBarStyle: {
-          height: 90,
-          backgroundColor: '#353339',
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20,
+          height: RH(90),
+          backgroundColor: TAB_BG_COLOR,
+          borderTopLeftRadius: RW(20),
+          borderTopRightRadius: RW(20),
         },
       })}
       initialRouteName="StackA"
     >
-      <Tab.Screen name="Menu" component={Menu} />
-      <Tab.Screen name="Settings" component={Settings} />
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="My account" component={MyAccount} />
+      <Tab.Screen name={NAV_SCREENS.stacks.menuStack} component={MenuStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.settingsStack} component={SettingsStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.homeStack} component={HomeStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.accountStack} component={MyAccountStack} />
     </Tab.Navigator>
   )
 }

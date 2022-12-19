@@ -9,9 +9,9 @@ export default StyleSheet.create({
   },
   border: {
     position: 'absolute',
-    width: RW(80),
+    width: RW(100),
     height: RH(8),
-    bottom: RW(-16),
+    bottom: RW(-6),
     borderTopLeftRadius: RW(15),
     borderTopRightRadius: RW(15),
   },
