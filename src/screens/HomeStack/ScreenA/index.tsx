@@ -1,16 +1,21 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-import { t } from '@/i18n'
-
+import NavHeader from '@/navigation/components/NavHeader'
 import styles from './styles'
-import { NavHeader } from '@/navigation/components/NavHeader'
 
 const HomeScreenA: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{`StackC-ScreenA-${t('lorem')}`}</Text>
-      {/* <NavHeader user={{ url: 'placeholder' }} /> */}
+      <NavHeader
+        user={{
+          url: 'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          greetings: 'Hi Amanda!',
+          content: 'Welcome Back',
+        }}
+        hasNotification={true}
+        // hasBackButton={true}
+      />
     </View>
   )
 }
