@@ -23,6 +23,7 @@ import {
   OTPField,
   Signature,
   Stepper,
+  PageTitle,
 } from '@/components'
 import { RW, RH, font } from '@/theme'
 
@@ -212,6 +213,13 @@ const HomeScreenA: React.FC = () => {
       />
 
       <Stepper canJumpNext steps={steps} currentStep={currentStep} onChangeStep={onChangeStep} />
+      <Gap horizontal={false} gap={20} />
+      <PageTitle
+        title="Before we start process"
+        subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        titleAlign="center"
+        subTitleAlign="center"
+      />
     </View>
   )
 }
