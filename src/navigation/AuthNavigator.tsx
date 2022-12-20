@@ -4,6 +4,7 @@ import { createNativeStackNavigator as createStackNavigator } from '@react-navig
 import { NAV_HEADER_OPTION } from '@/constants'
 
 import SignIn from '@/screens/Auth/SignIn'
+import SignUp from '@/screens/Auth/SignUp'
 const Stack = createStackNavigator()
 
 const AuthNavigator = () => {
@@ -15,6 +16,7 @@ const AuthNavigator = () => {
       }}
     >
       <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="SignUp" component={SignUp} />
     </Stack.Navigator>
   )
 }

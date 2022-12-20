@@ -7,9 +7,15 @@
     "password": "סיסמה",
     "changeLanguage": "שנה שפה",
     "lorem": "לורם איפסום",
+    "idNumber": "מספר תעודת זהות",
+    "phoneNumber": "מספר טלפון",
+    "celluarCompany": "חברת סלולר",
+    "creaditCardNumber": "מספר כרטיס אשראי",
+    "signUp": "הירשם",
     "menu": "תַפרִיט",
     "settings": "הגדרות",
     "home": "בית",
-    "myAccount": "החשבון שלי"
+    "myAccount": "החשבון שלי",
+    "next": "הַבָּא"
   }
 }

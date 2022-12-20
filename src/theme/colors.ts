@@ -19,6 +19,7 @@ export const BUTTON_DEFAULT_COLOR = '#2F333C'
 export const BUTTON_DISABLED_COLOR = '#E0E0E0'
 export const BUTTON_GRADIENT_START = '#FF7852'
 export const BUTTON_GRADIENT_END = '#FF423F'
+export const BUTTON_SPECIAL_COLOR = '#E0E0E0'
 
 export const DOT_ACTIVE = '#FFFFFF'
 export const DOT_INACTIVE = '#C4C4C4'
@@ -35,3 +36,7 @@ export const TAB_BG_COLOR = '#353339'
 export const PROFILE_GREETINGS_COLOR = '#FFFFFFCC'
 
 export const TITLE_COLOR = '#000033'
+
+export const TEXT_DARK_PLACEHOLDER_COLOR = '#5E626C'
+export const SIGNUP_BG_COLOR = '#222126'
+export const SIGNUP_TEXTFIELD_BG_COLOR = '#2C2B30'

@@ -7,9 +7,15 @@
     "password": "Password",
     "changeLanguage": "Change language",
     "lorem": "lorem ipsum",
+    "idNumber": "ID number",
+    "phoneNumber": "Phone number",
+    "celluarCompany": "Celluar Comapny",
+    "creditCardNumber": "Credit Card Number",
+    "signUp": "Sign Up",
     "menu": "Menu",
     "settings": "Settings",
     "home": "Home",
-    "myAccount": "My Account"
+    "myAccount": "My Account",
+    "next": "Next"
   }
 }

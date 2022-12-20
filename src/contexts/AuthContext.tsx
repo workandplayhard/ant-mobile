@@ -8,7 +8,7 @@ import { ISignInPayload, ISignUpPayload, TPCallback } from '@/types'
 interface IAuthContext {
   authenticated: boolean
   onSignIn: (params: ISignInPayload, callback?: TPCallback) => void
-  onSignUp: (params: ISignUpPayload, callback: TPCallback) => void
+  onSignUp: (params: ISignUpPayload, callback?: TPCallback) => void
   onSignOut: () => void
 }
 
