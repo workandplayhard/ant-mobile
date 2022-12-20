@@ -5,7 +5,6 @@ import styles from './styles'
 
 interface ITextField extends TextProps {
   text: string | number
-  style: StyleProp<TextStyle>
 }
 
 export const TextField: React.FC<ITextField> = ({ style = {}, text, ...rest }) => {

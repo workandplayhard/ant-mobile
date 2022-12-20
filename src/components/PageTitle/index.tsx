@@ -4,32 +4,31 @@ import { StyleProp, TextStyle, View } from 'react-native'
 import { TextField } from '../TextField'
 
 import styles from './styles'
+import { Col } from '../Col'
+import { Gap } from '../Gap'
 
 interface IPageTitle {
   title?: string
   subTitle?: string
-  titleStyle?: StyleProp<TextStyle>
-  subTitleStyle?: StyleProp<TextStyle>
-  titleAlign?: StyleProp<TextStyle>
-  subTitleAlign?: StyleProp<TextStyle>
+  titleAlign?: 'left' | 'right' | 'center'
+  subTitleAlign?: 'left' | 'right' | 'center'
 }
 
 export const PageTitle: React.FC<IPageTitle> = ({
   title,
   subTitle,
-  titleStyle,
-  subTitleStyle,
-  titleAlign = {},
-  subTitleAlign = {},
+  titleAlign = 'left',
+  subTitleAlign = 'left',
 }) => {
   return (
-    <>
-      <View style={[styles.container, titleAlign]}>
-        {title && <TextField text={title} style={titleStyle} />}
-      </View>
-      <View style={[styles.container, subTitleAlign]}>
-        {subTitle && <TextField text={subTitle} style={subTitleStyle} />}
-      </View>
-    </>
+    <Col style={styles.container}>
+      {title && <TextField text={title} style={[styles.title, { textAlign: titleAlign }]} />}
+      {subTitle && (
+        <>
+          <Gap horizontal={false} gap={12} />
+          <TextField text={subTitle} style={[styles.subTitle, { textAlign: subTitleAlign }]} />
+        </>
+      )}
+    </Col>
   )
 }

@@ -217,10 +217,8 @@ const HomeScreenA: React.FC = () => {
       <PageTitle
         title="Before we start process"
         subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        titleStyle={{ ...font('rw.bold', 15, WHITE, 26) }}
-        subTitleStyle={{ ...font('rw.regular', 12, WHITE, 26), textAlign: 'left' }}
-        titleAlign={{ textAlign: 'left' }}
-        subTitleAlign={{ textAlign: 'left' }}
+        titleAlign="center"
+        subTitleAlign="center"
       />
     </View>
   )

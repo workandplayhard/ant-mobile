@@ -1,5 +1,3 @@
-import { t } from '@/i18n'
-
 export const TAB_NAVIGATOR_ICON_MAP = {
   MENU_ICON: 'menuIcon',
   SETTINGS_ICON: 'settingsIcon',
@@ -9,10 +7,10 @@ export const TAB_NAVIGATOR_ICON_MAP = {
 
 export const NAV_SCREENS = {
   stacks: {
-    menuStack: 'Menu',
-    settingsStack: 'Settings',
-    homeStack: 'Home',
-    accountStack: 'My account',
+    menuStack: 'menu',
+    settingsStack: 'settings',
+    homeStack: 'home',
+    accountStack: 'myAccount',
   },
   screens: { 'menuStack:screenA': 'menuStack:screenA' },
 }
