@@ -26,6 +26,7 @@ import {
 } from '@/theme'
 import { getIconName } from '@/utils'
 import { NAV_HEADER_OPTION } from '@/constants'
+import { NAV_SCREENS } from './constants'
 
 import styles from './styles'
 
@@ -83,10 +84,10 @@ const TabNavigator = () => {
       })}
       initialRouteName="StackA"
     >
-      <Tab.Screen name={t('menu')} component={MenuStack} />
-      <Tab.Screen name={t('settings')} component={SettingsStack} />
-      <Tab.Screen name={t('home')} component={HomeStack} />
-      <Tab.Screen name={t('myAccount')} component={MyAccountStack} />
+      <Tab.Screen name={t(NAV_SCREENS.stacks.menuStack)} component={MenuStack} />
+      <Tab.Screen name={t(NAV_SCREENS.stacks.settingsStack)} component={SettingsStack} />
+      <Tab.Screen name={t(NAV_SCREENS.stacks.homeStack)} component={HomeStack} />
+      <Tab.Screen name={t(NAV_SCREENS.stacks.accountStack)} component={MyAccountStack} />
     </Tab.Navigator>
   )
 }

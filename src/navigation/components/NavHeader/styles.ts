@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 import { RW, RH, font } from '@/theme/utils'
-import { WHITE } from '@/theme'
+import { PROFILE_GREETINGS_COLOR, WHITE } from '@/theme'
 
 export default StyleSheet.create({
   image: {
@@ -10,7 +10,7 @@ export default StyleSheet.create({
     borderRadius: RW(26),
   },
   greetings: {
-    ...font('pp.regular', 12, 'rgba(255, 255, 255, 0.8)', 15),
+    ...font('pp.regular', 12, PROFILE_GREETINGS_COLOR, 15),
     marginVertical: RH(7),
   },
   content: {
