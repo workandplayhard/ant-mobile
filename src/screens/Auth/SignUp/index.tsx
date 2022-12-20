@@ -5,7 +5,7 @@ import { Button, ScrollContainer } from '@/components'
 import HeaderImage from '@/assets/images/img_signup_header.svg'
 import { t } from '@/i18n'
 import { useAuth, useApp } from '@/hooks'
-import { PAGE_HORIZONTAL_PADDING, RW } from '@/theme'
+import { PAGE_HORIZONTAL_PADDING, RW, SIGNUP_PLACEHOLDER_COLOR } from '@/theme'
 
 import styles from './styles'
 
@@ -28,7 +28,7 @@ const SignUpScreen: React.FC = () => {
           keyboardType="numeric"
           style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
           placeholder={t('idNumber')}
-          placeholderTextColor="#5E626C"
+          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
           value={IDNumber}
           onChangeText={setIDNumber}
         />
@@ -37,7 +37,7 @@ const SignUpScreen: React.FC = () => {
           keyboardType="numeric"
           style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
           placeholder={t('phoneNumber')}
-          placeholderTextColor="#5E626C"
+          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
           value={phoneNumber}
           onChangeText={setPhoneNumber}
         />
@@ -45,7 +45,7 @@ const SignUpScreen: React.FC = () => {
         <TextInput
           style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
           placeholder={t('celluarCompany')}
-          placeholderTextColor="#5E626C"
+          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
           value={celluarCompany}
           onChangeText={setCellularCompany}
         />
@@ -54,7 +54,7 @@ const SignUpScreen: React.FC = () => {
           keyboardType="numeric"
           style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
           placeholder={t('Credit Card Number')}
-          placeholderTextColor="#5E626C"
+          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
           value={creditCardNumber}
           onChangeText={setCreditCardNumber}
         />

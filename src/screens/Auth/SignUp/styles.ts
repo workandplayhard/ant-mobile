@@ -1,10 +1,10 @@
 import { I18nManager, StyleSheet } from 'react-native'
 
-import { BLACK, font, PAGE_HORIZONTAL_PADDING, RH, RW, WHITE } from '@/theme'
+import { font, RH, RW, SIGNUP_BG_COLOR, SIGNUP_TEXTFIELD_BG_COLOR, WHITE } from '@/theme'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: '#222126',
+    backgroundColor: SIGNUP_BG_COLOR,
     height: '100%',
   },
   title: {
@@ -16,13 +16,13 @@ export default StyleSheet.create({
   textField: {
     ...font('rw.regular', 16, WHITE),
     width: '100%',
-    height: 60,
+    height: RH(60),
     borderRadius: RW(16),
     paddingHorizontal: RW(20),
     paddingVertical: RH(5),
     marginBottom: RH(20),
     textAlign: 'left',
-    backgroundColor: '#2C2B30',
+    backgroundColor: SIGNUP_TEXTFIELD_BG_COLOR,
   },
   rtlInput: {
     textAlign: 'right',

@@ -36,3 +36,9 @@ export const TAB_BG_COLOR = '#353339'
 export const PROFILE_GREETINGS_COLOR = '#FFFFFFCC'
 
 export const TITLE_COLOR = '#000033'
+
+export const SIGNUP_PLACEHOLDER_COLOR = '#5E626C'
+export const SIGNUP_BG_COLOR = '#222126'
+export const SIGNUP_TEXTFIELD_BG_COLOR = '#2C2B30'
+
+
