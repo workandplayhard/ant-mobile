@@ -6,6 +6,11 @@
     "email": "Email",
     "password": "Password",
     "changeLanguage": "Change language",
-    "lorem": "lorem ipsum"
+    "lorem": "lorem ipsum",
+    "idNumber": "ID number",
+    "phoneNumber": "Phone number",
+    "celluarCompany": "Celluar Comapny",
+    "creaditCardNumber": "Creadit Card Number",
+    "signUp": "Sign Up"
   }
 }
