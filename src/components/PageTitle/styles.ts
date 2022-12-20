@@ -7,8 +7,10 @@ export default StyleSheet.create({
   },
   title: {
     ...font('rw.bold', 26, TITLE_COLOR, 32),
+    width: '100%',
   },
   subTitle: {
-    ...font('rw.thin', 14, BLACK, 26),
+    ...font('rw.regular', 14, BLACK, 26),
+    width: '100%',
   },
 })

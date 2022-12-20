@@ -25,7 +25,7 @@ import {
   Stepper,
   PageTitle,
 } from '@/components'
-import { RW, RH, font, WHITE } from '@/theme'
+import { RW, RH, font } from '@/theme'
 
 import styles from './styles'
 import { IOption, IStep } from '@/types'

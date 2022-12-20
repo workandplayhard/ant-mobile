@@ -21,8 +21,8 @@ export const PageTitle: React.FC<IPageTitle> = ({
 }) => {
   return (
     <Col style={styles.container}>
-      {title && <TextField text={title} style={[styles.title, { textAlign: titleAlign }]} />}
-      {subTitle && (
+      {!!title && <TextField text={title} style={[styles.title, { textAlign: titleAlign }]} />}
+      {!!subTitle && (
         <>
           <Gap horizontal={false} gap={12} />
           <TextField text={subTitle} style={[styles.subTitle, { textAlign: subTitleAlign }]} />
