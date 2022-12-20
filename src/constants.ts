@@ -19,6 +19,5 @@ export const NAV_HEADER_OPTION = {
   headerTransparent: true,
 }
 
-export const PAGE_HORIZONTAL_PADDING = 30
 export const SCREEN_HEIGHT = Dimensions.get('window').height
 export const SCREEN_WIDTH = Dimensions.get('window').width

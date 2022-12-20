@@ -1,17 +1,16 @@
 import { StyleSheet } from 'react-native'
 
-import { font, RH, RW } from '@/theme/utils'
+import { PAGE_HORIZONTAL_PADDING, RH } from '@/theme/utils'
+import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#FFBD6E',
-    paddingHorizontal: RW(16),
-    paddingVertical: RH(24),
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingVertical: RH(68),
+    width: SCREEN_WIDTH,
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  title: {
-    ...font('bold', 18, 'white', 28),
+    flexDirection: 'row-reverse',
   },
 })

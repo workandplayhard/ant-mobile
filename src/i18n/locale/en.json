@@ -6,6 +6,10 @@
     "email": "Email",
     "password": "Password",
     "changeLanguage": "Change language",
-    "lorem": "lorem ipsum"
+    "lorem": "lorem ipsum",
+    "menu": "Menu",
+    "settings": "Settings",
+    "home": "Home",
+    "myAccount": "My Account"
   }
 }
