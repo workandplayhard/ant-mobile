@@ -17,7 +17,6 @@ import {
   BUTTON_DEFAULT_COLOR,
   BUTTON_DISABLED_COLOR,
   RW,
-  BUTTON_SPECIAL_COLOR,
 } from '@/theme'
 import IconNames from '../Icon/icons'
 import styles from './styles'
