@@ -21,7 +21,6 @@ export default StyleSheet.create({
     paddingHorizontal: RW(20),
     paddingVertical: RH(5),
     marginBottom: RH(20),
-    textAlign: 'left',
     backgroundColor: SIGNUP_TEXTFIELD_BG_COLOR,
   },
   button: {

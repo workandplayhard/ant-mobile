@@ -26,7 +26,6 @@ export default StyleSheet.create({
     paddingHorizontal: RW(5),
     paddingVertical: RH(5),
     marginBottom: RH(5),
-    textAlign: 'left',
   },
   rtlInput: {
     textAlign: 'right',
