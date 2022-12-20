@@ -6,17 +6,17 @@ import styles from './styles'
 
 interface IRadioButton {
   onChange: (e: boolean) => void
-  isEnabled: boolean
+  isOn: boolean
 }
 
-export const Radio: React.FC<IRadioButton> = ({ onChange, isEnabled }) => {
+export const Radio: React.FC<IRadioButton> = ({ onChange, isOn }) => {
   const Icon = useMemo(
-    () => (isEnabled ? IconNames.toggleDisabledIcon : IconNames.toggleEnabledIcon),
-    [isEnabled],
+    () => (isOn ? IconNames.toggleEnabledIcon : IconNames.toggleDisabledIcon),
+    [isOn],
   )
 
   return (
-    <TouchableOpacity onPress={() => onChange(!isEnabled)}>
+    <TouchableOpacity onPress={() => onChange(!isOn)}>
       <Icon style={styles.radio} />
     </TouchableOpacity>
   )

@@ -1,8 +1,8 @@
 import React from 'react'
-import { imageWithDefault } from '@/utils/image'
-import { Image } from 'react-native'
 
+import AvatarPlaceholder from '@/assets/images/placeholder.png'
 import { RW } from '@/theme'
+import { ImageView } from '../ImageView'
 
 interface IUserAvatar {
   url?: string
@@ -16,8 +16,9 @@ export const UserAvatar: React.FC<IUserAvatar> = ({
   size = RW(50),
 }) => {
   return (
-    <Image
-      source={imageWithDefault(url, placeholder)}
+    <ImageView
+      url={url}
+      placeholder={placeholder ? AvatarPlaceholder : undefined}
       style={{ width: size, height: size, borderRadius: size / 2 }}
     />
   )

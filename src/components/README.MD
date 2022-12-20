@@ -1,1 +1,0 @@
-Place common components like Input, Checkbox, etc

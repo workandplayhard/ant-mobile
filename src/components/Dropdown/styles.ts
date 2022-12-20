@@ -1,26 +1,36 @@
 import { StyleSheet } from 'react-native'
 
-import { RW, RH, font } from '@/theme/utils'
-import { DROPBOX_BUTTON_COLOR } from '@/theme'
+import {
+  RW,
+  RH,
+  font,
+  TEXT_INPUT_FONT_COLOR,
+  TEXT_INPUT_BORDER_ACTIVE_COLOR,
+  DROPBOX_BUTTON_COLOR,
+} from '@/theme'
 
 export default StyleSheet.create({
   buttonStyle: {
-    width: RW(330),
+    width: '100%',
     height: RH(60),
     borderWidth: RW(1),
+    borderColor: TEXT_INPUT_BORDER_ACTIVE_COLOR,
     borderRadius: RW(15),
     backgroundColor: DROPBOX_BUTTON_COLOR,
+    paddingHorizontal: RW(20),
   },
-  dropdownStyles: {
+  buttonText: {
+    ...font('pp.regular', 16, TEXT_INPUT_FONT_COLOR, 24),
+    textAlign: 'left',
+    flex: 1,
+    marginLeft: 0,
+  },
+  dropdownView: {
+    borderWidth: 1,
     borderRadius: RW(15),
-    width: RW(330),
+    paddingHorizontal: RW(20),
   },
-  rowStyle: {
-    height: RH(90),
-    width: RW(290),
-    marginLeft: RW(20),
-  },
-  renderText: {
-    ...font('rw.medium', 16, 'black', 24),
+  row: {
+    width: '100%',
   },
 })

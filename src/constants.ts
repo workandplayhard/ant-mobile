@@ -1,5 +1,4 @@
 import { Dimensions, Platform } from 'react-native'
-
 import { TLang } from './types'
 
 export const SERVER_ENDPOINT = __DEV__ ? 'http://localhost:4001' : 'http://localhost:4001'

@@ -3,6 +3,10 @@ export const DEFAULT_STATUSBAR = 'transparent'
 export const BLACK = '#000000'
 export const TRANSPARENT = 'transparent'
 export const WHITE = '#FFFFFF'
+export const GRAY = '#F4F5FC'
+export const TEXT_RED = '#FF423F'
+export const DARK_RED = '#FF423F'
+export const LIGHT_RED = '#FF423F4D'
 
 export const ERROR = '#EB5757'
 export const SUCCESS = '#27AE60'
@@ -16,5 +20,18 @@ export const BUTTON_DISABLED_COLOR = '#E0E0E0'
 export const BUTTON_GRADIENT_START = '#FF7852'
 export const BUTTON_GRADIENT_END = '#FF423F'
 
-export const DROPBOX_BUTTON_COLOR = '#EEEEEE'
-export const DROPBOX_BORDER_COLOR = '#000033'
+export const DOT_ACTIVE = '#FFFFFF'
+export const DOT_INACTIVE = '#C4C4C4'
+
+export const STEP_ACTIVE_BG_COLOR = '#F15223'
+export const STEP_INACTIVE_BG_COLOR = '#F4F5FC'
+export const STEP_SHADOW_COLOR = '#F15223A1'
+
+export const TAB_MENU_ACTIVE_COLOR = '#898B94'
+export const TAB_ACTIVE_TINT_COLOR = 'grey'
+export const TAB_INACTIVE_TINT_COLOR = 'red'
+export const TAB_BG_COLOR = '#353339'
+
+export const PROFILE_GREETINGS_COLOR = '#FFFFFFCC'
+
+export const TITLE_COLOR = '#000033'

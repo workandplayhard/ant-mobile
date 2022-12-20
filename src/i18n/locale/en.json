@@ -11,6 +11,10 @@
     "phoneNumber": "Phone number",
     "celluarCompany": "Celluar Comapny",
     "creaditCardNumber": "Creadit Card Number",
-    "signUp": "Sign Up"
+    "signUp": "Sign Up",
+    "menu": "Menu",
+    "settings": "Settings",
+    "home": "Home",
+    "myAccount": "My Account"
   }
 }

@@ -1,5 +1,12 @@
 import React, { useMemo } from 'react'
-import { View, Text, ViewStyle, StyleProp, TouchableOpacity } from 'react-native'
+import {
+  View,
+  Text,
+  ViewStyle,
+  StyleProp,
+  TouchableOpacity,
+  TouchableOpacityProps,
+} from 'react-native'
 import { SvgProps } from 'react-native-svg'
 import LinearGradient from 'react-native-linear-gradient'
 
@@ -13,19 +20,20 @@ import {
 } from '@/theme'
 import IconNames from '../Icon/icons'
 import styles from './styles'
+import { TextStyle } from 'react-native'
 
 type TVariant = 'primary' | 'default' | 'pure'
 
 type TSize = 'xs' | 'sm' | 'md' | 'lg'
 
-interface IButton {
+interface IButton extends TouchableOpacityProps {
   text?: string
   variant?: TVariant
   size?: TSize
   borderColor?: string
   wrapperStyle?: StyleProp<ViewStyle>
   buttonStyle?: StyleProp<ViewStyle>
-  textStyle?: StyleProp<ViewStyle>
+  textStyle?: StyleProp<TextStyle>
   iconStyle?: SvgProps
   iconName?: keyof typeof IconNames
   disabled?: boolean
@@ -44,6 +52,7 @@ export const Button: React.FC<IButton> = ({
   textStyle = {},
   buttonStyle = {},
   wrapperStyle = {},
+  ...rest
 }) => {
   const IconComponent = iconName ? IconNames[iconName] : null
 
@@ -66,7 +75,7 @@ export const Button: React.FC<IButton> = ({
 
   return (
     <View style={[styles.wrapper, wrapperStyle]}>
-      <TouchableOpacity onPress={onPress} style={styles.button} disabled={disabled}>
+      <TouchableOpacity onPress={onPress} style={styles.button} disabled={disabled} {...rest}>
         <LinearGradient
           colors={colors}
           start={{ x: 1, y: 0 }}

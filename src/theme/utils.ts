@@ -1,11 +1,13 @@
-import { PixelRatio } from 'react-native'
+import { Dimensions, PixelRatio } from 'react-native'
 
 import { IFont } from '@/types'
-import { IS_IOS, SCREEN_HEIGHT, SCREEN_WIDTH } from '@/constants'
+import { IS_IOS } from '@/constants'
 import { FONT_MAP } from './fonts'
 
-const guidelineBaseWidth = 375 // Screen width that is used in Figma
-const guidelineBaseHeight = 667 // Screen height that is used in Figma
+const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window')
+
+const guidelineBaseWidth = 390 // Screen width that is used in Figma
+const guidelineBaseHeight = 844 // Screen height that is used in Figma
 
 export const RatioH = SCREEN_HEIGHT / guidelineBaseHeight
 export const RatioW = SCREEN_WIDTH / guidelineBaseWidth
@@ -54,3 +56,4 @@ export const font: IFont = (fontWeight, fontSize, color, lineHeight) => {
  */
 export const RW = (value: number) => RatioW * value
 export const RH = (value: number) => RatioH * value
+export const PAGE_HORIZONTAL_PADDING = RW(30)
