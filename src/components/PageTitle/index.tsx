@@ -1,11 +1,10 @@
 import React from 'react'
-import { StyleProp, TextStyle, View } from 'react-native'
 
 import { TextField } from '../TextField'
-
-import styles from './styles'
 import { Col } from '../Col'
 import { Gap } from '../Gap'
+
+import styles from './styles'
 
 interface IPageTitle {
   title?: string
