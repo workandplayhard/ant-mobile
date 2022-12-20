@@ -1,11 +1,9 @@
 import { StyleSheet } from 'react-native'
 
-import { SCREEN_HEIGHT, SCREEN_WIDTH } from '@/constants'
-
 export default StyleSheet.create({
   container: {
-    width: SCREEN_WIDTH,
-    height: SCREEN_HEIGHT,
+    width: '100%',
+    height: '100%',
     flexDirection: 'column',
   },
 })
