@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Col, Icon, ImageView, Row, TextField } from '@/components'
-import { RH } from '@/theme'
 
 import styles from './styles'
 import { View } from 'react-native'
@@ -36,7 +35,7 @@ export const NavHeader: React.FC<INavHeader> = ({
       }
     >
       {user?.url && (
-        <View style={{ flexDirection: 'row' }}>
+        <View style={styles.profile}>
           <ImageView url={user.url} style={styles.image} />
           <Col style={styles.adjust}>
             {user.greetings && <TextField style={styles.greetings} text={user.greetings} />}

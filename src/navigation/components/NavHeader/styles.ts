@@ -19,4 +19,7 @@ export default StyleSheet.create({
   adjust: {
     paddingHorizontal: RH(15),
   },
+  profile: {
+    flexDirection: 'row',
+  },
 })

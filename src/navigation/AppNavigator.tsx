@@ -5,6 +5,7 @@ import { createNativeStackNavigator as createStackNavigator } from '@react-navig
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { View } from 'react-native'
 
+import { t } from '@/i18n'
 import MenuStack from '@/screens/MenuStack'
 import SettingsStack from '@/screens/SettingsStack'
 import HomeStack from '@/screens/HomeStack'
@@ -24,7 +25,6 @@ import {
   TAB_INACTIVE_TINT_COLOR,
 } from '@/theme'
 import { getIconName } from '@/utils'
-import { NAV_SCREENS } from './constants'
 import { NAV_HEADER_OPTION } from '@/constants'
 
 import styles from './styles'
@@ -83,10 +83,10 @@ const TabNavigator = () => {
       })}
       initialRouteName="StackA"
     >
-      <Tab.Screen name={NAV_SCREENS.stacks.menuStack} component={MenuStack} />
-      <Tab.Screen name={NAV_SCREENS.stacks.settingsStack} component={SettingsStack} />
-      <Tab.Screen name={NAV_SCREENS.stacks.homeStack} component={HomeStack} />
-      <Tab.Screen name={NAV_SCREENS.stacks.accountStack} component={MyAccountStack} />
+      <Tab.Screen name={t('menu')} component={MenuStack} />
+      <Tab.Screen name={t('settings')} component={SettingsStack} />
+      <Tab.Screen name={t('home')} component={HomeStack} />
+      <Tab.Screen name={t('myAccount')} component={MyAccountStack} />
     </Tab.Navigator>
   )
 }
