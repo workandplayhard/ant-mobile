@@ -23,7 +23,7 @@ import IconNames from '../Icon/icons'
 import styles from './styles'
 import { TextStyle } from 'react-native'
 
-type TVariant = 'primary' | 'default' | 'pure' | 'special'
+type TVariant = 'primary' | 'default' | 'pure'
 
 type TSize = 'xs' | 'sm' | 'md' | 'lg'
 
@@ -66,10 +66,6 @@ export const Button: React.FC<IButton> = ({
     }
     if (variant === 'default') {
       return [BUTTON_DEFAULT_COLOR, BUTTON_DEFAULT_COLOR]
-    }
-
-    if (variant === 'special') {
-      return [BUTTON_SPECIAL_COLOR, BUTTON_SPECIAL_COLOR]
     }
 
     if (variant === 'pure') {

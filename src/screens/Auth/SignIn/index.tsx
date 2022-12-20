@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Text, View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import { Button, TextInput } from '@/components'
 import { t } from '@/i18n'
 import { useAuth, useApp } from '@/hooks'
-import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 

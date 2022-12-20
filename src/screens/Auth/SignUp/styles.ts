@@ -42,5 +42,6 @@ export default StyleSheet.create({
   },
   headerImage: {
     position: 'absolute',
+    ...(I18nManager.isRTL ? { left: RW(-90) } : { right: RW(-90) }),
   },
 })
