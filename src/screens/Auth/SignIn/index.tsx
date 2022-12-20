@@ -4,12 +4,14 @@ import { Text, View } from 'react-native'
 import { Button, TextInput } from '@/components'
 import { t } from '@/i18n'
 import { useAuth, useApp } from '@/hooks'
+import { useNavigation } from '@react-navigation/native'
 
 import styles from './styles'
 
 const SignInScreen: React.FC = () => {
   const { onSignIn } = useAuth()
   const { isRTL } = useApp()
+  const navigation = useNavigation()
 
   const [email, setEmail] = useState<string>('test@gmail.com')
   const [password, setPassword] = useState<string>('test')
@@ -35,6 +37,12 @@ const SignInScreen: React.FC = () => {
         size="xs"
         text={t('signIn')}
         onPress={() => onSignIn({ email, password })}
+      />
+      <Button
+        variant="primary"
+        size="xs"
+        text={t('signUp')}
+        onPress={() => navigation.navigate('SignUp' as never)}
       />
     </View>
   )

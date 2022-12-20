@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
-import { Input, Text, View, TextInput, TouchableOpacity } from 'react-native'
+import { Text, View, TextInput, I18nManager } from 'react-native'
 
-import { Button, Col } from '@/components'
+import { Button, ScrollContainer } from '@/components'
+import HeaderImage from '@/assets/images/img_signup_header.svg'
 import { t } from '@/i18n'
 import { useAuth, useApp } from '@/hooks'
+import { PAGE_HORIZONTAL_PADDING, RW } from '@/theme'
 
 import styles from './styles'
 
 const SignUpScreen: React.FC = () => {
-  const { onSignUp } = useAuth()
+  // const { onSignUp } = useAuth()
   const { isRTL } = useApp()
 
   const [IDNumber, setIDNumber] = useState<string>('')
@@ -20,42 +22,51 @@ const SignUpScreen: React.FC = () => {
   // const [email, setEmail] = useState<string>('')
 
   return (
-    <Col style={styles.container}>
-      <Text style={styles.title}>Lorem Ipsum is simply dummy text</Text>
-      <TextInput
-        keyboardType="numeric"
-        style={[styles.textField, isRTL && styles.rtlInput]}
-        placeholder={t('idNumber')}
-        placeholderTextColor="white"
-        value={IDNumber}
-        onChangeText={setIDNumber}
+    <ScrollContainer style={styles.container} contentContainerStyle={{ alignContent: 'center' }}>
+      <HeaderImage
+        style={[styles.headerImage, I18nManager.isRTL ? { left: RW(-90) } : { right: RW(-90) }]}
+        width={350}
+        height={140}
       />
+      <View style={{ padding: PAGE_HORIZONTAL_PADDING }}>
+        <Text style={styles.title}>Lorem Ipsum is simply dummy text</Text>
+        <TextInput
+          keyboardType="numeric"
+          style={[styles.textField, isRTL && styles.rtlInput]}
+          placeholder={t('idNumber')}
+          placeholderTextColor="#5E626C"
+          value={IDNumber}
+          onChangeText={setIDNumber}
+        />
 
-      <TextInput
-        keyboardType="numeric"
-        style={[styles.textField, isRTL && styles.rtlInput]}
-        placeholder={t('phoneNumber')}
-        placeholderTextColor="white"
-        value={phoneNumber}
-        onChangeText={setPhoneNumber}
-      />
+        <TextInput
+          keyboardType="numeric"
+          style={[styles.textField, isRTL && styles.rtlInput]}
+          placeholder={t('phoneNumber')}
+          placeholderTextColor="#5E626C"
+          value={phoneNumber}
+          onChangeText={setPhoneNumber}
+        />
 
-      <TextInput
-        style={[styles.textField, isRTL && styles.rtlInput]}
-        placeholder={t('celluarCompany')}
-        placeholderTextColor="white"
-        value={celluarCompany}
-        onChangeText={setCellularCompany}
-      />
+        <TextInput
+          style={[styles.textField, isRTL && styles.rtlInput]}
+          placeholder={t('celluarCompany')}
+          placeholderTextColor="#5E626C"
+          value={celluarCompany}
+          onChangeText={setCellularCompany}
+        />
 
-      <TextInput
-        keyboardType="numeric"
-        style={[styles.textField, isRTL && styles.rtlInput]}
-        placeholder={t('creditCardNumber')}
-        placeholderTextColor="white"
-        value={creditCardNumber}
-        onChangeText={setCreditCardNumber}
-      />
+        <TextInput
+          keyboardType="numeric"
+          style={[styles.textField, isRTL && styles.rtlInput]}
+          placeholder={t('Credit Card Number')}
+          placeholderTextColor="#5E626C"
+          value={creditCardNumber}
+          onChangeText={setCreditCardNumber}
+        />
+
+        <Button variant="special" buttonStyle={styles.button} size="lg" text={t('next')} />
+      </View>
 
       {/* <TextInput
         style={[styles.textField, isRTL && styles.rtlInput]}
@@ -86,7 +97,7 @@ const SignUpScreen: React.FC = () => {
         text={t('signUp')}
         onPress={() => onSignUp({ email, password })}
       /> */}
-    </Col>
+    </ScrollContainer>
   )
 }
 

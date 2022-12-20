@@ -1,41 +1,46 @@
-import { StyleSheet } from 'react-native'
+import { I18nManager, StyleSheet } from 'react-native'
 
-import { font, RH, RW, WHITE } from '@/theme'
+import { BLACK, font, PAGE_HORIZONTAL_PADDING, RH, RW, WHITE } from '@/theme'
 
 export default StyleSheet.create({
   container: {
-    width: '100%',
+    backgroundColor: '#222126',
+    height: '100%',
   },
   title: {
-    ...font('rw.bold', 18, WHITE, 28),
-    textAlign: 'left',
+    ...font('rw.bold', 26, WHITE, 32),
     width: '100%',
-    marginBottom: RH(20),
+    paddingTop: RH(134),
+    paddingBottom: RH(40),
   },
   textField: {
     ...font('rw.regular', 16, WHITE),
     width: '100%',
-    borderWidth: RH(1),
-    borderColor: WHITE,
-    borderRadius: RW(3),
-    paddingHorizontal: RW(5),
+    height: 60,
+    borderRadius: RW(16),
+    paddingHorizontal: RW(20),
     paddingVertical: RH(5),
-    marginBottom: RH(5),
+    marginBottom: RH(20),
     textAlign: 'left',
+    backgroundColor: '#2C2B30',
   },
   rtlInput: {
     textAlign: 'right',
   },
   button: {
     width: '100%',
-    borderRadius: RW(5),
-    backgroundColor: '#222126',
-    paddingVertical: RH(10),
-    marginTop: RH(15),
+    height: RW(68),
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: RW(40),
   },
   buttonText: {
     ...font('rw.bold', 18, WHITE, 28),
     width: '100%',
     textAlign: 'center',
+  },
+  headerImage: {
+    position: 'absolute',
   },
 })
