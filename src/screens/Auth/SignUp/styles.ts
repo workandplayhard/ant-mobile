@@ -24,9 +24,6 @@ export default StyleSheet.create({
     textAlign: 'left',
     backgroundColor: SIGNUP_TEXTFIELD_BG_COLOR,
   },
-  rtlInput: {
-    textAlign: 'right',
-  },
   button: {
     width: '100%',
     height: RW(68),

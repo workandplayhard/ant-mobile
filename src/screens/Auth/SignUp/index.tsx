@@ -4,8 +4,8 @@ import { Text, View, TextInput, I18nManager } from 'react-native'
 import { Button, ScrollContainer } from '@/components'
 import HeaderImage from '@/assets/images/img_signup_header.svg'
 import { t } from '@/i18n'
-import { useAuth, useApp } from '@/hooks'
-import { PAGE_HORIZONTAL_PADDING, RW, SIGNUP_PLACEHOLDER_COLOR } from '@/theme'
+import { useAuth } from '@/hooks'
+import { PAGE_HORIZONTAL_PADDING, RW, TEXT_DARK_PLACEHOLDER_COLOR } from '@/theme'
 
 import styles from './styles'
 
@@ -26,35 +26,35 @@ const SignUpScreen: React.FC = () => {
         <Text style={styles.title}>Lorem Ipsum is simply dummy text</Text>
         <TextInput
           keyboardType="numeric"
-          style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+          style={[styles.textField]}
           placeholder={t('idNumber')}
-          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
+          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
           value={IDNumber}
           onChangeText={setIDNumber}
         />
 
         <TextInput
           keyboardType="numeric"
-          style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+          style={[styles.textField]}
           placeholder={t('phoneNumber')}
-          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
+          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
           value={phoneNumber}
           onChangeText={setPhoneNumber}
         />
 
         <TextInput
-          style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+          style={[styles.textField]}
           placeholder={t('celluarCompany')}
-          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
+          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
           value={celluarCompany}
           onChangeText={setCellularCompany}
         />
 
         <TextInput
           keyboardType="numeric"
-          style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+          style={[styles.textField]}
           placeholder={t('Credit Card Number')}
-          placeholderTextColor={SIGNUP_PLACEHOLDER_COLOR}
+          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
           value={creditCardNumber}
           onChangeText={setCreditCardNumber}
         />
@@ -63,7 +63,7 @@ const SignUpScreen: React.FC = () => {
       </View>
 
       {/* <TextInput
-        style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+        style={[styles.textField]}
         placeholder={t('email')}
         placeholderTextColor="white"
         value={email}
@@ -71,7 +71,7 @@ const SignUpScreen: React.FC = () => {
       />
       <TextInput
         secureTextEntry
-        style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+        style={[styles.textField]}
         placeholder={t('password')}
         placeholderTextColor="white"
         value={password}
@@ -79,7 +79,7 @@ const SignUpScreen: React.FC = () => {
       />
       <TextInput
         secureTextEntry
-        style={[styles.textField, I18nManager.isRTL && styles.rtlInput]}
+        style={[styles.textField]}
         placeholder={t('conformPassword')}
         placeholderTextColor="white"
         value={confirmPassword}
