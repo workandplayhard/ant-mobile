@@ -32,6 +32,6 @@ export const TAB_ACTIVE_TINT_COLOR = 'grey'
 export const TAB_INACTIVE_TINT_COLOR = 'red'
 export const TAB_BG_COLOR = '#353339'
 
-export const PROFILE_GREETINGS_COLOR = 'FFFF00'
+export const PROFILE_GREETINGS_COLOR = '#FFFFFFCC'
 
 export const TITLE_COLOR = '#000033'
