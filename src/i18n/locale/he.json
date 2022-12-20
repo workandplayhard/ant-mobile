@@ -6,6 +6,10 @@
     "email": "אימייל",
     "password": "סיסמה",
     "changeLanguage": "שנה שפה",
-    "lorem": "לורם איפסום"
+    "lorem": "לורם איפסום",
+    "menu": "תַפרִיט",
+    "settings": "הגדרות",
+    "home": "בית",
+    "myAccount": "החשבון שלי"
   }
 }

@@ -9,10 +9,10 @@ export const TAB_NAVIGATOR_ICON_MAP = {
 
 export const NAV_SCREENS = {
   stacks: {
-    menuStack: t('Menu'),
-    settingsStack: t('Settings'),
-    homeStack: t('Home'),
-    accountStack: t('My account'),
+    menuStack: 'Menu',
+    settingsStack: 'Settings',
+    homeStack: 'Home',
+    accountStack: 'My account',
   },
-  screens: { 'menuStack:screenA': t('menuStack:screenA') },
+  screens: { 'menuStack:screenA': 'menuStack:screenA' },
 }
