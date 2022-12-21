@@ -28,7 +28,7 @@ export default StyleSheet.create({
   homeSubTitle: {
     ...font('rw.regular', 14, HOME_SUBTITLE_COLOR, 26),
     textAlign: 'center',
-    paddingBottom: RW(20),
+    paddingBottom: RW(40),
   },
   plan: {
     width: '100%',
