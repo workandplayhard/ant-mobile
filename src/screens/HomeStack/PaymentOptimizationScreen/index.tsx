@@ -78,7 +78,7 @@ const PaymentOptimizationScreen: React.FC = () => {
             style={styles.contentDescriptionContext}
           />
         </Row>
-        <Button variant="primary" text={t('start')} />
+        <Button variant="primary" text={t('start')} style={styles.contentDescriptionBottom} />
       </Col>
     </ScrollContainer>
   )

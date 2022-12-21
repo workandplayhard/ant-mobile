@@ -137,4 +137,7 @@ export default StyleSheet.create({
     padding: RW(20),
     ...font('rw.semibold', 14, BLACK, 24),
   },
+  contentDescriptionBottom: {
+    marginBottom: RW(60),
+  },
 })
