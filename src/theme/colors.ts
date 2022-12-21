@@ -43,3 +43,5 @@ export const SIGNUP_TEXTFIELD_BG_COLOR = '#2C2B30'
 
 export const DASHBOARD_ICON_COLORS = ['#008037', '#EF404A', '#FF7852']
 export const DASHBOARD_SHADOW_COLOR = '#031455'
+
+export const HOME_SUBTITLE_COLOR = '#ffffffb3'
