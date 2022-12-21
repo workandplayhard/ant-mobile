@@ -16,6 +16,10 @@
     "settings": "הגדרות",
     "home": "בית",
     "myAccount": "החשבון שלי",
-    "next": "הַבָּא"
+    "next": "הַבָּא",
+    "start": "התחל",
+    "saveTitle": ":עד היום הזה חסכתם",
+    "saveDateDescription": "בדיקת ההוצאות האחרונה הייתה ב:",
+    "goodToSeeYouAgain": "טוב לראות אותך שוב."
   }
 }

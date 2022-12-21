@@ -80,6 +80,7 @@ const TabNavigator = () => {
           backgroundColor: TAB_BG_COLOR,
           borderTopLeftRadius: RW(20),
           borderTopRightRadius: RW(20),
+          position: 'absolute',
         },
       })}
       initialRouteName="StackA"
