@@ -11,6 +11,7 @@ interface IPageTitle {
   subTitle?: string
   titleAlign?: 'left' | 'right' | 'center'
   subTitleAlign?: 'left' | 'right' | 'center'
+  mode: 'dark' | 'light'
 }
 
 export const PageTitle: React.FC<IPageTitle> = ({
@@ -18,14 +19,29 @@ export const PageTitle: React.FC<IPageTitle> = ({
   subTitle,
   titleAlign = 'left',
   subTitleAlign = 'left',
+  mode = 'light',
 }) => {
   return (
     <Col style={styles.container}>
-      {!!title && <TextField text={title} style={[styles.title, { textAlign: titleAlign }]} />}
+      {!!title && (
+        <TextField
+          text={title}
+          style={[
+            mode === 'light' ? styles.lightTitle : styles.darkTitle,
+            { textAlign: titleAlign },
+          ]}
+        />
+      )}
       {!!subTitle && (
         <>
           <Gap horizontal={false} gap={12} />
-          <TextField text={subTitle} style={[styles.subTitle, { textAlign: subTitleAlign }]} />
+          <TextField
+            text={subTitle}
+            style={[
+              mode === 'light' ? styles.lightSubTitle : styles.darkSubTitle,
+              { textAlign: subTitleAlign },
+            ]}
+          />
         </>
       )}
     </Col>

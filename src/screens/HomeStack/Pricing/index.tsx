@@ -1,7 +1,16 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
-import { Button, CheckBox, Container, Gap, Row, ScrollContainer, TextField } from '@/components'
+import {
+  Button,
+  CheckBox,
+  Container,
+  Gap,
+  PageTitle,
+  Row,
+  ScrollContainer,
+  TextField,
+} from '@/components'
 
 import HeaderImage from '@/assets/images/img_signup_header.svg'
 import { RW } from '@/theme'
@@ -12,42 +21,42 @@ import mockData from './mockData.json'
 import styles from './styles'
 
 const Pricing: React.FC = () => {
-  const [checked, setChecked] = React.useState<boolean>(false)
+  const [selected, setSelected] = React.useState<number | null>(null)
 
   return (
     <Container>
       <HeaderImage style={styles.headerImage} width={RW(350)} height={RW(140)} />
-      <View style={styles.header}>
-        <TextField text={t('homeTitle')} style={styles.homeTitle} />
-        <Gap horizontal={false} gap={12} />
-        <TextField text={mockData.homeSubTitle} style={styles.homeSubTitle} />
+      <View style={styles.container}>
+        <Gap horizontal={false} gap={130} />
+        <PageTitle
+          title={t('homeTitle')}
+          titleAlign="center"
+          subTitle={mockData.homeSubTitle}
+          subTitleAlign="center"
+          mode="dark"
+        />
+        <Gap horizontal={false} gap={40} />
 
         <ScrollContainer>
-          <View style={styles.plan}>
-            <Row style={styles.planContent}>
-              <CheckBox isChecked={checked} onChange={setChecked} />
-              <Text style={styles.planText}>{mockData.textExample}</Text>
-            </Row>
-          </View>
-          <View style={styles.plan}>
-            <Row style={styles.planContent}>
-              <CheckBox isChecked={checked} onChange={setChecked} />
-              <Text style={styles.planText}>{mockData.textExample}</Text>
-            </Row>
-          </View>
-          <View style={[styles.plan, styles.buttonPosition]}>
-            <Row style={styles.planContent}>
-              <CheckBox isChecked={checked} onChange={setChecked} />
-              <Text style={styles.planText}>{mockData.textExample}</Text>
-            </Row>
-          </View>
+          {mockData.plans.map((plan) => (
+            <React.Fragment key={plan.id}>
+              <View style={styles.plan}>
+                <Row style={styles.planContent}>
+                  <CheckBox
+                    isChecked={selected === plan.id}
+                    onChange={() => setSelected(plan.id)}
+                  />
+                  <TextField text={plan.description} style={styles.planText} />
+                </Row>
+              </View>
+              <Gap horizontal={false} gap={20} />
+            </React.Fragment>
+          ))}
+          <Gap horizontal={false} gap={40} />
 
-          <Button
-            variant="primary"
-            disabled={checked ? false : true}
-            text="Next"
-            style={styles.buttonPosition}
-          />
+          <Button variant="primary" disabled={!selected} text={t('next')} />
+
+          <Gap horizontal={false} gap={130} />
         </ScrollContainer>
       </View>
     </Container>
