@@ -37,7 +37,10 @@ const PaymentOptimizationScreen: React.FC = () => {
         </View>
       </View>
       <View style={styles.header}>
-        <TextField text={mockData.headerGreetings} style={styles.headerGreetings} />
+        <TextField
+          text={t(mockData.headerGreetings, { username: 'John' })}
+          style={styles.headerGreetings}
+        />
         <Gap horizontal={false} gap={5} />
         <TextField text={t('goodToSeeYouAgain')} style={styles.headerGreetingsContent} />
       </View>
