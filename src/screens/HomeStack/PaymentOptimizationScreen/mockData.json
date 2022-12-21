@@ -1,9 +1,6 @@
 {
-  "saveTitle": "Until this day you have saved:",
-  "savePrice": "$1250",
-  "saveDateDescription": "Last expenses check was at:",
+  "savePrice": "1250",
   "saveDateTime": "2022-07-22",
   "headerGreetings": "Hey John! 👋",
-  "headerGreetingsContent": "Good to see you again.",
   "contentDescriptionContext": "Lorem Ipsum is simply dummy text of the printing typesetting"
 }

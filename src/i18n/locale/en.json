@@ -16,6 +16,10 @@
     "settings": "Settings",
     "home": "Home",
     "myAccount": "My Account",
-    "next": "Next"
+    "next": "Next",
+    "start": "Start",
+    "saveTitle": "Until this day you have saved:",
+    "saveDateDescription": "Last expenses check was at:",
+    "goodToSeeYouAgain": "Good to see you again."
   }
 }

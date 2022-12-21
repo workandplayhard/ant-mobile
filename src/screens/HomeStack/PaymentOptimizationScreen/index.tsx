@@ -6,6 +6,7 @@ import { DASHBOARD_ICON_COLORS, RW } from '@/theme'
 
 import HeaderImage from '@/assets/images/img_signup_header.svg'
 import P from '@/assets/images/img_p.svg'
+import { t } from '@/i18n'
 
 import mockData from './mockData.json'
 
@@ -17,12 +18,12 @@ const PaymentOptimizationScreen: React.FC = () => {
       <HeaderImage style={styles.headerImage} width={RW(350)} height={RW(140)} />
       <View style={styles.saveParent}>
         <View style={styles.save}>
-          <TextField text={mockData.saveTitle} style={styles.saveTitle} />
-          <TextField text={mockData.savePrice} style={styles.savePrice} />
+          <TextField text={t('saveTitle')} style={styles.saveTitle} />
+          <TextField text={t('currency', { value: mockData.savePrice })} style={styles.savePrice} />
 
           <Row style={styles.saveDateParent}>
             <Col>
-              <TextField text={mockData.saveDateDescription} style={styles.saveDateDescription} />
+              <TextField text={t('saveDateDescription')} style={styles.saveDateDescription} />
               <DateTime
                 value={mockData.saveDateTime}
                 format="DD/MM/YYYY"
@@ -38,7 +39,7 @@ const PaymentOptimizationScreen: React.FC = () => {
       <View style={styles.header}>
         <TextField text={mockData.headerGreetings} style={styles.headerGreetings} />
         <Gap horizontal={false} gap={5} />
-        <TextField text={mockData.headerGreetingsContent} style={styles.headerGreetingsContent} />
+        <TextField text={t('goodToSeeYouAgain')} style={styles.headerGreetingsContent} />
       </View>
 
       <Col style={styles.contentContainer}>
@@ -74,7 +75,7 @@ const PaymentOptimizationScreen: React.FC = () => {
             style={styles.contentDescriptionContext}
           />
         </Row>
-        <Button variant="primary" text="start" />
+        <Button variant="primary" text={t('start')} />
       </Col>
     </ScrollContainer>
   )

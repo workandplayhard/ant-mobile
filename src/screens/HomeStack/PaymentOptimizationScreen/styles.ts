@@ -35,7 +35,7 @@ export default StyleSheet.create({
     marginRight: RW(15),
   },
   box: {
-    backgroundColor: 'white',
+    backgroundColor: WHITE,
     borderRadius: RW(15),
     shadowColor: DASHBOARD_SHADOW_COLOR,
     shadowOffset: {
@@ -112,6 +112,7 @@ export default StyleSheet.create({
   },
   contentIconContainer: {
     marginTop: RW(184),
+    justifyContent: 'space-between',
   },
   contentDescriptionContainer: {
     height: RW(76),
