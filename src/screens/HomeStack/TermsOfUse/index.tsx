@@ -7,7 +7,7 @@ import { useNavigation } from '@react-navigation/native'
 import { Button, Gap, ScrollContainer, Signature, TextField } from '@/components'
 import { t } from '@/i18n'
 import { WHITE } from '@/theme/colors'
-import { SCREEN_HEIGHT } from '@/constants'
+import { MODALIZE_INITIAL_POS, SCREEN_HEIGHT } from '@/constants'
 import { RW } from '@/theme/utils'
 
 import mockData from './mockData.json'
@@ -50,7 +50,9 @@ const TermsOfUse = () => {
             <TextField text={t('termUse')} style={styles.modalizeTitle} />
 
             <Gap horizontal={false} gap={20} />
-            <ScrollContainer style={{ maxHeight: pos === 'initial' ? RW(160) : RW(417) }}>
+            <ScrollContainer
+              style={{ maxHeight: pos === MODALIZE_INITIAL_POS ? RW(160) : RW(417) }}
+            >
               <TextField text={mockData.example} style={styles.modalizeContent} />
             </ScrollContainer>
 
