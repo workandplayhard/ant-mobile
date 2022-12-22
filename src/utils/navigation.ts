@@ -1,4 +1,4 @@
-import { TAB_NAVIGATOR_ICON_MAP } from '@/navigation/constants'
+import { NAV_SCREENS, TAB_NAVIGATOR_ICON_MAP } from '@/navigation/constants'
 
 /**
  * Get route name
@@ -10,13 +10,13 @@ export const getIconName = (routeName: string) => {
   let iconName
 
   switch (routeName) {
-    case 'Menu':
+    case NAV_SCREENS.stacks.menuStack:
       iconName = TAB_NAVIGATOR_ICON_MAP.MENU_ICON
       break
-    case 'Settings':
+    case NAV_SCREENS.stacks.settingsStack:
       iconName = TAB_NAVIGATOR_ICON_MAP.SETTINGS_ICON
       break
-    case 'Home':
+    case NAV_SCREENS.stacks.homeStack:
       iconName = TAB_NAVIGATOR_ICON_MAP.BALLOON_HOT_ICON
       break
     default:

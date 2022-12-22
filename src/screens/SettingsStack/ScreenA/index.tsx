@@ -106,6 +106,13 @@ const HomeScreenA: React.FC = () => {
   return (
     <View style={styles.container}>
       <ScrollContainer>
+        <PageTitle
+          title="Before we start process"
+          subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          titleAlign="center"
+          subTitleAlign="center"
+          mode="dark"
+        />
         <Col>
           <TextField style={styles.title} text={`StackB-ScreenA-${t('lorem')}`} />
           <TextField style={styles.title} text={`StackB-ScreenA-${t('lorem')}`} />
@@ -166,6 +173,19 @@ const HomeScreenA: React.FC = () => {
             ]}
           />
         </Col>
+        <Gap horizontal={false} gap={20} />
+
+        <Slider
+          width={329}
+          urls={[
+            'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+            'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+            'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          ]}
+        />
+
+        <Stepper canJumpNext steps={steps} currentStep={currentStep} onChangeStep={onChangeStep} />
+        <Gap horizontal={false} gap={20} />
       </ScrollContainer>
       {showModal === 1 && (
         <Modal
@@ -187,7 +207,7 @@ const HomeScreenA: React.FC = () => {
             }}
           >
             <OTPField cellCount={6} value={code} setValue={setCode} />
-            <Signature ref={signatureRef} onSign={(d: string) => setSign(d)} />
+            <Signature ref={signatureRef} onSignComplete={(d: string) => setSign(d)} />
             <Button
               variant="pure"
               size="xs"

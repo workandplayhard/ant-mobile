@@ -42,7 +42,13 @@ const TabNavigator = () => {
 
           return (
             <>
-              <View style={styles.container}>
+              <View
+                style={[
+                  styles.container,
+                  route.name === NAV_SCREENS.stacks.menuStack && styles.firstItem,
+                  route.name === NAV_SCREENS.stacks.accountStack && styles.lastItem,
+                ]}
+              >
                 {focused && (
                   <LinearGradient
                     colors={[BUTTON_GRADIENT_START, BUTTON_GRADIENT_END]}
@@ -59,7 +65,7 @@ const TabNavigator = () => {
                   size={RW(24)}
                 />
                 <TextField
-                  text={route.name}
+                  text={t(route.name)}
                   style={{
                     ...font('pp.regular', RW(12), focused ? WHITE : TAB_MENU_ACTIVE_COLOR, RW(18)),
                     paddingVertical: RH(7),
@@ -77,18 +83,20 @@ const TabNavigator = () => {
         tabBarShowLabel: false,
         tabBarStyle: {
           height: RH(90),
+          borderWidth: 0,
           backgroundColor: TAB_BG_COLOR,
-          borderTopLeftRadius: RW(20),
-          borderTopRightRadius: RW(20),
+          borderTopLeftRadius: RW(25),
+          borderTopRightRadius: RW(25),
           position: 'absolute',
+          paddingBottom: 0,
         },
       })}
       initialRouteName="StackA"
     >
-      <Tab.Screen name={t(NAV_SCREENS.stacks.menuStack)} component={MenuStack} />
-      <Tab.Screen name={t(NAV_SCREENS.stacks.settingsStack)} component={SettingsStack} />
-      <Tab.Screen name={t(NAV_SCREENS.stacks.homeStack)} component={HomeStack} />
-      <Tab.Screen name={t(NAV_SCREENS.stacks.accountStack)} component={MyAccountStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.menuStack} component={MenuStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.settingsStack} component={SettingsStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.homeStack} component={HomeStack} />
+      <Tab.Screen name={NAV_SCREENS.stacks.accountStack} component={MyAccountStack} />
     </Tab.Navigator>
   )
 }
