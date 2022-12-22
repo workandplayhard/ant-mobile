@@ -21,6 +21,8 @@
     "saveTitle": "Until this day you have saved:",
     "saveDateDescription": "Last expenses check was at:",
     "goodToSeeYouAgain": "Good to see you again.",
-    "homeTitle": "Nice to meet you, a plan to reduce costs"
+    "homeTitle": "Nice to meet you, a plan to reduce costs",
+    "signatureStatus": "I have read and understand the terms of use",
+    "termUse": "Term of Use"
   }
 }

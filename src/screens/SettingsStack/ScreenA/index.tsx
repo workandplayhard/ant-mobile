@@ -219,6 +219,7 @@ const HomeScreenA: React.FC = () => {
         subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         titleAlign="center"
         subTitleAlign="center"
+        mode="dark"
       />
     </View>
   )
