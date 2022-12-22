@@ -2,6 +2,7 @@ import React, { ElementRef, useCallback, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
+import { useNavigation } from '@react-navigation/native'
 
 import { Button, Gap, ScrollContainer, Signature, TextField } from '@/components'
 import { t } from '@/i18n'
@@ -14,6 +15,7 @@ import mockData from './mockData.json'
 import styles from './styles'
 
 const TermsOfUse = () => {
+  const navigation = useNavigation()
   const modalizeRef = useRef<Modalize>(null)
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [sign, setSign] = useState<string | undefined>()
@@ -55,15 +57,16 @@ const TermsOfUse = () => {
             <TextField text={t('signatureStatus')} style={styles.modalizeSignature} />
 
             <Gap horizontal={false} gap={12} />
-            <Signature ref={signatureRef} onSign={(d: string) => setSign(d)} />
+            <Signature ref={signatureRef} onSignComplete={(d: string) => setSign(d)} />
 
             <Gap horizontal={false} gap={40} />
             <Button
               variant="primary"
               size="lg"
+              disabled={!sign}
               text={t('next')}
               onPress={() => {
-                signatureRef.current?.getSignature()
+                navigation.navigate('Pricing' as never)
               }}
             />
           </View>
