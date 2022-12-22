@@ -53,7 +53,7 @@ const SignUpScreen: React.FC = () => {
         <TextInput
           keyboardType="numeric"
           style={[styles.textField]}
-          placeholder={t('Credit Card Number')}
+          placeholder={t('creditCardNumber')}
           placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
           value={creditCardNumber}
           onChangeText={setCreditCardNumber}

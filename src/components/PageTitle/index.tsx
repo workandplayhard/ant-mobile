@@ -11,7 +11,7 @@ interface IPageTitle {
   subTitle?: string
   titleAlign?: 'left' | 'right' | 'center'
   subTitleAlign?: 'left' | 'right' | 'center'
-  mode: 'dark' | 'light'
+  mode?: 'dark' | 'light'
 }
 
 export const PageTitle: React.FC<IPageTitle> = ({

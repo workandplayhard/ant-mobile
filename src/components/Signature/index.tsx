@@ -1,4 +1,11 @@
-import React, { useCallback, useRef, forwardRef, useImperativeHandle } from 'react'
+import React, {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  forwardRef,
+  useImperativeHandle,
+} from 'react'
 import { StyleProp, View, ViewProps } from 'react-native'
 import SignatureCapture, { SaveEventParams } from 'react-native-signature-capture'
 
@@ -8,7 +15,11 @@ import styles from './styles'
 
 interface ISignature {
   style?: StyleProp<ViewProps>
-  onSign: (d: string) => void
+  autoComplete?: boolean
+  onSignComplete: (d: string) => void
+  onSignStart?: () => void
+  onSignInProgress?: () => void
+  onSignEnd?: () => void
 }
 
 interface ISignatureControl {
@@ -16,45 +27,92 @@ interface ISignatureControl {
   resetSignature: () => void
 }
 
-export const Signature = forwardRef<ISignatureControl, ISignature>(({ style, onSign }, ref) => {
-  const signRef = useRef<any>(null)
+type TPanEVent = 'start' | 'move' | 'end'
 
-  useImperativeHandle(
+export const Signature = forwardRef<ISignatureControl, ISignature>(
+  (
+    { style, autoComplete = true, onSignComplete, onSignStart, onSignInProgress, onSignEnd },
     ref,
-    () => ({
-      getSignature() {
-        signRef.current?.saveImage()
-      },
-      resetSignature() {
-        signRef.current?.resetImage()
-      },
-    }),
-    [],
-  )
+  ) => {
+    const signRef = useRef<any>(null)
+    const timer = useRef<any>(null)
 
-  const onSave = useCallback(
-    (result: SaveEventParams) => {
-      onSign(result.encoded)
-    },
-    [onSign],
-  )
+    const [event, setEvent] = useState<TPanEVent | null>(null)
 
-  return (
-    <View style={[styles.container, style]}>
-      <SignatureCapture
-        style={styles.signature}
-        ref={signRef}
-        onSaveEvent={onSave}
-        showNativeButtons={false}
-        showTitleLabel={false}
-        showBorder={false}
-        // @ts-ignore
-        strokeColor={WHITE}
-        minStrokeWidth={4}
-        maxStrokeWidth={4}
-        backgroundColor={TRANSPARENT}
-        viewMode="portrait"
-      />
-    </View>
-  )
-})
+    useImperativeHandle(
+      ref,
+      () => ({
+        getSignature() {
+          signRef.current?.saveImage()
+        },
+        resetSignature() {
+          signRef.current?.resetImage()
+        },
+      }),
+      [],
+    )
+
+    useEffect(() => {
+      if (event === 'start' && timer.current) {
+        clearTimeout(timer.current)
+      }
+      if (event === 'end' && autoComplete) {
+        timer.current = setTimeout(() => {
+          signRef.current?.saveImage()
+          setEvent(null)
+        }, 1500)
+      }
+
+      return () => {
+        if (timer.current) {
+          clearTimeout(timer.current)
+        }
+      }
+    }, [autoComplete, event])
+
+    const onSave = useCallback(
+      (result: SaveEventParams) => {
+        onSignComplete(result.encoded)
+      },
+      [onSignComplete],
+    )
+
+    const onEvent = useCallback(
+      (e: TPanEVent) => {
+        setEvent(e)
+        if (e === 'start') {
+          onSignStart?.()
+        } else if (e === 'move') {
+          onSignInProgress?.()
+        } else if (e === 'end') {
+          onSignEnd?.()
+        }
+      },
+      [onSignEnd, onSignInProgress, onSignStart],
+    )
+
+    return (
+      <View style={[styles.container, style]}>
+        <SignatureCapture
+          style={styles.signature}
+          ref={signRef}
+          onSaveEvent={onSave}
+          showNativeButtons={false}
+          showTitleLabel={false}
+          showBorder={false}
+          // @ts-ignore
+          strokeColor={WHITE}
+          minStrokeWidth={4}
+          maxStrokeWidth={4}
+          backgroundColor={TRANSPARENT}
+          viewMode="portrait"
+          onStartShouldSetResponderCapture={() => true}
+          onMoveShouldSetResponderCapture={() => true}
+          onResponderStart={() => onEvent('start')}
+          onResponderMove={() => onEvent('move')}
+          onResponderEnd={() => onEvent('end')}
+        />
+      </View>
+    )
+  },
+)

@@ -1,11 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { View, Animated } from 'react-native'
-import * as RNLocalize from 'react-native-localize'
-
-import { APP_LANG_KEY, APP_LANGUAGES } from '@/constants'
-import { getStorageValue } from '@/utils'
-import { useApp } from '@/hooks'
-import { TLang } from '@/types'
 
 import styles from './styles'
 
@@ -14,7 +8,6 @@ interface Props {
 }
 
 const Splash: React.FC<Props> = ({ onLoadEnd }) => {
-  const { onChangeLanguage } = useApp()
   const [loaded, setLoaded] = useState<boolean>(false)
 
   const circle = useRef(new Animated.Value(-1000))
@@ -31,24 +24,6 @@ const Splash: React.FC<Props> = ({ onLoadEnd }) => {
       }
     })
   }, [])
-
-  useEffect(() => {
-    const checkLang = async () => {
-      let language = await getStorageValue<TLang | undefined>(APP_LANG_KEY)
-
-      let _isRTL = language ? language === APP_LANGUAGES.HE : undefined
-
-      if (!language) {
-        const localeData = RNLocalize.getLocales()
-        const currentDeviceLang = localeData[0]?.languageCode || APP_LANGUAGES.HE
-        language = currentDeviceLang === APP_LANGUAGES.EN ? APP_LANGUAGES.EN : APP_LANGUAGES.HE
-        _isRTL = localeData[0]?.isRTL
-      }
-
-      onChangeLanguage({ lng: language as TLang, _isRTL, restart: false })
-    }
-    checkLang()
-  }, [onChangeLanguage])
 
   useEffect(() => {
     if (loaded) {
