@@ -5,6 +5,7 @@ export const SERVER_ENDPOINT = __DEV__ ? 'http://localhost:4001' : 'http://local
 
 export const IS_IOS = Platform.OS === 'ios'
 
+export const APP_DEFAULT_LANG: TLang = 'en'
 export const APP_LANG_KEY = '@Lang'
 export const APP_TOKEN_KEY = '@Token'
 
