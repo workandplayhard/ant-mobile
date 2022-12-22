@@ -2,7 +2,6 @@ import React, { ElementRef, useCallback, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
-import { useNavigation } from '@react-navigation/native'
 
 import { Button, Gap, ScrollContainer, Signature, TextField } from '@/components'
 import { t } from '@/i18n'
@@ -13,6 +12,7 @@ import { RW } from '@/theme/utils'
 import mockData from './mockData.json'
 
 import styles from './styles'
+import { useNavigation } from '@react-navigation/native'
 
 const TermsOfUse = () => {
   const navigation = useNavigation()
@@ -34,10 +34,11 @@ const TermsOfUse = () => {
           ref={modalizeRef}
           modalStyle={pos === 'initial' ? styles.modal : styles.modalNonBorder}
           handleStyle={styles.handle}
-          closeOnOverlayTap={false}
+          closeOnOverlayTap={true}
           overlayStyle={{ backgroundColor: 'none' }}
           childrenStyle={{ backgroundColor: WHITE }}
           snapPoint={RW(560)}
+          onClosed={() => setSign('')}
           onPositionChange={(position) => {
             setPos(position)
           }}
