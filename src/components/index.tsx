@@ -1,5 +1,6 @@
 export * from './Button'
 export * from './CheckBox'
+export * from './CircularProgress'
 export * from './Col'
 export * from './DateTime'
 export * from './Dropdown'
