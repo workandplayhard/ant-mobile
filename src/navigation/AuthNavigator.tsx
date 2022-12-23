@@ -3,8 +3,8 @@ import { createNativeStackNavigator as createStackNavigator } from '@react-navig
 
 import { NAV_HEADER_OPTION } from '@/constants'
 
-import SignIn from '@/screens/Auth/SignIn'
-import SignUp from '@/screens/Auth/SignUp'
+import SignIn from '@/screens/AuthStack/SignIn'
+import SignUp from '@/screens/AuthStack/SignUp'
 import { NavScreens } from './constants'
 
 const Stack = createStackNavigator()
