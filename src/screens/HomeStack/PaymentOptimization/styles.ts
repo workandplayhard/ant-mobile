@@ -4,29 +4,18 @@ import { PAGE_HORIZONTAL_PADDING, RW, RH, font } from '@/theme/utils'
 import {
   BLACK,
   WHITE,
-  PRIMARY_BG_COLOR,
   TEXT_INPUT_FONT_COLOR,
   DASHBOARD_SHADOW_COLOR,
   STEP_INACTIVE_BG_COLOR,
 } from '@/theme'
 
 export default StyleSheet.create({
-  container: {
-    backgroundColor: PRIMARY_BG_COLOR,
-  },
   scrollContainer: {
     height: '100%',
     backgroundColor: 'transparent',
   },
   contentContainerStyle: {
     alignContent: 'center',
-  },
-  headerImage: {
-    position: 'absolute',
-    ...(I18nManager.isRTL ? { left: RW(-90) } : { right: RW(-90) }),
-    width: RW(350),
-    height: RW(140),
-    zIndex: 2,
   },
   iconWrapper: {
     alignItems: 'center',
@@ -97,6 +86,7 @@ export default StyleSheet.create({
     width: RW(52),
     height: RW(52),
     right: 0,
+    transform: [{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }],
   },
   header: {
     justifyContent: 'center',

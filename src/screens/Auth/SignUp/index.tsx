@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Text, View, TextInput } from 'react-native'
 
 import { Button, ScrollContainer } from '@/components'
-import HeaderImage from '@/assets/images/img_signup_header.svg'
+import WrapperWithBackground from '@/screens/HomeStack/shared/wrapperWithBackground'
 import { t } from '@/i18n'
-import { PAGE_HORIZONTAL_PADDING, RW, TEXT_DARK_PLACEHOLDER_COLOR } from '@/theme'
+import { PAGE_HORIZONTAL_PADDING, TEXT_DARK_PLACEHOLDER_COLOR } from '@/theme'
 
 import styles from './styles'
 
@@ -19,54 +19,54 @@ const SignUpScreen: React.FC = () => {
   // const [email, setEmail] = useState<string>('')
 
   return (
-    <ScrollContainer style={styles.container} contentContainerStyle={{ alignContent: 'center' }}>
-      <HeaderImage style={styles.headerImage} width={RW(350)} height={RW(140)} />
-      <View style={{ padding: PAGE_HORIZONTAL_PADDING }}>
-        <Text style={styles.title}>Lorem Ipsum is simply dummy text</Text>
-        <TextInput
-          keyboardType="numeric"
-          style={[styles.textField]}
-          placeholder={t('idNumber')}
-          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
-          value={iDNumber}
-          onChangeText={setIDNumber}
-        />
+    <WrapperWithBackground>
+      <ScrollContainer style={styles.container} contentContainerStyle={{ alignContent: 'center' }}>
+        <View style={{ padding: PAGE_HORIZONTAL_PADDING }}>
+          <Text style={styles.title}>Lorem Ipsum is simply dummy text</Text>
+          <TextInput
+            keyboardType="numeric"
+            style={[styles.textField]}
+            placeholder={t('idNumber')}
+            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
+            value={iDNumber}
+            onChangeText={setIDNumber}
+          />
 
-        <TextInput
-          keyboardType="numeric"
-          style={[styles.textField]}
-          placeholder={t('phoneNumber')}
-          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
-          value={phoneNumber}
-          onChangeText={setPhoneNumber}
-        />
+          <TextInput
+            keyboardType="numeric"
+            style={[styles.textField]}
+            placeholder={t('phoneNumber')}
+            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
+          />
 
-        <TextInput
-          style={[styles.textField]}
-          placeholder={t('celluarCompany')}
-          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
-          value={celluarCompany}
-          onChangeText={setCellularCompany}
-        />
+          <TextInput
+            style={[styles.textField]}
+            placeholder={t('celluarCompany')}
+            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
+            value={celluarCompany}
+            onChangeText={setCellularCompany}
+          />
 
-        <TextInput
-          keyboardType="numeric"
-          style={[styles.textField]}
-          placeholder={t('creditCardNumber')}
-          placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
-          value={creditCardNumber}
-          onChangeText={setCreditCardNumber}
-        />
+          <TextInput
+            keyboardType="numeric"
+            style={[styles.textField]}
+            placeholder={t('creditCardNumber')}
+            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
+            value={creditCardNumber}
+            onChangeText={setCreditCardNumber}
+          />
 
-        <Button
-          disabled={!(iDNumber || phoneNumber || celluarCompany || creditCardNumber)}
-          buttonStyle={styles.button}
-          size="lg"
-          text={t('next')}
-        />
-      </View>
+          <Button
+            disabled={!(iDNumber || phoneNumber || celluarCompany || creditCardNumber)}
+            buttonStyle={styles.button}
+            size="lg"
+            text={t('next')}
+          />
+        </View>
 
-      {/* <TextInput
+        {/* <TextInput
         style={[styles.textField]}
         placeholder={t('email')}
         placeholderTextColor="white"
@@ -95,7 +95,8 @@ const SignUpScreen: React.FC = () => {
         text={t('signUp')}
         onPress={() => onSignUp({ email, password })}
       /> */}
-    </ScrollContainer>
+      </ScrollContainer>
+    </WrapperWithBackground>
   )
 }
 
