@@ -6,10 +6,11 @@ import { PROFILE_GREETINGS_COLOR, WHITE } from '@/theme'
 export default StyleSheet.create({
   container: {
     width: '100%',
+    paddingRight: RW(6),
   },
   image: {
     width: RW(52),
-    height: 52,
+    height: RW(52),
     borderRadius: RW(26),
   },
   greetings: {

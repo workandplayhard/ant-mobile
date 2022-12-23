@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native'
 
-import { BLACK, HOME_SUBTITLE_COLOR, RW, PRIMARY_BG_COLOR, WHITE, font } from '@/theme'
+import { BLACK, HOME_SUBTITLE_COLOR, RW, PRIMARY_BG_COLOR, WHITE, font, PAGE_HORIZONTAL_PADDING } from '@/theme'
 import { SCREEN_HEIGHT } from '@/constants'
 
 export default StyleSheet.create({
+  container: {
+    padding: PAGE_HORIZONTAL_PADDING,
+  },
   modalizeWrapper: {
     padding: RW(30),
     backgroundColor: PRIMARY_BG_COLOR,

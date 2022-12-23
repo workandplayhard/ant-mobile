@@ -25,6 +25,11 @@
     "signatureStatus": "קראתי והבנתי את תנאי השימוש",
     "termUse": "תנאי שימוש",
     "termUseTitle": "לפני שנתחיל את ההתקדמות",
-    "greetings": "Hey {{name}}! 👋"
+    "greetings": "היי {{שֵׁם}}! 👋",
+    "homeGreetings": "היי {{שֵׁם}}!",
+    "homeGreetingsContent": "ברוך שובך",
+    "copyCardNumber": "העתק מספר כרטיס",
+    "showCVV": "הצג CVV",
+    "moneySpent": "כסף שהוצא"
   }
 }

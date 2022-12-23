@@ -28,7 +28,7 @@ const TermsOfUse = () => {
   }, [])
 
   return (
-    <View style={{ padding: 30 }}>
+    <View style={styles.container}>
       <Gap horizontal={false} gap={38} />
       <NavHeader hasBackButton={true} />
 
