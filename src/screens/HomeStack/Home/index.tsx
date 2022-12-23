@@ -68,7 +68,12 @@ const Home: React.FC = () => {
 
       <Gap horizontal={false} gap={30} />
       <Row style={styles.progressRow}>
-        <CircularProgress maxValue={1000} value={208} valueStr={t('currency', { value: 208 })} />
+        <CircularProgress
+          maxValue={1000}
+          value={208}
+          valueStr={t('currency', { value: 208 })}
+          label={t('lastMonth')}
+        />
 
         <Gap horizontal gap={50} />
         <CircularProgress
@@ -76,6 +81,7 @@ const Home: React.FC = () => {
           maxValue={1000}
           value={878}
           valueStr={t('currency', { value: 878 })}
+          label={t('thisMonth')}
         />
       </Row>
 

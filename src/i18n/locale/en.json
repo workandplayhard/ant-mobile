@@ -30,6 +30,8 @@
     "homeGreetingsContent": "Welcome Back",
     "copyCardNumber": "Copy card number",
     "showCVV": "Show CVV",
-    "moneySpent": "Money Spent"
+    "moneySpent": "Money Spent",
+    "lastMonth": "Last month",
+    "thisMonth": "This month"
   }
 }

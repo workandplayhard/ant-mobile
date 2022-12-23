@@ -12,9 +12,9 @@ import {
   PROGRESS_INACTIVE_END_COLOR,
   PROGRESS_INACTIVE_STROKE_COLOR,
 } from '@/theme'
+import { TextField } from '../TextField'
 
 import styles from './styles'
-import { TextField } from '../TextField'
 
 interface Props {
   style?: StyleProp<ViewStyle>
@@ -22,6 +22,7 @@ interface Props {
   valueStr: number | string
   maxValue: number
   isCurrent?: boolean
+  label: string
 }
 
 export const CircularProgress: React.FC<Props> = ({
@@ -30,6 +31,7 @@ export const CircularProgress: React.FC<Props> = ({
   maxValue,
   value,
   valueStr,
+  label,
 }) => {
   return (
     <View style={[styles.container, style]}>
@@ -56,6 +58,7 @@ export const CircularProgress: React.FC<Props> = ({
         }}
         text={valueStr}
       />
+      <TextField text={label} style={styles.label} />
     </View>
   )
 }

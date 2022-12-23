@@ -30,6 +30,8 @@
     "homeGreetingsContent": "ברוך שובך",
     "copyCardNumber": "העתק מספר כרטיס",
     "showCVV": "הצג CVV",
-    "moneySpent": "כסף שהוצא"
+    "moneySpent": "כסף שהוצא",
+    "lastMonth": "בחודש שעבר",
+    "thisMonth": "החודש הזה"
   }
 }
