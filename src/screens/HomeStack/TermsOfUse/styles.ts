@@ -1,12 +1,12 @@
 import { StyleSheet } from 'react-native'
 
-import { BLACK, HOME_SUBTITLE_COLOR, RW, SIGNUP_BG_COLOR, WHITE, font } from '@/theme'
+import { BLACK, HOME_SUBTITLE_COLOR, RW, PRIMARY_BG_COLOR, WHITE, font } from '@/theme'
 import { SCREEN_HEIGHT } from '@/constants'
 
 export default StyleSheet.create({
   modalizeWrapper: {
     padding: RW(30),
-    backgroundColor: SIGNUP_BG_COLOR,
+    backgroundColor: PRIMARY_BG_COLOR,
     height: SCREEN_HEIGHT,
   },
   modalizeTitle: {
@@ -27,12 +27,12 @@ export default StyleSheet.create({
     width: RW(80),
   },
   modal: {
-    backgroundColor: SIGNUP_BG_COLOR,
+    backgroundColor: PRIMARY_BG_COLOR,
     borderTopLeftRadius: RW(20),
     borderTopRightRadius: RW(20),
   },
   modalNonBorder: {
-    backgroundColor: SIGNUP_BG_COLOR,
+    backgroundColor: PRIMARY_BG_COLOR,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
   },

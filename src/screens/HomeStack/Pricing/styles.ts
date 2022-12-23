@@ -1,12 +1,12 @@
 import { I18nManager, StyleSheet } from 'react-native'
 
 import { PAGE_HORIZONTAL_PADDING, RW, font } from '@/theme/utils'
-import { WHITE, SIGNUP_BG_COLOR, TEXT_INPUT_BG_COLOR } from '@/theme'
+import { WHITE, PRIMARY_BG_COLOR, TEXT_INPUT_BG_COLOR } from '@/theme'
 
 export default StyleSheet.create({
   container: {
     height: '100%',
-    backgroundColor: SIGNUP_BG_COLOR,
+    backgroundColor: PRIMARY_BG_COLOR,
     padding: PAGE_HORIZONTAL_PADDING,
   },
   headerImage: {

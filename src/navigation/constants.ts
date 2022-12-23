@@ -5,12 +5,31 @@ export const TAB_NAVIGATOR_ICON_MAP = {
   ACCOUNT_ICON: 'accountIcon',
 }
 
-export const NAV_SCREENS = {
-  stacks: {
-    menuStack: 'menu',
-    settingsStack: 'settings',
-    homeStack: 'home',
-    accountStack: 'myAccount',
+export const NavTabs = {
+  menuTab: 'menuTab',
+  settingsTab: 'settingsTab',
+  homeTab: 'homeTab',
+  accountTab: 'myAccountTab',
+}
+
+export const NavScreens = {
+  auth: {
+    signIn: 'authStack:signIn',
+    signUp: 'authStack:signUp',
   },
-  screens: { 'menuStack:screenA': 'menuStack:screenA' },
+  menu: {
+    screenA: 'menuStack:screenA',
+  },
+  settings: {
+    screenA: 'settingsStack:screenA',
+  },
+  home: {
+    screenA: 'homeStack:screenA',
+    pricing: 'homeStack:pricing',
+    paymentOptimization: 'homeStack:paymentOptimization',
+    termsOfUse: 'homeStack:termsOfUse',
+  },
+  account: {
+    screenA: 'accountStack:screenA',
+  },
 }

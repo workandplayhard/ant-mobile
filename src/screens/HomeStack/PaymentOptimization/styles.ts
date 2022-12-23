@@ -1,10 +1,10 @@
 import { I18nManager, StyleSheet } from 'react-native'
 
-import { PAGE_HORIZONTAL_PADDING, RW, font } from '@/theme/utils'
+import { PAGE_HORIZONTAL_PADDING, RW, RH, font } from '@/theme/utils'
 import {
   BLACK,
   WHITE,
-  SIGNUP_BG_COLOR,
+  PRIMARY_BG_COLOR,
   TEXT_INPUT_FONT_COLOR,
   DASHBOARD_SHADOW_COLOR,
   STEP_INACTIVE_BG_COLOR,
@@ -12,8 +12,11 @@ import {
 
 export default StyleSheet.create({
   container: {
+    backgroundColor: PRIMARY_BG_COLOR,
+  },
+  scrollContainer: {
     height: '100%',
-    backgroundColor: WHITE,
+    backgroundColor: 'transparent',
   },
   contentContainerStyle: {
     alignContent: 'center',
@@ -23,7 +26,7 @@ export default StyleSheet.create({
     ...(I18nManager.isRTL ? { left: RW(-90) } : { right: RW(-90) }),
     width: RW(350),
     height: RW(140),
-    zIndex: 1,
+    zIndex: 2,
   },
   iconWrapper: {
     alignItems: 'center',
@@ -48,12 +51,13 @@ export default StyleSheet.create({
   },
   save: {
     width: '100%',
-    height: RW(245),
+    height: RH(245),
     backgroundColor: WHITE,
     borderRadius: RW(15),
+    marginTop: RH(-85),
     shadowColor: DASHBOARD_SHADOW_COLOR,
     shadowOffset: {
-      width: RW(17),
+      width: 0,
       height: RW(17),
     },
     shadowOpacity: 0.08,
@@ -61,12 +65,12 @@ export default StyleSheet.create({
     elevation: 5,
   },
   saveParent: {
-    width: '100%',
-    marginTop: RW(250),
-    position: 'absolute',
     zIndex: 1,
+    width: '100%',
+    height: 0,
     alignItems: 'center',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    backgroundColor: WHITE,
   },
   saveTitle: {
     ...font('rw.regular', 18, BLACK, 28),
@@ -96,8 +100,8 @@ export default StyleSheet.create({
   },
   header: {
     justifyContent: 'center',
-    height: RW(347),
-    backgroundColor: SIGNUP_BG_COLOR,
+    height: RW(280),
+    borderColor: 'red',
     padding: PAGE_HORIZONTAL_PADDING,
   },
   headerGreetings: {
@@ -107,11 +111,12 @@ export default StyleSheet.create({
     ...font('rw.semibold', 20, WHITE, 35),
   },
   contentContainer: {
-    padding: PAGE_HORIZONTAL_PADDING,
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingTop: RW(190),
     paddingBottom: RW(60),
+    backgroundColor: WHITE,
   },
   contentIconContainer: {
-    marginTop: RW(184),
     justifyContent: 'space-between',
   },
   contentDescriptionContainer: {

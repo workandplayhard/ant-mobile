@@ -12,6 +12,6 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    ...font('bold', 18, 'black', 28),
+    ...font('rw.bold', 18, 'black', 28),
   },
 })

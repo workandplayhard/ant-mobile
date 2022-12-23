@@ -12,10 +12,10 @@
     "celluarCompany": "Celluar Comapny",
     "creditCardNumber": "Credit Card Number",
     "signUp": "Sign Up",
-    "menu": "Menu",
-    "settings": "Settings",
-    "home": "Home",
-    "myAccount": "My Account",
+    "menuTab": "Menu",
+    "settingsTab": "Settings",
+    "homeTab": "Home",
+    "myAccountTab": "My Account",
     "next": "Next",
     "start": "Start",
     "saveTitle": "Until this day you have saved:",
@@ -25,5 +25,6 @@
     "signatureStatus": "I have read and understand the terms of use",
     "termUse": "Term of Use",
     "termUseTitle": "Before we start the progress",
+    "greetings": "Hey {{name}}! 👋"
   }
 }

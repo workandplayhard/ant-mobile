@@ -10,7 +10,7 @@ export default StyleSheet.create({
     paddingVertical: RH(68),
     width: SCREEN_WIDTH,
     alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row-reverse',
+    flexDirection: 'column',
+    height: '100%',
   },
 })
