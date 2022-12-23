@@ -48,7 +48,7 @@ export const Slider: React.FC<Props> = ({
           activeOpacity={onItemPress ? 0.75 : 1}
           style={[styles.imageContainer, { height, width }]}
         >
-          <ImageView style={{ height, width }} />
+          <ImageView style={{ height, width, borderRadius: RW(12) }} />
         </TouchableOpacity>,
       ]
     }
@@ -60,7 +60,7 @@ export const Slider: React.FC<Props> = ({
         activeOpacity={onItemPress ? 0.75 : 1}
         style={[styles.imageContainer, { height, width }]}
       >
-        <ImageView style={{ height, width }} url={url} />
+        <ImageView style={{ height, width, borderRadius: RW(12) }} url={url} />
       </TouchableOpacity>
     ))
   }, [urls, height, width, onItemPress])

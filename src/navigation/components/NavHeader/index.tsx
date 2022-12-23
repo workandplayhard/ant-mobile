@@ -1,9 +1,9 @@
 import React from 'react'
+import { View } from 'react-native'
 
 import { Col, Icon, ImageView, Row, TextField } from '@/components'
 
 import styles from './styles'
-import { View } from 'react-native'
 
 interface IUser {
   url?: string
