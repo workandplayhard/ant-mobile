@@ -33,7 +33,7 @@ const PaymentProcessOverview = () => {
       <NavHeader hasBackButton />
       <Gap gap={17} />
       <PageTitle
-        title={'We are now starting the process!'}
+        title={t('startingProcess')}
         titleAlign="center"
         subTitle={mockData.subTitleExample}
         subTitleAlign="center"
@@ -54,10 +54,7 @@ const PaymentProcessOverview = () => {
         >
           <Col style={[styles.wrapper]}>
             <Gap gap={20} />
-            <TextField
-              text={'Lorem Ipsum is simply dummy text of the printing'}
-              style={styles.modalTitle}
-            />
+            <TextField text={mockData.contentTitleExample} style={styles.modalTitle} />
 
             <Gap gap={20} />
             <ScrollContainer style={styles.scrollContainerInitial}>

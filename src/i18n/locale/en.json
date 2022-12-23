@@ -32,6 +32,7 @@
     "showCVV": "Show CVV",
     "moneySpent": "Money Spent",
     "lastMonth": "Last month",
-    "thisMonth": "This month"
+    "thisMonth": "This month",
+    "startingProcess": "We are now starting the process!"
   }
 }
