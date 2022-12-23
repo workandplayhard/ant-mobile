@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
+import { RouteParamList } from '@/navigation'
 import { Col, Icon, ImageView, Row, TextField } from '@/components'
+import { RW } from '@/theme'
 
 import styles from './styles'
 
@@ -24,6 +28,15 @@ export const NavHeader: React.FC<INavHeader> = ({
   hasNotification,
   onBack,
 }) => {
+  const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const _onBack = useCallback(() => {
+    if (onBack) {
+      onBack()
+    } else if (navigation.canGoBack()) {
+      navigation.goBack()
+    }
+  }, [navigation, onBack])
+
   return (
     <Row
       style={[
@@ -44,8 +57,12 @@ export const NavHeader: React.FC<INavHeader> = ({
           </Col>
         </View>
       )}
-      {!!hasBackButton && <Icon name="arrowPrevIcon" onPress={onBack} />}
-      {!!hasNotification && <Icon name="notificationIcon" badgeColor="red" />}
+      {!!hasBackButton && (
+        <View style={styles.iconContainer}>
+          <Icon name="arrowPrevIcon" size={RW(24)} onPress={_onBack} />
+        </View>
+      )}
+      {!!hasNotification && <Icon name="notificationActive" size={RW(24)} />}
     </Row>
   )
 }

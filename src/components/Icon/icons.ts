@@ -33,6 +33,7 @@ import toggleDisabledIcon from '@/assets/icons/ic_toggle_disabled.svg'
 import copyCardNumberIcon from '@/assets/icons/ic_copy_card_number.svg'
 import walletCreditCardIcon from '@/assets/icons/ic_wallet_credit_card.svg'
 import handsHoldingCircleIcon from '@/assets/icons/ic_hands_holding_circle.svg'
+import notificationActive from '@/assets/icons/ic_notification_active.svg'
 
 export default {
   tvIcon,
@@ -70,4 +71,5 @@ export default {
   toggleDisabledIcon,
   walletCreditCardIcon,
   handsHoldingCircleIcon,
+  notificationActive,
 }

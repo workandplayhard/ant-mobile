@@ -4,11 +4,10 @@ import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { NavScreens, RouteParamList } from '@/navigation'
-import { Button, CheckBox, Col, Container, Gap, PageTitle, Row, TextField } from '@/components'
+import { Button, CheckBox, Col, Gap, PageTitle, Row, TextField } from '@/components'
 
-import HeaderImage from '@/assets/images/img_signup_header.svg'
-import { RW } from '@/theme'
 import { t } from '@/i18n'
+import WrapperWithBackground from '../shared/wrapperWithBackground'
 
 import mockData from './mockData.json'
 
@@ -19,8 +18,7 @@ const Pricing: React.FC = () => {
   const [selected, setSelected] = React.useState<number | null>(null)
 
   return (
-    <Container>
-      <HeaderImage style={styles.headerImage} width={RW(350)} height={RW(140)} />
+    <WrapperWithBackground>
       <View style={styles.container}>
         <Gap horizontal={false} gap={130} />
         <PageTitle
@@ -59,7 +57,7 @@ const Pricing: React.FC = () => {
           <Gap horizontal={false} gap={130} />
         </Col>
       </View>
-    </Container>
+    </WrapperWithBackground>
   )
 }
 
