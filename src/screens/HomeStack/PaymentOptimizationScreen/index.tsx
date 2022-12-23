@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import { Button, Col, DateTime, Gap, Icon, Row, ScrollContainer, TextField } from '@/components'
 import { DASHBOARD_ICON_COLORS, RW } from '@/theme'
@@ -13,6 +14,8 @@ import mockData from './mockData.json'
 import styles from './styles'
 
 const PaymentOptimizationScreen: React.FC = () => {
+  const navigation = useNavigation()
+
   return (
     <ScrollContainer style={styles.container} contentContainerStyle={styles.contentContainerStyle}>
       <HeaderImage style={styles.headerImage} width={RW(350)} height={RW(140)} />
@@ -78,7 +81,12 @@ const PaymentOptimizationScreen: React.FC = () => {
             style={styles.contentDescriptionContext}
           />
         </Row>
-        <Button variant="primary" text={t('start')} style={styles.contentDescriptionBottom} />
+        <Button
+          variant="primary"
+          text={t('start')}
+          style={styles.contentDescriptionBottom}
+          onPress={() => navigation.navigate('Pricing' as never)}
+        />
       </Col>
     </ScrollContainer>
   )

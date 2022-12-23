@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 import {
   Button,
@@ -22,6 +23,7 @@ import styles from './styles'
 
 const Pricing: React.FC = () => {
   const [selected, setSelected] = React.useState<number | null>(null)
+  const navigation = useNavigation()
 
   return (
     <Container>
@@ -54,7 +56,12 @@ const Pricing: React.FC = () => {
           ))}
           <Gap horizontal={false} gap={40} />
 
-          <Button variant="primary" disabled={!selected} text={t('next')} />
+          <Button
+            variant="primary"
+            disabled={!selected}
+            text={t('next')}
+            onPress={() => navigation.navigate('TermsOfUse' as never)}
+          />
 
           <Gap horizontal={false} gap={130} />
         </ScrollContainer>

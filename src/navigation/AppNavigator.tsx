@@ -28,6 +28,10 @@ import { getIconName } from '@/utils'
 import { NAV_HEADER_OPTION } from '@/constants'
 import { NAV_SCREENS } from './constants'
 
+import PaymentOptimizationScreen from '@/screens/HomeStack/PaymentOptimizationScreen'
+import Pricing from '@/screens/HomeStack/Pricing'
+import TermsOfUse from '@/screens/HomeStack/TermsOfUse'
+
 import styles from './styles'
 
 const AppStack = createStackNavigator()
@@ -104,6 +108,8 @@ const AppNavigator = () => {
   return (
     <AppStack.Navigator initialRouteName="TabNavigator" screenOptions={NAV_HEADER_OPTION}>
       <AppStack.Screen name="TabNavigator" component={TabNavigator} />
+      <AppStack.Screen name="Pricing" component={Pricing} />
+      <AppStack.Screen name="TermsOfUse" component={TermsOfUse} />
     </AppStack.Navigator>
   )
 }
