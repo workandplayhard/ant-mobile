@@ -15,7 +15,7 @@ import { SCREEN_HEIGHT } from '@/constants'
 export const modalInitialHeight = RH(550)
 
 export default StyleSheet.create({
-  container: {
+  modalizeWrapper: {
     paddingHorizontal: RW(25),
   },
   modal: {

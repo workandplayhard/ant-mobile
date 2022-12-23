@@ -25,6 +25,7 @@ export const NavScreens = {
   },
   home: {
     screenA: 'homeStack:screenA',
+    home: 'homeStack:home',
     pricing: 'homeStack:pricing',
     paymentOptimization: 'homeStack:paymentOptimization',
     termsOfUse: 'homeStack:termsOfUse',
