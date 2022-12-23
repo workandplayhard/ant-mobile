@@ -41,31 +41,33 @@ const Home: React.FC = () => {
       </View>
 
       <Gap horizontal={false} gap={18} />
-      <Row style={styles.spaceBetween}>
-        <Button
-          variant="default"
-          text={t('copyCardNumber')}
-          iconName="copyCardNumberIcon"
-          wrapperStyle={styles.cardNumberButton}
-          buttonStyle={styles.button}
-          textStyle={styles.cardNumberText}
-        />
+      <Row style={styles.buttonRow}>
+        <View style={styles.cardNumber}>
+          <Button
+            variant="default"
+            text={t('copyCardNumber')}
+            iconName="copyCardNumberIcon"
+            textStyle={styles.cardNumberText}
+            buttonStyle={styles.buttonHeight}
+          />
+        </View>
 
-        <Button
-          variant="default"
-          text={t('showCVV')}
-          iconName="showCVVIcon"
-          wrapperStyle={styles.showCVVButton}
-          buttonStyle={styles.button}
-          textStyle={styles.showCVVText}
-        />
+        <View style={styles.showCVV}>
+          <Button
+            variant="default"
+            text={t('showCVV')}
+            iconName="showCVVIcon"
+            textStyle={styles.showCVVText}
+            buttonStyle={styles.buttonHeight}
+          />
+        </View>
       </Row>
 
       <Gap horizontal={false} gap={40} />
       <TextField text={t('moneySpent')} style={styles.moneySpentText} />
 
       <Gap horizontal={false} gap={30} />
-      <Row>
+      <Row style={styles.progressRow}>
         <CircularProgress maxValue={1000} value={208} valueStr={t('currency', { value: 208 })} />
 
         <Gap horizontal gap={50} />

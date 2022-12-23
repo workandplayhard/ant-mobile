@@ -33,7 +33,7 @@ const TermsOfUse = () => {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <View style={styles.wrapper}>
       <NavHeader hasBackButton />
       <Gap gap={17} />
       <PageTitle

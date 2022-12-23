@@ -108,9 +108,6 @@ const AppNavigator = () => {
   return (
     <AppStack.Navigator initialRouteName="TabNavigator" screenOptions={NAV_HEADER_OPTION}>
       <AppStack.Screen name="TabNavigator" component={TabNavigator} />
-      <AppStack.Screen name="PaymentOptimizationScreen" component={PaymentOptimizationScreen} />
-      <AppStack.Screen name="Pricing" component={Pricing} />
-      <AppStack.Screen name="TermsOfUse" component={TermsOfUse} />
     </AppStack.Navigator>
   )
 }

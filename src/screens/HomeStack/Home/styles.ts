@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
 import { PAGE_HORIZONTAL_PADDING, RW, font } from '@/theme/utils'
-import { SCREEN_WIDTH } from '@/constants'
 import { PRIMARY_BG_COLOR, WHITE } from '@/theme'
 
 export default StyleSheet.create({
@@ -9,23 +8,28 @@ export default StyleSheet.create({
     backgroundColor: PRIMARY_BG_COLOR,
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
     paddingVertical: RW(40),
-    width: SCREEN_WIDTH,
+    width: '100%',
     flexDirection: 'column',
     height: '100%',
   },
-  spaceBetween: {
+  buttonRow: {
     justifyContent: 'space-between',
-  },
-  cardNumberButton: {
-    width: RW(189),
+    display: 'flex',
+    width: '100%',
     height: RW(49),
+  },
+  buttonHeight: {
+    height: RW(49),
+  },
+  cardNumber: {
+    flexShrink: 4,
+    paddingRight: RW(10),
   },
   cardNumberText: {
     ...font('rw.regular', 12, WHITE, 14),
   },
-  showCVVButton: {
-    width: RW(126),
-    height: RW(49),
+  showCVV: {
+    flexShrink: 6,
   },
   showCVVText: {
     ...font('rw.regular', 12, WHITE, 14),
@@ -36,5 +40,8 @@ export default StyleSheet.create({
   button: {
     width: '100%',
     height: '100%',
+  },
+  progressRow: {
+    justifyContent: 'center',
   },
 })
