@@ -3,12 +3,13 @@ import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
 import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { Button, Gap, PageTitle, ScrollContainer, Signature, TextField } from '@/components'
 import { t } from '@/i18n'
-import { WHITE } from '@/theme/colors'
+import { RW, WHITE } from '@/theme'
 import { MODALIZE_INITIAL_POS, SCREEN_HEIGHT } from '@/constants'
-import { RW } from '@/theme/utils'
+import { NavScreens, RouteParamList } from '@/navigation'
 
 import mockData from './mockData.json'
 
@@ -16,7 +17,7 @@ import styles from './styles'
 import NavHeader from '@/navigation/components/NavHeader'
 
 const TermsOfUse = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const modalizeRef = useRef<Modalize>(null)
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [sign, setSign] = useState<string | undefined>()
@@ -79,7 +80,7 @@ const TermsOfUse = () => {
               disabled={!sign}
               text={t('next')}
               onPress={() => {
-                navigation.navigate('Pricing' as never)
+                navigation.navigate(NavScreens.home.pricing)
               }}
             />
           </View>

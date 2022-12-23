@@ -1,17 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
-import {
-  Button,
-  CheckBox,
-  Container,
-  Gap,
-  PageTitle,
-  Row,
-  ScrollContainer,
-  TextField,
-} from '@/components'
+import { NavScreens, RouteParamList } from '@/navigation'
+import { Button, CheckBox, Col, Container, Gap, PageTitle, Row, TextField } from '@/components'
 
 import HeaderImage from '@/assets/images/img_signup_header.svg'
 import { RW } from '@/theme'
@@ -22,8 +15,8 @@ import mockData from './mockData.json'
 import styles from './styles'
 
 const Pricing: React.FC = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const [selected, setSelected] = React.useState<number | null>(null)
-  const navigation = useNavigation()
 
   return (
     <Container>
@@ -39,7 +32,7 @@ const Pricing: React.FC = () => {
         />
         <Gap horizontal={false} gap={40} />
 
-        <ScrollContainer>
+        <Col>
           {mockData.plans.map((plan) => (
             <React.Fragment key={plan.id}>
               <View style={styles.plan}>
@@ -60,11 +53,11 @@ const Pricing: React.FC = () => {
             variant="primary"
             disabled={!selected}
             text={t('next')}
-            onPress={() => navigation.navigate('TermsOfUse' as never)}
+            onPress={() => navigation.navigate(NavScreens.home.termsOfUse)}
           />
 
           <Gap horizontal={false} gap={130} />
-        </ScrollContainer>
+        </Col>
       </View>
     </Container>
   )

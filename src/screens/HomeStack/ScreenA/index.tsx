@@ -1,10 +1,17 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import NavHeader from '@/navigation/components/NavHeader'
+import { Button, Gap } from '@/components'
+import { NavScreens, RouteParamList } from '@/navigation'
+import { t } from '@/i18n'
 import styles from './styles'
 
 const HomeScreenA: React.FC = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+
   return (
     <View style={styles.container}>
       <NavHeader
@@ -15,6 +22,13 @@ const HomeScreenA: React.FC = () => {
         }}
         hasNotification={true}
         // hasBackButton={true}
+      />
+      <Gap gap={100} />
+      <Button
+        variant="primary"
+        size="xs"
+        text={t('next')}
+        onPress={() => navigation.navigate(NavScreens.home.paymentOptimization)}
       />
     </View>
   )

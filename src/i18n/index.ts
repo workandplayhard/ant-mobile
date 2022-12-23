@@ -1,4 +1,4 @@
-import i18n, { t as _t, TFuncKey } from 'i18next'
+import i18n, { t as _t, TOptions, StringMap } from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
 import { APP_DEFAULT_LANG } from '@/constants'
@@ -28,8 +28,7 @@ i18n
     },
   })
 
-export const t = (key: TFuncKey, withKeys?: Record<string, any>) => {
-  return _t(key, withKeys) as string
-}
+export const t = (key: string, options?: TOptions<StringMap> & { defaultValue?: string }) =>
+  _t(key, { ...(options || {}), defaultValue: options?.defaultValue || '' })
 
 export default i18n

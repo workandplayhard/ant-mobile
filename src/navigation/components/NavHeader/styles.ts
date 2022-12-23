@@ -4,6 +4,9 @@ import { RW, RH, font } from '@/theme/utils'
 import { PROFILE_GREETINGS_COLOR, WHITE } from '@/theme'
 
 export default StyleSheet.create({
+  container: {
+    width: '100%',
+  },
   image: {
     width: RW(52),
     height: 52,

@@ -24,6 +24,7 @@ import {
   Signature,
   Stepper,
   PageTitle,
+  CircularProgress,
 } from '@/components'
 import { RW, RH, font } from '@/theme'
 
@@ -158,6 +159,21 @@ const HomeScreenA: React.FC = () => {
               </Row>
             )}
           </Dropdown>
+          <Gap gap={20} />
+          <Row>
+            <CircularProgress
+              maxValue={1000}
+              value={208}
+              valueStr={t('currency', { value: 208 })}
+            />
+            <Gap horizontal gap={50} />
+            <CircularProgress
+              isCurrent
+              maxValue={1000}
+              value={878}
+              valueStr={t('currency', { value: 878 })}
+            />
+          </Row>
           <Gap horizontal={false} gap={20} />
           <TextInput value={text} placeholder="Your name" onChange={setText} />
           <Gap horizontal={false} gap={20} />
@@ -174,16 +190,6 @@ const HomeScreenA: React.FC = () => {
           />
         </Col>
         <Gap horizontal={false} gap={20} />
-
-        <Slider
-          width={329}
-          urls={[
-            'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-            'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-            'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-          ]}
-        />
-
         <Stepper canJumpNext steps={steps} currentStep={currentStep} onChangeStep={onChangeStep} />
         <Gap horizontal={false} gap={20} />
       </ScrollContainer>
@@ -208,39 +214,10 @@ const HomeScreenA: React.FC = () => {
           >
             <OTPField cellCount={6} value={code} setValue={setCode} />
             <Signature ref={signatureRef} onSignComplete={(d: string) => setSign(d)} />
-            <Button
-              variant="pure"
-              size="xs"
-              text="Get Sign"
-              textStyle={{ color: 'red' }}
-              onPress={() => {
-                signatureRef.current?.getSignature()
-              }}
-            />
             <Button variant="primary" size="xs" text="Close" onPress={closeModal} />
           </View>
         </Modal>
       )}
-      <Gap horizontal={false} gap={20} />
-
-      <Slider
-        width={329}
-        urls={[
-          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
-        ]}
-      />
-
-      <Stepper canJumpNext steps={steps} currentStep={currentStep} onChangeStep={onChangeStep} />
-      <Gap horizontal={false} gap={20} />
-      <PageTitle
-        title="Before we start process"
-        subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        titleAlign="center"
-        subTitleAlign="center"
-        mode="dark"
-      />
     </View>
   )
 }

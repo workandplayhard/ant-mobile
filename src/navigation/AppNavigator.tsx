@@ -9,7 +9,7 @@ import { t } from '@/i18n'
 import MenuStack from '@/screens/MenuStack'
 import SettingsStack from '@/screens/SettingsStack'
 import HomeStack from '@/screens/HomeStack'
-import MyAccountStack from '@/screens/MyAccountStack'
+import MyAccountStack from '@/screens/AccountStack'
 import { Icon, TextField } from '@/components'
 import IconNames from '@/components/Icon/icons'
 import {
@@ -26,7 +26,7 @@ import {
 } from '@/theme'
 import { getIconName } from '@/utils'
 import { NAV_HEADER_OPTION } from '@/constants'
-import { NAV_SCREENS } from './constants'
+import { NavTabs } from './constants'
 
 import PaymentOptimizationScreen from '@/screens/HomeStack/PaymentOptimizationScreen'
 import Pricing from '@/screens/HomeStack/Pricing'
@@ -49,8 +49,8 @@ const TabNavigator = () => {
               <View
                 style={[
                   styles.container,
-                  route.name === NAV_SCREENS.stacks.menuStack && styles.firstItem,
-                  route.name === NAV_SCREENS.stacks.accountStack && styles.lastItem,
+                  route.name === NavTabs.menuTab && styles.firstItem,
+                  route.name === NavTabs.accountTab && styles.lastItem,
                 ]}
               >
                 {focused && (
@@ -95,12 +95,12 @@ const TabNavigator = () => {
           paddingBottom: 0,
         },
       })}
-      initialRouteName="StackA"
+      initialRouteName={NavTabs.settingsTab}
     >
-      <Tab.Screen name={NAV_SCREENS.stacks.menuStack} component={MenuStack} />
-      <Tab.Screen name={NAV_SCREENS.stacks.settingsStack} component={SettingsStack} />
-      <Tab.Screen name={NAV_SCREENS.stacks.homeStack} component={HomeStack} />
-      <Tab.Screen name={NAV_SCREENS.stacks.accountStack} component={MyAccountStack} />
+      <Tab.Screen name={NavTabs.menuTab} component={MenuStack} />
+      <Tab.Screen name={NavTabs.settingsTab} component={SettingsStack} />
+      <Tab.Screen name={NavTabs.homeTab} component={HomeStack} />
+      <Tab.Screen name={NavTabs.accountTab} component={MyAccountStack} />
     </Tab.Navigator>
   )
 }
