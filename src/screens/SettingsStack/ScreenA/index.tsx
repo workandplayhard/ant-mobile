@@ -228,6 +228,26 @@ const HomeScreenA: React.FC = () => {
           </View>
         </Modal>
       )}
+      <Gap horizontal={false} gap={20} />
+
+      <Slider
+        width={329}
+        urls={[
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+          'https://woz-u.com/wp-content/uploads/2020/02/What-Do-Software-Engineers-Do-WOZ-1-min.png',
+        ]}
+      />
+
+      <Stepper canJumpNext steps={steps} currentStep={currentStep} onChangeStep={onChangeStep} />
+      <Gap horizontal={false} gap={20} />
+      <PageTitle
+        title="Before we start process"
+        subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        titleAlign="center"
+        subTitleAlign="center"
+        mode="dark"
+      />
     </View>
   )
 }
