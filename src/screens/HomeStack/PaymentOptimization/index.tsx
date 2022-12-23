@@ -94,7 +94,9 @@ const PaymentOptimization: React.FC = () => {
             variant="primary"
             text={t('start')}
             style={styles.contentDescriptionBottom}
-            onPress={() => navigation.navigate(NavScreens.home.pricing)}
+            onPress={() => {
+              navigation.navigate(NavScreens.home.pricing)
+            }}
           />
         </Col>
       </ScrollContainer>

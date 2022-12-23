@@ -7,5 +7,7 @@ export interface RouteParamList extends Record<keyof typeof NavScreens, any> {
   'menuStack:screenA': undefined
   'homeStack:pricing': undefined
   'homeStack:paymentOptimization': undefined
+  'homeStack:termsOfUse': undefined
+  'homeStack:paymentProcessOverview': undefined
   [x: string]: any
 }

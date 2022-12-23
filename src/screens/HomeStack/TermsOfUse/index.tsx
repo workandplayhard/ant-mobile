@@ -21,7 +21,11 @@ const TermsOfUse = () => {
   const modalizeRef = useRef<Modalize>(null)
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [sign, setSign] = useState<string | undefined>()
-  const [pos, setPos] = useState<'top' | 'initial'>('initial')
+  const [pos, setPos] = useState<'top' | 'initial' | ''>('initial')
+
+  const onCancelModal = () => {
+    modalizeRef.current?.close()
+  }
 
   useEffect(() => {
     modalizeRef.current?.open()
@@ -83,7 +87,8 @@ const TermsOfUse = () => {
               disabled={!sign}
               text={t('next')}
               onPress={() => {
-                navigation.navigate(NavScreens.home.pricing)
+                onCancelModal()
+                navigation.navigate(NavScreens.home.paymentProgressOverview)
               }}
             />
           </Col>
