@@ -25,6 +25,7 @@ import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
+import nextIndicatorIcon from '@/assets/icons/ic_next_indicator.svg'
 import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
 import notificationIcon from '@/assets/icons/ic_notification.svg'
 import toggleEnabledIcon from '@/assets/icons/ic_toggle_enabled.svg'
@@ -67,6 +68,7 @@ export default {
   notificationIcon,
   tvDefaultPlanIcon,
   toggleEnabledIcon,
+  nextIndicatorIcon,
   copyCardNumberIcon,
   toggleDisabledIcon,
   walletCreditCardIcon,

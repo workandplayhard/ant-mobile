@@ -29,6 +29,7 @@ export const NavScreens = {
     pricing: 'homeStack:pricing',
     paymentOptimization: 'homeStack:paymentOptimization',
     termsOfUse: 'homeStack:termsOfUse',
+    paymentProgressOverview: 'homeStack:paymentProgressOverview',
   },
   account: {
     screenA: 'accountStack:screenA',
