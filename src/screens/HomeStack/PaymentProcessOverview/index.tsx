@@ -2,12 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useIsFocused } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { Button, Col, Gap, Icon, PageTitle, Row, ScrollContainer, TextField } from '@/components'
 import { t } from '@/i18n'
 import { TRANSPARENT } from '@/theme'
+import { SCREEN_HEIGHT } from '@/constants'
 import NavHeader from '@/navigation/components/NavHeader'
 import { NavScreens, RouteParamList } from '@/navigation'
 
@@ -17,23 +18,25 @@ import styles, { modalInitialHeight } from './styles'
 
 const PaymentProcessOverview = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const isFocused = useIsFocused()
   const modalizeRef = useRef<Modalize>(null)
+  const [pos, setPos] = useState<'top' | 'initial'>('initial')
 
   const onCancelModal = () => {
     modalizeRef.current?.close()
   }
 
   useEffect(() => {
-    modalizeRef.current?.open()
-
-    return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (isFocused) {
+      modalizeRef.current?.open()
+    } else {
       modalizeRef.current?.close()
+      setPos('initial')
     }
-  }, [])
+  }, [isFocused])
 
   return (
-    <View style={styles.wrapper}>
+    <View style={styles.modalizeWrapper}>
       <NavHeader hasBackButton />
       <Gap gap={17} />
       <PageTitle
@@ -50,18 +53,22 @@ const PaymentProcessOverview = () => {
           withHandle
           handlePosition="inside"
           modalStyle={styles.modal}
-          handleStyle={[styles.handle]}
+          handleStyle={[styles.handle, pos !== 'initial' && styles.handleLg]}
           closeOnOverlayTap={false}
           overlayStyle={{ backgroundColor: TRANSPARENT }}
-          childrenStyle={styles.modalChildren}
-          modalHeight={modalInitialHeight}
+          childrenStyle={[styles.modalChildren, pos !== 'initial' && styles.modalChildrenLg]}
+          modalHeight={SCREEN_HEIGHT}
+          onClosed={() => setPos('initial')}
+          onPositionChange={(position) => {
+            setPos(position)
+          }}
         >
-          <Col style={[styles.wrapper]}>
+          <Col style={[styles.wrapper, pos !== 'initial' && styles.wrapperLg]}>
             <Gap gap={20} />
             <TextField text={mockData.contentTitleExample} style={styles.modalTitle} />
 
             <Gap gap={20} />
-            <ScrollContainer style={styles.scrollContainerInitial}>
+            <ScrollContainer style={[pos === 'initial' && styles.scrollContainerInitial]}>
               <TextField text={mockData.example} style={styles.progressOverview} />
 
               <Gap gap={31} />

@@ -4,7 +4,7 @@ import { Text, View, TextInput } from 'react-native'
 import { Button, ScrollContainer } from '@/components'
 import WrapperWithBackground from '@/screens/HomeStack/shared/wrapperWithBackground'
 import { t } from '@/i18n'
-import { PAGE_HORIZONTAL_PADDING, TEXT_DARK_PLACEHOLDER_COLOR } from '@/theme'
+import { PAGE_HORIZONTAL_PADDING } from '@/theme'
 
 import styles from './styles'
 
@@ -27,7 +27,6 @@ const SignUpScreen: React.FC = () => {
             keyboardType="numeric"
             style={[styles.textField]}
             placeholder={t('idNumber')}
-            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
             value={iDNumber}
             onChangeText={setIDNumber}
           />
@@ -36,7 +35,6 @@ const SignUpScreen: React.FC = () => {
             keyboardType="numeric"
             style={[styles.textField]}
             placeholder={t('phoneNumber')}
-            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
             value={phoneNumber}
             onChangeText={setPhoneNumber}
           />
@@ -44,7 +42,6 @@ const SignUpScreen: React.FC = () => {
           <TextInput
             style={[styles.textField]}
             placeholder={t('celluarCompany')}
-            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
             value={celluarCompany}
             onChangeText={setCellularCompany}
           />
@@ -53,7 +50,6 @@ const SignUpScreen: React.FC = () => {
             keyboardType="numeric"
             style={[styles.textField]}
             placeholder={t('creditCardNumber')}
-            placeholderTextColor={TEXT_DARK_PLACEHOLDER_COLOR}
             value={creditCardNumber}
             onChangeText={setCreditCardNumber}
           />

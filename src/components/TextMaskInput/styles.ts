@@ -1,13 +1,15 @@
-import { I18nManager, StyleSheet } from 'react-native'
+import { StyleSheet, I18nManager } from 'react-native'
 
-import { font, RW, RH } from '@/theme/utils'
 import {
-  TEXT_INPUT_DARK_BG_COLOR,
+  RW,
+  RH,
+  font,
   TEXT_INPUT_LIGHT_BG_COLOR,
-  TEXT_INPUT_LIGHT_COLOR,
+  TEXT_INPUT_DARK_BG_COLOR,
   TEXT_INPUT_DARK_COLOR,
-  TEXT_LABEL_LIGHT_COLOR,
+  TEXT_INPUT_LIGHT_COLOR,
   TEXT_LABEL_DARK_COLOR,
+  TEXT_LABEL_LIGHT_COLOR,
   DARK_RED,
 } from '@/theme'
 

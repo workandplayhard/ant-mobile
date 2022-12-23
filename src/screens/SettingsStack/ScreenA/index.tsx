@@ -19,6 +19,7 @@ import {
   ImageView,
   TextField,
   TextInput,
+  TextMaskInput,
   Slider,
   OTPField,
   Signature,
@@ -36,6 +37,7 @@ const HomeScreenA: React.FC = () => {
   const [showModal, setShowModal] = useState<number>(0)
   const [checked, setChecked] = useState<boolean>(false)
   const [text, setText] = useState<string>('')
+  const [creditCard, setCreditCard] = useState<string>('')
   const [code, setCode] = useState<string>('')
   const [sign, setSign] = useState<string | undefined>()
   const [countries, setCountries] = useState<IOption<string>[]>([
@@ -176,6 +178,17 @@ const HomeScreenA: React.FC = () => {
           </Row>
           <Gap horizontal={false} gap={20} />
           <TextInput value={text} placeholder="Your name" onChange={setText} />
+          <Gap gap={20} />
+          <TextMaskInput
+            // eslint-disable-next-line prettier/prettier
+            mask={[/\d/, /\d/, /\d/, /\d/, " ", [/\d/], [/\d/], [/\d/], [/\d/], " ", [/\d/], [/\d/], [/\d/], [/\d/], " ", /\d/, /\d/, /\d/, /\d/]}
+            value={creditCard}
+            label="Credit card"
+            obfuscationCharacter="X"
+            placeholder="XXXX XXXX XXXX XXXX"
+            mode="dark"
+            onChange={(v: string) => setCreditCard(v)}
+          />
           <Gap horizontal={false} gap={20} />
           <Button variant="default" size="xs" text="Open" onPress={() => openModal(1)} />
           <Gap horizontal={false} gap={20} />
