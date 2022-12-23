@@ -1,10 +1,10 @@
-import React, { ElementRef, useCallback, useRef, useState } from 'react'
+import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
 import { useNavigation } from '@react-navigation/native'
 
-import { Button, Gap, ScrollContainer, Signature, TextField } from '@/components'
+import { Button, Gap, PageTitle, ScrollContainer, Signature, TextField } from '@/components'
 import { t } from '@/i18n'
 import { WHITE } from '@/theme/colors'
 import { MODALIZE_INITIAL_POS, SCREEN_HEIGHT } from '@/constants'
@@ -13,6 +13,7 @@ import { RW } from '@/theme/utils'
 import mockData from './mockData.json'
 
 import styles from './styles'
+import NavHeader from '@/navigation/components/NavHeader'
 
 const TermsOfUse = () => {
   const navigation = useNavigation()
@@ -21,14 +22,23 @@ const TermsOfUse = () => {
   const [sign, setSign] = useState<string | undefined>()
   const [pos, setPos] = useState<string>('initial')
 
-  const onOpen = useCallback(() => {
+  useEffect(() => {
     modalizeRef.current?.open()
-  }, [modalizeRef])
+  }, [])
 
   return (
-    <>
+    <View style={{ padding: 30 }}>
+      <Gap horizontal={false} gap={38} />
+      <NavHeader hasBackButton={true} />
+
+      <Gap horizontal={false} gap={17} />
+      <PageTitle
+        title={t('termUseTitle')}
+        titleAlign="center"
+        subTitle={mockData.subTitleExample}
+        subTitleAlign="center"
+      />
       <Gap horizontal={false} gap={100} />
-      <Button onPressIn={onOpen} />
       <Portal>
         <Modalize
           ref={modalizeRef}
@@ -75,7 +85,7 @@ const TermsOfUse = () => {
           </View>
         </Modalize>
       </Portal>
-    </>
+    </View>
   )
 }
 
