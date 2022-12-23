@@ -22,7 +22,7 @@ interface Props {
   valueStr: number | string
   maxValue: number
   isCurrent?: boolean
-  label: string
+  label?: string
 }
 
 export const CircularProgress: React.FC<Props> = ({
@@ -58,7 +58,7 @@ export const CircularProgress: React.FC<Props> = ({
         }}
         text={valueStr}
       />
-      <TextField text={label} style={styles.label} />
+      {!!label && <TextField text={label} style={styles.label} />}
     </View>
   )
 }

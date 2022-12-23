@@ -28,10 +28,6 @@ import { getIconName } from '@/utils'
 import { NAV_HEADER_OPTION } from '@/constants'
 import { NavTabs } from './constants'
 
-import PaymentOptimizationScreen from '@/screens/HomeStack/PaymentOptimization'
-import Pricing from '@/screens/HomeStack/Pricing'
-import TermsOfUse from '@/screens/HomeStack/TermsOfUse'
-
 import styles from './styles'
 
 const AppStack = createStackNavigator()

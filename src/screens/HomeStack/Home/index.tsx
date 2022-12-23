@@ -75,7 +75,7 @@ const Home: React.FC = () => {
           label={t('lastMonth')}
         />
 
-        <Gap horizontal gap={50} />
+        <Gap horizontal gap={47} />
         <CircularProgress
           isCurrent
           maxValue={1000}
