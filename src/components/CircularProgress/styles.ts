@@ -1,5 +1,5 @@
-import { font, TRANSPARENT } from '@/theme'
 import { StyleSheet } from 'react-native'
+import { font, TRANSPARENT } from '@/theme'
 
 export default StyleSheet.create({
   container: {

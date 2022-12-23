@@ -38,7 +38,7 @@ export const Dropdown = <T,>({
       onBlur={() => setFocused(false)}
       buttonTextAfterSelection={() => buttonText || placeholder || ''}
       defaultButtonText={buttonText || placeholder || ''}
-      buttonStyle={styles.buttonStyle}
+      buttonStyle={{ ...styles.buttonStyle, ...(focused ? styles.buttonFocused : {}) }}
       buttonTextStyle={styles.buttonText}
       dropdownStyle={{ ...styles.dropdownView, ...dropDownStyle }}
       rowStyle={styles.row}

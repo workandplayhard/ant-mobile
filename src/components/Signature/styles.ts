@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-import { RH, TEXT_INPUT_BG_COLOR, TRANSPARENT } from '@/theme'
+import { RH, TEXT_INPUT_DARK_BG_COLOR, TRANSPARENT } from '@/theme'
 
 export default StyleSheet.create({
   container: {
@@ -8,7 +8,7 @@ export default StyleSheet.create({
     height: RH(89),
     borderRadius: RH(20),
     overflow: 'hidden',
-    backgroundColor: TEXT_INPUT_BG_COLOR,
+    backgroundColor: TEXT_INPUT_DARK_BG_COLOR,
   },
   signature: {
     width: '100%',

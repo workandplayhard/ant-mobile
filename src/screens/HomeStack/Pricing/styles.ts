@@ -1,7 +1,7 @@
 import { I18nManager, StyleSheet } from 'react-native'
 
 import { PAGE_HORIZONTAL_PADDING, RW, font } from '@/theme/utils'
-import { WHITE, PRIMARY_BG_COLOR, TEXT_INPUT_BG_COLOR } from '@/theme'
+import { WHITE, PRIMARY_BG_COLOR, ROW_DARK_BG_COLOR } from '@/theme'
 
 export default StyleSheet.create({
   container: {
@@ -19,7 +19,7 @@ export default StyleSheet.create({
   plan: {
     width: '100%',
     height: RW(50),
-    backgroundColor: TEXT_INPUT_BG_COLOR,
+    backgroundColor: ROW_DARK_BG_COLOR,
     borderRadius: RW(10),
   },
   planText: {

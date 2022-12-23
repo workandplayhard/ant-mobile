@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, TextInput as DefaultTextInput, StyleProp, ViewStyle, TextStyle } from 'react-native'
+import { StyleProp, TextStyle, View, ViewStyle } from 'react-native'
+import MaskInput, { Mask } from 'react-native-mask-input'
 
 import { TEXT_INPUT_PLACEHOLDER_DARK_COLOR, TEXT_INPUT_PLACEHOLDER_LIGHT_COLOR } from '@/theme'
 
@@ -7,27 +8,29 @@ import { TextField } from '../TextField'
 import { Gap } from '../Gap'
 import styles from './styles'
 
-interface ITextInput {
+interface ITextMaskInput {
   value?: Maybe<string | number>
+  mask: Mask
   disabled?: boolean
   label?: string
-  error?: string
-  secureTextEntry?: boolean
   placeholder?: string
+  mode?: 'dark' | 'light'
+  obfuscationCharacter?: string
+  error?: string
   containerStyle?: StyleProp<ViewStyle>
   style?: StyleProp<TextStyle>
-  mode?: 'dark' | 'light'
-  onChange(v: string): void
+  onChange(masked: string, unmasked: string): void
 }
 
-export const TextInput: React.FC<ITextInput> = ({
+export const TextMaskInput: React.FC<ITextMaskInput> = ({
   value,
+  label,
+  mask,
   disabled = false,
   placeholder,
-  label,
-  error,
   mode = 'dark',
-  secureTextEntry = false,
+  obfuscationCharacter,
+  error,
   containerStyle = {},
   style = {},
   onChange,
@@ -40,15 +43,16 @@ export const TextInput: React.FC<ITextInput> = ({
           <Gap gap={5} />
         </>
       )}
-      <DefaultTextInput
-        secureTextEntry={secureTextEntry}
+      <MaskInput
+        value={`${value ?? ''}`}
         style={[styles.input, mode === 'dark' && styles.inputDark, style]}
+        onChangeText={onChange}
+        obfuscationCharacter={obfuscationCharacter}
         placeholder={placeholder}
         placeholderTextColor={
           mode === 'dark' ? TEXT_INPUT_PLACEHOLDER_DARK_COLOR : TEXT_INPUT_PLACEHOLDER_LIGHT_COLOR
         }
-        value={`${value ?? ''}`}
-        onChangeText={onChange}
+        mask={mask}
         editable={!disabled}
       />
       {!!error && (

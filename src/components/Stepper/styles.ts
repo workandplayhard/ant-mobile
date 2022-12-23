@@ -7,7 +7,7 @@ import {
   STEP_SHADOW_COLOR,
   font,
   WHITE,
-  TEXT_INPUT_FONT_COLOR,
+  STEPPER_TEXT_COLOR,
   RH,
 } from '@/theme'
 import { SCREEN_WIDTH } from '@/constants'
@@ -48,13 +48,13 @@ export default StyleSheet.create({
     backgroundColor: STEP_ACTIVE_BG_COLOR,
   },
   stepText: {
-    ...font('rw.regular', 16, TEXT_INPUT_FONT_COLOR, 16),
+    ...font('rw.regular', 16, STEPPER_TEXT_COLOR, 16),
   },
   currentStepText: {
     color: WHITE,
   },
   stepLabel: {
-    ...font('rw.regular', 12, TEXT_INPUT_FONT_COLOR, 16),
+    ...font('rw.regular', 12, STEPPER_TEXT_COLOR, 16),
     paddingHorizontal: RW(2),
     width: SCREEN_WIDTH,
   },
