@@ -49,7 +49,6 @@ export default StyleSheet.create({
   },
   progressOverview: {
     ...font('rw.thin', 16, WHITE, 26),
-    textAlign: 'left',
   },
   handle: {
     backgroundColor: WHITE,

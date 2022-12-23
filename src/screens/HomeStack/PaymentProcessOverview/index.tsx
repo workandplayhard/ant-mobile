@@ -19,6 +19,10 @@ const PaymentProcessOverview = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const modalizeRef = useRef<Modalize>(null)
 
+  const onCancelModal = () => {
+    modalizeRef.current?.close()
+  }
+
   useEffect(() => {
     modalizeRef.current?.open()
 
@@ -38,7 +42,7 @@ const PaymentProcessOverview = () => {
         subTitle={mockData.subTitleExample}
         subTitleAlign="center"
       />
-      <Gap horizontal={false} gap={100} />
+      <Gap gap={100} />
       <Portal>
         <Modalize
           ref={modalizeRef}
@@ -76,7 +80,8 @@ const PaymentProcessOverview = () => {
                 size="lg"
                 text={t('next')}
                 onPress={() => {
-                  navigation.navigate(NavScreens.home.termsOfUse)
+                  onCancelModal()
+                  navigation.navigate(NavScreens.home.otherInformationSources)
                 }}
               />
             </ScrollContainer>
