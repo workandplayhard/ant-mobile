@@ -4,22 +4,12 @@ import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { NavScreens, RouteParamList } from '@/navigation'
-import {
-  Container,
-  Button,
-  Col,
-  DateTime,
-  Gap,
-  Icon,
-  Row,
-  ScrollContainer,
-  TextField,
-} from '@/components'
-import { DASHBOARD_ICON_COLORS, RW } from '@/theme'
+import { Button, Col, DateTime, Gap, Icon, Row, ScrollContainer, TextField } from '@/components'
+import { DASHBOARD_ICON_COLORS } from '@/theme'
 
-import HeaderImage from '@/assets/images/img_signup_header.svg'
 import P from '@/assets/images/img_p.svg'
 import { t } from '@/i18n'
+import WrapperWithBackground from '../shared/wrapperWithBackground'
 
 import mockData from './mockData.json'
 
@@ -29,8 +19,7 @@ const PaymentOptimization: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
 
   return (
-    <Container style={styles.container}>
-      <HeaderImage style={styles.headerImage} width={RW(350)} height={RW(140)} />
+    <WrapperWithBackground>
       <ScrollContainer
         style={styles.scrollContainer}
         showScrollBar={false}
@@ -109,7 +98,7 @@ const PaymentOptimization: React.FC = () => {
           />
         </Col>
       </ScrollContainer>
-    </Container>
+    </WrapperWithBackground>
   )
 }
 

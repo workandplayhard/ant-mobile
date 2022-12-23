@@ -5,34 +5,37 @@ import { Portal } from 'react-native-portalize'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
-import { Button, Gap, PageTitle, ScrollContainer, Signature, TextField } from '@/components'
+import { Button, Col, Gap, PageTitle, ScrollContainer, Signature, TextField } from '@/components'
 import { t } from '@/i18n'
-import { RW, WHITE } from '@/theme'
-import { MODALIZE_INITIAL_POS, SCREEN_HEIGHT } from '@/constants'
+import { TRANSPARENT } from '@/theme'
+import { SCREEN_HEIGHT } from '@/constants'
+import NavHeader from '@/navigation/components/NavHeader'
 import { NavScreens, RouteParamList } from '@/navigation'
 
 import mockData from './mockData.json'
 
-import styles from './styles'
-import NavHeader from '@/navigation/components/NavHeader'
+import styles, { modalInitialHeight } from './styles'
 
 const TermsOfUse = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const modalizeRef = useRef<Modalize>(null)
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [sign, setSign] = useState<string | undefined>()
-  const [pos, setPos] = useState<string>('initial')
+  const [pos, setPos] = useState<'top' | 'initial'>('initial')
 
   useEffect(() => {
     modalizeRef.current?.open()
+
+    return () => {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      modalizeRef.current?.close()
+    }
   }, [])
 
   return (
-    <View style={{ padding: 30 }}>
-      <Gap horizontal={false} gap={38} />
-      <NavHeader hasBackButton={true} />
-
-      <Gap horizontal={false} gap={17} />
+    <View style={styles.container}>
+      <NavHeader hasBackButton />
+      <Gap gap={17} />
       <PageTitle
         title={t('termUseTitle')}
         titleAlign="center"
@@ -43,37 +46,37 @@ const TermsOfUse = () => {
       <Portal>
         <Modalize
           ref={modalizeRef}
-          modalStyle={pos === 'initial' ? styles.modal : styles.modalNonBorder}
-          handleStyle={styles.handle}
-          closeOnOverlayTap={true}
-          overlayStyle={{ backgroundColor: 'none' }}
-          childrenStyle={{ backgroundColor: WHITE }}
-          snapPoint={RW(560)}
-          onClosed={() => setSign('')}
+          alwaysOpen={modalInitialHeight}
+          withHandle
+          handlePosition="inside"
+          modalStyle={styles.modal}
+          handleStyle={[styles.handle, pos !== 'initial' && styles.handleLg]}
+          closeOnOverlayTap={false}
+          overlayStyle={{ backgroundColor: TRANSPARENT }}
+          childrenStyle={[styles.modalChildren, pos !== 'initial' && styles.modalChildrenLg]}
+          onClosed={() => setPos('initial')}
           onPositionChange={(position) => {
             setPos(position)
           }}
           modalHeight={SCREEN_HEIGHT}
-          HeaderComponent={(<Gap horizontal={false} gap={40} />) as unknown as React.ReactNode}
         >
-          <View style={styles.modalizeWrapper}>
-            <Gap horizontal={false} gap={20} />
-            <TextField text={t('termUse')} style={styles.modalizeTitle} />
+          <Col style={[styles.wrapper, pos !== 'initial' && styles.wrapperLg]}>
+            <Gap gap={20} />
+            <TextField text={t('termUse')} style={styles.modalTitle} />
 
-            <Gap horizontal={false} gap={20} />
-            <ScrollContainer
-              style={{ maxHeight: pos === MODALIZE_INITIAL_POS ? RW(160) : RW(417) }}
-            >
-              <TextField text={mockData.example} style={styles.modalizeContent} />
+            <Gap gap={20} />
+            <ScrollContainer style={[pos === 'initial' && styles.scrollContainerInitial]}>
+              <TextField text={mockData.example} style={styles.termsOfUse} />
             </ScrollContainer>
 
-            <Gap horizontal={false} gap={30} />
-            <TextField text={t('signatureStatus')} style={styles.modalizeSignature} />
+            <Gap gap={30} />
+            <Col isFull>
+              <TextField text={t('signatureStatus')} style={styles.signatureLabel} />
+              <Gap gap={12} />
+              <Signature ref={signatureRef} onSignComplete={(d: string) => setSign(d)} />
+            </Col>
 
-            <Gap horizontal={false} gap={12} />
-            <Signature ref={signatureRef} onSignComplete={(d: string) => setSign(d)} />
-
-            <Gap horizontal={false} gap={40} />
+            <Gap gap={40} />
             <Button
               variant="primary"
               size="lg"
@@ -83,7 +86,7 @@ const TermsOfUse = () => {
                 navigation.navigate(NavScreens.home.pricing)
               }}
             />
-          </View>
+          </Col>
         </Modalize>
       </Portal>
     </View>

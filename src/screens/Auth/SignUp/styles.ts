@@ -1,10 +1,10 @@
 import { I18nManager, StyleSheet } from 'react-native'
 
-import { font, RH, RW, PRIMARY_BG_COLOR, SIGNUP_TEXTFIELD_BG_COLOR, WHITE } from '@/theme'
+import { font, RH, RW, SIGNUP_TEXTFIELD_BG_COLOR, WHITE, TRANSPARENT } from '@/theme'
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: PRIMARY_BG_COLOR,
+    backgroundColor: TRANSPARENT,
     height: '100%',
   },
   title: {
