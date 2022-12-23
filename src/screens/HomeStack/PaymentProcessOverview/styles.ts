@@ -42,7 +42,6 @@ export default StyleSheet.create({
   },
   modalTitle: {
     ...font('rw.bold', 20, WHITE, 28),
-    textAlign: 'left',
   },
   scrollContainerInitial: {
     maxHeight: RH(360),
