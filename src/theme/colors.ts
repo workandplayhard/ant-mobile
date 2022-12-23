@@ -37,7 +37,7 @@ export const PROFILE_GREETINGS_COLOR = '#FFFFFFCC'
 export const TITLE_COLOR = '#000033'
 
 export const TEXT_DARK_PLACEHOLDER_COLOR = '#5E626C'
-export const SIGNUP_BG_COLOR = '#222126'
+export const PRIMARY_BG_COLOR = '#222126'
 export const SIGNUP_TEXTFIELD_BG_COLOR = '#2C2B30'
 
 export const DASHBOARD_ICON_COLORS = ['#008037', '#EF404A', '#FF7852']

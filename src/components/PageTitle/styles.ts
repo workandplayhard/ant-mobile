@@ -15,8 +15,10 @@ export default StyleSheet.create({
   },
   darkTitle: {
     ...font('rw.bold', 26, WHITE, 32),
+    width: '100%',
   },
   darkSubTitle: {
     ...font('rw.regular', 14, HOME_SUBTITLE_COLOR, 26),
+    width: '100%',
   },
 })

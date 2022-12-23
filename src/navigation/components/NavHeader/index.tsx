@@ -26,13 +26,14 @@ export const NavHeader: React.FC<INavHeader> = ({
 }) => {
   return (
     <Row
-      style={
+      style={[
+        styles.container,
         (user || hasBackButton) && hasNotification
           ? { justifyContent: 'space-between' }
           : hasNotification && !hasBackButton
           ? { justifyContent: 'flex-end' }
-          : { justifyContent: 'flex-start' }
-      }
+          : { justifyContent: 'flex-start' },
+      ]}
     >
       {user?.url && (
         <View style={styles.profile}>

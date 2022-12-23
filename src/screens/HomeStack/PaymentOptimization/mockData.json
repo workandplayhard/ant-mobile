@@ -1,6 +1,5 @@
 {
   "savePrice": 1250,
   "saveDateTime": "2022-07-22",
-  "headerGreetings": "Hey {{username}}! 👋",
   "contentDescriptionContext": "Lorem Ipsum is simply dummy text of the printing typesetting"
 }
