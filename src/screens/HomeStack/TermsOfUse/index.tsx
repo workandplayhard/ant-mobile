@@ -21,7 +21,7 @@ const TermsOfUse = () => {
   const modalizeRef = useRef<Modalize>(null)
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [sign, setSign] = useState<string | undefined>()
-  const [pos, setPos] = useState<'top' | 'initial' | ''>('initial')
+  const [pos, setPos] = useState<'top' | 'initial'>('initial')
 
   const onCancelModal = () => {
     modalizeRef.current?.close()
