@@ -7,11 +7,12 @@ import { IS_IOS } from '@/constants'
 export default StyleSheet.create({
   container: {
     width: '100%',
+    paddingRight: RW(6),
     paddingTop: IS_IOS ? RH(68) : RH(68),
   },
   image: {
-    width: RW(52),
-    height: 52,
+    width: RH(52),
+    height: RH(52),
     borderRadius: RW(26),
   },
   greetings: {

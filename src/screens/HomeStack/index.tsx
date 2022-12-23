@@ -8,24 +8,31 @@ import PaymentOptimizationScreen from './PaymentOptimization'
 import PricingScreen from './Pricing'
 import TermsOfUseScreen from './TermsOfUse'
 import ScreenA from './ScreenA'
+import Home from './Home'
+import PaymentProcessOverview from './PaymentProcessOverview'
 
 const Stack = createStackNavigator()
 
 const StackScreen = () => {
   return (
     <Stack.Navigator
-      initialRouteName={NavScreens.home.screenA}
+      initialRouteName={NavScreens.home.home}
       screenOptions={{
         ...NAV_HEADER_OPTION,
       }}
     >
       <Stack.Screen name={NavScreens.home.screenA} component={ScreenA} />
+      <Stack.Screen name={NavScreens.home.home} component={Home} />
       <Stack.Screen name={NavScreens.home.pricing} component={PricingScreen} />
       <Stack.Screen
         name={NavScreens.home.paymentOptimization}
         component={PaymentOptimizationScreen}
       />
       <Stack.Screen name={NavScreens.home.termsOfUse} component={TermsOfUseScreen} />
+      <Stack.Screen
+        name={NavScreens.home.paymentProgressOverview}
+        component={PaymentProcessOverview}
+      />
     </Stack.Navigator>
   )
 }

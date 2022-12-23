@@ -25,6 +25,14 @@
     "signatureStatus": "I have read and understand the terms of use",
     "termUse": "Term of Use",
     "termUseTitle": "Before we start the progress",
-    "greetings": "Hey {{name}}! 👋"
+    "greetings": "Hey {{name}}! 👋",
+    "homeGreetings": "Hi {{name}}!",
+    "homeGreetingsContent": "Welcome Back",
+    "copyCardNumber": "Copy card number",
+    "showCVV": "Show CVV",
+    "moneySpent": "Money Spent",
+    "lastMonth": "Last month",
+    "thisMonth": "This month",
+    "startingProcess": "We are now starting the process!"
   }
 }

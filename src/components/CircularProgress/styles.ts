@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { font, TRANSPARENT } from '@/theme'
+import { font, RW, TRANSPARENT, WHITE } from '@/theme'
 
 export default StyleSheet.create({
   container: {
@@ -12,5 +12,9 @@ export default StyleSheet.create({
     textAlign: 'center',
     position: 'absolute',
     width: '100%',
+  },
+  label: {
+    ...font('pp.regular', 16, WHITE, 24),
+    top: RW(11),
   },
 })

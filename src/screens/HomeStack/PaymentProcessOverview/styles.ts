@@ -1,7 +1,6 @@
 import { StyleSheet } from 'react-native'
 
 import {
-  HOME_SUBTITLE_COLOR,
   RW,
   PRIMARY_BG_COLOR,
   WHITE,
@@ -9,6 +8,7 @@ import {
   PAGE_HORIZONTAL_PADDING,
   RH,
   TRANSPARENT,
+  TEXT_INPUT_DARK_BG_COLOR,
 } from '@/theme'
 import { SCREEN_HEIGHT } from '@/constants'
 
@@ -34,7 +34,6 @@ export default StyleSheet.create({
   },
   wrapper: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    height: '100%',
     flex: 1,
     borderTopLeftRadius: RW(20),
     borderTopRightRadius: RW(20),
@@ -47,18 +46,12 @@ export default StyleSheet.create({
   },
   modalTitle: {
     ...font('rw.bold', 20, WHITE, 28),
-    textAlign: 'left',
   },
   scrollContainerInitial: {
-    height: RH(160),
+    maxHeight: RH(360),
   },
-  termsOfUse: {
+  progressOverview: {
     ...font('rw.thin', 16, WHITE, 26),
-    textAlign: 'left',
-  },
-  signatureLabel: {
-    ...font('rw.thin', 16, HOME_SUBTITLE_COLOR, 26),
-    textAlign: 'left',
   },
   handle: {
     backgroundColor: WHITE,
@@ -69,5 +62,21 @@ export default StyleSheet.create({
   },
   handleLg: {
     top: RH(70),
+  },
+  icon: {
+    width: RW(83),
+    height: RW(81),
+    backgroundColor: TEXT_INPUT_DARK_BG_COLOR,
+    borderRadius: RW(20),
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconRow: {
+    justifyContent: 'space-between',
+  },
+  indicator: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: RW(5),
   },
 })
