@@ -13,7 +13,11 @@ import { IOption } from '@/types'
 import styles, { informationModalHeight } from './styles'
 import { OTHER_INFORMATION_SUB_FOOTER_CANCEL_BORDER_COLOR, WHITE, font } from '@/theme'
 
-const Period = () => {
+interface IProps {
+  onPeriodStatus: (count: number) => void
+}
+
+const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
   const [periods, setPeriods] = useState<IOption<string>[]>(mockData.data.periods)
   const [modal, setModal] = useState<boolean>(false)
   const [index, setIndex] = useState<number>(0)
@@ -47,6 +51,7 @@ const Period = () => {
 
       if (current.length === 0) {
         _c[index].isSelected = isSelected
+        onPeriodStatus(1)
         setPeriods(_c)
       } else {
         const trueElement = periods.filter((item) => item.isSelected === true)

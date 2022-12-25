@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -17,6 +17,14 @@ import styles from './styles'
 
 const OtherInformationSources = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const [bankStatus, setBankStatus] = useState<number>(0)
+  const [periodStatus, setPeriodStatus] = useState<number>(0)
+  const [cardStatus, setCardStatus] = useState<number>(0)
+
+  // const enabled = bankStatus && cardStatus ? true : false
+  const enabled = useMemo(() => {
+    return bankStatus && cardStatus && periodStatus ? true : false
+  }, [cardStatus, bankStatus, periodStatus])
 
   return (
     <ScrollContainer style={styles.container}>
@@ -27,9 +35,9 @@ const OtherInformationSources = () => {
         <PageTitle title={t('otherInformationSources')} titleAlign="left" />
       </View>
 
-      <Bank />
+      <Bank onBankStatus={setBankStatus} onCardStatus={setCardStatus} />
       <Information />
-      <Period />
+      <Period onPeriodStatus={setPeriodStatus} />
 
       <View style={styles.line} />
 
@@ -40,6 +48,7 @@ const OtherInformationSources = () => {
         <Button
           variant="primary"
           size="lg"
+          disabled={!enabled}
           text={t('next')}
           buttonStyle={styles.paddingHorizontalStandard}
         />

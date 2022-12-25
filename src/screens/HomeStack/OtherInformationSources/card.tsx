@@ -10,16 +10,22 @@ import { IOption } from '@/types'
 
 import styles from './styles'
 
-const Card = () => {
+interface IProps {
+  onCardStatus: (count: number) => void
+}
+
+const Card: React.FC<IProps> = ({ onCardStatus }) => {
   const [cards, setCards] = useState<IOption<string>[]>(mockData.data.cards)
+  const current = cards.filter((card) => card.isSelected === true)
 
   const onSelectCard = useCallback(
     (index: number, isSelected: boolean) => {
       const _c = [...cards]
       _c[index].isSelected = isSelected
       setCards(_c)
+      onCardStatus(isSelected ? current.length + 1 : current.length - 1)
     },
-    [cards],
+    [cards, current.length, onCardStatus],
   )
 
   return (

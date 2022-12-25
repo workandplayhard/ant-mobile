@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useState, useMemo, isValidElement } from 'react'
 import { Text, View } from 'react-native'
 
 import Card from './card'
@@ -13,17 +13,26 @@ import { IOption } from '@/types'
 
 import styles from './styles'
 
-const Bank = () => {
+interface IProps {
+  onBankStatus: (count: number) => void
+  onCardStatus: (count: number) => void
+}
+
+const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
   const [countries, setCountries] = useState<IOption<string>[]>(mockData.data.countries)
-  const current = countries.filter((country) => country.isSelected === true)
+  const current = useMemo(
+    () => countries.filter((country) => country.isSelected === true),
+    [countries],
+  )
 
   const onSelectCountry = useCallback(
     (index: number, isSelected: boolean) => {
       const _c = [...countries]
       _c[index].isSelected = isSelected
       setCountries(_c)
+      onBankStatus(isSelected ? current.length + 1 : current.length - 1)
     },
-    [countries],
+    [countries, current, onBankStatus],
   )
 
   return (
@@ -46,7 +55,7 @@ const Bank = () => {
           dropDownStyle={styles.dropdownPos}
         >
           {(item, index) => (
-            <Row style={styles.financialRow}>
+            <Row style={styles.financialRow} key={index}>
               <ImageView url={item.image} style={styles.image} />
               <Text style={styles.dropdownText}>{item.label}</Text>
               <CheckBox
@@ -57,7 +66,7 @@ const Bank = () => {
           )}
         </Dropdown>
       </View>
-      {current.length !== 0 && <Card />}
+      {current.length !== 0 && <Card onCardStatus={onCardStatus} />}
     </>
   )
 }
