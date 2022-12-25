@@ -4,7 +4,7 @@ import { PAGE_HORIZONTAL_PADDING, RW, RH, font } from '@/theme/utils'
 import {
   BLACK,
   WHITE,
-  TEXT_INPUT_FONT_COLOR,
+  TITLE_LIGHT_COLOR,
   DASHBOARD_SHADOW_COLOR,
   STEP_INACTIVE_BG_COLOR,
 } from '@/theme'
@@ -76,7 +76,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   saveDateDescription: {
-    ...font('rw.regular', 14, TEXT_INPUT_FONT_COLOR, 24),
+    ...font('rw.regular', 14, TITLE_LIGHT_COLOR, 24),
   },
   saveDateTime: {
     ...font('pp.regular', 15, BLACK, 28),

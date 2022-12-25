@@ -2,7 +2,7 @@ import React, { ElementRef, useEffect, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation, useIsFocused } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { Button, Col, Gap, PageTitle, ScrollContainer, Signature, TextField } from '@/components'
@@ -18,6 +18,7 @@ import styles, { modalInitialHeight } from './styles'
 
 const TermsOfUse = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const isFocused = useIsFocused()
   const modalizeRef = useRef<Modalize>(null)
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [sign, setSign] = useState<string | undefined>()
@@ -28,13 +29,12 @@ const TermsOfUse = () => {
   }
 
   useEffect(() => {
-    modalizeRef.current?.open()
-
-    return () => {
-      // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (isFocused) {
+      modalizeRef.current?.open()
+    } else {
       modalizeRef.current?.close()
     }
-  }, [])
+  }, [isFocused])
 
   return (
     <View style={styles.modalizeWrapper}>

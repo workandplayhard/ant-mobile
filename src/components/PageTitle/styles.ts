@@ -1,4 +1,4 @@
-import { BLACK, HOME_SUBTITLE_COLOR, TITLE_COLOR, WHITE, font } from '@/theme'
+import { BLACK, HOME_SUBTITLE_COLOR, PAGE_TITLE_COLOR, WHITE, font } from '@/theme'
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
@@ -6,7 +6,7 @@ export default StyleSheet.create({
     width: '100%',
   },
   lightTitle: {
-    ...font('rw.bold', 26, TITLE_COLOR, 32),
+    ...font('rw.bold', 26, PAGE_TITLE_COLOR, 32),
     width: '100%',
   },
   lightSubTitle: {
