@@ -29,13 +29,13 @@ export default StyleSheet.create({
     marginTop: RW(26),
   },
   circle: {
-    width: 5,
-    height: 5,
-    backgroundColor: '#000033',
-    borderRadius: 3,
+    width: RW(5),
+    height: RW(5),
+    backgroundColor: TITLE_COLOR,
+    borderRadius: RW(3),
     justifyContent: 'center',
     alignItems: 'center',
-    top: 12,
+    top: RW(12),
     position: 'absolute',
   },
   paddingHorizontalStandard: {
@@ -69,8 +69,8 @@ export default StyleSheet.create({
     ...font('rw.medium', 16, BLACK, 24),
   },
   subSourceIcon: {
-    width: 20,
-    height: 20,
+    width: RW(20),
+    height: RW(20),
   },
   subSourceIconPos: {
     paddingLeft: RW(15),
@@ -99,17 +99,14 @@ export default StyleSheet.create({
   },
   modal: {
     backgroundColor: TRANSPARENT,
-    borderTopLeftRadius: RW(0),
-    borderTopRightRadius: RW(0),
+    borderTopLeftRadius: 0,
+    borderTopRightRadius: 0,
   },
   modalChildren: {
     backgroundColor: PRIMARY_BG_COLOR,
     borderTopLeftRadius: RW(20),
     borderTopRightRadius: RW(20),
     height: informationModalHeight,
-  },
-  modalChildrenLg: {
-    height: SCREEN_HEIGHT,
   },
   wrapper: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
@@ -122,6 +119,9 @@ export default StyleSheet.create({
   modalTitle: {
     ...font('rw.bold', 20, WHITE, 28),
   },
+  modalContent: {
+    ...font('rw.thin', 16, WHITE, 26),
+  },
   scrollContainerInitial: {
     maxHeight: RH(160),
   },
@@ -131,8 +131,5 @@ export default StyleSheet.create({
     width: RW(80),
     height: RH(3),
     borderRadius: RW(2),
-  },
-  background: {
-    backgroundColor: '#00000080',
   },
 })

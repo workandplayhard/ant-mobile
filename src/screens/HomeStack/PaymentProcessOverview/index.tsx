@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { I18nManager, View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
@@ -10,7 +10,6 @@ import { t } from '@/i18n'
 import { TRANSPARENT } from '@/theme'
 import NavHeader from '@/navigation/components/NavHeader'
 import { NavScreens, RouteParamList } from '@/navigation'
-import { useApp } from '@/hooks'
 
 import mockData from './mockData.json'
 

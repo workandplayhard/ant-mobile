@@ -17,7 +17,6 @@ const Bank = () => {
   const [countries, setCountries] = useState<IOption<string>[]>(mockData.data.countries)
   const current = countries.filter((country) => country.isSelected === true)
 
-  console.log('current: ', current)
   const onSelectCountry = useCallback(
     (index: number, isSelected: boolean) => {
       const _c = [...countries]

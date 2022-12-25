@@ -1,5 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react'
 import { Text, View } from 'react-native'
+import { Modalize } from 'react-native-modalize'
+import { Portal } from 'react-native-portalize'
 
 import { Button, Col, Dropdown, Gap, Icon, Row, ScrollContainer, TextField } from '@/components'
 
@@ -9,9 +11,7 @@ import mockData from './mockData'
 import { IOption } from '@/types'
 
 import styles, { informationModalHeight } from './styles'
-import { Modalize } from 'react-native-modalize'
-import { Portal } from 'react-native-portalize'
-import { WHITE, font } from '@/theme'
+import { OTHER_INFORMATION_SUB_FOOTER_CANCEL_BORDER_COLOR, WHITE, font } from '@/theme'
 
 const Period = () => {
   const [periods, setPeriods] = useState<IOption<string>[]>(mockData.data.periods)
@@ -45,7 +45,6 @@ const Period = () => {
       const _c = [...periods]
       const current = periods.filter((item) => item.isSelected === true)
 
-      console.log('current periods', current, periods)
       if (current.length === 0) {
         _c[index].isSelected = isSelected
         setPeriods(_c)
@@ -109,19 +108,16 @@ const Period = () => {
             <Gap gap={20} />
 
             <Gap gap={20} />
-            <TextField text={periods[index].label} style={{ ...font('rw.bold', 20, WHITE, 28) }} />
+            <TextField text={periods[index].label} style={styles.modalTitle} />
             <Gap gap={20} />
             <ScrollContainer style={styles.scrollContainerInitial}>
-              <TextField
-                text={mockData.data.modalContentExample}
-                style={{ ...font('rw.thin', 16, WHITE, 26) }}
-              />
+              <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />
             </ScrollContainer>
 
             <Gap gap={60} />
             <Button
               variant="pure"
-              borderColor="#7A7A7D"
+              borderColor={OTHER_INFORMATION_SUB_FOOTER_CANCEL_BORDER_COLOR}
               size="lg"
               text={t('cancel')}
               onPress={onCancelModal}
