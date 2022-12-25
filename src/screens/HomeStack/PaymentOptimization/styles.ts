@@ -40,7 +40,7 @@ export default StyleSheet.create({
   },
   save: {
     width: '100%',
-    height: RH(245),
+    height: RW(245),
     backgroundColor: WHITE,
     borderRadius: RW(15),
     marginTop: RH(-85),

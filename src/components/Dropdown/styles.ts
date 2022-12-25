@@ -7,6 +7,7 @@ import {
   TEXT_INPUT_FONT_COLOR,
   TEXT_INPUT_BORDER_ACTIVE_COLOR,
   DROPBOX_BUTTON_COLOR,
+  WHITE,
 } from '@/theme'
 
 export default StyleSheet.create({
@@ -26,7 +27,7 @@ export default StyleSheet.create({
     marginLeft: 0,
   },
   dropdownView: {
-    borderWidth: 1,
+    backgroundColor: WHITE,
     borderRadius: RW(15),
     paddingHorizontal: RW(20),
   },

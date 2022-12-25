@@ -9,5 +9,6 @@ export interface RouteParamList extends Record<keyof typeof NavScreens, any> {
   'homeStack:paymentOptimization': undefined
   'homeStack:termsOfUse': undefined
   'homeStack:paymentProcessOverview': undefined
+  'homeStack:otherInformationSources': undefined
   [x: string]: any
 }
