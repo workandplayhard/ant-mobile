@@ -2,18 +2,18 @@ import { StyleSheet } from 'react-native'
 
 import {
   RW,
-  WHITE,
-  PAGE_HORIZONTAL_PADDING,
   RH,
-  OTHER_INFORMATION_SUB_SOURCE_BG_COLOR,
   font,
-  TITLE_COLOR,
+  WHITE,
   BLACK,
-  OTHER_INFORMATION_SUB_SOURCE_DROP_BORDER,
   TRANSPARENT,
+  PAGE_TITLE_COLOR,
   PRIMARY_BG_COLOR,
+  PAGE_HORIZONTAL_PADDING,
+  OTHER_INFORMATION_SUB_SOURCE_BG_COLOR,
+  OTHER_INFORMATION_SUB_SOURCE_DROP_BORDER,
 } from '@/theme'
-import { SCREEN_HEIGHT } from '@/constants'
+import { SCREEN_WIDTH } from '@/constants'
 
 export const informationModalHeight = RH(517)
 
@@ -31,8 +31,8 @@ export default StyleSheet.create({
   circle: {
     width: RW(5),
     height: RW(5),
-    backgroundColor: TITLE_COLOR,
-    borderRadius: RW(3),
+    backgroundColor: PAGE_TITLE_COLOR,
+    borderRadius: SCREEN_WIDTH / 2,
     justifyContent: 'center',
     alignItems: 'center',
     top: RW(12),
@@ -53,7 +53,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   subSourceText: {
-    ...font('rw.semibold', 18, TITLE_COLOR, 24),
+    ...font('rw.semibold', 18, PAGE_TITLE_COLOR, 24),
   },
   dropdownPos: {
     marginTop: RW(-20),
@@ -76,10 +76,10 @@ export default StyleSheet.create({
     paddingLeft: RW(15),
   },
   subSourceInformationText: {
-    ...font('rw.regular', 16, TITLE_COLOR, 24),
+    ...font('rw.regular', 16, PAGE_TITLE_COLOR, 24),
   },
   subSourcePeriodText: {
-    ...font('rw.semibold', 16, TITLE_COLOR, 24),
+    ...font('rw.semibold', 16, PAGE_TITLE_COLOR, 24),
   },
   subSourcePeriodDropBorder: {
     borderColor: OTHER_INFORMATION_SUB_SOURCE_DROP_BORDER,
@@ -88,7 +88,7 @@ export default StyleSheet.create({
     marginBottom: RW(10),
   },
   subSourceFooterListItem: {
-    ...font('rw.regular', 16, TITLE_COLOR, 24),
+    ...font('rw.regular', 16, PAGE_TITLE_COLOR, 24),
     paddingLeft: RW(20),
   },
   subSourceFooterListItemRTL: {
