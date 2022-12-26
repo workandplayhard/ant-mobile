@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { View } from 'react-native'
+import { I18nManager, View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 import { Portal } from 'react-native-portalize'
 import { useNavigation, useIsFocused } from '@react-navigation/native'
@@ -75,9 +75,15 @@ const PaymentProcessOverview = () => {
 
               <Row isFull style={styles.iconRow}>
                 <Icon name="walletCreditCardIcon" size={40} wrapperStyle={styles.icon} />
-                <Icon name="nextIndicatorIcon" wrapperStyle={styles.indicator} />
+                <Icon
+                  name="nextIndicatorIcon"
+                  wrapperStyle={[styles.indicator, I18nManager.isRTL && styles.isRTL]}
+                />
                 <Icon name="humanIcon" size={40} wrapperStyle={styles.icon} />
-                <Icon name="nextIndicatorIcon" wrapperStyle={styles.indicator} />
+                <Icon
+                  name="nextIndicatorIcon"
+                  wrapperStyle={[styles.indicator, I18nManager.isRTL && styles.isRTL]}
+                />
                 <Icon name="bankIcon" size={40} wrapperStyle={styles.icon} />
               </Row>
 

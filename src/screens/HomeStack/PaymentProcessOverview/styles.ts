@@ -79,4 +79,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: RW(5),
   },
+  isRTL: {
+    transform: [{ rotate: '180deg' }],
+  },
 })

@@ -7,6 +7,11 @@ export interface IOption<T = string> {
   isSelected?: boolean
 }
 
+export interface IFinance {
+  label: string
+  isSelected?: boolean
+}
+
 export type TPCallback = (...params: any[]) => void
 
 export type TCallback = () => void

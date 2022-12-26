@@ -46,7 +46,6 @@ export const Button: React.FC<IButton> = ({
   iconName,
   variant = 'default',
   size = 'lg',
-  borderColor = 'transparent',
   onPress,
   iconStyle = {},
   textStyle = {},
@@ -80,7 +79,7 @@ export const Button: React.FC<IButton> = ({
           colors={colors}
           start={{ x: 1, y: 0 }}
           end={{ x: 0, y: 0 }}
-          style={[styles.background, styles[size], { borderColor }, buttonStyle]}
+          style={[styles.background, styles[size], buttonStyle]}
         >
           {!!IconComponent && <IconComponent {...iconStyle} />}
           {!!iconName && !!text && <Gap horizontal gap={RW(10)} />}
