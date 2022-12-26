@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { NavScreens, RouteParamList } from '@/navigation'
 import { Text, View } from 'react-native'
 
-import { Button, Gap, ImageView, PageTitle, ScrollContainer } from '@/components'
+import { t } from 'i18next'
+import { NavScreens, RouteParamList } from '@/navigation'
+import { Gap, ImageView, PageTitle, ScrollContainer } from '@/components'
 
 import Pig from '@/assets/images/img_pig.png'
 
 import styles from './styles'
-import { t } from 'i18next'
 
 export const PaymentFinalization: React.FC = () => {
   const [timerCount, setTimer] = React.useState(0)
