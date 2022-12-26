@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
-import { CheckBox, Gap, Icon, Row } from '@/components'
+import { CheckBox, Gap, Icon, Row, TextField } from '@/components'
 
 import { t } from '@/i18n'
 
@@ -25,10 +25,9 @@ const Information = () => {
 
   return (
     <View>
-      <Gap gap={40} />
       <View style={styles.subSource}>
         <Row>
-          <Text style={styles.subSourceText}>{t('typesOfInformation')}</Text>
+          <TextField text={t('typesOfInformation')} style={styles.subSourceText} />
           <Icon
             name="questionCircleIcon"
             wrapperStyle={styles.subSourceIconPos}
@@ -43,7 +42,7 @@ const Information = () => {
           <Row
             style={[item.label !== t('accountBalance') && styles.financialGap, styles.financialRow]}
           >
-            <Text style={styles.subSourceInformationText}>{item.label}</Text>
+            <TextField text={item.label} style={styles.subSourceInformationText} />
             <CheckBox
               onChange={(isChecked: boolean) => onSelectFinancial(index, isChecked)}
               isChecked={item.isSelected}

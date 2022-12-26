@@ -1,9 +1,9 @@
 import React, { useCallback, useState, useMemo } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 import Card from './card'
 
-import { CheckBox, Dropdown, Gap, ImageView, Row } from '@/components'
+import { CheckBox, Dropdown, Gap, ImageView, Row, TextField } from '@/components'
 
 import { t } from '@/i18n'
 
@@ -34,9 +34,8 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
 
   return (
     <View>
-      <Gap gap={40} />
       <View style={styles.subSource}>
-        <Text style={styles.subSourceText}>{t('chooseBanksAndCards')}</Text>
+        <TextField text={t('chooseBanksAndCards')} style={styles.subSourceText} />
       </View>
 
       <Gap gap={40} />
@@ -54,7 +53,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
           {(item, index) => (
             <Row style={styles.financialRow} key={index}>
               <ImageView url={item.image} style={styles.image} />
-              <Text style={styles.dropdownText}>{item.label}</Text>
+              <TextField text={item.label} style={styles.dropdownText} />
               <CheckBox
                 onChange={(isChecked: boolean) => onSelectBank(index, isChecked)}
                 isChecked={banks[index].isSelected}
@@ -63,7 +62,12 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
           )}
         </Dropdown>
       </View>
-      {current.length !== 0 && <Card onCardStatus={onCardStatus} />}
+      {current.length !== 0 && (
+        <View>
+          <Gap gap={19} />
+          <Card onCardStatus={onCardStatus} />
+        </View>
+      )}
     </View>
   )
 }

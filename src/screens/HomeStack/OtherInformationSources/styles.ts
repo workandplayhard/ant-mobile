@@ -6,7 +6,6 @@ import {
   font,
   WHITE,
   BLACK,
-  TRANSPARENT,
   PAGE_TITLE_COLOR,
   PRIMARY_BG_COLOR,
   PAGE_HORIZONTAL_PADDING,
@@ -20,7 +19,6 @@ export const informationModalHeight = RH(517)
 export default StyleSheet.create({
   container: {
     backgroundColor: WHITE,
-    paddingVertical: RW(40),
     width: '100%',
     flexDirection: 'column',
     height: '100%',

@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
 
 import {
@@ -78,10 +78,9 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
 
   return (
     <View>
-      <Gap gap={48} />
       <View style={styles.subSource}>
         <Row>
-          <Text style={styles.subSourceText}>{t('chooseThePeriod')}</Text>
+          <TextField text={t('chooseThePeriod')} style={styles.subSourceText} />
           <Icon
             name="questionCircleIcon"
             wrapperStyle={styles.subSourceIconPos}
@@ -104,7 +103,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
             .join(', ')}
           dropDownStyle={styles.dropdownPos}
         >
-          {(item) => <Text style={styles.subSourcePeriodText}>{item.label}</Text>}
+          {(item) => <TextField text={item.label} style={styles.subSourcePeriodText} />}
         </Dropdown>
         <Gap gap={40} />
       </View>

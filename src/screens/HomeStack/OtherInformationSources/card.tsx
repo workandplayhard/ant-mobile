@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
-import { CheckBox, Dropdown, Gap, ImageView, Row } from '@/components'
+import { CheckBox, Dropdown, Gap, ImageView, Row, TextField } from '@/components'
 
 import { t } from '@/i18n'
 
@@ -31,7 +31,6 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
 
   return (
     <View>
-      <Gap gap={19} />
       <View style={styles.paddingHorizontalStandard}>
         <Dropdown<string>
           data={cards}
@@ -46,7 +45,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
           {(item, index) => (
             <Row style={styles.financialRow}>
               <ImageView url={item.image} style={styles.image} />
-              <Text style={styles.dropdownText}>{item.label}</Text>
+              <TextField text={item.label} style={styles.dropdownText} />
               <CheckBox
                 onChange={(isChecked: boolean) => onSelectCard(index, isChecked)}
                 isChecked={cards[index].isSelected}

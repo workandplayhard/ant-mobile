@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
-import { Button, Gap, PageTitle, ScrollContainer } from '@/components'
+import { Button, Container, Gap, PageTitle, ScrollContainer } from '@/components'
 import NavHeader from '@/navigation/components/NavHeader'
 import { RouteParamList } from '@/navigation'
 import { t } from '@/i18n'
@@ -26,35 +26,41 @@ const OtherInformationSources = () => {
   }, [cardStatus, bankStatus, periodStatus])
 
   return (
-    <ScrollContainer style={styles.container}>
+    <Container style={styles.container}>
       <View style={styles.paddingHorizontalStandard}>
         <NavHeader hasBackButton />
 
         <Gap gap={22} />
         <PageTitle title={t('otherInformationSources')} titleAlign="left" />
       </View>
+      <ScrollContainer style={styles.container}>
+        <Gap gap={40} />
+        <Bank onBankStatus={setBankStatus} onCardStatus={setCardStatus} />
 
-      <Bank onBankStatus={setBankStatus} onCardStatus={setCardStatus} />
-      <Information />
-      <Period onPeriodStatus={setPeriodStatus} />
+        <Gap gap={40} />
+        <Information />
 
-      <View style={styles.line} />
+        <Gap gap={48} />
+        <Period onPeriodStatus={setPeriodStatus} />
 
-      <Footer />
+        <View style={styles.line} />
 
-      <Gap gap={60} />
-      <View style={styles.paddingHorizontalStandard}>
-        <Button
-          variant="primary"
-          size="lg"
-          disabled={!enabled}
-          text={t('next')}
-          buttonStyle={styles.paddingHorizontalStandard}
-        />
-      </View>
+        <Footer />
 
-      <Gap gap={200} />
-    </ScrollContainer>
+        <Gap gap={60} />
+        <View style={styles.paddingHorizontalStandard}>
+          <Button
+            variant="primary"
+            size="lg"
+            disabled={!enabled}
+            text={t('next')}
+            buttonStyle={styles.paddingHorizontalStandard}
+          />
+        </View>
+
+        <Gap gap={200} />
+      </ScrollContainer>
+    </Container>
   )
 }
 
