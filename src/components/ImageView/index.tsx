@@ -7,7 +7,7 @@ interface IImageView {
   placeholder?: any
   size?: number
   resizeMode?: ImageResizeMode
-  style: StyleProp<ImageStyle>
+  style?: StyleProp<ImageStyle>
 }
 
 export const ImageView: React.FC<IImageView> = ({ url = '', placeholder, style, resizeMode }) => {
