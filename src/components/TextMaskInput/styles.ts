@@ -5,14 +5,14 @@ import {
   RH,
   font,
   DARK_RED,
-  DETAIL_BORDER_BLUR,
-  DETAIL_BORDER_FOCUS,
   TEXT_INPUT_DARK_COLOR,
   TEXT_LABEL_DARK_COLOR,
   TEXT_INPUT_LIGHT_COLOR,
   TEXT_LABEL_LIGHT_COLOR,
   TEXT_INPUT_DARK_BG_COLOR,
   TEXT_INPUT_LIGHT_BG_COLOR,
+  TEXT_INPUT_DARK_BORDER_ACTIVE_COLOR,
+  TEXT_INPUT_DARK_BORDER_INACTIVE_COLOR,
 } from '@/theme'
 
 export default StyleSheet.create({
@@ -44,9 +44,9 @@ export default StyleSheet.create({
     textAlign: 'right',
   },
   focus: {
-    borderColor: DETAIL_BORDER_FOCUS,
+    borderColor: TEXT_INPUT_DARK_BORDER_ACTIVE_COLOR,
   },
   blur: {
-    borderColor: DETAIL_BORDER_BLUR,
+    borderColor: TEXT_INPUT_DARK_BORDER_INACTIVE_COLOR,
   },
 })

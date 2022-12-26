@@ -5,8 +5,7 @@ import { RW, WHITE, TEXT_LABEL_LIGHT_COLOR, PAGE_HORIZONTAL_PADDING } from '@/th
 export default StyleSheet.create({
   container: {
     backgroundColor: WHITE,
-    height: '100%',
-    padding: PAGE_HORIZONTAL_PADDING,
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },
   input: {
     borderWidth: RW(1),

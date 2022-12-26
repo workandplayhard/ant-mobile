@@ -1,8 +1,15 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 
-import { Button, Gap, PageTitle, ScrollContainer, TextInput, TextMaskInput } from '@/components'
+import {
+  Button,
+  Container,
+  Gap,
+  PageTitle,
+  ScrollContainer,
+  TextInput,
+  TextMaskInput,
+} from '@/components'
 import NavHeader from '@/navigation/components/NavHeader'
-import WrapperWithBackground from '@/screens/HomeStack/shared/wrapperWithBackground'
 import { t } from '@/i18n'
 
 import mask from './mask'
@@ -18,14 +25,24 @@ const PersonalDetails: React.FC = () => {
   const [celluar, setCelluar] = useState<string>('')
   const [email, setEmail] = useState<string>('')
 
-  return (
-    <WrapperWithBackground>
-      <ScrollContainer style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <NavHeader hasBackButton />
-        <Gap gap={22} />
-        <PageTitle title={t('personalDetails')} titleAlign="left" />
+  const applyMask = useCallback((text: string | undefined) => {
+    const numberCount = text?.replace(/\D+/g, '').length || 0
+    if (numberCount <= 10) {
+      return mask.phoneNumber_1
+    } else if (numberCount === 11) {
+      return mask.phoneNumber_2
+    } else {
+      return mask.phoneNumber_3
+    }
+  }, [])
 
-        <Gap gap={40} />
+  return (
+    <Container style={styles.container}>
+      <NavHeader hasBackButton />
+      <Gap gap={22} />
+      <PageTitle title={t('personalDetails')} titleAlign="left" />
+      <Gap gap={40} />
+      <ScrollContainer contentContainerStyle={styles.contentContainer}>
         <TextInput
           value={fullName}
           mode="light"
@@ -51,16 +68,7 @@ const PersonalDetails: React.FC = () => {
 
         <Gap gap={20} />
         <TextMaskInput
-          mask={(text) => {
-            const numberCount = text?.replace(/\D+/g, '').length || 0
-            if (numberCount <= 10) {
-              return mask.phoneNumber_1
-            } else if (numberCount === 11) {
-              return mask.phoneNumber_2
-            } else {
-              return mask.phoneNumber_3
-            }
-          }}
+          mask={applyMask}
           mode="light"
           value={phoneNumber}
           label={t('phoneNumber')}
@@ -112,7 +120,7 @@ const PersonalDetails: React.FC = () => {
 
         <Gap gap={200} />
       </ScrollContainer>
-    </WrapperWithBackground>
+    </Container>
   )
 }
 
