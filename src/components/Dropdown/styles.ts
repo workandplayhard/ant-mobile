@@ -4,6 +4,7 @@ import {
   RW,
   RH,
   font,
+  WHITE,
   DROPDOWN_TEXT_COLOR,
   DROPDOWN_BORDER_COLOR,
   DROPDOWN_ACTIVE_BORDER_COLOR,
@@ -30,7 +31,7 @@ export default StyleSheet.create({
     marginLeft: 0,
   },
   dropdownView: {
-    borderWidth: 1,
+    backgroundColor: WHITE,
     borderRadius: RW(15),
     paddingHorizontal: RW(20),
   },

@@ -37,6 +37,21 @@
     "personalDetails": "פרטים אישיים",
     "fullName": "השם המלא",
     "credit": "כרטיס אשראי",
-    "celluar": "ספק סלולר"
+    "celluar": "ספק סלולר",
+    "otherInformationSources": "מקורות מידע אחרים",
+    "chooseBanksAndCards": "בחרו בנקים וכרטיסים",
+    "typesOfInformation": "סוגי המידע",
+    "accountBalance": "יתרת חשבון",
+    "accountTransactions": "עסקאות בחשבון",
+    "placeholder": "מציין מיקום",
+    "chooseThePeriod": "בוחרים את תקופת האישור",
+    "mizrahiTefahotBank": "בנק מזרחי טפחות",
+    "machineLearningIsrael": "Machine Learning ישראל",
+    "bankHapoalim": "הבנק הפועלים",
+    "oneTimeOnly": "רק פעם אחת",
+    "yearAndHalf": "שנה וחצי",
+    "threeYears": "שנים",
+    "cancel": "לְבַטֵל",
+    "optimizeYourPayments": "בצע אופטימיזציה של התשלומים שלך"
   }
 }

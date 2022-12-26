@@ -89,7 +89,7 @@ const Home: React.FC = () => {
       <Button
         variant="primary"
         size="lg"
-        text="Optimize your payments"
+        text={t('optimizeYourPayments')}
         textStyle={{ ...font('pp.regular', 18, WHITE, 30) }}
         onPress={() => navigation.navigate(NavScreens.home.paymentOptimization)}
       />
