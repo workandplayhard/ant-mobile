@@ -36,7 +36,7 @@
     "startingProcess": "אנחנו מתחילים עכשיו בתהליך!",
     "finalizationTitle": "כל החשבונות אושרו בהצלחה, המתן",
     "finalizationSubTitle": "התהליך עשוי להימשך כמה דקות, אנא התאזר בסבלנות",
-    "percentage": "{{value}}%",
+    "percentage": "{{value}}<tag1>%</tag1>",
     "otherInformationSources": "מקורות מידע אחרים",
     "chooseBanksAndCards": "בחרו בנקים וכרטיסים",
     "typesOfInformation": "סוגי המידע",

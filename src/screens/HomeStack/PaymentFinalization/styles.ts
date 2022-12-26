@@ -1,4 +1,4 @@
-import { PAGE_HORIZONTAL_PADDING, PRIMARY_BG_COLOR, WHITE, font } from '@/theme'
+import { PAGE_HORIZONTAL_PADDING, PRIMARY_BG_COLOR, RH, WHITE, font } from '@/theme'
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
@@ -15,5 +15,9 @@ export default StyleSheet.create({
   percentage: {
     ...font('pp.bold', 26, WHITE, 32),
     textAlign: 'center',
+    padding: RH(3),
+  },
+  percentageSymbol: {
+    ...font('pp.bold', 14, WHITE, 26),
   },
 })

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { Trans } from 'react-i18next'
 
 import { t } from 'i18next'
 import { NavScreens, RouteParamList } from '@/navigation'
@@ -18,7 +19,7 @@ export const PaymentFinalization: React.FC = () => {
   useEffect(() => {
     timer.current = setInterval(() => {
       setPercentage((currentPercentage: number) => {
-        if (currentPercentage > 98) {
+        if (currentPercentage > 99) {
           navigation.navigate(NavScreens.home.otherInformationSources)
           clearInterval(timer.current)
         }
@@ -42,12 +43,20 @@ export const PaymentFinalization: React.FC = () => {
       />
 
       <Gap gap={60} />
-      <TextField text={t('percentage', { value: percentage })} style={styles.percentage} />
+      <TextField style={styles.percentage}>
+        <Trans
+          i18nKey="percentage"
+          values={{ value: percentage }}
+          components={{
+            tag1: <TextField style={styles.percentageSymbol} />,
+          }}
+        />
+      </TextField>
 
-      <Gap gap={90} />
-      <ImageView url={Pig} style={styles.pos} />
+      <Gap gap={75} />
+      <ImageView url={Pig} />
 
-      <Gap gap={200} />
+      <Gap gap={180} />
     </ScrollContainer>
   )
 }
