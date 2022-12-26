@@ -29,7 +29,7 @@ interface IProps {
 
 const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
   const [periods, setPeriods] = useState<IOption<string>[]>(mockData.data.periods)
-  const [modal, setModal] = useState<boolean>(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
   const [index, setIndex] = useState<number>(0)
   const modalizeRef = useRef<Modalize>(null)
 
@@ -38,7 +38,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
   }, [modalizeRef])
 
   const onCancelModal = useCallback(() => {
-    setModal(false)
+    setShowModal(false)
     modalizeRef.current?.close()
   }, [modalizeRef])
 
@@ -68,7 +68,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         const trueElement = periods.filter((item) => item.isSelected === true)
         if (trueElement[0].label !== _c[index].label) {
           setIndex(index)
-          setModal(true)
+          setShowModal(true)
           onOpenModal()
         }
       }
@@ -96,7 +96,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
           iconSelect="default"
           placeholder={t('placeholder')}
           buttonStyle={styles.subSourcePeriodDropBorder}
-          onChange={(item, index) => onSelectPeriod(index, !item.isSelected)}
+          onChange={(item, idx) => onSelectPeriod(idx, !item.isSelected)}
           buttonText={periods
             .filter((item) => item.isSelected)
             .map((item) => item.label)
@@ -108,44 +108,46 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         <Gap gap={40} />
       </View>
 
-      <Modal
-        modalStyle={styles.modal}
-        isVisible={modal}
-        hasBackdrop={true}
-        backdropColor={MODAL_BACKDROP_COLOR}
-        swipeEnabled={true}
-      >
-        <Col style={[styles.wrapper]}>
-          <View style={styles.handleWrapper}>
-            <View style={styles.handle} />
-          </View>
-          <Gap gap={30} />
-          <TextField text={periods[index].label} style={styles.modalTitle} />
-          <Gap gap={20} />
-          <ScrollContainer style={styles.scrollContainerInitial}>
-            <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />
-          </ScrollContainer>
+      {showModal && (
+        <Modal
+          modalStyle={styles.modal}
+          isVisible
+          hasBackdrop={true}
+          backdropColor={MODAL_BACKDROP_COLOR}
+          swipeEnabled={true}
+        >
+          <Col style={[styles.wrapper]}>
+            <View style={styles.handleWrapper}>
+              <View style={styles.handle} />
+            </View>
+            <Gap gap={30} />
+            <TextField text={periods[index].label} style={styles.modalTitle} />
+            <Gap gap={20} />
+            <ScrollContainer style={styles.scrollContainerInitial}>
+              <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />
+            </ScrollContainer>
 
-          <Gap gap={60} />
-          <Button
-            variant="default"
-            size="lg"
-            text={t('cancel')}
-            onPress={onCancelModal}
-            buttonStyle={{
-              borderColor: '#7A7A7D',
-            }}
-          />
+            <Gap gap={60} />
+            <Button
+              variant="default"
+              size="lg"
+              text={t('cancel')}
+              onPress={onCancelModal}
+              buttonStyle={{
+                borderColor: '#7A7A7D',
+              }}
+            />
 
-          <Gap gap={21} />
-          <Button
-            variant="primary"
-            size="lg"
-            text={mockData.data.informationModalButton}
-            onPress={onNext}
-          />
-        </Col>
-      </Modal>
+            <Gap gap={21} />
+            <Button
+              variant="primary"
+              size="lg"
+              text={mockData.data.informationModalButton}
+              onPress={onNext}
+            />
+          </Col>
+        </Modal>
+      )}
     </View>
   )
 }

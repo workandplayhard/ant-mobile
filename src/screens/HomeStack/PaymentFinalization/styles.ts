@@ -13,7 +13,7 @@ export default StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: RH(350),
+    paddingTop: RH(300),
   },
   pos: {
     alignItems: 'center',

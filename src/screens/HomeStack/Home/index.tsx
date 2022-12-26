@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
 
   return (
-    <ScrollContainer style={styles.container}>
+    <ScrollContainer style={styles.container} contentContainerStyle={styles.scrollContent}>
       <NavHeader
         user={{
           url: mockData.exampleAvatarURL,

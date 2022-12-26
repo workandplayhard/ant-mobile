@@ -23,6 +23,10 @@ export default StyleSheet.create({
     flexDirection: 'column',
     height: '100%',
   },
+  scrollContainer: {
+    flex: 1,
+    width: '100%',
+  },
   financialGap: {
     marginTop: RW(26),
   },

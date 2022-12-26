@@ -33,7 +33,7 @@ const OtherInformationSources = () => {
         <Gap gap={22} />
         <PageTitle title={t('otherInformationSources')} titleAlign="left" />
       </View>
-      <ScrollContainer style={styles.container}>
+      <ScrollContainer style={styles.scrollContainer}>
         <Gap gap={40} />
         <Bank onBankStatus={setBankStatus} onCardStatus={setCardStatus} />
 

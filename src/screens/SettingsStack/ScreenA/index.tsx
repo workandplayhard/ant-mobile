@@ -108,7 +108,7 @@ const HomeScreenA: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollContainer>
+      <ScrollContainer contentContainerStyle={styles.scrollContent}>
         <PageTitle
           title="Before we start process"
           subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."

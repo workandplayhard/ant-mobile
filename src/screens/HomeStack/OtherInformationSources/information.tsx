@@ -40,6 +40,7 @@ const Information = () => {
       <View style={styles.paddingHorizontalStandard}>
         {financial.map((item, index) => (
           <Row
+            key={index}
             style={[item.label !== t('accountBalance') && styles.financialGap, styles.financialRow]}
           >
             <TextField text={item.label} style={styles.subSourceInformationText} />

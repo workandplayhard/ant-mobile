@@ -8,8 +8,8 @@ import mockData from './mockData'
 import styles from './styles'
 
 const Footer = () => {
-  const itemDisplay = (content: string) => (
-    <Row style={styles.subSourceFooterList}>
+  const renderItem = (content: string, index: number) => (
+    <Row key={index} style={styles.subSourceFooterList}>
       <View style={styles.circle} />
       <TextField
         text={content}
@@ -27,7 +27,7 @@ const Footer = () => {
         <TextField text={mockData.data.headingExample} style={styles.subSourceText} />
 
         <Gap gap={20} />
-        {mockData.data.footerListItems.map((item) => itemDisplay(item))}
+        {mockData.data.footerListItems.map((item, index) => renderItem(item, index))}
       </View>
     </View>
   )

@@ -91,7 +91,7 @@ const TabNavigator = () => {
           paddingBottom: 0,
         },
       })}
-      initialRouteName={NavTabs.settingsTab}
+      initialRouteName={NavTabs.homeTab}
     >
       <Tab.Screen name={NavTabs.menuTab} component={MenuStack} />
       <Tab.Screen name={NavTabs.settingsTab} component={SettingsStack} />

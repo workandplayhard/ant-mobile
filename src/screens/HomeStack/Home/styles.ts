@@ -6,11 +6,14 @@ import { PRIMARY_BG_COLOR, WHITE } from '@/theme'
 export default StyleSheet.create({
   container: {
     backgroundColor: PRIMARY_BG_COLOR,
-    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
     paddingVertical: RW(40),
     width: '100%',
     flexDirection: 'column',
     height: '100%',
+  },
+  scrollContent: {
+    width: '100%',
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },
   buttonRow: {
     justifyContent: 'space-between',

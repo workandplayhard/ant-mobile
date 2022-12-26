@@ -20,6 +20,7 @@ export default StyleSheet.create({
     borderRadius: RW(15),
     backgroundColor: DROPDOWN_BUTTON_BG_COLOR,
     paddingHorizontal: RW(20),
+    overflow: 'visible',
   },
   buttonFocused: {
     borderColor: DROPDOWN_ACTIVE_BORDER_COLOR,
