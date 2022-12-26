@@ -5,7 +5,7 @@ import { Trans } from 'react-i18next'
 
 import { t } from 'i18next'
 import { NavScreens, RouteParamList } from '@/navigation'
-import { Gap, ImageView, PageTitle, ScrollContainer, TextField } from '@/components'
+import { Gap, ImageView, PageTitle, TextField, Col, Container } from '@/components'
 
 import Pig from '@/assets/images/img_pig.png'
 
@@ -32,32 +32,31 @@ export const PaymentFinalization: React.FC = () => {
   }, [navigation])
 
   return (
-    <ScrollContainer style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <Gap gap={330} />
-      <PageTitle
-        title={t('finalizationTitle')}
-        titleAlign="center"
-        subTitle={t('finalizationSubTitle')}
-        subTitleAlign="center"
-        mode="dark"
-      />
-
-      <Gap gap={60} />
-      <TextField style={styles.percentage}>
-        <Trans
-          i18nKey="percentage"
-          values={{ value: percentage }}
-          components={{
-            tag1: <TextField style={styles.percentageSymbol} />,
-          }}
+    <Container style={styles.container}>
+      <Col style={styles.contentContainer}>
+        <PageTitle
+          title={t('finalizationTitle')}
+          titleAlign="center"
+          subTitle={t('finalizationSubTitle')}
+          subTitleAlign="center"
+          mode="dark"
         />
-      </TextField>
 
-      <Gap gap={75} />
-      <ImageView url={Pig} />
+        <Gap gap={60} />
+        <TextField style={styles.percentage}>
+          <Trans
+            i18nKey="percentage"
+            values={{ value: percentage }}
+            components={{
+              tag1: <TextField style={styles.percentageSymbol} />,
+            }}
+          />
+        </TextField>
 
-      <Gap gap={180} />
-    </ScrollContainer>
+        <Gap gap={75} />
+        <ImageView url={Pig} />
+      </Col>
+    </Container>
   )
 }
 

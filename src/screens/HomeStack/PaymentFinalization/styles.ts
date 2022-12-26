@@ -4,10 +4,16 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
   container: {
     backgroundColor: PRIMARY_BG_COLOR,
-    padding: PAGE_HORIZONTAL_PADDING,
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    flexDirection: 'column',
+    alignITems: 'center',
+    justifycontent: 'center',
   },
   contentContainer: {
+    width: '100%',
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: RH(350),
   },
   pos: {
     alignItems: 'center',
