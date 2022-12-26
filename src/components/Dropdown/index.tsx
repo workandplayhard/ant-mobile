@@ -9,7 +9,7 @@ import { Icon } from '../Icon'
 import styles from './styles'
 
 interface IDropdown<T> {
-  data: IOption<T>[] | string[]
+  data: IOption<T>[]
   placeholder?: string
   disabled?: boolean
   buttonText?: string

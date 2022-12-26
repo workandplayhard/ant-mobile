@@ -21,7 +21,7 @@ const Footer = () => {
     </Row>
   )
   return (
-    <>
+    <View>
       <Gap gap={40} />
       <View style={styles.paddingHorizontalStandard}>
         <TextField text={mockData.data.headingExample} style={styles.subSourceText} />
@@ -29,7 +29,7 @@ const Footer = () => {
         <Gap gap={20} />
         {mockData.data.footerListItems.map((item) => itemDisplay(item))}
       </View>
-    </>
+    </View>
   )
 }
 

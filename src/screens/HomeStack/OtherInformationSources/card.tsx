@@ -5,8 +5,9 @@ import { CheckBox, Dropdown, Gap, ImageView, Row } from '@/components'
 
 import { t } from '@/i18n'
 
-import mockData from './mockData'
 import { IOption } from '@/types'
+
+import mockData from './mockData'
 
 import styles from './styles'
 
@@ -29,7 +30,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
   )
 
   return (
-    <>
+    <View>
       <Gap gap={19} />
       <View style={styles.paddingHorizontalStandard}>
         <Dropdown<string>
@@ -56,7 +57,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
 
         <Gap gap={20} />
       </View>
-    </>
+    </View>
   )
 }
 

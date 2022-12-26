@@ -2,7 +2,7 @@ export type TLang = 'en' | 'he'
 
 export interface IOption<T = string> {
   label: string
-  value?: T
+  value: T
   image?: any
   isSelected?: boolean
 }

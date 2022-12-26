@@ -1,17 +1,27 @@
 import React, { useCallback, useRef, useState } from 'react'
 import { Text, View } from 'react-native'
 import { Modalize } from 'react-native-modalize'
-import { Portal } from 'react-native-portalize'
 
-import { Button, Col, Dropdown, Gap, Icon, Row, ScrollContainer, TextField } from '@/components'
+import {
+  Button,
+  Col,
+  Dropdown,
+  Gap,
+  Icon,
+  Modal,
+  Row,
+  ScrollContainer,
+  TextField,
+} from '@/components'
+import { MODAL_BACKDROP_COLOR } from '@/theme'
 
 import { t } from '@/i18n'
 
-import mockData from './mockData'
 import { IOption } from '@/types'
 
-import styles, { informationModalHeight } from './styles'
-import { OTHER_INFORMATION_SUB_FOOTER_CANCEL_BORDER_COLOR, WHITE, font } from '@/theme'
+import mockData from './mockData'
+
+import styles from './styles'
 
 interface IProps {
   onPeriodStatus: (count: number) => void
@@ -45,6 +55,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
   }, [index, periods, onCancelModal])
 
   const onSelectPeriod = useCallback(
+    // eslint-disable-next-line @typescript-eslint/no-shadow
     (index: number, isSelected: boolean) => {
       const _c = [...periods]
       const current = periods.filter((item) => item.isSelected === true)
@@ -62,11 +73,11 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         }
       }
     },
-    [onOpenModal, periods],
+    [onOpenModal, onPeriodStatus, periods],
   )
 
   return (
-    <>
+    <View>
       <Gap gap={48} />
       <View style={styles.subSource}>
         <Row>
@@ -98,47 +109,43 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         <Gap gap={40} />
       </View>
 
-      <Portal>
-        <Modalize
-          ref={modalizeRef}
-          withHandle
-          handlePosition="inside"
-          modalStyle={styles.modal}
-          handleStyle={[styles.handle]}
-          closeOnOverlayTap={false}
-          childrenStyle={styles.modalChildren}
-          modalHeight={informationModalHeight}
-        >
-          <Col style={[styles.wrapper]}>
-            <Gap gap={20} />
+      <Modal
+        modalStyle={styles.modal}
+        isVisible={modal}
+        hasBackdrop={true}
+        backdropColor={MODAL_BACKDROP_COLOR}
+        swipeEnabled={true}
+      >
+        <Col style={[styles.wrapper]}>
+          <View style={styles.handle} />
+          <Gap gap={20} />
+          <TextField text={periods[index].label} style={styles.modalTitle} />
+          <Gap gap={20} />
+          <ScrollContainer style={styles.scrollContainerInitial}>
+            <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />
+          </ScrollContainer>
 
-            <Gap gap={20} />
-            <TextField text={periods[index].label} style={styles.modalTitle} />
-            <Gap gap={20} />
-            <ScrollContainer style={styles.scrollContainerInitial}>
-              <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />
-            </ScrollContainer>
+          <Gap gap={60} />
+          <Button
+            variant="default"
+            size="lg"
+            text={t('cancel')}
+            onPress={onCancelModal}
+            buttonStyle={{
+              borderColor: '#7A7A7D',
+            }}
+          />
 
-            <Gap gap={60} />
-            <Button
-              variant="pure"
-              borderColor={OTHER_INFORMATION_SUB_FOOTER_CANCEL_BORDER_COLOR}
-              size="lg"
-              text={t('cancel')}
-              onPress={onCancelModal}
-            />
-
-            <Gap gap={21} />
-            <Button
-              variant="primary"
-              size="lg"
-              text={mockData.data.informationModalButton}
-              onPress={onNext}
-            />
-          </Col>
-        </Modalize>
-      </Portal>
-    </>
+          <Gap gap={21} />
+          <Button
+            variant="primary"
+            size="lg"
+            text={mockData.data.informationModalButton}
+            onPress={onNext}
+          />
+        </Col>
+      </Modal>
+    </View>
   )
 }
 

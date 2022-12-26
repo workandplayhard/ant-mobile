@@ -16,7 +16,7 @@ export default {
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.",
     headingExample: 'Lorem Ipsum is simply dummy',
     informationModalButton: 'Lorem Ipsum',
-    countries: [
+    banks: [
       {
         label: t('mizrahiTefahotBank'),
         value: 'us',
@@ -70,14 +70,17 @@ export default {
       {
         label: t('oneTimeOnly'),
         isSelected: false,
+        value: 'oneTime',
       },
       {
         label: t('yearAndHalf'),
         isSelected: false,
+        value: 'yearAndHalf',
       },
       {
         label: t('threeYears'),
         isSelected: false,
+        value: 'threYears',
       },
     ],
   },

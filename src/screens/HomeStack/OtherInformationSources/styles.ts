@@ -56,7 +56,7 @@ export default StyleSheet.create({
     ...font('rw.semibold', 18, PAGE_TITLE_COLOR, 24),
   },
   dropdownPos: {
-    marginTop: RW(-20),
+    marginTop: RW(-50),
   },
   financialRow: {
     justifyContent: 'space-between',
@@ -98,9 +98,9 @@ export default StyleSheet.create({
     paddingHorizontal: RW(25),
   },
   modal: {
-    backgroundColor: TRANSPARENT,
     borderTopLeftRadius: 0,
     borderTopRightRadius: 0,
+    alignItems: 'flex-end',
   },
   modalChildren: {
     backgroundColor: PRIMARY_BG_COLOR,
@@ -115,6 +115,7 @@ export default StyleSheet.create({
     borderTopRightRadius: RW(20),
     paddingTop: RH(35),
     paddingBottom: RH(40),
+    backgroundColor: PRIMARY_BG_COLOR,
   },
   modalTitle: {
     ...font('rw.bold', 20, WHITE, 28),
@@ -126,9 +127,11 @@ export default StyleSheet.create({
     maxHeight: RH(160),
   },
   handle: {
+    position: 'absolute',
     backgroundColor: WHITE,
     top: RH(20),
     width: RW(80),
+    marginLeft: SCREEN_WIDTH / 2 - RW(40),
     height: RH(3),
     borderRadius: RW(2),
   },

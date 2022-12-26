@@ -5,8 +5,9 @@ import { CheckBox, Gap, Icon, Row } from '@/components'
 
 import { t } from '@/i18n'
 
-import mockData from './mockData'
 import { IFinance } from '@/types'
+
+import mockData from './mockData'
 
 import styles from './styles'
 
@@ -23,7 +24,7 @@ const Information = () => {
   )
 
   return (
-    <>
+    <View>
       <Gap gap={40} />
       <View style={styles.subSource}>
         <Row>
@@ -50,7 +51,7 @@ const Information = () => {
           </Row>
         ))}
       </View>
-    </>
+    </View>
   )
 }
 

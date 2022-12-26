@@ -21,7 +21,6 @@ const OtherInformationSources = () => {
   const [periodStatus, setPeriodStatus] = useState<number>(0)
   const [cardStatus, setCardStatus] = useState<number>(0)
 
-  // const enabled = bankStatus && cardStatus ? true : false
   const enabled = useMemo(() => {
     return bankStatus && cardStatus && periodStatus ? true : false
   }, [cardStatus, bankStatus, periodStatus])
