@@ -6,10 +6,14 @@ export default StyleSheet.create({
     backgroundColor: PRIMARY_BG_COLOR,
     padding: PAGE_HORIZONTAL_PADDING,
   },
+  contentContainer: {
+    alignItems: 'center',
+  },
   pos: {
     alignItems: 'center',
   },
-  timer: {
+  percentage: {
     ...font('pp.bold', 26, WHITE, 32),
+    textAlign: 'center',
   },
 })

@@ -35,6 +35,7 @@
     "thisMonth": "החודש הזה",
     "startingProcess": "אנחנו מתחילים עכשיו בתהליך!",
     "finalizationTitle": "כל החשבונות אושרו בהצלחה, המתן",
-    "finalizationSubTitle": "התהליך עשוי להימשך כמה דקות, אנא התאזר בסבלנות"
+    "finalizationSubTitle": "התהליך עשוי להימשך כמה דקות, אנא התאזר בסבלנות",
+    "percentage": "{{value<tag>%</tag>}}"
   }
 }
