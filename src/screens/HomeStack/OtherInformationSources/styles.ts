@@ -111,7 +111,7 @@ export default StyleSheet.create({
     flex: 1,
     borderTopLeftRadius: RW(20),
     borderTopRightRadius: RW(20),
-    paddingTop: RH(35),
+    paddingTop: RH(20),
     paddingBottom: RH(40),
     backgroundColor: PRIMARY_BG_COLOR,
   },

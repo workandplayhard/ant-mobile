@@ -119,7 +119,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
           <View style={styles.handleWrapper}>
             <View style={styles.handle} />
           </View>
-          <Gap gap={20} />
+          <Gap gap={30} />
           <TextField text={periods[index].label} style={styles.modalTitle} />
           <Gap gap={20} />
           <ScrollContainer style={styles.scrollContainerInitial}>
