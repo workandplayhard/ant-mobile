@@ -54,7 +54,7 @@ export default StyleSheet.create({
     ...font('rw.semibold', 18, PAGE_TITLE_COLOR, 24),
   },
   dropdownPos: {
-    marginTop: RW(-50),
+    marginTop: RH(-50),
   },
   financialRow: {
     justifyContent: 'space-between',
@@ -124,13 +124,17 @@ export default StyleSheet.create({
   scrollContainerInitial: {
     maxHeight: RH(160),
   },
+  handleWrapper: {
+    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
   handle: {
+    top: 0,
     position: 'absolute',
-    backgroundColor: WHITE,
-    top: RH(20),
     width: RW(80),
-    marginLeft: SCREEN_WIDTH / 2 - RW(40),
     height: RH(3),
     borderRadius: RW(2),
+    backgroundColor: WHITE,
   },
 })

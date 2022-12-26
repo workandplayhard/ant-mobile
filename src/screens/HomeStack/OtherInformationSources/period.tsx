@@ -116,7 +116,9 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         swipeEnabled={true}
       >
         <Col style={[styles.wrapper]}>
-          <View style={styles.handle} />
+          <View style={styles.handleWrapper}>
+            <View style={styles.handle} />
+          </View>
           <Gap gap={20} />
           <TextField text={periods[index].label} style={styles.modalTitle} />
           <Gap gap={20} />
