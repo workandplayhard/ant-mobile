@@ -36,6 +36,21 @@
     "startingProcess": "We are now starting the process!",
     "finalizationTitle": "All accounts succesfully approved, Please wait",
     "finalizationSubTitle": "The process could take a few minutes, please be patient",
-    "percentage": "{{value}}%"
+    "percentage": "{{value}}%",
+    "otherInformationSources": "Other information sources",
+    "chooseBanksAndCards": "Choose banks and cards",
+    "typesOfInformation": "Types of information",
+    "accountBalance": "Account balance",
+    "accountTransactions": "Account transactions",
+    "placeholder": "Select",
+    "chooseThePeriod": "Choose the period of the of approval",
+    "mizrahiTefahotBank": "Mizrahi Tefahot Bank",
+    "machineLearningIsrael": "Machine Learning Israel",
+    "bankHapoalim": "Bank Hapoalim",
+    "oneTimeOnly": "One time only",
+    "yearAndHalf": "A year and a Half",
+    "threeYears": "Three years",
+    "cancel": "Cancel",
+    "optimizeYourPayments": "Optimize your payments"
   }
 }

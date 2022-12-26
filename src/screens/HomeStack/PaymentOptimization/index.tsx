@@ -57,6 +57,8 @@ const PaymentOptimization: React.FC = () => {
             </Row>
           </View>
         </View>
+
+        <Gap gap={40} />
         <Col style={styles.contentContainer}>
           <Row style={styles.contentIconContainer}>
             <Icon

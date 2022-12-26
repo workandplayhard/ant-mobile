@@ -30,6 +30,7 @@ import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
 import notificationIcon from '@/assets/icons/ic_notification.svg'
 import toggleEnabledIcon from '@/assets/icons/ic_toggle_enabled.svg'
 import tvDefaultPlanIcon from '@/assets/icons/ic_tv_default_plan.svg'
+import questionCircleIcon from '@/assets/icons/ic_question_circle.svg'
 import toggleDisabledIcon from '@/assets/icons/ic_toggle_disabled.svg'
 import copyCardNumberIcon from '@/assets/icons/ic_copy_card_number.svg'
 import walletCreditCardIcon from '@/assets/icons/ic_wallet_credit_card.svg'
@@ -69,6 +70,7 @@ export default {
   tvDefaultPlanIcon,
   toggleEnabledIcon,
   nextIndicatorIcon,
+  questionCircleIcon,
   copyCardNumberIcon,
   toggleDisabledIcon,
   walletCreditCardIcon,
