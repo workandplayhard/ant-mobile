@@ -10,6 +10,7 @@ import TermsOfUseScreen from './TermsOfUse'
 import ScreenA from './ScreenA'
 import Home from './Home'
 import PaymentProcessOverview from './PaymentProcessOverview'
+import PaymentFinalization from './PaymentFinalization'
 
 const Stack = createStackNavigator()
 
@@ -33,6 +34,7 @@ const StackScreen = () => {
         name={NavScreens.home.paymentProgressOverview}
         component={PaymentProcessOverview}
       />
+      <Stack.Screen name={NavScreens.home.paymentFinalization} component={PaymentFinalization} />
     </Stack.Navigator>
   )
 }
