@@ -9,6 +9,9 @@ const HomeScreenA: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{`StackD-ScreenA-${t('lorem')}`}</Text>
+      <Text style={styles.title}>{`StackD-ScreenA-${t('lorem')}`}</Text>
+      <Text style={styles.title}>{`StackD-ScreenA-${t('lorem')}`}</Text>
+      <Text style={styles.title}>{`StackD-ScreenA-${t('lorem')}`}</Text>
     </View>
   )
 }

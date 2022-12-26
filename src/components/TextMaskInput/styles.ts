@@ -4,13 +4,15 @@ import {
   RW,
   RH,
   font,
-  TEXT_INPUT_LIGHT_BG_COLOR,
-  TEXT_INPUT_DARK_BG_COLOR,
-  TEXT_INPUT_DARK_COLOR,
-  TEXT_INPUT_LIGHT_COLOR,
-  TEXT_LABEL_DARK_COLOR,
-  TEXT_LABEL_LIGHT_COLOR,
   DARK_RED,
+  DETAIL_BORDER_BLUR,
+  DETAIL_BORDER_FOCUS,
+  TEXT_INPUT_DARK_COLOR,
+  TEXT_LABEL_DARK_COLOR,
+  TEXT_INPUT_LIGHT_COLOR,
+  TEXT_LABEL_LIGHT_COLOR,
+  TEXT_INPUT_DARK_BG_COLOR,
+  TEXT_INPUT_LIGHT_BG_COLOR,
 } from '@/theme'
 
 export default StyleSheet.create({
@@ -40,5 +42,11 @@ export default StyleSheet.create({
   error: {
     ...font('pp.regular', 12, DARK_RED, 18),
     textAlign: 'right',
+  },
+  focus: {
+    borderColor: DETAIL_BORDER_FOCUS,
+  },
+  blur: {
+    borderColor: DETAIL_BORDER_BLUR,
   },
 })

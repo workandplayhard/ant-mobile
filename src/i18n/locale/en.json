@@ -33,6 +33,10 @@
     "moneySpent": "Money Spent",
     "lastMonth": "Last month",
     "thisMonth": "This month",
-    "startingProcess": "We are now starting the process!"
+    "startingProcess": "We are now starting the process!",
+    "personalDetails": "Personal Details",
+    "fullName": "Full name",
+    "credit": "Credit card",
+    "celluar": "Celluar provider"
   }
 }

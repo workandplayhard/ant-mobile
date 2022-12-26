@@ -33,6 +33,10 @@
     "moneySpent": "כסף שהוצא",
     "lastMonth": "בחודש שעבר",
     "thisMonth": "החודש הזה",
-    "startingProcess": "אנחנו מתחילים עכשיו בתהליך!"
+    "startingProcess": "אנחנו מתחילים עכשיו בתהליך!",
+    "personalDetails": "פרטים אישיים",
+    "fullName": "השם המלא",
+    "credit": "כרטיס אשראי",
+    "celluar": "ספק סלולר"
   }
 }

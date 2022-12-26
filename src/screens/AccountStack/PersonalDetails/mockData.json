@@ -1,0 +1,10 @@
+{
+  "placeholder": {
+    "fullName": "John Doe",
+    "idNumber": "XXXX XXXX",
+    "phoneNumber": "+972 00 000 0000",
+    "creditCard": "XXXX XXXX XXXX XXXX",
+    "cellur": "Cellcom",
+    "email": "johndoe@example.com"
+  }
+}
