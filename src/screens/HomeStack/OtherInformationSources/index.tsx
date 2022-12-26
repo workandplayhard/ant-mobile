@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { Button, Container, Gap, PageTitle, ScrollContainer } from '@/components'
 import NavHeader from '@/navigation/components/NavHeader'
-import { RouteParamList } from '@/navigation'
+import { NavScreens, RouteParamList } from '@/navigation'
 import { t } from '@/i18n'
 
 import Bank from './bank'
@@ -55,6 +55,7 @@ const OtherInformationSources = () => {
             disabled={!enabled}
             text={t('next')}
             buttonStyle={styles.paddingHorizontalStandard}
+            onPress={() => navigation.navigate(NavScreens.home.paymentFinalization)}
           />
         </View>
 
