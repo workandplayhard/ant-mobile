@@ -24,7 +24,7 @@ export const PaymentFinalization: React.FC = () => {
           clearInterval(timer.current)
         }
 
-        return currentPercentage + 1
+        return Math.min(100, currentPercentage + 1)
       })
     }, 50)
 
