@@ -33,6 +33,8 @@
     "moneySpent": "Money Spent",
     "lastMonth": "Last month",
     "thisMonth": "This month",
-    "startingProcess": "We are now starting the process!"
+    "startingProcess": "We are now starting the process!",
+    "finalizationTitle": "All accounts succesfully approved, Please wait",
+    "finalizationSubTitle": "The process could take a few minutes, please be patient"
   }
 }

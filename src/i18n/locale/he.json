@@ -33,6 +33,8 @@
     "moneySpent": "כסף שהוצא",
     "lastMonth": "בחודש שעבר",
     "thisMonth": "החודש הזה",
-    "startingProcess": "אנחנו מתחילים עכשיו בתהליך!"
+    "startingProcess": "אנחנו מתחילים עכשיו בתהליך!",
+    "finalizationTitle": "כל החשבונות אושרו בהצלחה, המתן",
+    "finalizationSubTitle": "התהליך עשוי להימשך כמה דקות, אנא התאזר בסבלנות"
   }
 }
