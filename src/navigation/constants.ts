@@ -35,5 +35,6 @@ export const NavScreens = {
   },
   account: {
     screenA: 'accountStack:screenA',
+    personalDetails: 'accountStack:personalDetails',
   },
 }
