@@ -52,7 +52,9 @@ export const TextMaskInput: React.FC<ITextMaskInput> = ({
         style={[
           styles.input,
           mode === 'dark' && styles.inputDark,
-          isFocus ? styles.focus : styles.blur,
+          mode === 'light' && styles.inputLight,
+          isFocus && mode === 'dark' ? styles.darkFocused : styles.darkBlured,
+          isFocus && mode === 'light' ? styles.lightFocused : styles.lightBlured,
           style,
         ]}
         onChangeText={onChange}

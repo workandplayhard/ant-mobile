@@ -11,6 +11,8 @@ import {
   TEXT_INPUT_LIGHT_BG_COLOR,
   TEXT_INPUT_DARK_BORDER_ACTIVE_COLOR,
   TEXT_INPUT_DARK_BORDER_INACTIVE_COLOR,
+  TEXT_INPUT_LIGHT_BORDER_ACTIVE_COLOR,
+  TEXT_INPUT_LIGHT_BORDER_INACTIVE_COLOR,
 } from '@/theme'
 
 export default StyleSheet.create({
@@ -31,6 +33,10 @@ export default StyleSheet.create({
     backgroundColor: TEXT_INPUT_DARK_BG_COLOR,
     color: TEXT_INPUT_DARK_COLOR,
   },
+  inputLight: {
+    backgroundColor: TEXT_INPUT_LIGHT_BG_COLOR,
+    color: TEXT_INPUT_LIGHT_COLOR,
+  },
   label: {
     ...font('pp.regular', 14, TEXT_LABEL_LIGHT_COLOR, 20),
   },
@@ -41,10 +47,16 @@ export default StyleSheet.create({
     ...font('pp.regular', 12, DARK_RED, 18),
     textAlign: 'right',
   },
-  focus: {
+  lightFocused: {
+    borderColor: TEXT_INPUT_LIGHT_BORDER_ACTIVE_COLOR,
+  },
+  lightBlured: {
+    borderColor: TEXT_INPUT_LIGHT_BORDER_INACTIVE_COLOR,
+  },
+  darkFocused: {
     borderColor: TEXT_INPUT_DARK_BORDER_ACTIVE_COLOR,
   },
-  blur: {
+  darkBlured: {
     borderColor: TEXT_INPUT_DARK_BORDER_INACTIVE_COLOR,
   },
 })
