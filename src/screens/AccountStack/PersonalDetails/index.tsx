@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from 'react'
+import { View } from 'react-native'
 
 import {
   Button,
@@ -38,9 +39,11 @@ const PersonalDetails: React.FC = () => {
 
   return (
     <Container style={styles.container}>
-      <NavHeader hasBackButton />
-      <Gap gap={22} />
-      <PageTitle title={t('personalDetails')} titleAlign="left" />
+      <View style={styles.headerContainer}>
+        <NavHeader hasBackButton />
+        <Gap gap={22} />
+        <PageTitle title={t('personalDetails')} titleAlign="left" />
+      </View>
       <Gap gap={40} />
       <ScrollContainer contentContainerStyle={styles.contentContainer}>
         <TextInput
