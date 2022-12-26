@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
@@ -13,20 +13,21 @@ import styles from './styles'
 export const PaymentFinalization: React.FC = () => {
   const [percentage, setPercentage] = React.useState(0)
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const timer = useRef<any>(null)
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    timer.current = setInterval(() => {
       setPercentage((currentPercentage: number) => {
         if (currentPercentage > 98) {
           navigation.navigate(NavScreens.home.otherInformationSources)
-          clearInterval(interval)
+          clearInterval(timer.current)
         }
 
         return currentPercentage + 1
       })
     }, 50)
 
-    return () => clearInterval(interval)
+    return () => clearInterval(timer.current)
   }, [navigation])
 
   return (
