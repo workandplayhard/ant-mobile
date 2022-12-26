@@ -21,7 +21,7 @@ export default StyleSheet.create({
   border: {
     position: 'absolute',
     width: '100%',
-    height: RH(8),
+    height: RH(4),
     bottom: 0,
     borderTopLeftRadius: RW(15),
     borderTopRightRadius: RW(15),
