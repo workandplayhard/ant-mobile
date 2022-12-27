@@ -95,11 +95,7 @@ export const CustomerExpense: React.FC = () => {
           <Button variant="primary" size="lg" text={t('next')} onPress={() => setShowModal(true)} />
         </View>
         <Gap gap={150} />
-        {showModal && (
-          <View style={styles.modalContainer}>
-            <OTPVerification showModal={(val) => setShowModal(val)} />
-          </View>
-        )}
+        {showModal && <OTPVerification showModal={(val) => setShowModal(val)} />}
       </ScrollContainer>
     </Container>
   )

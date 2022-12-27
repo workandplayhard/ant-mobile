@@ -96,10 +96,6 @@ export default StyleSheet.create({
   buttonContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },
-  modalContainer: {
-    width: '100%',
-    paddingHorizontal: RW(30),
-  },
   modalTitle: {
     textAlign: 'center',
     ...font('rw.bold', 26, BLACK, 32),
