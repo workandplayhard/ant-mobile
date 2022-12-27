@@ -1,13 +1,11 @@
 import React, { useCallback, useState } from 'react'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { useNavigation } from '@react-navigation/native'
 
 import { Button, Col, Gap, Modal, OTPField, PageTitle } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
-
 import { t } from '@/i18n'
-
 import { NavScreens, RouteParamList } from '@/navigation'
-import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { useNavigation } from '@react-navigation/native'
 
 import mockData from './mockData.json'
 

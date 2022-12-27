@@ -1,4 +1,5 @@
-import { SCREEN_WIDTH } from '@/constants'
+import { StyleSheet } from 'react-native'
+
 import {
   RH,
   RW,
@@ -9,7 +10,7 @@ import {
   PAGE_HORIZONTAL_PADDING,
   TEXT_INPUT_DARK_BG_COLOR,
 } from '@/theme'
-import { StyleSheet } from 'react-native'
+import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   container: {
