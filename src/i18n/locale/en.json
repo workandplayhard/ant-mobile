@@ -58,6 +58,6 @@
     "optimizeYourPayments": "Optimize your payments",
     "ok": "Ok",
     "OTP": "OTP Verification",
-    "expense": "{{value}}"
+    "constantExpense": "Constant expense"
   }
 }

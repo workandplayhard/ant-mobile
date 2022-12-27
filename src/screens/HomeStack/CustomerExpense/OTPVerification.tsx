@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { useNavigation } from '@react-navigation/native'
 
-import { Button, Col, Gap, Modal, OTPField, PageTitle } from '@/components'
+import { Button, Col, Gap, Modal, OTPField, PageTitle, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
 import { t } from '@/i18n'
 import { NavScreens, RouteParamList } from '@/navigation'
@@ -27,19 +27,16 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
     <Modal
       modalStyle={styles.modal}
       isVisible
-      hasBackdrop={true}
+      hasBackdrop
       backdropColor={MODAL_BACKDROP_COLOR}
-      swipeEnabled={true}
+      swipeEnabled
     >
       <Col style={[styles.wrapper]}>
         <Gap gap={20} />
-        <PageTitle
-          title={t('OTP')}
-          titleAlign="center"
-          subTitle={mockData.modalTitleExample}
-          subTitleAlign="center"
-          mode="light"
-        />
+        <TextField text={t('OTP')} style={styles.modalTitle} />
+        <Gap horizontal={false} gap={12} />
+        <TextField text={mockData.modalTitleExample} style={styles.modalSubTitle} />
+
         <Gap gap={40} />
         <OTPField cellCount={6} value={code} setValue={setCode} />
 

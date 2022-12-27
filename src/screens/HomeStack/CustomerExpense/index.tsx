@@ -48,21 +48,18 @@ export const CustomerExpense: React.FC = () => {
             onPress={() => navigation.navigate(NavScreens.home.home)}
           />
         </Row>
-        <PageTitle title="Constant expense " titleAlign="left" mode="dark" />
-      </View>
-      <View style={styles.questionCirclePos}>
-        <Icon name="questionCircleIcon" size={24} />
+        <PageTitle title={t('constantExpense')} titleAlign="left" mode="dark" />
       </View>
 
       <ScrollContainer>
+        <View style={styles.questionCirclePos}>
+          <Icon name="questionCircleIcon" size={24} />
+        </View>
         <View style={styles.contentContainer}>
           <View style={styles.description}>
             <TextField text={mockData.descriptionHeaderExample} style={styles.descriptionTitle} />
             <Gap gap={15} />
-            <TextField
-              text={t('expense', { value: mockData.descriptionNumberExample })}
-              style={styles.descriptionNumber}
-            />
+            <TextField text={mockData.descriptionNumberExample} style={styles.descriptionNumber} />
           </View>
         </View>
 
@@ -74,8 +71,6 @@ export const CustomerExpense: React.FC = () => {
               style={[
                 styles.card,
                 {
-                  marginLeft: index % 2 === 0 ? 0 : 20,
-                  marginTop: index > 1 ? 20 : 0,
                   backgroundColor: card.color,
                 },
               ]}
@@ -83,11 +78,13 @@ export const CustomerExpense: React.FC = () => {
               <Icon name={card.iconName} size={34} />
               <Gap gap={20} />
               <TextField text={card.label} style={styles.cardText} />
-              <View style={styles.cardCheckboxPos}>
-                <CheckBox
-                  onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
-                  isChecked={cards[index].isSelected}
-                />
+              <View style={styles.cardCheckboxPosWrapper}>
+                <View style={styles.cardCheckboxPos}>
+                  <CheckBox
+                    onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
+                    isChecked={cards[index].isSelected}
+                  />
+                </View>
               </View>
             </View>
           ))}

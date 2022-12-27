@@ -58,6 +58,6 @@
     "optimizeYourPayments": "בצע אופטימיזציה של התשלומים שלך",
     "ok": "בסדר",
     "OTP": "אימות של OTP",
-    "expense": "{{value}}"
+    "constantExpense": "הוצאה מתמדת"
   }
 }

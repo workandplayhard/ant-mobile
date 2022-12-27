@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { I18nManager, StyleSheet } from 'react-native'
 
 import {
   RH,
@@ -28,20 +28,6 @@ export default StyleSheet.create({
     width: '100%',
     padding: RW(30),
   },
-  pos: {
-    alignItems: 'center',
-  },
-  percentage: {
-    ...font('pp.bold', 26, WHITE, 32),
-    textAlign: 'center',
-    padding: RH(3),
-  },
-  percentageSymbol: {
-    ...font('pp.bold', 14, WHITE, 26),
-  },
-  modalizeWrapper: {
-    paddingHorizontal: RW(25),
-  },
   modal: {
     paddingHorizontal: RW(30),
     borderTopLeftRadius: 0,
@@ -54,15 +40,6 @@ export default StyleSheet.create({
     flex: 1,
     borderRadius: RW(20),
     backgroundColor: WHITE,
-  },
-  modalTitle: {
-    ...font('rw.bold', 20, WHITE, 28),
-  },
-  modalContent: {
-    ...font('rw.thin', 16, BLACK, 26),
-  },
-  scrollContainerInitial: {
-    maxHeight: RH(160),
   },
   closePos: {
     justifyContent: 'flex-end',
@@ -83,7 +60,7 @@ export default StyleSheet.create({
   },
   descriptionNumber: {
     ...font('pp.bold', 28, WHITE, 26),
-    paddingTop: RH(10),
+    paddingTop: RH(15),
     textAlign: 'center',
   },
   cardContainer: {
@@ -91,11 +68,13 @@ export default StyleSheet.create({
     flexDirection: 'row',
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   card: {
-    width: SCREEN_WIDTH / 2 - 40,
-    height: SCREEN_WIDTH / 2 - 40,
+    width: RW(155),
+    height: RW(155),
     borderRadius: RW(15),
+    marginBottom: RW(20),
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -103,9 +82,16 @@ export default StyleSheet.create({
     ...font('rw.semibold', 20, WHITE, 26),
   },
   cardCheckboxPos: {
-    position: 'absolute',
     right: RW(10),
-    top: RW(10),
+  },
+  cardCheckboxPosWrapper: {
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    paddingVertical: RW(10),
+    PaddingHorizontal: RW(10),
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
   },
   buttonContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
@@ -113,5 +99,15 @@ export default StyleSheet.create({
   modalContainer: {
     width: '100%',
     paddingHorizontal: RW(30),
+  },
+  modalTitle: {
+    textAlign: 'center',
+    ...font('rw.bold', 26, BLACK, 32),
+    width: '100%',
+  },
+  modalSubTitle: {
+    textAlign: 'center',
+    ...font('rw.regular', 14, BLACK, 26),
+    width: '100%',
   },
 })

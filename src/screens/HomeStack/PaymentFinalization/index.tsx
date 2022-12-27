@@ -20,7 +20,7 @@ export const PaymentFinalization: React.FC = () => {
     timer.current = setInterval(() => {
       setPercentage((currentPercentage: number) => {
         if (currentPercentage > 99) {
-          navigation.navigate(NavScreens.home.otherInformationSources)
+          navigation.navigate(NavScreens.home.customerExpense)
           clearInterval(timer.current)
         }
 
