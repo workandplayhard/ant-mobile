@@ -19,6 +19,7 @@ import { t } from '@/i18n'
 import { ICard } from '@/types'
 import OTPVerification from './OTPVerification'
 import { NavScreens, RouteParamList } from '@/navigation'
+import { RW } from '@/theme'
 
 import mockData from './mockData.json'
 
@@ -53,7 +54,7 @@ export const CustomerExpense: React.FC = () => {
 
       <ScrollContainer>
         <View style={styles.questionCirclePos}>
-          <Icon name="questionCircleIcon" size={24} />
+          <Icon name="questionCircleIcon" size={RW(24)} />
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.description}>
@@ -75,10 +76,10 @@ export const CustomerExpense: React.FC = () => {
                 },
               ]}
             >
-              <Icon name={card.iconName} size={34} />
+              <Icon name={card.iconName} size={RW(34)} />
               <Gap gap={20} />
               <TextField text={card.label} style={styles.cardText} />
-              <View style={styles.cardCheckboxPosWrapper}>
+              <View style={styles.cardCheckboxWrapper}>
                 <View style={styles.cardCheckboxPos}>
                   <CheckBox
                     onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}

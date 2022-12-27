@@ -1,4 +1,4 @@
-import { I18nManager, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import {
   RH,
@@ -10,7 +10,6 @@ import {
   PAGE_HORIZONTAL_PADDING,
   TEXT_INPUT_DARK_BG_COLOR,
 } from '@/theme'
-import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   container: {
@@ -64,7 +63,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   cardContainer: {
-    paddingHorizontal: 30,
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
     flexDirection: 'row',
     display: 'flex',
     flexWrap: 'wrap',
@@ -84,7 +83,7 @@ export default StyleSheet.create({
   cardCheckboxPos: {
     right: RW(10),
   },
-  cardCheckboxPosWrapper: {
+  cardCheckboxWrapper: {
     width: '100%',
     position: 'absolute',
     top: 0,
