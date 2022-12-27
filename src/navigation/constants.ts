@@ -32,6 +32,7 @@ export const NavScreens = {
     paymentProgressOverview: 'homeStack:paymentProgressOverview',
     otherInformationSources: 'homeStack:otherInformationSources',
     paymentFinalization: 'homeStack:paymentFinalization',
+    customerExpense: 'homeStack:customerExpense',
   },
   account: {
     screenA: 'accountStack:screenA',

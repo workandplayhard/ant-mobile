@@ -1,0 +1,15 @@
+{
+  "data": {
+    "cards": [
+      { "label": "Engergy", "iconName": "energyIcon", "isSelected": false, "color": "#FF2D39" },
+      { "label": "Telephone", "iconName": "telephoneIcon", "isSelected": false, "color": "#FFBD6E" },
+      { "label": "Insurance", "iconName": "handsHoldingCircleIcon", "isSelected": false, "color": "#FFBD6E" },
+      { "label": "TV", "iconName": "tvIcon", "isSelected": false, "color": "#FFBD6E" },
+      { "label": "Car Insurance", "iconName": "carIcon", "isSelected": false, "color": "#008037" },
+      { "label": "Music", "iconName": "musicIcon", "isSelected": false, "color": "#008037" }
+    ]
+  },
+  "descriptionHeaderExample": "Lorem Ipsum is simply dummy text of the printing",
+  "descriptionNumberExample": 1669,
+  "modalTitleExample": "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+}
