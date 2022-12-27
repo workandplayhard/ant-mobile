@@ -1,3 +1,5 @@
+import IconNames from '@/components/Icon/icons'
+
 export type TLang = 'en' | 'he'
 
 export interface IOption<T = string> {
@@ -10,6 +12,13 @@ export interface IOption<T = string> {
 export interface IFinance {
   label: string
   isSelected?: boolean
+}
+
+export interface ICard {
+  label: string
+  iconName: keyof typeof IconNames
+  isSelected?: boolean
+  color: string
 }
 
 export type TPCallback = (...params: any[]) => void

@@ -55,6 +55,9 @@
     "yearAndHalf": "A year and a Half",
     "threeYears": "Three years",
     "cancel": "Cancel",
-    "optimizeYourPayments": "Optimize your payments"
+    "optimizeYourPayments": "Optimize your payments",
+    "ok": "Ok",
+    "OTP": "OTP Verification",
+    "constantExpense": "Constant expense"
   }
 }

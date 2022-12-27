@@ -20,6 +20,7 @@ import arrowUpIcon from '@/assets/icons/ic_arrow_up.svg'
 import showCVVIcon from '@/assets/icons/ic_show_cvv.svg'
 import settingsIcon from '@/assets/icons/ic_settings.svg'
 import downloadIcon from '@/assets/icons/ic_download.svg'
+import telephoneIcon from '@/assets/icons/ic_telephone.svg'
 import arrowNextIcon from '@/assets/icons/ic_arrow_next.svg'
 import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
@@ -63,6 +64,7 @@ export default {
   arrowNextIcon,
   arrowPrevIcon,
   arrowDownIcon,
+  telephoneIcon,
   arrowBackIcon,
   balloonHotIcon,
   balloonThinIcon,

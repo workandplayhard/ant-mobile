@@ -55,6 +55,9 @@
     "yearAndHalf": "שנה וחצי",
     "threeYears": "שנים",
     "cancel": "לְבַטֵל",
-    "optimizeYourPayments": "בצע אופטימיזציה של התשלומים שלך"
+    "optimizeYourPayments": "בצע אופטימיזציה של התשלומים שלך",
+    "ok": "בסדר",
+    "OTP": "אימות של OTP",
+    "constantExpense": "הוצאה מתמדת"
   }
 }

@@ -12,6 +12,7 @@ import Home from './Home'
 import PaymentProcessOverview from './PaymentProcessOverview'
 import PaymentFinalization from './PaymentFinalization'
 import OtherInformationSources from './OtherInformationSources'
+import CustomerExpense from './CustomerExpense'
 
 const Stack = createStackNavigator()
 
@@ -40,6 +41,7 @@ const StackScreen = () => {
         name={NavScreens.home.otherInformationSources}
         component={OtherInformationSources}
       />
+      <Stack.Screen name={NavScreens.home.customerExpense} component={CustomerExpense} />
     </Stack.Navigator>
   )
 }
