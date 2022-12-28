@@ -219,7 +219,7 @@ export default StyleSheet.create({
     paddingVertical: RW(30),
   },
   downloadBtn: {
-    borderColor: 'white',
+    borderColor: WHITE,
     borderWidth: RW(3),
   },
   emailBack: {

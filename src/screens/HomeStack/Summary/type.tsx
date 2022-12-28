@@ -1,8 +1,7 @@
 import React from 'react'
 
-import iconNames from '@/components/Icon/icons'
-
 import { Col, Icon, Row, TextField } from '@/components'
+import iconNames from '@/components/Icon/icons'
 
 import styles from './styles'
 

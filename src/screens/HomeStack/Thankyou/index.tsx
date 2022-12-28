@@ -1,11 +1,11 @@
 import React from 'react'
 import { View } from 'react-native'
-
-import { Button, Container, Gap, Icon, TextField } from '@/components'
-
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+
+import { Button, Container, Gap, Icon, TextField } from '@/components'
 import { NavScreens, RouteParamList } from '@/navigation'
+import { RW } from '@/theme'
 
 import { t } from '@/i18n'
 
@@ -18,7 +18,7 @@ export const Thankyou = () => {
     <Container style={styles.container}>
       <View style={styles.content}>
         <Gap gap={61} />
-        <Icon name="prayIcon" size={100} />
+        <Icon name="prayIcon" size={RW(100)} />
 
         <Gap gap={40} />
         <TextField text={t('thankyou')} style={styles.greetings} />

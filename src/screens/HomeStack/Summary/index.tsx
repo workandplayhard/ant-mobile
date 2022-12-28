@@ -6,6 +6,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { Button, Col, Container, Gap, Icon, PageTitle, Row, ScrollContainer } from '@/components'
 import { t } from '@/i18n'
+import { RW } from '@/theme'
 
 import Type from './type'
 import Information from './information'
@@ -34,7 +35,7 @@ const Summary: React.FC = () => {
         <Row isFull style={styles.closePos}>
           <Icon
             name="closeIcon"
-            size={24}
+            size={RW(24)}
             onPress={() => navigation.navigate(NavScreens.home.home)}
           />
         </Row>
@@ -115,11 +116,11 @@ const Summary: React.FC = () => {
           text={t('saveDocuments')}
           onPress={() => setShowModal(true)}
         />
-        {showModal && (
-          <Document showModal={(val) => setShowModal(val)} onDownload={(val) => setDownload(val)} />
-        )}
         <Gap gap={200} />
       </ScrollContainer>
+      {showModal && (
+        <Document showModal={(val) => setShowModal(val)} onDownload={(val) => setDownload(val)} />
+      )}
       {download && (
         <Download onDownload={(val) => setDownload(val)} onEmail={(val) => setEmail(val)} />
       )}

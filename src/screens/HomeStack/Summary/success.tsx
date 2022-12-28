@@ -1,4 +1,5 @@
 import React from 'react'
+import { Trans } from 'react-i18next'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { NavScreens, RouteParamList } from '@/navigation'
@@ -7,10 +8,9 @@ import { Button, Col, Gap, Icon, Modal, Row, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR, RW } from '@/theme'
 import { t } from 'i18next'
 
-import styles from './styles'
-import { Trans } from 'react-i18next'
 import mockData from './mockData.json'
 
+import styles from './styles'
 interface IProps {
   onEmail: (val: boolean) => void
   onSuccess: (val: boolean) => void

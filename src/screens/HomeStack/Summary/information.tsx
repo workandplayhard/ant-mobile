@@ -3,10 +3,8 @@ import React from 'react'
 import { View } from 'react-native'
 
 import { Col, ImageView, Row, TextField } from '@/components'
-import { font } from '@/theme'
-import HotMobile from '@/assets/images/img_hot_mobile.png'
 
-import mockData from './mockData.json'
+import HotMobile from '@/assets/images/img_hot_mobile.png'
 
 import styles from './styles'
 
