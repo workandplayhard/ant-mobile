@@ -15,7 +15,7 @@ export default StyleSheet.create({
   container: {
     backgroundColor: PRIMARY_BG_COLOR,
     flexDirection: 'column',
-    alignITems: 'center',
+    alignItems: 'center',
     justifycontent: 'center',
   },
   headerContainer: {

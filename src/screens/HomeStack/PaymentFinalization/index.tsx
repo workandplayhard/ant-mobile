@@ -48,7 +48,7 @@ export const PaymentFinalization: React.FC = () => {
             i18nKey="percentage"
             values={{ value: percentage }}
             components={{
-              tag1: <TextField style={styles.percentageSymbol} />,
+              tag: <TextField style={styles.percentageSymbol} />,
             }}
           />
         </TextField>
