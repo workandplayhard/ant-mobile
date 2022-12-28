@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useApp } from '@/hooks'
 import { Button, Col, Gap, Icon, Modal, Row, TextField, TextInput } from '@/components'
 import { MODAL_BACKDROP_COLOR, RW } from '@/theme'
 import { t } from '@/i18n'
@@ -14,6 +15,8 @@ interface IProps {
 
 const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
   const [email, setEmail] = React.useState<string>('')
+  const { isRTL } = useApp()
+
   const onBack = () => {
     onEmail(false)
     onDownload(true)
@@ -29,7 +32,12 @@ const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
     >
       <Col style={styles.downloadWrapper}>
         <Row>
-          <Icon name="arrowBackIcon" size={RW(20)} onPress={onBack} />
+          <Icon
+            name="arrowBackIcon"
+            size={RW(20)}
+            onPress={onBack}
+            wrapperStyle={isRTL && styles.isRTL}
+          />
           <TextField text={t('back')} style={styles.emailBack} onPress={onBack} />
         </Row>
 

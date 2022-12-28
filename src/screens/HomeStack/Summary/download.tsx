@@ -17,15 +17,15 @@ const Download: React.FC<IProps> = ({ onDownload, onEmail }) => {
   return (
     <Modal
       modalStyle={styles.downloadModal}
-      isVisible={true}
-      hasBackdrop={true}
+      isVisible
+      hasBackdrop
       backdropColor={MODAL_BACKDROP_COLOR}
-      swipeEnabled={true}
+      swipeEnabled
     >
       <Col style={styles.downloadWrapper}>
         <TextField text={mockData.downloadtitle} style={styles.downloadText} />
 
-        <Gap gap={40} />
+        <Gap gap={10} />
         <Button
           variant="pure"
           size="lg"

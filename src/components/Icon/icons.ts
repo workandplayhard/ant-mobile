@@ -33,6 +33,7 @@ import whiteDownloadIcon from '@/assets/icons/ic_white_download.svg'
 import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
 import notificationIcon from '@/assets/icons/ic_notification.svg'
 import toggleEnabledIcon from '@/assets/icons/ic_toggle_enabled.svg'
+import thankyouCloseIcon from '@/assets/icons/ic_thankyou_close.svg'
 import tvDefaultPlanIcon from '@/assets/icons/ic_tv_default_plan.svg'
 import questionCircleIcon from '@/assets/icons/ic_question_circle.svg'
 import toggleDisabledIcon from '@/assets/icons/ic_toggle_disabled.svg'
@@ -77,6 +78,7 @@ export default {
   whiteDownloadIcon,
   tvDefaultPlanIcon,
   toggleEnabledIcon,
+  thankyouCloseIcon,
   nextIndicatorIcon,
   questionCircleIcon,
   copyCardNumberIcon,

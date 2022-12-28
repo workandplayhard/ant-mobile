@@ -2,11 +2,13 @@ import React from 'react'
 import { Trans } from 'react-i18next'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+
 import { NavScreens, RouteParamList } from '@/navigation'
 
+import { useApp } from '@/hooks'
 import { Button, Col, Gap, Icon, Modal, Row, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR, RW } from '@/theme'
-import { t } from 'i18next'
+import { t } from '@/i18n'
 
 import mockData from './mockData.json'
 
@@ -18,6 +20,7 @@ interface IProps {
 
 const Success: React.FC<IProps> = ({ onEmail, onSuccess }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const { isRTL } = useApp()
 
   const onBack = () => {
     onEmail(true)
@@ -27,15 +30,20 @@ const Success: React.FC<IProps> = ({ onEmail, onSuccess }) => {
   return (
     <Modal
       modalStyle={styles.downloadModal}
-      isVisible={true}
-      hasBackdrop={true}
+      isVisible
+      hasBackdrop
       backdropColor={MODAL_BACKDROP_COLOR}
-      swipeEnabled={true}
+      swipeEnabled
     >
       <Col style={styles.downloadWrapper}>
         <Gap gap={2} />
         <Row>
-          <Icon name="arrowBackIcon" size={RW(20)} onPress={onBack} />
+          <Icon
+            name="arrowBackIcon"
+            size={RW(20)}
+            onPress={onBack}
+            wrapperStyle={isRTL && styles.isRTL}
+          />
           <TextField text={t('back')} style={styles.emailBack} onPress={onBack} />
         </Row>
 
@@ -49,7 +57,7 @@ const Success: React.FC<IProps> = ({ onEmail, onSuccess }) => {
               i18nKey="emailProvider"
               values={{ email: mockData.mail }}
               components={{
-                tag2: <TextField style={styles.successMail} />,
+                tag: <TextField style={styles.successMail} />,
               }}
             />
           </TextField>

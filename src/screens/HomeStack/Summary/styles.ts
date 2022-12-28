@@ -9,7 +9,6 @@ import {
   SUMMARY_BORDER,
   SUMMARY_CONTENT,
   SUMMARY_HEADER,
-  TEXT_INPUT_LIGHT_BORDER_INACTIVE_COLOR,
   TEXT_INPUT_PLACEHOLDER_DARK_COLOR,
   TITLE_LIGHT_COLOR,
   TOTAL_DESCRIPTION,
@@ -34,11 +33,11 @@ export default StyleSheet.create({
   },
   scrollContainer: {
     width: '100%',
-    padding: RW(30),
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },
   line: {
     width: '100%',
-    height: RW(1),
+    height: RH(1),
     backgroundColor: SUMMARY_BORDER,
   },
   dotLine: {
@@ -106,6 +105,7 @@ export default StyleSheet.create({
   },
   totalAmounthText: {
     ...font('rw.regular', 14, SUMMARY_CONTENT, 20),
+    paddingBottom: RH(7),
   },
   informationPos: {
     paddingLeft: RW(11),
@@ -170,6 +170,7 @@ export default StyleSheet.create({
     borderTopLeftRadius: RW(20),
     borderTopRightRadius: RW(20),
     backgroundColor: PRIMARY_BG_COLOR,
+    alignItems: 'center',
   },
   modalTitle: {
     textAlign: 'center',
@@ -236,7 +237,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   successRow: {
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   successProvider: {
     ...font('rw.regular', 14, WHITE, 24),
@@ -249,5 +250,8 @@ export default StyleSheet.create({
   mailIconWrapper: {
     width: '100%',
     alignItems: 'center',
+  },
+  isRTL: {
+    transform: [{ rotate: '180deg' }],
   },
 })

@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { Row, TextField } from '@/components'
+import { Gap, Row, TextField } from '@/components'
 import { t } from '@/i18n'
 
 import mockData from './mockData.json'
@@ -15,6 +15,7 @@ const Footer = () => {
       <View>
         <Row style={styles.totalAmounthPos}>
           <TextField text={mockData.count_5} style={styles.totalAmounthCount} />
+          <Gap horizontal={true} gap={5} />
           <TextField text={mockData.countDescription} style={styles.totalAmounthText} />
         </Row>
       </View>
