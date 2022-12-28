@@ -18,8 +18,10 @@ import messageIcon from '@/assets/icons/ic_message.svg'
 import accountIcon from '@/assets/icons/ic_account.svg'
 import arrowUpIcon from '@/assets/icons/ic_arrow_up.svg'
 import showCVVIcon from '@/assets/icons/ic_show_cvv.svg'
+import blackTVIcon from '@/assets/icons/ic_black_tv.svg'
 import settingsIcon from '@/assets/icons/ic_settings.svg'
 import downloadIcon from '@/assets/icons/ic_download.svg'
+import blackCarIcon from '@/assets/icons/ic_black_car.svg'
 import telephoneIcon from '@/assets/icons/ic_telephone.svg'
 import arrowNextIcon from '@/assets/icons/ic_arrow_next.svg'
 import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
@@ -27,6 +29,7 @@ import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
 import nextIndicatorIcon from '@/assets/icons/ic_next_indicator.svg'
+import whiteDownloadIcon from '@/assets/icons/ic_white_download.svg'
 import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
 import notificationIcon from '@/assets/icons/ic_notification.svg'
 import toggleEnabledIcon from '@/assets/icons/ic_toggle_enabled.svg'
@@ -57,7 +60,9 @@ export default {
   showCVVIcon,
   messageIcon,
   accountIcon,
+  blackTVIcon,
   arrowUpIcon,
+  blackCarIcon,
   settingsIcon,
   downloadIcon,
   unCheckedIcon,
@@ -69,6 +74,7 @@ export default {
   balloonHotIcon,
   balloonThinIcon,
   notificationIcon,
+  whiteDownloadIcon,
   tvDefaultPlanIcon,
   toggleEnabledIcon,
   nextIndicatorIcon,
