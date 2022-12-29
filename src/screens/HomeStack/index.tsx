@@ -14,6 +14,7 @@ import PaymentFinalization from './PaymentFinalization'
 import OtherInformationSources from './OtherInformationSources'
 import CustomerExpense from './CustomerExpense'
 import Summary from './Summary'
+import ReducingCost from './ReducingCost'
 import { Thankyou } from './Thankyou'
 
 const Stack = createStackNavigator()
@@ -44,6 +45,7 @@ const StackScreen = () => {
         component={OtherInformationSources}
       />
       <Stack.Screen name={NavScreens.home.customerExpense} component={CustomerExpense} />
+      <Stack.Screen name={NavScreens.home.reducingCost} component={ReducingCost} />
       <Stack.Screen name={NavScreens.home.summary} component={Summary} />
       <Stack.Screen name={NavScreens.home.thankyou} component={Thankyou} />
     </Stack.Navigator>

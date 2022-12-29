@@ -79,6 +79,19 @@
     "back": "גַב",
     "insertEmailAddress": "הוסף כתובת דואל כדי לשלוח את המסמכים לדואל שלך",
     "emailID": "זיהוי דוא",
-    "success": "כל המסמכים נשלחו בהצלחה"
+    "success": "כל המסמכים נשלחו בהצלחה",
+    "averageTelephoneUse": "שימוש ממוצע בטלפון",
+    "valueForMoney": "תמורה לכסף",
+    "bestTelephonePlan": "עכשיו יש לך את תוכנית הטלפון הטובה ביותר עבורך.",
+    "reducingPlanTitle": "תכנית להוזלת עלויות",
+    "reducingCostTitle": "תוכנית הפחתת עלויות",
+    "currentPlan": "עלות נוכחית של התכנית",
+    "averageTelephoneUseDetail": "שימוש ממוצע בטלפון (SMS, שיחות לפי דקות, גלישהבאינטרנט)",
+    "currentTVPlan": "תוכנית טלוויזיה נוכחית",
+    "tvPlanClosed": "תכנית הטלוויזיה החדשה נסגרה",
+    "cheapest": "הכי זול",
+    "reactive": "תְגוּבָתִי",
+    "insuranceDetails": "פרטי ביטוח",
+    "currentPlanReduce": "תוכנית נוכחית"
   }
 }

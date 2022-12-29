@@ -28,7 +28,9 @@ import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
+import reducingBackIcon from '@/assets/icons/ic_reducing_back.svg'
 import nextIndicatorIcon from '@/assets/icons/ic_next_indicator.svg'
+import reducingCheckIcon from '@/assets/icons/ic_reducing_check.svg'
 import whiteDownloadIcon from '@/assets/icons/ic_white_download.svg'
 import balloonThinIcon from '@/assets/icons/ic_balloon_thin.svg'
 import notificationIcon from '@/assets/icons/ic_notification.svg'
@@ -38,6 +40,7 @@ import tvDefaultPlanIcon from '@/assets/icons/ic_tv_default_plan.svg'
 import questionCircleIcon from '@/assets/icons/ic_question_circle.svg'
 import toggleDisabledIcon from '@/assets/icons/ic_toggle_disabled.svg'
 import copyCardNumberIcon from '@/assets/icons/ic_copy_card_number.svg'
+import reducingForwardIcon from '@/assets/icons/ic_reducing_forward.svg'
 import walletCreditCardIcon from '@/assets/icons/ic_wallet_credit_card.svg'
 import handsHoldingCircleIcon from '@/assets/icons/ic_hands_holding_circle.svg'
 import notificationActive from '@/assets/icons/ic_notification_active.svg'
@@ -75,14 +78,17 @@ export default {
   balloonHotIcon,
   balloonThinIcon,
   notificationIcon,
+  reducingBackIcon,
   whiteDownloadIcon,
   tvDefaultPlanIcon,
   toggleEnabledIcon,
   thankyouCloseIcon,
   nextIndicatorIcon,
+  reducingCheckIcon,
   questionCircleIcon,
   copyCardNumberIcon,
   toggleDisabledIcon,
+  reducingForwardIcon,
   walletCreditCardIcon,
   handsHoldingCircleIcon,
   notificationActive,
