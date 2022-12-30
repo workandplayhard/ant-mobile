@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react'
-import { ScrollView } from 'react-native-gesture-handler'
+import React from 'react'
 import { View } from 'react-native'
 
 import { useData } from '@/hooks'
