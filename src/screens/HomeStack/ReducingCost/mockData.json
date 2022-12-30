@@ -109,4 +109,26 @@
   "planTitleExample": "Lorem Ipsum is simply dummy",
   "planSubTitleExample": "Lorem Ipsum is simply dummy",
   "planCheckText": "I agree to change the plan.",
+  "stepData": [
+    {
+      "label": "lorem ipsum",
+      "value": 1,
+     "isCompleted": false
+    },
+    {
+      "label": "lorem ipsum",
+      "value": 2,
+      "isCompleted": false
+    },
+    {
+      "label": "lorem ipsum",
+      "value": 3,
+      "isCompleted": false
+    },
+    {
+      "label": "lorem ipsum",
+      "value": 4,
+      "isCompleted": false
+    },
+  ]
 }

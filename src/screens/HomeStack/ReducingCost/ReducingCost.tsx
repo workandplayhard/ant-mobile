@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View } from 'react-native'
 
 import { useData } from '@/hooks'
@@ -19,7 +19,8 @@ const ReducingCost: React.FC = () => {
   const { cost, success, tvOffer, tvPlan, tvSuccess } = useData()
 
   return (
-    <WrapperWithStepper title={cost ? t('reducingPlanTitle') : t('reducingCostTitle')}>
+    // <WrapperWithStepper title={cost ? t('reducingPlanTitle') : t('reducingCostTitle')}>
+    <WrapperWithStepper>
       <ScrollContainer style={styles.container}>
         {!success && !tvOffer && !tvPlan && !tvSuccess && (
           <View>

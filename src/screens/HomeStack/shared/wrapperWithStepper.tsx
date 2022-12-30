@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { StyleSheet, I18nManager, View } from 'react-native'
 
 import { Container, Gap, Icon, PageTitle, Row, Stepper, TextField } from '@/components'
@@ -14,13 +14,15 @@ import {
 import { IStep } from '@/types'
 import { useData } from '@/hooks'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { t } from 'i18next'
+
+import mockData from '../ReducingCost/mockData.json'
 
 interface Props {
   children: React.ReactNode
-  title: string
 }
 
-const WrapperWithStepper: React.FC<Props> = ({ children, title }) => {
+const WrapperWithStepper: React.FC<Props> = ({ children }) => {
   const [currentStep, setCurrentStep] = useState<number>(0)
   const {
     cost,
@@ -36,28 +38,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children, title }) => {
     onTVSuccess,
   } = useData()
 
-  const [steps, setSteps] = useState<IStep<number>[]>([
-    {
-      label: 'lorem ipsum',
-      value: 1,
-      isCompleted: false,
-    },
-    {
-      label: 'lorem ipsum',
-      value: 2,
-      isCompleted: false,
-    },
-    {
-      label: 'lorem ipsum',
-      value: 3,
-      isCompleted: false,
-    },
-    {
-      label: 'lorem ipsum',
-      value: 4,
-      isCompleted: false,
-    },
-  ])
+  const [steps, setSteps] = useState<IStep<number>[]>(mockData.stepData)
   const onChangeStep = useCallback(
     (step: number) => {
       setCurrentStep(step)
@@ -86,6 +67,13 @@ const WrapperWithStepper: React.FC<Props> = ({ children, title }) => {
       onTVPlan(true)
     }
   }
+
+  const getTitle = useCallback(() => {
+    if (cost || tvOffer) return t('reducingCostTitle')
+    else if (detail || success || tvPlan) return t('reducingPlanTitle')
+    else return t('carInsurance')
+  }, [cost, detail, success, tvOffer, tvPlan])
+
   return (
     <Container style={styles.container}>
       <Gap gap={76} />
@@ -111,7 +99,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children, title }) => {
 
       <Gap gap={30} />
       <View style={styles.row}>
-        <PageTitle title={title} titleAlign="left" mode="light" />
+        <PageTitle title={getTitle()} titleAlign="left" mode="light" />
       </View>
 
       <Gap gap={40} />
