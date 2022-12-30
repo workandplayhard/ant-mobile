@@ -21,6 +21,21 @@ export interface ICard {
   color: string
 }
 
+export interface ICost {
+  title: string
+  cost: string
+  iconName?: keyof typeof IconNames
+}
+
+export interface IAverage {
+  countDescription: string
+  informationInternetSize: string
+  count: number
+  SMSSize: number
+  callsSize: number
+  isSelected: boolean
+}
+
 export type TPCallback = (...params: any[]) => void
 
 export type TCallback = () => void

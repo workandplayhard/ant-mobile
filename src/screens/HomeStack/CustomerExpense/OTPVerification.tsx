@@ -47,7 +47,7 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
           disabled={code.length === 6 ? false : true}
           text={t('ok')}
           onPress={() => {
-            navigation.navigate(NavScreens.home.summary)
+            navigation.navigate(NavScreens.home.reducingCost)
             onCancelModal()
           }}
         />
