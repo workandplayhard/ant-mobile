@@ -16,7 +16,7 @@ import styles from './styles'
 const AverageReducing = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const [data, setData] = useState<IAverage[]>(mockData.information as unknown as IAverage[])
-  const { onCost, cost, onSuccess, onDetail } = useData()
+  const { detail, tvPlan, onCost, onDetail } = useData()
 
   const onChange = useCallback(
     (index: number) => {
@@ -30,6 +30,15 @@ const AverageReducing = () => {
     },
     [data],
   )
+
+  const formatInformation = useCallback(() => {
+    const _c = [...data]
+    _c.map((information) => {
+      information.isSelected = false
+    })
+
+    setData(_c)
+  }, [data])
 
   return (
     <View>
@@ -58,14 +67,17 @@ const AverageReducing = () => {
               SMSSize={information.SMSSize}
               callsSize={information.callsSize}
               internetSize={information.informationInternetSize}
-              style={[information.isSelected && styles.cardBorder, cost && styles.cardHeight]}
+              style={[
+                information.isSelected && styles.cardBorder,
+                (detail || tvPlan) && styles.cardHeight,
+              ]}
             />
           </TouchableOpacity>
           <Gap gap={20} />
         </View>
       ))}
 
-      <Gap gap={60} />
+      <Gap gap={40} />
       <Button
         variant="primary"
         size="lg"
@@ -74,6 +86,7 @@ const AverageReducing = () => {
         onPress={() => {
           onCost(false)
           onDetail(true)
+          formatInformation()
         }}
       />
     </View>

@@ -31,6 +31,15 @@ const TVOffer: React.FC = () => {
     [data],
   )
 
+  const formatInformation = useCallback(() => {
+    const _c = [...data]
+    _c.map((information) => {
+      information.isSelected = false
+    })
+
+    setData(_c)
+  }, [data])
+
   return (
     <View>
       <ScrollContainer direction="horizontal" style={styles.averageRow}>
@@ -74,6 +83,7 @@ const TVOffer: React.FC = () => {
         onPress={() => {
           onTVOffer(false)
           onTVPlan(true)
+          formatInformation()
         }}
       />
     </View>

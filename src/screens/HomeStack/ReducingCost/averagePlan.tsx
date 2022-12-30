@@ -25,7 +25,7 @@ const AveragePlan = () => {
           SMSSize={mockData.costInformation.SMSSize}
           callsSize={mockData.costInformation.callsSize}
           internetSize={mockData.costInformation.informationInternetSize}
-          style={cost && styles.cardHeight}
+          style={(detail || onTVPlan) && styles.cardHeight}
         />
 
         <Gap gap={40} />
@@ -41,7 +41,7 @@ const AveragePlan = () => {
           SMSSize={mockData.costInformation.SMSSize}
           callsSize={mockData.costInformation.callsSize}
           internetSize={mockData.costInformation.informationInternetSize}
-          style={cost && styles.cardHeight}
+          style={(detail || onTVPlan) && styles.cardHeight}
         />
 
         <Gap gap={60} />
