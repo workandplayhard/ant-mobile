@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { StyleSheet, I18nManager, View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { Container, Gap, Icon, PageTitle, Row, Stepper, TextField } from '@/components'
 import {
@@ -10,10 +11,8 @@ import {
   WHITE,
   font,
 } from '@/theme'
-
 import { IStep } from '@/types'
 import { useData } from '@/hooks'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { t } from 'i18next'
 
 import mockData from '../ReducingCost/mockData.json'

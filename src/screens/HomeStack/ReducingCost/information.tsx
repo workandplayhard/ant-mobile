@@ -5,10 +5,10 @@ import { StyleProp, View, ViewStyle } from 'react-native'
 import { Col, ImageView, Row, TextField } from '@/components'
 import { useData } from '@/hooks'
 
-import styles from './styles'
-
 import HotMobile from '@/assets/images/img_white_hot_mobile.png'
 import YES from '@/assets/images/img_yes.png'
+
+import styles from './styles'
 
 interface IInformation {
   count: number

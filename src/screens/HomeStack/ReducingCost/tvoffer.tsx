@@ -2,10 +2,10 @@ import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-import { IAverage } from '@/types'
 import { Button, Gap, ScrollContainer } from '@/components'
 import { t } from '@/i18n'
 import { useData } from '@/hooks'
+import { IAverage } from '@/types'
 
 import Information from './information'
 
@@ -50,9 +50,9 @@ const TVOffer: React.FC = () => {
           wrapperStyle={styles.valueButton}
         />
         <Gap horizontal gap={15} />
-        <Button variant="pure" size="lg" text="Cheapest" wrapperStyle={styles.customButton} />
+        <Button variant="pure" size="lg" text={t('cheapest')} wrapperStyle={styles.customButton} />
         <Gap horizontal gap={15} />
-        <Button variant="pure" size="lg" text="Reactive" wrapperStyle={styles.customButton} />
+        <Button variant="pure" size="lg" text={t('reactive')} wrapperStyle={styles.customButton} />
       </ScrollContainer>
 
       <Gap gap={40} />

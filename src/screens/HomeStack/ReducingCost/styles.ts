@@ -64,7 +64,7 @@ export default StyleSheet.create({
   },
   planCost: {
     ...font('pp.bold', 16, SUMMARY_CONTENT, 28),
-    width: 80,
+    width: RW(80),
     textAlign: 'center',
   },
   planTitle: {

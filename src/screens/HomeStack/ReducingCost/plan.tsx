@@ -2,7 +2,6 @@ import React from 'react'
 import { View } from 'react-native'
 
 import { Col, Gap, Icon, Row, TextField } from '@/components'
-
 import { ICost } from '@/types'
 import { RW } from '@/theme'
 

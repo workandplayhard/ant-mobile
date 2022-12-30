@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { View } from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
 
 import { Button, CheckBox, Gap, Icon, Row, TextField } from '@/components'
 import { t } from '@/i18n'

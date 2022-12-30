@@ -5,7 +5,6 @@ import { Button, Container, Gap, ImageView, TextField } from '@/components'
 import { t } from '@/i18n'
 import { useData } from '@/hooks'
 import { ICost } from '@/types'
-import { PAGE_HORIZONTAL_PADDING } from '@/theme'
 
 import Plan from './plan'
 
@@ -21,7 +20,7 @@ const Congratulation = () => {
   return (
     <Container>
       {tvSuccess && (
-        <View style={{ paddingHorizontal: PAGE_HORIZONTAL_PADDING }}>
+        <View style={styles.contentContainer}>
           <Plan title={t('currentPlanReduce')} costs={mockData.currentPlan as unknown as ICost[]} />
 
           <Gap gap={40} />
