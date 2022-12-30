@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, I18nManager, View } from 'react-native'
 
 import { Container, Gap, Icon, PageTitle, Row, Stepper, TextField } from '@/components'
@@ -30,6 +30,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     success,
     tvOffer,
     tvPlan,
+    tvSuccess,
     onCost,
     onDetail,
     onSuccess,
@@ -68,6 +69,10 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     }
   }
 
+  // useEffect(() => {
+  //   if (!detail) onChangeStep(1)
+  // }, [detail, onChangeStep]) this stepper working but can't touch anything on my screen
+
   const getTitle = useCallback(() => {
     if (cost || tvOffer) return t('reducingCostTitle')
     else if (detail || success || tvPlan) return t('reducingPlanTitle')
@@ -89,11 +94,13 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
         </TouchableOpacity>
 
         <View>
-          <Row>
-            <TextField text="Forward" style={styles.forward} />
-            <Gap horizontal={true} gap={7} />
-            <Icon name="reducingForwardIcon" size={RW(20)} />
-          </Row>
+          <TouchableOpacity disabled={tvSuccess === true}>
+            <Row>
+              <TextField text="Forward" style={styles.forward} />
+              <Gap horizontal={true} gap={7} />
+              <Icon name="reducingForwardIcon" size={RW(20)} />
+            </Row>
+          </TouchableOpacity>
         </View>
       </Row>
 

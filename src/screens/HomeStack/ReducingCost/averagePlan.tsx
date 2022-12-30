@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { View } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 
 import { Button, CheckBox, Gap, Icon, Row, TextField } from '@/components'
 import { t } from '@/i18n'
@@ -14,7 +15,7 @@ import styles from './styles'
 
 const AveragePlan = () => {
   const [checked, setChecked] = useState<boolean>(false)
-  const { cost, detail, onDetail, onSuccess, tvOffer, onTVPlan, onTVSuccess } = useData()
+  const { detail, onDetail, onSuccess, tvOffer, onTVPlan, onTVSuccess } = useData()
 
   return (
     <View>

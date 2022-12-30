@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Ref, useEffect, useRef } from 'react'
 import { StyleProp, ViewStyle, ScrollView } from 'react-native'
 
 import styles from './styles'
@@ -18,6 +18,16 @@ export const ScrollContainer: React.FC<IScrollContainer> = ({
   style = {},
   children,
 }) => {
+  const scrollRef = useRef<ScrollView>(null)
+
+  useEffect(
+    () =>
+      scrollRef.current?.scrollTo({
+        y: 0,
+      }),
+    [],
+  )
+
   return (
     <ScrollView
       keyboardDismissMode="on-drag"
@@ -26,6 +36,8 @@ export const ScrollContainer: React.FC<IScrollContainer> = ({
       style={[styles.container, style]}
       contentContainerStyle={[styles.contentContainerStyle, contentContainerStyle]}
       horizontal={direction === 'horizontal'}
+      scrollsToTop
+      ref={scrollRef}
     >
       {children}
     </ScrollView>

@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react'
+import React, { useEffect, useRef } from 'react'
+import { ScrollView } from 'react-native-gesture-handler'
 import { View } from 'react-native'
 
 import { useData } from '@/hooks'
@@ -16,12 +17,11 @@ import mockData from './mockData.json'
 import styles from './styles'
 
 const ReducingCost: React.FC = () => {
-  const { cost, success, tvOffer, tvPlan, tvSuccess } = useData()
+  const { success, tvOffer, tvPlan, tvSuccess } = useData()
 
   return (
-    // <WrapperWithStepper title={cost ? t('reducingPlanTitle') : t('reducingCostTitle')}>
-    <WrapperWithStepper>
-      <ScrollContainer style={styles.container}>
+    <ScrollContainer style={styles.container}>
+      <WrapperWithStepper>
         {!success && !tvOffer && !tvPlan && !tvSuccess && (
           <View>
             <View style={styles.contentContainer}>
@@ -59,8 +59,8 @@ const ReducingCost: React.FC = () => {
           </View>
         )}
         <Gap gap={100} />
-      </ScrollContainer>
-    </WrapperWithStepper>
+      </WrapperWithStepper>
+    </ScrollContainer>
   )
 }
 

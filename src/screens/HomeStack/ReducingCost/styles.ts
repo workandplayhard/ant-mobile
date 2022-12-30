@@ -173,4 +173,11 @@ export default StyleSheet.create({
     ...font('rw.regular', 18, TEXT_RED, 30),
     letterSpacing: RW(1),
   },
+  moneyButton: {
+    width: RW(166),
+    height: RH(48),
+  },
+  cheapButton: {
+    height: RH(48),
+  },
 })
