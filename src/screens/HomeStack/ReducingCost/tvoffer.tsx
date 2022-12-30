@@ -4,7 +4,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { Button, Gap, ScrollContainer } from '@/components'
 import { t } from '@/i18n'
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 import { IAverage } from '@/types'
 
 import Information from './information'
@@ -16,7 +16,7 @@ import styles from './styles'
 const TVOffer: React.FC = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const [data, setData] = useState<IAverage[]>(mockData.information as unknown as IAverage[])
-  const { onTVPlan, onTVOffer } = useData()
+  const { onTVPlan, onTVOffer } = useReduceCost()
 
   const onChange = useCallback(
     (index: number) => {
@@ -45,14 +45,27 @@ const TVOffer: React.FC = () => {
       <ScrollContainer direction="horizontal" style={styles.averageRow}>
         <Button
           variant="primary"
-          size="lg"
+          size="md"
           text={t('valueForMoney')}
           wrapperStyle={styles.valueButton}
+          buttonStyle={styles.moneyButton}
         />
         <Gap horizontal gap={15} />
-        <Button variant="pure" size="lg" text={t('cheapest')} wrapperStyle={styles.customButton} />
+        <Button
+          variant="pure"
+          size="md"
+          text={t('cheapest')}
+          wrapperStyle={styles.customButton}
+          iconStyle={styles.cheapButton}
+        />
         <Gap horizontal gap={15} />
-        <Button variant="pure" size="lg" text={t('reactive')} wrapperStyle={styles.customButton} />
+        <Button
+          variant="pure"
+          size="md"
+          text={t('reactive')}
+          wrapperStyle={styles.customButton}
+          iconStyle={styles.cheapButton}
+        />
       </ScrollContainer>
 
       <Gap gap={40} />

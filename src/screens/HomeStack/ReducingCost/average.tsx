@@ -1,9 +1,9 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { Gap, TextField } from '@/components'
+import { Container, Gap, TextField } from '@/components'
 import { t } from '@/i18n'
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 
 import AverageReducing from './averageReducing'
 import AveragePlan from './averagePlan'
@@ -12,7 +12,7 @@ import TVOffer from './tvoffer'
 import styles from './styles'
 
 const Average = () => {
-  const { cost, detail, tvOffer, tvPlan } = useData()
+  const { cost, detail, tvOffer, tvPlan } = useReduceCost()
 
   return (
     <View>

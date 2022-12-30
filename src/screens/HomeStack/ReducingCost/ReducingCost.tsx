@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 import { t } from '@/i18n'
 import { Gap, ScrollContainer } from '@/components'
 import { ICost } from '@/types'
@@ -16,7 +16,7 @@ import mockData from './mockData.json'
 import styles from './styles'
 
 const ReducingCost: React.FC = () => {
-  const { success, tvOffer, tvPlan, tvSuccess } = useData()
+  const { success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
 
   return (
     <ScrollContainer style={styles.container}>

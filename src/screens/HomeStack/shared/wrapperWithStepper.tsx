@@ -12,7 +12,7 @@ import {
   font,
 } from '@/theme'
 import { IStep } from '@/types'
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 import { t } from 'i18next'
 
 import mockData from '../ReducingCost/mockData.json'
@@ -36,7 +36,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     onTVOffer,
     onTVPlan,
     onTVSuccess,
-  } = useData()
+  } = useReduceCost()
 
   const [steps, setSteps] = useState<IStep<number>[]>(mockData.stepData)
   const onChangeStep = useCallback(
@@ -49,7 +49,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     [steps],
   )
 
-  const onBack = () => {
+  const onBack = useCallback(() => {
     if (detail) {
       onDetail(false)
       onCost(true)
@@ -66,7 +66,18 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
       onTVSuccess(false)
       onTVPlan(true)
     }
-  }
+  }, [
+    detail,
+    onCost,
+    onDetail,
+    onSuccess,
+    onTVOffer,
+    onTVPlan,
+    onTVSuccess,
+    success,
+    tvOffer,
+    tvPlan,
+  ])
 
   // useEffect(() => {
   //   if (!detail) onChangeStep(1)

@@ -1,8 +1,9 @@
 import React, { Ref, useEffect, useRef } from 'react'
 import { StyleProp, ViewStyle, ScrollView } from 'react-native'
 
+import { useReduceCost } from '@/hooks'
+
 import styles from './styles'
-import { useData } from '@/hooks'
 
 interface IScrollContainer {
   direction?: 'vertical' | 'horizontal'
@@ -19,7 +20,7 @@ export const ScrollContainer: React.FC<IScrollContainer> = ({
   style = {},
   children,
 }) => {
-  const { cost, detail, success, tvOffer, tvPlan, tvSuccess } = useData()
+  const { cost, detail, success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
   const scrollRef = useRef<ScrollView>(null)
   useEffect(
     () =>

@@ -3,7 +3,7 @@ import { View } from 'react-native'
 
 import { Button, Container, Gap, ImageView, TextField } from '@/components'
 import { t } from '@/i18n'
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 import { ICost } from '@/types'
 
 import Plan from './plan'
@@ -15,7 +15,7 @@ import styles from './styles'
 import ReducingBackground from '@/assets/images/img_reducing.png'
 
 const Congratulation = () => {
-  const { onTVOffer, onSuccess, tvSuccess } = useData()
+  const { onTVOffer, onSuccess, tvSuccess } = useReduceCost()
 
   return (
     <Container>

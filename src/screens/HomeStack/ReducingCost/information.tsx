@@ -3,7 +3,7 @@ import React from 'react'
 import { StyleProp, View, ViewStyle } from 'react-native'
 
 import { Col, ImageView, Row, TextField } from '@/components'
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 
 import HotMobile from '@/assets/images/img_white_hot_mobile.png'
 import YES from '@/assets/images/img_yes.png'
@@ -32,7 +32,7 @@ const Information: React.FC<IInformation> = ({
   internetSize,
   style,
 }) => {
-  const { tvOffer, tvPlan } = useData()
+  const { tvOffer, tvPlan } = useReduceCost()
   const informationDetails = [
     { title: 'SMS', size: SMSSize },
     { title: 'Calls', size: callsSize },

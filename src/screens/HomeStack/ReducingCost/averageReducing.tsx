@@ -2,10 +2,10 @@ import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-import { Button, Gap, ScrollContainer } from '@/components'
+import { Button, Container, Gap, ScrollContainer } from '@/components'
 import { t } from '@/i18n'
 import { IAverage } from '@/types'
-import { useData } from '@/hooks'
+import { useReduceCost } from '@/hooks'
 
 import Information from './information'
 
@@ -16,7 +16,7 @@ import styles from './styles'
 const AverageReducing = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const [data, setData] = useState<IAverage[]>(mockData.information as unknown as IAverage[])
-  const { detail, tvPlan, onCost, onDetail } = useData()
+  const { detail, tvPlan, onCost, onDetail } = useReduceCost()
 
   const onChange = useCallback(
     (index: number) => {
