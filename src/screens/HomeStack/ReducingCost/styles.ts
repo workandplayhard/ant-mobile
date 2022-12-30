@@ -119,6 +119,7 @@ export default StyleSheet.create({
     paddingHorizontal: RH(20),
     paddingVertical: RH(15),
     borderRadius: RW(12),
+    height: RH(88),
   },
   informationTitle: {
     ...font('pp.bold', 30, WHITE, 36),
