@@ -40,6 +40,12 @@ const AverageReducing = () => {
     setData(_c)
   }, [data])
 
+  const onPress = useCallback(() => {
+    onCost(false)
+    onDetail(true)
+    formatInformation()
+  }, [formatInformation, onCost, onDetail])
+
   return (
     <View>
       <ScrollContainer direction="horizontal" style={styles.averageRow}>
@@ -96,11 +102,7 @@ const AverageReducing = () => {
         size="lg"
         text={t('next')}
         disabled={selected === false}
-        onPress={() => {
-          onCost(false)
-          onDetail(true)
-          formatInformation()
-        }}
+        onPress={onPress}
       />
     </View>
   )

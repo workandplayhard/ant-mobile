@@ -34,7 +34,7 @@ const Plan: React.FC<IPlan> = ({ title, costs }) => {
                 <TextField text={cost.cost} style={styles.planCost} />
               </Col>
             </View>
-            {index < 2 && <Gap horizontal={true} gap={40} />}
+            {index < costs.length - 1 && <Gap horizontal={true} gap={40} />}
           </>
         ))}
       </Row>

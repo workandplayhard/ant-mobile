@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View } from 'react-native'
 
 import { Button, Container, Gap, ImageView, TextField } from '@/components'
@@ -16,6 +16,11 @@ import ReducingBackground from '@/assets/images/img_reducing.png'
 
 const Congratulation = () => {
   const { onTVOffer, onSuccess, tvSuccess } = useReduceCost()
+
+  const onPress = useCallback(() => {
+    onSuccess(false)
+    onTVOffer(true)
+  }, [onSuccess, onTVOffer])
 
   return (
     <Container>
@@ -44,15 +49,7 @@ const Congratulation = () => {
           <TextField text={t('bestTelephonePlan')} style={styles.congratulationContent} />
 
           <Gap gap={30} />
-          <Button
-            variant="primary"
-            size="lg"
-            text={t('next')}
-            onPress={() => {
-              onSuccess(false)
-              onTVOffer(true)
-            }}
-          />
+          <Button variant="primary" size="lg" text={t('next')} onPress={() => onPress()} />
         </View>
       </View>
     </Container>

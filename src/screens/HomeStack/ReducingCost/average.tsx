@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-import { Container, Gap, TextField } from '@/components'
+import { Gap, TextField } from '@/components'
 import { t } from '@/i18n'
 import { useReduceCost } from '@/hooks'
 

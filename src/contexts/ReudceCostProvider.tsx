@@ -30,7 +30,7 @@ export const ReduceCostContext = createContext<IState>({
   onTVSuccess: () => undefined,
 })
 
-export const StateProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ReduceCostProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [cost, onCost] = useState<boolean>(true)
   const [detail, onDetail] = useState<boolean>(false)
   const [success, onSuccess] = useState<boolean>(false)
