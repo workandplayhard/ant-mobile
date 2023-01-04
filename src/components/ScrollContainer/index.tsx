@@ -11,11 +11,11 @@ interface IScrollContainer {
   children: React.ReactNode
 }
 
-interface IScrollTo {
-  scrollTo?: ({ x = 0, y = 0 }: { x?: number; y?: number }) => void
+interface IScrollControl {
+  scrollTo?: ({ x, y, animated }: { x?: number; y?: number; animated?: boolean }) => void
 }
 
-export const ScrollContainer = forwardRef<IScrollTo, IScrollContainer>(
+export const ScrollContainer = forwardRef<IScrollControl, IScrollContainer>(
   (
     {
       direction = 'vertical',
@@ -31,9 +31,11 @@ export const ScrollContainer = forwardRef<IScrollTo, IScrollContainer>(
     useImperativeHandle(
       ref,
       () => ({
-        scrollTo() {
+        scrollTo({ x = 0, y = 0, animated = true }) {
           scrollRef.current?.scrollTo({
-            y: 0,
+            animated,
+            x,
+            y,
           })
         },
       }),

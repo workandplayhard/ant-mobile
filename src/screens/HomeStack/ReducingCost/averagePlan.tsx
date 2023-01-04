@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 
-import { Button, CheckBox, Container, Gap, Icon, Row, TextField } from '@/components'
+import { Button, CheckBox, Gap, Icon, Row, TextField } from '@/components'
 import { t } from '@/i18n'
 import { RW } from '@/theme'
 import { useReduceCost } from '@/hooks'

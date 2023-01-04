@@ -1,4 +1,4 @@
-import React, { ElementRef, useRef } from 'react'
+import React, { ElementRef, useEffect, useRef } from 'react'
 import { View } from 'react-native'
 
 import { useReduceCost } from '@/hooks'
@@ -18,6 +18,19 @@ import styles from './styles'
 const ReducingCost: React.FC = () => {
   const { success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
   const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
+  const timer = useRef<any>(null)
+
+  useEffect(() => {
+    timer.current = setTimeout(() => {
+      scrollRef.current?.scrollTo?.({ y: 50 })
+    }, 50)
+
+    return () => {
+      if (timer.current) {
+        clearTimeout(timer.current)
+      }
+    }
+  }, [])
 
   return (
     <ScrollContainer style={styles.container} ref={scrollRef}>

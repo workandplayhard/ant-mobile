@@ -77,7 +77,7 @@ const TVOffer: React.FC = () => {
       <Gap gap={40} />
 
       {data.map((information, index) => (
-        <View>
+        <View key={index}>
           <TouchableOpacity onPress={() => onChange(index)}>
             <Information
               key={index}
