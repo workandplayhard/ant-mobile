@@ -1,10 +1,10 @@
 import React from 'react'
 import Tooltip from 'rn-tooltip'
 
-import { TextField } from '../TextField'
-
 import { PRIMARY_BG_COLOR, RH, RW, TRANSPARENT } from '@/theme'
 import { t } from '@/i18n'
+
+import { TextField } from '../TextField'
 
 import styles from './styles'
 
