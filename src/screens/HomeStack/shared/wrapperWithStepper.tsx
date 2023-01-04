@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, I18nManager, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -39,6 +39,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
   } = useReduceCost()
 
   const [steps, setSteps] = useState<IStep<number>[]>(mockData.stepData)
+
   const onChangeStep = useCallback(
     (step: number) => {
       setCurrentStep(step)
@@ -48,6 +49,12 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     },
     [steps],
   )
+
+  useEffect(() => {
+    if (cost) onChangeStep(0)
+    else if (detail) onChangeStep(1)
+    else if (tvSuccess) onChangeStep(2)
+  }, [cost, detail, tvSuccess])
 
   const onBack = useCallback(() => {
     if (detail) {
@@ -79,9 +86,11 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     tvPlan,
   ])
 
+  // if (detail) onChangeStep(1)
   // useEffect(() => {
-  //   if (!detail) onChangeStep(1)
-  // }, [detail, onChangeStep]) this stepper working but can't touch anything on my screen
+  //   if (detail) console.log('here:')
+  // }, [detail, onChangeStep])
+  // this stepper working but can't touch anything on my screen
 
   const getTitle = useCallback(() => {
     if (cost || tvOffer) return t('reducingCostTitle')
