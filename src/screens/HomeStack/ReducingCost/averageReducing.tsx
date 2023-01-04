@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
-import { Button, Container, Gap, ScrollContainer } from '@/components'
+import { Button, Gap, ScrollContainer } from '@/components'
 import { t } from '@/i18n'
 import { IAverage } from '@/types'
 import { useReduceCost } from '@/hooks'
@@ -77,7 +77,7 @@ const AverageReducing = () => {
       <Gap gap={40} />
 
       {data.map((information, index) => (
-        <View>
+        <View key={index}>
           <TouchableOpacity onPress={() => onChange(index)}>
             <Information
               key={index}

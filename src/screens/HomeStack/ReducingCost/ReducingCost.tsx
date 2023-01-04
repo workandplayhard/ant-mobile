@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ElementRef, useCallback, useRef } from 'react'
 import { View } from 'react-native'
 
 import { useReduceCost } from '@/hooks'
@@ -17,10 +17,16 @@ import styles from './styles'
 
 const ReducingCost: React.FC = () => {
   const { success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
+  const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
+
+  const onStepChange = useCallback(() => {
+    console.log('erer')
+    scrollRef.current?.scrollTo?.({ y: 0 })
+  }, [])
 
   return (
-    <ScrollContainer style={styles.container}>
-      <WrapperWithStepper>
+    <ScrollContainer style={styles.container} ref={scrollRef}>
+      <WrapperWithStepper onStepChange={onStepChange}>
         {!success && !tvOffer && !tvPlan && !tvSuccess && (
           <View>
             <View style={styles.contentContainer}>

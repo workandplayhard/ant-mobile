@@ -1,10 +1,13 @@
 import React, { useCallback } from 'react'
 import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { Button, Container, Gap, ImageView, TextField } from '@/components'
 import { t } from '@/i18n'
 import { useReduceCost } from '@/hooks'
 import { ICost } from '@/types'
+import { NavScreens, RouteParamList } from '@/navigation'
 
 import Plan from './plan'
 
@@ -15,12 +18,17 @@ import styles from './styles'
 import ReducingBackground from '@/assets/images/img_reducing.png'
 
 const Congratulation = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const { onTVOffer, onSuccess, tvSuccess } = useReduceCost()
 
   const onPress = useCallback(() => {
-    onSuccess(false)
-    onTVOffer(true)
-  }, [onSuccess, onTVOffer])
+    if (!tvSuccess) {
+      onSuccess(false)
+      onTVOffer(true)
+    } else {
+      navigation.navigate(NavScreens.home.summary)
+    }
+  }, [navigation, onSuccess, onTVOffer, tvSuccess])
 
   return (
     <Container>
