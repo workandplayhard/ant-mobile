@@ -23,7 +23,7 @@ const ReducingCost: React.FC = () => {
   useEffect(() => {
     timer.current = setTimeout(() => {
       scrollRef.current?.scrollTo?.({ y: 50 })
-    }, 50)
+    }, 100)
 
     return () => {
       if (timer.current) {
