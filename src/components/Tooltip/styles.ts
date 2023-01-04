@@ -7,6 +7,7 @@ export default StyleSheet.create({
     backgroundColor: PRIMARY_BG_COLOR,
     left: RW(11),
     borderRadius: RW(15),
+    maxWidth: RW(200),
   },
   text: {
     ...font('rw.regular', 14, WHITE, 24),

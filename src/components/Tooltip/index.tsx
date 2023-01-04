@@ -18,11 +18,11 @@ export const CustomTooltip: React.FC<ITooltip> = ({ text = t('loremExample'), ch
     <Tooltip
       popover={<TextField text={text} style={styles.text} />}
       containerStyle={styles.container}
-      width={RW(200)}
-      height={RH(76)}
       pointerColor={PRIMARY_BG_COLOR}
       pointerStyle={styles.pointerPos}
       overlayColor={TRANSPARENT}
+      height="auto"
+      width="auto"
     >
       {children}
     </Tooltip>
