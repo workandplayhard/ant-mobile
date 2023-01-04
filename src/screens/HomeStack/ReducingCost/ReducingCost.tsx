@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ElementRef, useRef } from 'react'
 import { View } from 'react-native'
 
 import { useReduceCost } from '@/hooks'
@@ -17,9 +17,10 @@ import styles from './styles'
 
 const ReducingCost: React.FC = () => {
   const { success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
+  const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
 
   return (
-    <ScrollContainer style={styles.container}>
+    <ScrollContainer style={styles.container} ref={scrollRef}>
       <WrapperWithStepper>
         {!success && !tvOffer && !tvPlan && !tvSuccess && (
           <View>

@@ -1,7 +1,5 @@
-import React, { Ref, useEffect, useRef } from 'react'
+import React, { forwardRef, useImperativeHandle, useRef } from 'react'
 import { StyleProp, ViewStyle, ScrollView } from 'react-native'
-
-import { useReduceCost } from '@/hooks'
 
 import styles from './styles'
 
@@ -13,34 +11,47 @@ interface IScrollContainer {
   children: React.ReactNode
 }
 
-export const ScrollContainer: React.FC<IScrollContainer> = ({
-  direction = 'vertical',
-  showScrollBar = true,
-  contentContainerStyle = {},
-  style = {},
-  children,
-}) => {
-  const { cost, detail, success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
-  const scrollRef = useRef<ScrollView>(null)
-  useEffect(
-    () =>
-      scrollRef.current?.scrollTo({
-        y: 0,
-      }),
-    [cost, detail, success, tvOffer, tvPlan, tvSuccess],
-  )
-
-  return (
-    <ScrollView
-      keyboardDismissMode="on-drag"
-      keyboardShouldPersistTaps="handled"
-      showsVerticalScrollIndicator={showScrollBar}
-      style={[styles.container, style]}
-      contentContainerStyle={[styles.contentContainerStyle, contentContainerStyle]}
-      horizontal={direction === 'horizontal'}
-      ref={scrollRef}
-    >
-      {children}
-    </ScrollView>
-  )
+interface IScrollTo {
+  scrollTo?: ({ x = 0, y = 0 }: { x?: number; y?: number }) => void
 }
+
+export const ScrollContainer = forwardRef<IScrollTo, IScrollContainer>(
+  (
+    {
+      direction = 'vertical',
+      showScrollBar = true,
+      contentContainerStyle = {},
+      style = {},
+      children,
+    },
+    ref,
+  ) => {
+    const scrollRef = useRef<ScrollView>(null)
+
+    useImperativeHandle(
+      ref,
+      () => ({
+        scrollTo() {
+          scrollRef.current?.scrollTo({
+            y: 0,
+          })
+        },
+      }),
+      [],
+    )
+
+    return (
+      <ScrollView
+        keyboardDismissMode="on-drag"
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={showScrollBar}
+        style={[styles.container, style]}
+        contentContainerStyle={[styles.contentContainerStyle, contentContainerStyle]}
+        horizontal={direction === 'horizontal'}
+        ref={scrollRef}
+      >
+        {children}
+      </ScrollView>
+    )
+  },
+)
