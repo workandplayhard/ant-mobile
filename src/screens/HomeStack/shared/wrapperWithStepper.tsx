@@ -88,12 +88,6 @@ const WrapperWithStepper: React.FC<Props> = ({ children, onStepChange }) => {
     tvPlan,
   ])
 
-  // if (detail) onChangeStep(1)
-  // useEffect(() => {
-  //   if (detail) console.log('here:')
-  // }, [detail, onChangeStep])
-  // this stepper working but can't touch anything on my screen
-
   const getTitle = useCallback(() => {
     if (cost || tvOffer) return t('reducingCostTitle')
     else if (detail || success || tvPlan) return t('reducingPlanTitle')
