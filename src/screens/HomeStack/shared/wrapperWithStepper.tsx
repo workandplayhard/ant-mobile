@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { StyleSheet, I18nManager, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -18,10 +18,11 @@ import { t } from 'i18next'
 import mockData from '../ReducingCost/mockData.json'
 
 interface Props {
+  onStepChange: () => void
   children: React.ReactNode
 }
 
-const WrapperWithStepper: React.FC<Props> = ({ children }) => {
+const WrapperWithStepper: React.FC<Props> = ({ children, onStepChange }) => {
   const [currentStep, setCurrentStep] = useState<number>(0)
   const {
     cost,
@@ -45,6 +46,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
       const _steps = [...steps]
       _steps[Math.max(0, step - 1)].isCompleted = true
       setSteps(_steps)
+      onStepChange()
     },
     [steps],
   )
