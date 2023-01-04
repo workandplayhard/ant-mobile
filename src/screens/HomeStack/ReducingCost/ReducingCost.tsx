@@ -20,7 +20,6 @@ const ReducingCost: React.FC = () => {
   const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
 
   const onStepChange = useCallback(() => {
-    console.log('erer')
     scrollRef.current?.scrollTo?.({ y: 0 })
   }, [])
 
