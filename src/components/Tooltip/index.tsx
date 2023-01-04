@@ -1,0 +1,30 @@
+import React from 'react'
+import Tooltip from 'rn-tooltip'
+
+import { TextField } from '../TextField'
+
+import { PRIMARY_BG_COLOR, RH, RW, TRANSPARENT } from '@/theme'
+import { t } from '@/i18n'
+
+import styles from './styles'
+
+interface ITooltip {
+  text?: string | number
+  children: React.ReactNode
+}
+
+export const CustomTooltip: React.FC<ITooltip> = ({ text = t('loremExample'), children }) => {
+  return (
+    <Tooltip
+      popover={<TextField text={text} style={styles.text} />}
+      containerStyle={styles.container}
+      width={RW(200)}
+      height={RH(76)}
+      pointerColor={PRIMARY_BG_COLOR}
+      pointerStyle={styles.pointerPos}
+      overlayColor={TRANSPARENT}
+    >
+      {children}
+    </Tooltip>
+  )
+}

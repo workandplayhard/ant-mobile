@@ -3,8 +3,8 @@ import { View } from 'react-native'
 
 import { CheckBox, Gap, Icon, Row, TextField } from '@/components'
 
+import { CustomTooltip } from '@/components/Tooltip'
 import { t } from '@/i18n'
-
 import { IFinance } from '@/types'
 
 import mockData from './mockData'
@@ -28,11 +28,13 @@ const Information = () => {
       <View style={styles.subSource}>
         <Row>
           <TextField text={t('typesOfInformation')} style={styles.subSourceText} />
-          <Icon
-            name="questionCircleIcon"
-            wrapperStyle={styles.subSourceIconPos}
-            iconStyle={styles.subSourceIcon}
-          />
+          <CustomTooltip>
+            <Icon
+              name="questionCircleIcon"
+              wrapperStyle={styles.subSourceIconPos}
+              iconStyle={styles.subSourceIcon}
+            />
+          </CustomTooltip>
         </Row>
       </View>
 

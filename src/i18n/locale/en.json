@@ -95,6 +95,7 @@
     "reactive": "Reactive",
     "insuranceDetails": "Insurance details",
     "currentPlanReduce": "Current plan",
-    "carInsurance": "Car insurance plan"
+    "carInsurance": "Car insurance plan",
+    "loremExample": "Lorem Ipsum is simply dummy text printing"
   }
 }
