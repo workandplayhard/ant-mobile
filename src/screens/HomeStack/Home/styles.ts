@@ -11,6 +11,10 @@ export default StyleSheet.create({
     flexDirection: 'column',
     height: '100%',
   },
+  headerContainer: {
+    paddingHorizontal: RW(30),
+    backgroundColor: PRIMARY_BG_COLOR,
+  },
   scrollContent: {
     width: '100%',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
