@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { NavScreens, RouteParamList } from '@/navigation'
 import { Button, CheckBox, Col, Gap, PageTitle, Row, TextField } from '@/components'
@@ -16,6 +17,10 @@ import styles from './styles'
 const Pricing: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const [selected, setSelected] = React.useState<number | null>(null)
+
+  const onClick = useCallback((id: number) => {
+    setSelected(id)
+  }, [])
 
   return (
     <WrapperWithBackground>
@@ -34,13 +39,15 @@ const Pricing: React.FC = () => {
           {mockData.plans.map((plan) => (
             <React.Fragment key={plan.id}>
               <View style={styles.plan}>
-                <Row style={styles.planContent}>
-                  <CheckBox
-                    isChecked={selected === plan.id}
-                    onChange={() => setSelected(plan.id)}
-                  />
-                  <TextField text={plan.description} style={styles.planText} />
-                </Row>
+                <TouchableOpacity onPress={() => onClick(plan.id)}>
+                  <Row style={styles.planContent}>
+                    <CheckBox
+                      isChecked={selected === plan.id}
+                      onChange={() => setSelected(plan.id)}
+                    />
+                    <TextField text={plan.description} style={styles.planText} />
+                  </Row>
+                </TouchableOpacity>
               </View>
               <Gap horizontal={false} gap={20} />
             </React.Fragment>
