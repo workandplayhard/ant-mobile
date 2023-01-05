@@ -58,7 +58,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
   const onSelectPeriod = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-shadow
     (index: number, isSelected: boolean) => {
-      const _c = [...periods]
+      let _c = [...periods]
       const current = periods.filter((item) => item.isSelected === true)
 
       if (current.length === 0) {
@@ -67,10 +67,18 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         setPeriods(_c)
       } else {
         const trueElement = periods.filter((item) => item.isSelected === true)
-        if (trueElement[0].label !== _c[index].label) {
+        if (trueElement[0].label !== _c[index].label && _c[index].label === 'One time only') {
           setIndex(index)
           setShowModal(true)
           onOpenModal()
+        } else {
+          _c = _c.map((item) => {
+            item.isSelected = false
+            return item
+          })
+
+          _c[index].isSelected = isSelected
+          setPeriods(_c)
         }
       }
     },
