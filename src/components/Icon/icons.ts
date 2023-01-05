@@ -28,6 +28,7 @@ import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
+import circleCheckIcon from '@/assets/icons/ic_circle_check.svg'
 import reducingBackIcon from '@/assets/icons/ic_reducing_back.svg'
 import nextIndicatorIcon from '@/assets/icons/ic_next_indicator.svg'
 import reducingCheckIcon from '@/assets/icons/ic_reducing_check.svg'
@@ -77,6 +78,7 @@ export default {
   arrowBackIcon,
   balloonHotIcon,
   balloonThinIcon,
+  circleCheckIcon,
   notificationIcon,
   reducingBackIcon,
   whiteDownloadIcon,

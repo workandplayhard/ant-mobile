@@ -105,6 +105,7 @@ export default StyleSheet.create({
     paddingTop: RW(190),
     paddingBottom: RW(60),
     backgroundColor: WHITE,
+    alignItems: 'center',
   },
   contentIconContainer: {
     justifyContent: 'space-between',
