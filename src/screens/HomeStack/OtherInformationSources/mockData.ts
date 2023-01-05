@@ -80,7 +80,7 @@ export default {
       {
         label: t('threeYears'),
         isSelected: false,
-        value: 'threYears',
+        value: 'threeYears',
       },
     ],
   },

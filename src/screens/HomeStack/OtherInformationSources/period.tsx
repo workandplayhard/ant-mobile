@@ -60,8 +60,9 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
 
     _c[2].isSelected = true
     setPeriods(_c)
+    onPeriodStatus(1)
     setShowModal(false)
-  }, [periods])
+  }, [onPeriodStatus, periods])
 
   const onSelectPeriod = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-shadow
@@ -81,7 +82,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         }
       } else {
         const trueElement = periods.filter((item) => item.isSelected === true)
-        if (trueElement[0].label !== _c[index].label && _c[index].label === 'One time only') {
+        if (trueElement[0].value !== _c[index].value && _c[index].value === 'oneTime') {
           setIndex(index)
           setShowModal(true)
           onOpenModal()
@@ -92,6 +93,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
           })
 
           _c[index].isSelected = isSelected
+          onPeriodStatus(1)
           setPeriods(_c)
         }
       }
@@ -158,9 +160,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
               size="lg"
               text={t('cancel')}
               onPress={onCancelModal}
-              buttonStyle={{
-                borderColor: '#7A7A7D',
-              }}
+              buttonStyle={styles.buttonBorder}
             />
 
             <Gap gap={21} />
