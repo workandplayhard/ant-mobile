@@ -1,9 +1,8 @@
 import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 
-import { CheckBox, Gap, Icon, Row, TextField } from '@/components'
+import { CheckBox, Gap, Icon, Row, TextField, Tooltip } from '@/components'
 
-import { CustomTooltip } from '@/components/Tooltip'
 import { t } from '@/i18n'
 import { IFinance } from '@/types'
 
@@ -28,13 +27,13 @@ const Information = () => {
       <View style={styles.subSource}>
         <Row>
           <TextField text={t('typesOfInformation')} style={styles.subSourceText} />
-          <CustomTooltip>
+          <Tooltip text={t('lorem')} mode="light">
             <Icon
               name="questionCircleIcon"
               wrapperStyle={styles.subSourceIconPos}
               iconStyle={styles.subSourceIcon}
             />
-          </CustomTooltip>
+          </Tooltip>
         </Row>
       </View>
 

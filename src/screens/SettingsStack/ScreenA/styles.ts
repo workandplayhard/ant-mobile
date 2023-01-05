@@ -10,6 +10,9 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  containerLight: {
+    backgroundColor: '#FFFFFF',
+  },
   scrollContent: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },

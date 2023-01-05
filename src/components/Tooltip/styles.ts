@@ -1,19 +1,19 @@
-import { I18nManager, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 
-import { PRIMARY_BG_COLOR, RW, WHITE, font } from '@/theme'
+import { LABEL_DARK_COLOR, RW, WHITE, font } from '@/theme'
 
 export default StyleSheet.create({
-  container: {
-    backgroundColor: PRIMARY_BG_COLOR,
-    left: RW(11),
+  toolTipContainer: {
     borderRadius: RW(15),
+    // width: 'auto',
+    height: 'auto',
     maxWidth: RW(200),
+    padding: RW(15),
   },
   text: {
     ...font('rw.regular', 14, WHITE, 24),
   },
-  pointerPos: {
-    position: 'absolute',
-    left: I18nManager.isRTL ? RW(-169) : RW(-156),
+  textDark: {
+    color: LABEL_DARK_COLOR,
   },
 })

@@ -15,6 +15,7 @@ if (__DEV__) {
     'Animated: `useNativeDriver` was not specified',
     'Animated: `Animated.event now requires a second argument for options',
     'i18next::formatter: there was no format function for maximumfractiondigits: 2)',
+    '[RangeError: minimumFractionDigits value is invalid.]',
   ])
 } else {
   console.log = () => null

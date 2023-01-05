@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native'
 import React, { useCallback, useRef, useState, ElementRef } from 'react'
 
+import { Tooltip } from '@/components/Tooltip'
 import { t } from '@/i18n'
 
 import Placeholder from '@/assets/images/placeholder.png'
@@ -36,6 +37,7 @@ const HomeScreenA: React.FC = () => {
   const signatureRef = useRef<ElementRef<typeof Signature>>(null)
   const [showModal, setShowModal] = useState<number>(0)
   const [checked, setChecked] = useState<boolean>(false)
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark')
   const [text, setText] = useState<string>('')
   const [creditCard, setCreditCard] = useState<string>('')
   const [code, setCode] = useState<string>('')
@@ -107,14 +109,14 @@ const HomeScreenA: React.FC = () => {
   )
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, theme === 'light' && styles.containerLight]}>
       <ScrollContainer contentContainerStyle={styles.scrollContent}>
         <PageTitle
           title="Before we start process"
           subTitle="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
           titleAlign="center"
           subTitleAlign="center"
-          mode="dark"
+          mode={theme}
         />
         <Col>
           <TextField style={styles.title} text={`StackB-ScreenA-${t('lorem')}`} />
@@ -137,7 +139,14 @@ const HomeScreenA: React.FC = () => {
           <Row>
             <CheckBox isChecked={checked} onChange={setChecked} />
             <Gap horizontal gap={20} />
-            <Radio isOn={checked} onChange={setChecked} />
+            <Radio
+              isOn={theme === 'light'}
+              onChange={(c: boolean) => setTheme(c ? 'light' : 'dark')}
+            />
+            <Gap horizontal gap={20} />
+            <Tooltip text={t('lorem')} mode={theme}>
+              <Icon name="questionCircleIcon" size={RW(20)} />
+            </Tooltip>
           </Row>
           <DateTime value={new Date()} format="YYYY-MM-DD HH:mm:ss" style={{ color: '#ffffff' }} />
           <Gap horizontal={false} gap={20} />
@@ -177,7 +186,7 @@ const HomeScreenA: React.FC = () => {
             />
           </Row>
           <Gap horizontal={false} gap={20} />
-          <TextInput value={text} placeholder="Your name" onChange={setText} />
+          <TextInput value={text} placeholder="Your name" mode={theme} onChange={setText} />
           <Gap gap={20} />
           <TextMaskInput
             // eslint-disable-next-line prettier/prettier
@@ -186,7 +195,7 @@ const HomeScreenA: React.FC = () => {
             label="Credit card"
             obfuscationCharacter="X"
             placeholder="XXXX XXXX XXXX XXXX"
-            mode="dark"
+            mode={theme}
             onChange={(v: string) => setCreditCard(v)}
           />
           <Gap horizontal={false} gap={20} />

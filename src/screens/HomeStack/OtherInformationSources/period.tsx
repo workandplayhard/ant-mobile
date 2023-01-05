@@ -12,6 +12,7 @@ import {
   Row,
   ScrollContainer,
   TextField,
+  Tooltip,
 } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
 
@@ -81,11 +82,13 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
       <View style={styles.subSource}>
         <Row>
           <TextField text={t('chooseThePeriod')} style={styles.subSourceText} />
-          <Icon
-            name="questionCircleIcon"
-            wrapperStyle={styles.subSourceIconPos}
-            iconStyle={styles.subSourceIcon}
-          />
+          <Tooltip text={t('lorem')} mode="light">
+            <Icon
+              name="questionCircleIcon"
+              wrapperStyle={styles.subSourceIconPos}
+              iconStyle={styles.subSourceIcon}
+            />
+          </Tooltip>
         </Row>
       </View>
 

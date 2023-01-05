@@ -20,7 +20,7 @@ import { ICard } from '@/types'
 import OTPVerification from './OTPVerification'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { RW } from '@/theme'
-import { CustomTooltip } from '@/components/Tooltip'
+import { Tooltip } from '@/components/Tooltip'
 
 import mockData from './mockData.json'
 
@@ -55,9 +55,9 @@ export const CustomerExpense: React.FC = () => {
 
       <ScrollContainer>
         <View style={styles.questionCirclePos}>
-          <CustomTooltip>
+          <Tooltip text={t('lorem')} mode="dark">
             <Icon name="questionCircleIcon" size={RW(24)} />
-          </CustomTooltip>
+          </Tooltip>
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.description}>
