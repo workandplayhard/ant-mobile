@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import {
   Row,
@@ -70,27 +71,29 @@ export const CustomerExpense: React.FC = () => {
         <Gap gap={60} />
         <View style={styles.cardContainer}>
           {cards.map((card, index) => (
-            <View
-              key={index}
-              style={[
-                styles.card,
-                {
-                  backgroundColor: card.color,
-                },
-              ]}
-            >
-              <Icon name={card.iconName} size={RW(34)} />
-              <Gap gap={20} />
-              <TextField text={card.label} style={styles.cardText} />
-              <View style={styles.cardCheckboxWrapper}>
-                <View style={styles.cardCheckboxPos}>
-                  <CheckBox
-                    onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
-                    isChecked={cards[index].isSelected}
-                  />
+            <TouchableOpacity onPress={() => onCardSelect(index, !card.isSelected)}>
+              <View
+                key={index}
+                style={[
+                  styles.card,
+                  {
+                    backgroundColor: card.color,
+                  },
+                ]}
+              >
+                <Icon name={card.iconName} size={RW(34)} />
+                <Gap gap={20} />
+                <TextField text={card.label} style={styles.cardText} />
+                <View style={styles.cardCheckboxWrapper}>
+                  <View style={styles.cardCheckboxPos}>
+                    <CheckBox
+                      onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
+                      isChecked={cards[index].isSelected}
+                    />
+                  </View>
                 </View>
               </View>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
 
