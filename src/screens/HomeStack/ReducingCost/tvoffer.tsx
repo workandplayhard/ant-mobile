@@ -17,6 +17,7 @@ const TVOffer: React.FC = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const [data, setData] = useState<IAverage[]>(mockData.information as unknown as IAverage[])
   const { onTVPlan, onTVOffer } = useReduceCost()
+  const [button, setButton] = useState<string>(t('valueForMoney'))
 
   const onChange = useCallback(
     (index: number) => {
@@ -50,27 +51,30 @@ const TVOffer: React.FC = () => {
     <View>
       <ScrollContainer direction="horizontal" style={styles.averageRow}>
         <Button
-          variant="primary"
+          variant={button === t('valueForMoney') ? 'primary' : 'pure'}
           size="md"
           text={t('valueForMoney')}
           wrapperStyle={styles.valueButton}
           buttonStyle={styles.moneyButton}
+          onPress={() => setButton(t('valueForMoney'))}
         />
         <Gap horizontal gap={15} />
         <Button
-          variant="pure"
+          variant={button === t('cheapest') ? 'primary' : 'pure'}
           size="md"
           text={t('cheapest')}
           wrapperStyle={styles.customButton}
           iconStyle={styles.cheapButton}
+          onPress={() => setButton(t('cheapest'))}
         />
         <Gap horizontal gap={15} />
         <Button
-          variant="pure"
+          variant={button === t('reactive') ? 'primary' : 'pure'}
           size="md"
           text={t('reactive')}
           wrapperStyle={styles.customButton}
           iconStyle={styles.cheapButton}
+          onPress={() => setButton(t('reactive'))}
         />
       </ScrollContainer>
 

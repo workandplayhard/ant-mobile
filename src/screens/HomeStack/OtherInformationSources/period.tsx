@@ -40,8 +40,16 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
 
   const onCancelModal = useCallback(() => {
     setShowModal(false)
+    let _c = [...periods]
+    _c = _c.map((item) => {
+      item.isSelected = false
+      return item
+    })
+
+    _c[0].isSelected = true
+    setPeriods(_c)
     modalizeRef.current?.close()
-  }, [modalizeRef])
+  }, [periods])
 
   const onNext = useCallback(() => {
     let _c = [...periods]
@@ -50,27 +58,43 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
       return item
     })
 
-    _c[index].isSelected = true
+    _c[2].isSelected = true
     setPeriods(_c)
-    onCancelModal()
-  }, [index, periods, onCancelModal])
+    onPeriodStatus(1)
+    setShowModal(false)
+  }, [onPeriodStatus, periods])
 
   const onSelectPeriod = useCallback(
     // eslint-disable-next-line @typescript-eslint/no-shadow
     (index: number, isSelected: boolean) => {
-      const _c = [...periods]
+      let _c = [...periods]
       const current = periods.filter((item) => item.isSelected === true)
 
       if (current.length === 0) {
-        _c[index].isSelected = isSelected
-        onPeriodStatus(1)
-        setPeriods(_c)
+        if (index === 0) {
+          setShowModal(true)
+          setIndex(0)
+          onOpenModal()
+        } else {
+          _c[index].isSelected = isSelected
+          onPeriodStatus(1)
+          setPeriods(_c)
+        }
       } else {
         const trueElement = periods.filter((item) => item.isSelected === true)
-        if (trueElement[0].label !== _c[index].label) {
+        if (trueElement[0].value !== _c[index].value && _c[index].value === 'oneTime') {
           setIndex(index)
           setShowModal(true)
           onOpenModal()
+        } else {
+          _c = _c.map((item) => {
+            item.isSelected = false
+            return item
+          })
+
+          _c[index].isSelected = isSelected
+          onPeriodStatus(1)
+          setPeriods(_c)
         }
       }
     },
@@ -136,9 +160,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
               size="lg"
               text={t('cancel')}
               onPress={onCancelModal}
-              buttonStyle={{
-                borderColor: '#7A7A7D',
-              }}
+              buttonStyle={styles.buttonBorder}
             />
 
             <Gap gap={21} />

@@ -17,6 +17,7 @@ const AverageReducing = () => {
   const [selected, setSelected] = useState<boolean>(false)
   const [data, setData] = useState<IAverage[]>(mockData.information as unknown as IAverage[])
   const { detail, tvPlan, onCost, onDetail } = useReduceCost()
+  const [button, setButton] = useState<number>(1)
 
   const onChange = useCallback(
     (index: number) => {
@@ -50,27 +51,30 @@ const AverageReducing = () => {
     <View>
       <ScrollContainer direction="horizontal" style={styles.averageRow}>
         <Button
-          variant="primary"
+          variant={button === 1 ? 'primary' : 'pure'}
           size="md"
           text={t('valueForMoney')}
           wrapperStyle={styles.valueButton}
           buttonStyle={styles.moneyButton}
+          onPress={() => setButton(1)}
         />
         <Gap horizontal gap={15} />
         <Button
-          variant="pure"
+          variant={button === 2 ? 'primary' : 'pure'}
           size="md"
           text={t('cheapest')}
           wrapperStyle={styles.customButton}
           iconStyle={styles.cheapButton}
+          onPress={() => setButton(2)}
         />
         <Gap horizontal gap={15} />
         <Button
-          variant="pure"
+          variant={button === 3 ? 'primary' : 'pure'}
           size="md"
           text={t('reactive')}
           wrapperStyle={styles.customButton}
           iconStyle={styles.cheapButton}
+          onPress={() => setButton(3)}
         />
       </ScrollContainer>
 

@@ -11,6 +11,7 @@ import {
   PAGE_HORIZONTAL_PADDING,
   OTHER_INFORMATION_SUB_SOURCE_BG_COLOR,
   OTHER_INFORMATION_SUB_SOURCE_DROP_BORDER,
+  SOURCE_MODAL_BUTTON_BORDER,
 } from '@/theme'
 import { SCREEN_WIDTH } from '@/constants'
 
@@ -140,5 +141,8 @@ export default StyleSheet.create({
     height: RH(3),
     borderRadius: RW(2),
     backgroundColor: WHITE,
+  },
+  buttonBorder: {
+    borderColor: SOURCE_MODAL_BUTTON_BORDER,
   },
 })

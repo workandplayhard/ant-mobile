@@ -25,6 +25,7 @@ export const Tooltip: React.FC<ITooltip> = ({ text, mode = 'light', children }) 
       containerStyle={styles.toolTipContainer}
       pointerColor={mode === 'dark' ? WHITE : PRIMARY_BG_COLOR}
       overlayColor={TRANSPARENT}
+      height="auto"
     >
       {children}
     </RNTooltip>
