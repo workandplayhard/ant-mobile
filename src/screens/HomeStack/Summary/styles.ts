@@ -117,6 +117,7 @@ export default StyleSheet.create({
     ...font('pp.bold', 14, SUMMARY_CONTENT, 28),
   },
   informationRow: {
+    width: '100%',
     justifyContent: 'space-between',
     backgroundColor: GRAY,
     paddingHorizontal: RH(20),
@@ -130,6 +131,7 @@ export default StyleSheet.create({
     ...font('rw.regular', 14, SUMMARY_HEADER, 20),
   },
   totalRow: {
+    width: '100%',
     justifyContent: 'space-between',
   },
   totalCount: {

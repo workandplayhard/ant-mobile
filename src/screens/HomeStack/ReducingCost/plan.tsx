@@ -4,6 +4,7 @@ import { View } from 'react-native'
 import { Col, Gap, Icon, Row, TextField } from '@/components'
 import { ICost } from '@/types'
 import { RW } from '@/theme'
+import { CustomTooltip } from '@/components/Tooltip'
 
 import styles from './styles'
 
@@ -15,7 +16,9 @@ const Plan: React.FC<IPlan> = ({ title, costs }) => {
   return (
     <View>
       <TextField text={title} style={styles.header} />
-      <Icon name="questionCircleIcon" size={RW(20)} />
+      <CustomTooltip>
+        <Icon name="questionCircleIcon" size={RW(20)} />
+      </CustomTooltip>
 
       <Gap gap={40} />
       <Row style={styles.planRow}>
