@@ -5,7 +5,6 @@ import { LABEL_DARK_COLOR, RW, WHITE, font } from '@/theme'
 export default StyleSheet.create({
   toolTipContainer: {
     borderRadius: RW(15),
-    // width: 'auto',
     height: 'auto',
     maxWidth: RW(200),
     padding: RW(15),

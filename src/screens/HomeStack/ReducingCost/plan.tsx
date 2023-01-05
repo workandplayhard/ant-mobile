@@ -17,9 +17,11 @@ const Plan: React.FC<IPlan> = ({ title, costs }) => {
   return (
     <View>
       <TextField text={title} style={styles.header} />
-      <Tooltip text={t('lorem')}>
-        <Icon name="questionCircleIcon" size={RW(20)} />
-      </Tooltip>
+      <Row>
+        <Tooltip text={t('lorem')}>
+          <Icon name="questionCircleIcon" size={RW(20)} />
+        </Tooltip>
+      </Row>
 
       <Gap gap={40} />
       <Row style={styles.planRow}>
