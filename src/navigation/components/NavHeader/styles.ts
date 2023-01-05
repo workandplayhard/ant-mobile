@@ -8,7 +8,7 @@ export default StyleSheet.create({
   container: {
     width: '100%',
     paddingRight: RW(6),
-    paddingTop: IS_IOS ? RH(68) : RH(68),
+    paddingTop: IS_IOS ? RH(40) : RH(40),
   },
   image: {
     width: RH(52),
