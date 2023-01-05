@@ -1,11 +1,11 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { NavScreens, RouteParamList } from '@/navigation'
-import { Button, CheckBox, Col, Gap, PageTitle, Row, TextField } from '@/components'
+import { Button, Col, Gap, Icon, PageTitle, Row, TextField } from '@/components'
 
 import { t } from '@/i18n'
 import WrapperWithBackground from '../shared/wrapperWithBackground'
@@ -16,11 +16,6 @@ import styles from './styles'
 
 const Pricing: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
-  const [selected, setSelected] = React.useState<number | null>(null)
-
-  const onClick = useCallback((id: number) => {
-    setSelected(id)
-  }, [])
 
   return (
     <WrapperWithBackground>
@@ -39,12 +34,11 @@ const Pricing: React.FC = () => {
           {mockData.plans.map((plan) => (
             <React.Fragment key={plan.id}>
               <View style={styles.plan}>
-                <TouchableOpacity onPress={() => onClick(plan.id)}>
+                <TouchableOpacity>
                   <Row style={styles.planContent}>
-                    <CheckBox
-                      isChecked={selected === plan.id}
-                      onChange={() => setSelected(plan.id)}
-                    />
+                    <View style={styles.iconContainer}>
+                      <Icon name="circleCheckIcon" iconStyle={styles.icon} />
+                    </View>
                     <TextField text={plan.description} style={styles.planText} />
                   </Row>
                 </TouchableOpacity>
@@ -56,7 +50,6 @@ const Pricing: React.FC = () => {
 
           <Button
             variant="primary"
-            disabled={!selected}
             text={t('next')}
             onPress={() => navigation.navigate(NavScreens.home.termsOfUse)}
           />
