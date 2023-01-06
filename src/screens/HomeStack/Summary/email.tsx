@@ -31,7 +31,7 @@ const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
       swipeEnabled={true}
     >
       <Col style={styles.downloadWrapper}>
-        <Row>
+        <Row style={styles.arrowLeft}>
           <Icon
             name="arrowBackIcon"
             size={RW(20)}

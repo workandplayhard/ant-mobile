@@ -20,7 +20,7 @@ import { t } from '@/i18n'
 import { ICard } from '@/types'
 import OTPVerification from './OTPVerification'
 import { NavScreens, RouteParamList } from '@/navigation'
-import { RW } from '@/theme'
+import { ROW_DARK_BG_COLOR, RW } from '@/theme'
 import { Tooltip } from '@/components/Tooltip'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 
@@ -79,7 +79,7 @@ export const CustomerExpense: React.FC = () => {
                 style={[
                   styles.card,
                   {
-                    backgroundColor: enable ? card.color : '#2C2B30',
+                    backgroundColor: enable ? card.color : ROW_DARK_BG_COLOR,
                   },
                 ]}
               >

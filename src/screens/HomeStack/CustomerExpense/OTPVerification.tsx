@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { useNavigation } from '@react-navigation/native'
 
-import { Button, Col, Gap, Modal, OTPField, PageTitle, TextField } from '@/components'
+import { Button, Col, Gap, Modal, OTPField, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
 import { t } from '@/i18n'
 import { NavScreens, RouteParamList } from '@/navigation'
@@ -24,6 +24,12 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
   const onCancelModal = useCallback(() => {
     showModal(false)
   }, [showModal])
+
+  const onHandleOTP = useCallback(() => {
+    onEnable(true)
+    onCancelModal()
+    navigation.navigate(NavScreens.home.customerExpense)
+  }, [navigation, onCancelModal, onEnable])
 
   return (
     <Modal
@@ -48,11 +54,7 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
           size="lg"
           disabled={code.length === 6 ? false : true}
           text={t('ok')}
-          onPress={() => {
-            onEnable(true)
-            navigation.navigate(NavScreens.home.customerExpense)
-            onCancelModal()
-          }}
+          onPress={() => onHandleOTP()}
         />
       </Col>
     </Modal>
