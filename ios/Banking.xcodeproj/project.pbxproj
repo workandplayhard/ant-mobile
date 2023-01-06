@@ -23,6 +23,7 @@
 		923DC888D1C54FF5BAB5A83A /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7114E8749279416A93DB987D /* Raleway-Thin.ttf */; };
 		9913C0A9BAD840CA8642545B /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA7CF5D358D24960968F1A28 /* Raleway-Regular.ttf */; };
 		D131CAB71D624C749CAC2A65 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DFCB79E387EF4FE19E9E591E /* Poppins-Thin.ttf */; };
+		D38F59292968A0C2005EE5AA /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = D38F59282968A0C2005EE5AA /* main.jsbundle */; };
 		D3A92564EB74498DABE031E1 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F46CCFE7DFFE4166909814BB /* Poppins-SemiBold.ttf */; };
 		E1D6A2E0E96E461E863A43B5 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EC16891337324C3E81E64F32 /* Poppins-Black.ttf */; };
 		EF253FCC94A640A98464BEEE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE33C30E6994402BBE7D263F /* Poppins-Medium.ttf */; };
@@ -60,6 +61,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-Banking-BankingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banking-BankingTests.release.xcconfig"; path = "Target Support Files/Pods-Banking-BankingTests/Pods-Banking-BankingTests.release.xcconfig"; sourceTree = "<group>"; };
 		AE33C30E6994402BBE7D263F /* Poppins-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Medium.ttf"; path = "../src/assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		C4BED71174124B5BB4B64752 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		D38F59282968A0C2005EE5AA /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		DA7CF5D358D24960968F1A28 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Raleway-Regular.ttf"; path = "../src/assets/fonts/Raleway-Regular.ttf"; sourceTree = "<group>"; };
 		DFCB79E387EF4FE19E9E591E /* Poppins-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Thin.ttf"; path = "../src/assets/fonts/Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		EC16891337324C3E81E64F32 /* Poppins-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Black.ttf"; path = "../src/assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		13B07FAE1A68108700A75B9A /* Banking */ = {
 			isa = PBXGroup;
 			children = (
+				D38F59282968A0C2005EE5AA /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -286,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38F59292968A0C2005EE5AA /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				8C0FF545FFC4464A9231547A /* Raleway-Black.ttf in Resources */,
