@@ -2,10 +2,11 @@ import React, { useCallback, useState } from 'react'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { useNavigation } from '@react-navigation/native'
 
-import { Button, Col, Gap, Modal, OTPField, PageTitle, TextField } from '@/components'
+import { Button, Col, Gap, Modal, OTPField, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
 import { t } from '@/i18n'
 import { NavScreens, RouteParamList } from '@/navigation'
+import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 
 import mockData from './mockData.json'
 
@@ -18,10 +19,17 @@ interface IProps {
 const OTPVerification: React.FC<IProps> = ({ showModal }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const [code, setCode] = useState<string>('')
+  const { onEnable } = useCustomerExpense()
 
   const onCancelModal = useCallback(() => {
     showModal(false)
   }, [showModal])
+
+  const onHandleOTP = useCallback(() => {
+    onEnable(true)
+    onCancelModal()
+    navigation.navigate(NavScreens.home.customerExpense)
+  }, [navigation, onCancelModal, onEnable])
 
   return (
     <Modal
@@ -46,10 +54,7 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
           size="lg"
           disabled={code.length === 6 ? false : true}
           text={t('ok')}
-          onPress={() => {
-            navigation.navigate(NavScreens.home.reducingCost)
-            onCancelModal()
-          }}
+          onPress={() => onHandleOTP()}
         />
       </Col>
     </Modal>

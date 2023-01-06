@@ -197,9 +197,9 @@ export default StyleSheet.create({
     borderColor: SUMMARY_BORDER,
     backgroundColor: TRANSPARENT,
     ...font('pp.regular', 16, WHITE, 24),
-
   },
   documentRow: {
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -226,8 +226,8 @@ export default StyleSheet.create({
     borderWidth: RW(3),
   },
   emailBack: {
+    width: '100%',
     ...font('rw.semibold', 18, WHITE, 22),
-    textAlign: 'center',
     paddingLeft: RW(8),
   },
   emailTitle: {
@@ -255,5 +255,8 @@ export default StyleSheet.create({
   },
   isRTL: {
     transform: [{ rotate: '180deg' }],
+  },
+  arrowLeft: {
+    paddingHorizontal: RW(8),
   },
 })
