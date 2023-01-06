@@ -6,6 +6,7 @@ import { Button, Col, Gap, Modal, OTPField, PageTitle, TextField } from '@/compo
 import { MODAL_BACKDROP_COLOR } from '@/theme'
 import { t } from '@/i18n'
 import { NavScreens, RouteParamList } from '@/navigation'
+import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 
 import mockData from './mockData.json'
 
@@ -18,6 +19,7 @@ interface IProps {
 const OTPVerification: React.FC<IProps> = ({ showModal }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const [code, setCode] = useState<string>('')
+  const { onEnable } = useCustomerExpense()
 
   const onCancelModal = useCallback(() => {
     showModal(false)
@@ -47,7 +49,8 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
           disabled={code.length === 6 ? false : true}
           text={t('ok')}
           onPress={() => {
-            navigation.navigate(NavScreens.home.reducingCost)
+            onEnable(true)
+            navigation.navigate(NavScreens.home.customerExpense)
             onCancelModal()
           }}
         />
