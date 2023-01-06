@@ -6,6 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 14 Pro'",
     "iphone": "react-native run-ios --device \"Che’s iPhone\"",
+    "ios:bundle": "npx react-native bundle --platform ios --dev false --entry-file ./index.js --bundle-output ios/main.jsbundle",
     "start": "react-native start",
     "test": "jest",
     "lint": "npx eslint src/**/*.{tsx,ts} --fix && npx prettier --check src/**/*.{tsx,ts} --write"

@@ -1,7 +1,7 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { ReduceCostProvider } from '@/contexts'
 
-import ReducingCost from './reducingCost'
+import ReducingCost from './_reducingCost'
 
 export default function ({ ...props }) {
   return (
