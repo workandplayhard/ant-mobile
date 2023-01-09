@@ -1,4 +1,4 @@
-import { RW } from '@/theme'
+import { RW, WHITE } from '@/theme'
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
@@ -7,12 +7,14 @@ export default StyleSheet.create({
     overflow: 'visible',
   },
   badge: {
-    width: RW(12),
-    height: RW(12),
+    width: RW(16),
+    height: RW(16),
     borderRadius: RW(20),
     position: 'absolute',
-    right: -RW(6),
-    top: -RW(6),
+    right: -RW(4),
+    top: -RW(4),
     zIndex: 1,
+    borderWidth: 2,
+    borderColor: WHITE,
   },
 })
