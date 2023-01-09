@@ -69,10 +69,11 @@ export default StyleSheet.create({
   savePrice: {
     ...font('pp.bold', 36, BLACK, 35),
     textAlign: 'center',
-    paddingTop: RW(20),
+    paddingTop: RW(15),
   },
   saveDateParent: {
-    padding: PAGE_HORIZONTAL_PADDING,
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingTop: RW(20),
     justifyContent: 'space-between',
   },
   saveDateDescription: {
