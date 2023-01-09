@@ -40,7 +40,7 @@ export default StyleSheet.create({
   },
   save: {
     width: '100%',
-    height: RW(245),
+    height: RH(245),
     backgroundColor: WHITE,
     borderRadius: RW(15),
     marginTop: RH(-85),
@@ -64,16 +64,16 @@ export default StyleSheet.create({
   saveTitle: {
     ...font('rw.regular', 18, BLACK, 28),
     textAlign: 'center',
-    marginTop: RW(40),
+    marginTop: RH(40),
   },
   savePrice: {
     ...font('pp.bold', 36, BLACK, 35),
     textAlign: 'center',
-    paddingTop: RW(15),
+    paddingTop: RH(15),
   },
   saveDateParent: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RW(20),
+    paddingTop: RH(20),
     justifyContent: 'space-between',
   },
   saveDateDescription: {
@@ -81,7 +81,7 @@ export default StyleSheet.create({
   },
   saveDateTime: {
     ...font('pp.regular', 15, BLACK, 28),
-    paddingTop: RW(5),
+    paddingTop: RH(5),
   },
   saveButton: {
     width: RW(52),
@@ -103,8 +103,8 @@ export default StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RW(190),
-    paddingBottom: RW(60),
+    paddingTop: RH(190),
+    paddingBottom: RH(60),
     backgroundColor: WHITE,
     alignItems: 'center',
   },
@@ -112,12 +112,12 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   contentDescriptionContainer: {
-    height: RW(76),
+    height: RH(76),
     justifyContent: 'space-between',
-    marginTop: RW(30),
+    marginTop: RH(30),
     width: '100%',
     padding: RW(5),
-    marginVertical: RW(60),
+    marginVertical: RH(60),
   },
   contentDescriptionImg: {
     backgroundColor: STEP_INACTIVE_BG_COLOR,
