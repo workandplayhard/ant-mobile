@@ -1,7 +1,6 @@
-import { Dimensions, PixelRatio } from 'react-native'
+import { Dimensions, PixelRatio, Platform } from 'react-native'
 
 import { IFont } from '@/types'
-import { IS_IOS } from '@/constants'
 import { FONT_MAP } from './fonts'
 
 const { height: SCREEN_HEIGHT, width: SCREEN_WIDTH } = Dimensions.get('window')
@@ -15,7 +14,7 @@ export const RatioW = SCREEN_WIDTH / guidelineBaseWidth
 export const normalizePixel = (size: number) => {
   const newSize = size * RatioW
 
-  if (IS_IOS) {
+  if (Platform.OS === 'ios') {
     return Math.round(PixelRatio.roundToNearestPixel(newSize))
   }
 
