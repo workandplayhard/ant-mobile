@@ -7,6 +7,7 @@ export const GRAY = '#F4F5FC'
 export const TEXT_RED = '#FF423F'
 export const DARK_RED = '#FF423F'
 export const LIGHT_RED = '#FF423F4D'
+export const GREEN = '#00FF00'
 
 export const ERROR = '#EB5757'
 export const SUCCESS = '#27AE60'
