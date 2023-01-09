@@ -40,7 +40,6 @@ export default StyleSheet.create({
   },
   save: {
     width: '100%',
-    height: RH(245),
     backgroundColor: WHITE,
     borderRadius: RW(15),
     marginTop: RH(-85),
@@ -75,6 +74,7 @@ export default StyleSheet.create({
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
     paddingTop: RH(20),
     justifyContent: 'space-between',
+    marginBottom: RH(40),
   },
   saveDateDescription: {
     ...font('rw.regular', 14, TITLE_LIGHT_COLOR, 24),
@@ -103,7 +103,7 @@ export default StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RH(190),
+    paddingTop: RH(165),
     paddingBottom: RH(60),
     backgroundColor: WHITE,
     alignItems: 'center',
