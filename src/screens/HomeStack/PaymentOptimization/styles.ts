@@ -27,7 +27,7 @@ export default StyleSheet.create({
     marginRight: RW(15),
   },
   box: {
-    backgroundColor: WHITE,
+    backgroundColor: WHITE, 
     borderRadius: RW(15),
     shadowColor: DASHBOARD_SHADOW_COLOR,
     shadowOffset: {
@@ -40,7 +40,6 @@ export default StyleSheet.create({
   },
   save: {
     width: '100%',
-    height: RW(245),
     backgroundColor: WHITE,
     borderRadius: RW(15),
     marginTop: RH(-85),
@@ -64,23 +63,25 @@ export default StyleSheet.create({
   saveTitle: {
     ...font('rw.regular', 18, BLACK, 28),
     textAlign: 'center',
-    marginTop: RW(40),
+    marginTop: RH(40),
   },
   savePrice: {
     ...font('pp.bold', 36, BLACK, 35),
     textAlign: 'center',
-    paddingTop: RW(20),
+    paddingTop: RH(20),
   },
   saveDateParent: {
-    padding: PAGE_HORIZONTAL_PADDING,
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingTop: RH(30),
     justifyContent: 'space-between',
+    marginBottom: RH(40),
   },
   saveDateDescription: {
     ...font('rw.regular', 14, TITLE_LIGHT_COLOR, 24),
   },
   saveDateTime: {
     ...font('pp.regular', 15, BLACK, 28),
-    paddingTop: RW(5),
+    paddingTop: RH(5),
   },
   saveButton: {
     width: RW(52),
@@ -102,8 +103,8 @@ export default StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RW(190),
-    paddingBottom: RW(60),
+    paddingTop: RH(180),
+    paddingBottom: RH(60),
     backgroundColor: WHITE,
     alignItems: 'center',
   },
@@ -111,12 +112,12 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   contentDescriptionContainer: {
-    height: RW(76),
+    height: RH(76),
     justifyContent: 'space-between',
-    marginTop: RW(30),
+    marginTop: RH(30),
     width: '100%',
     padding: RW(5),
-    marginVertical: RW(60),
+    marginVertical: RH(60),
   },
   contentDescriptionImg: {
     backgroundColor: STEP_INACTIVE_BG_COLOR,
@@ -134,6 +135,6 @@ export default StyleSheet.create({
     ...font('rw.semibold', 14, BLACK, 24),
   },
   contentDescriptionBottom: {
-    marginBottom: RW(60),
+    marginBottom: RW(80),
   },
 })
