@@ -1,6 +1,16 @@
 import { StyleSheet, I18nManager } from 'react-native'
 
-import { RW, font, GRAY, DARK_RED, LIGHT_RED, TEXT_RED, TRANSPARENT } from '@/theme'
+import {
+  RW,
+  font,
+  GRAY,
+  DARK_RED,
+  LIGHT_RED,
+  TEXT_RED,
+  TRANSPARENT,
+  GREEN,
+  LIGHT_GREEN,
+} from '@/theme'
 
 export default StyleSheet.create({
   cell: {
@@ -35,5 +45,12 @@ export default StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
     flexDirection: I18nManager.isRTL ? 'row-reverse' : 'row',
+  },
+  validCell: {
+    borderColor: GREEN,
+    backgroundColor: LIGHT_GREEN,
+  },
+  validCellText: {
+    color: GREEN,
   },
 })

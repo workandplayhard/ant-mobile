@@ -15,9 +15,15 @@ interface IOtpField {
   value?: string
   cellCount?: number
   setValue: (text: string) => void
+  isValid?: boolean
 }
 
-export const OTPField: React.FC<IOtpField> = ({ cellCount = 6, value = '', setValue }) => {
+export const OTPField: React.FC<IOtpField> = ({
+  cellCount = 6,
+  value = '',
+  setValue,
+  isValid = false,
+}) => {
   const codeField = useBlurOnFulfill({ cellCount, value })
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     setValue,
@@ -39,8 +45,17 @@ export const OTPField: React.FC<IOtpField> = ({ cellCount = 6, value = '', setVa
         blurOnSubmit
         renderCell={({ index, symbol, isFocused }) => (
           <React.Fragment key={index}>
-            <View style={[styles.cell, (isFocused || !!symbol) && styles.focusedCell]}>
-              <Text style={styles.cellText} onLayout={getCellOnLayoutHandler(index)}>
+            <View
+              style={[
+                styles.cell,
+                (isFocused || !!symbol) && styles.focusedCell,
+                isValid && styles.validCell,
+              ]}
+            >
+              <Text
+                style={[styles.cellText, isValid && styles.validCellText]}
+                onLayout={getCellOnLayoutHandler(index)}
+              >
                 {symbol || (isFocused ? <Cursor /> : null)}
               </Text>
             </View>

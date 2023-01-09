@@ -22,7 +22,7 @@ const Stack = createStackNavigator()
 const StackScreen = () => {
   return (
     <Stack.Navigator
-      initialRouteName={NavScreens.home.home}
+      initialRouteName={NavScreens.home.paymentOptimization}
       screenOptions={{
         ...NAV_HEADER_OPTION,
       }}

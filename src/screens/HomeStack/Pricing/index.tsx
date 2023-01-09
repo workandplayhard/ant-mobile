@@ -2,7 +2,6 @@ import React from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { NavScreens, RouteParamList } from '@/navigation'
 import { Button, Col, Gap, Icon, PageTitle, Row, TextField } from '@/components'
@@ -34,14 +33,12 @@ const Pricing: React.FC = () => {
           {mockData.plans.map((plan) => (
             <React.Fragment key={plan.id}>
               <View style={styles.plan}>
-                <TouchableOpacity>
-                  <Row style={styles.planContent}>
-                    <View style={styles.iconContainer}>
-                      <Icon name="circleCheckIcon" iconStyle={styles.icon} />
-                    </View>
-                    <TextField text={plan.description} style={styles.planText} />
-                  </Row>
-                </TouchableOpacity>
+                <Row style={styles.planContent}>
+                  <View style={styles.iconContainer}>
+                    <Icon name="circleCheckIcon" iconStyle={styles.icon} />
+                  </View>
+                  <TextField text={plan.description} style={styles.planText} />
+                </Row>
               </View>
               <Gap horizontal={false} gap={20} />
             </React.Fragment>

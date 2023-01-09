@@ -46,7 +46,7 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
         <TextField text={mockData.modalTitleExample} style={styles.modalSubTitle} />
 
         <Gap gap={40} />
-        <OTPField cellCount={6} value={code} setValue={setCode} />
+        <OTPField cellCount={6} value={code} setValue={setCode} isValid={code.length === 6} />
 
         <Gap gap={60} />
         <Button
