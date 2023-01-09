@@ -27,7 +27,7 @@ export default StyleSheet.create({
     marginRight: RW(15),
   },
   box: {
-    backgroundColor: WHITE,
+    backgroundColor: WHITE, 
     borderRadius: RW(15),
     shadowColor: DASHBOARD_SHADOW_COLOR,
     shadowOffset: {
@@ -68,11 +68,11 @@ export default StyleSheet.create({
   savePrice: {
     ...font('pp.bold', 36, BLACK, 35),
     textAlign: 'center',
-    paddingTop: RH(15),
+    paddingTop: RH(20),
   },
   saveDateParent: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RH(20),
+    paddingTop: RH(30),
     justifyContent: 'space-between',
     marginBottom: RH(40),
   },
@@ -103,7 +103,7 @@ export default StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RH(165),
+    paddingTop: RH(180),
     paddingBottom: RH(60),
     backgroundColor: WHITE,
     alignItems: 'center',
@@ -135,6 +135,6 @@ export default StyleSheet.create({
     ...font('rw.semibold', 14, BLACK, 24),
   },
   contentDescriptionBottom: {
-    marginBottom: RW(60),
+    marginBottom: RW(80),
   },
 })
