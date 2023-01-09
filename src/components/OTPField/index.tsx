@@ -52,7 +52,10 @@ export const OTPField: React.FC<IOtpField> = ({
                 isValid && styles.validCell,
               ]}
             >
-              <Text style={styles.cellText} onLayout={getCellOnLayoutHandler(index)}>
+              <Text
+                style={[styles.cellText, isValid && styles.validCellText]}
+                onLayout={getCellOnLayoutHandler(index)}
+              >
                 {symbol || (isFocused ? <Cursor /> : null)}
               </Text>
             </View>
