@@ -1,6 +1,6 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useIsFocused, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -23,6 +23,7 @@ import { NavScreens, RouteParamList } from '@/navigation'
 import { ROW_DARK_BG_COLOR, RW } from '@/theme'
 import { Tooltip } from '@/components/Tooltip'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
+import { useApp } from '@/hooks'
 
 import mockData from './mockData.json'
 
@@ -33,6 +34,14 @@ export const CustomerExpense: React.FC = () => {
   const [cards, setCards] = useState<ICard[]>(mockData.data.cards as unknown as ICard[])
   const [showModal, setShowModal] = useState<boolean>(false)
   const { enable, onEnable } = useCustomerExpense()
+  const isFocused = useIsFocused()
+  const { onChangeTheme } = useApp()
+
+  useEffect(() => {
+    if (!isFocused) {
+      onChangeTheme({ statusBarStyle: 'dark-content' })
+    }
+  }, [onChangeTheme, isFocused])
 
   const onCardSelect = useCallback(
     (index: number, isSelected: boolean) => {

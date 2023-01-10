@@ -10,6 +10,7 @@ export const IS_IOS = Platform.OS === 'ios'
 export const STATUS_BAR = IS_IOS ? RH(35) : StatusBar.currentHeight || 0
 export const NAV_HEADER = IS_IOS ? RH(60) : RH(65)
 export const HEADER_HEIGHT = STATUS_BAR + NAV_HEADER + RH(5)
+export const HEADER_BOTTOM = RH(5)
 
 export const APP_DEFAULT_LANG: TLang = 'en'
 export const APP_LANG_KEY = '@Lang'

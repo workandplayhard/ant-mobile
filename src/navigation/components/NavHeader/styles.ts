@@ -2,7 +2,7 @@ import { StyleSheet, I18nManager } from 'react-native'
 
 import { RW, RH, font } from '@/theme/utils'
 import { PROFILE_GREETINGS_COLOR, WHITE } from '@/theme'
-import { HEADER_HEIGHT, STATUS_BAR } from '@/constants'
+import { HEADER_BOTTOM, HEADER_HEIGHT, STATUS_BAR } from '@/constants'
 
 export default StyleSheet.create({
   container: {
@@ -10,6 +10,7 @@ export default StyleSheet.create({
     paddingRight: RW(6),
     minHeight: HEADER_HEIGHT,
     paddingTop: STATUS_BAR,
+    paddingBottom: HEADER_BOTTOM,
   },
   image: {
     width: RH(52),

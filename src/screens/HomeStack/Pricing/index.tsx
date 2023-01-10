@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useIsFocused, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { NavScreens, RouteParamList } from '@/navigation'
 import { Button, Col, Gap, Icon, PageTitle, Row, TextField } from '@/components'
+import { useApp } from '@/hooks'
 
 import { t } from '@/i18n'
 import WrapperWithBackground from '../shared/wrapperWithBackground'
@@ -15,6 +16,14 @@ import styles from './styles'
 
 const Pricing: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const isFocused = useIsFocused()
+  const { onChangeTheme } = useApp()
+
+  useEffect(() => {
+    if (!isFocused) {
+      onChangeTheme({ statusBarStyle: 'dark-content' })
+    }
+  }, [onChangeTheme, isFocused])
 
   return (
     <WrapperWithBackground>

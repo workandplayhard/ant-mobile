@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useIsFocused, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import NavHeader from '@/navigation/components/NavHeader'
@@ -17,6 +17,7 @@ import {
 import { NavScreens, RouteParamList } from '@/navigation'
 import { RW, WHITE, font } from '@/theme'
 import { t } from '@/i18n'
+import { useApp } from '@/hooks'
 
 import mockData from './mockData.json'
 
@@ -24,6 +25,14 @@ import styles from './styles'
 
 const Home: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const isFocused = useIsFocused()
+  const { onChangeTheme } = useApp()
+
+  useEffect(() => {
+    if (isFocused) {
+      onChangeTheme({ statusBarStyle: 'light-content' })
+    }
+  }, [onChangeTheme, isFocused])
 
   return (
     <Container>

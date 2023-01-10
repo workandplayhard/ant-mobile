@@ -25,8 +25,6 @@ export default StyleSheet.create({
   },
   headerContainer: {
     width: '100%',
-    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RH(64),
   },
   closePos: {
     justifyContent: 'flex-end',
@@ -34,6 +32,7 @@ export default StyleSheet.create({
   scrollContainer: {
     width: '100%',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingTop: RH(66),
   },
   line: {
     width: '100%',

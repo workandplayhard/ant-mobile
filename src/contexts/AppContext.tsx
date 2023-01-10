@@ -23,7 +23,7 @@ interface ITheme {
 interface IAppContext {
   appLang: TLang
   isRTL: boolean
-  onChangeTheme: (args: ITheme) => void
+  onChangeTheme: (args: Partial<ITheme>) => void
   onChangeLanguage: ({ lng, _isRTL, restart }: IChangeLanguage) => void
 }
 
@@ -46,7 +46,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     I18nManager.isRTL && I18nManager.doLeftAndRightSwapInRTL,
   )
 
-  const onChangeTheme = useCallback((nTheme: ITheme) => {
+  const onChangeTheme = useCallback((nTheme: Partial<ITheme>) => {
     setTheme((_theme) => ({ ..._theme, ...nTheme }))
   }, [])
 
