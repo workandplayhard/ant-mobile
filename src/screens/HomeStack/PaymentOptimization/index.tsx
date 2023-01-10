@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useIsFocused, useNavigation } from '@react-navigation/native'
 import { View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { NavScreens, RouteParamList } from '@/navigation'
 import { Button, Col, DateTime, Gap, Icon, Row, ScrollContainer, TextField } from '@/components'
 import { DASHBOARD_ICON_COLORS } from '@/theme'
+import { useApp } from '@/hooks'
 
 import P from '@/assets/images/img_p.svg'
 import { t } from '@/i18n'
@@ -17,6 +18,14 @@ import styles from './styles'
 
 const PaymentOptimization: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+  const { onChangeTheme } = useApp()
+  const isFocused = useIsFocused()
+
+  useEffect(() => {
+    if (isFocused) {
+      onChangeTheme({ statusBarStyle: 'light-content' })
+    }
+  }, [onChangeTheme, isFocused])
 
   return (
     <WrapperWithBackground>

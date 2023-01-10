@@ -1,12 +1,13 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import { View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { useIsFocused, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { Button, Container, Gap, PageTitle, ScrollContainer } from '@/components'
 import NavHeader from '@/navigation/components/NavHeader'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { t } from '@/i18n'
+import { useApp } from '@/hooks'
 
 import Bank from './bank'
 import Period from './period'
@@ -20,6 +21,14 @@ const OtherInformationSources = () => {
   const [bankStatus, setBankStatus] = useState<number>(0)
   const [periodStatus, setPeriodStatus] = useState<number>(0)
   const [cardStatus, setCardStatus] = useState<number>(0)
+  const isFocused = useIsFocused()
+  const { onChangeTheme } = useApp()
+
+  useEffect(() => {
+    if (!isFocused) {
+      onChangeTheme({ statusBarStyle: 'light-content' })
+    }
+  }, [onChangeTheme, isFocused])
 
   const enabled = useMemo(() => {
     return bankStatus && cardStatus && periodStatus ? true : false

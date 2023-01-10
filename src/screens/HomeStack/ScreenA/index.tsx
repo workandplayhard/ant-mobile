@@ -7,6 +7,7 @@ import NavHeader from '@/navigation/components/NavHeader'
 import { Button, Gap } from '@/components'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { t } from '@/i18n'
+
 import styles from './styles'
 
 const HomeScreenA: React.FC = () => {

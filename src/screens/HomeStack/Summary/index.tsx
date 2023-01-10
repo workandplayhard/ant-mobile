@@ -30,94 +30,90 @@ const Summary: React.FC = () => {
   const [success, setSuccess] = useState<boolean>(false)
 
   return (
-    <Container style={styles.container}>
-      <View style={styles.headerContainer}>
-        <Row isFull style={styles.closePos}>
-          <Icon
-            name="closeIcon"
-            size={RW(24)}
-            onPress={() => navigation.navigate(NavScreens.home.home)}
-          />
-        </Row>
-
-        <Gap gap={26} />
-        <PageTitle
-          title={t('summaryTitle')}
-          titleAlign="center"
-          subTitle={t('summarySubtitle')}
-          subTitleAlign="center"
-          mode="light"
+    <ScrollContainer style={styles.scrollContainer}>
+      <Row isFull style={styles.closePos}>
+        <Icon
+          name="closeIcon"
+          size={RW(24)}
+          onPress={() => navigation.navigate(NavScreens.home.home)}
         />
-      </View>
+      </Row>
+
+      <Gap gap={26} />
+      <PageTitle
+        title={t('summaryTitle')}
+        titleAlign="center"
+        subTitle={t('summarySubtitle')}
+        subTitleAlign="center"
+        mode="light"
+      />
 
       <Gap gap={40} />
-      <ScrollContainer style={styles.scrollContainer}>
-        <View style={styles.card}>
-          <Col>
-            <Type iconName="ringIcon" typeTitle={t('calls')} typeContent={mockData.typeContent} />
-            <Gap gap={20} />
-            <View style={styles.line} />
-            <Gap gap={20} />
-            <Information
-              count={mockData.count}
-              countDescription={mockData.countDescription}
-              SMSSize={mockData.SMSSize}
-              callsSize={mockData.callsSize}
-              internetSize={mockData.informationInternetSize}
-            />
-            <Gap gap={20} />
-            <View style={styles.line} />
-            <Gap gap={20} />
-            <Total
-              count={mockData.count_1}
-              countDescription={mockData.countDescription}
-              content={mockData.totalContent}
-            />
-          </Col>
-        </View>
+      <View style={styles.card}>
+        <Col>
+          <Type iconName="ringIcon" typeTitle={t('calls')} typeContent={mockData.typeContent} />
+          <Gap gap={20} />
+          <View style={styles.line} />
+          <Gap gap={20} />
+          <Information
+            count={mockData.count}
+            countDescription={mockData.countDescription}
+            SMSSize={mockData.SMSSize}
+            callsSize={mockData.callsSize}
+            internetSize={mockData.informationInternetSize}
+          />
+          <Gap gap={20} />
+          <View style={styles.line} />
+          <Gap gap={20} />
+          <Total
+            count={mockData.count_1}
+            countDescription={mockData.countDescription}
+            content={mockData.totalContent}
+          />
+        </Col>
+      </View>
 
-        <Gap gap={20} />
-        <View style={styles.card}>
-          <Col>
-            <Type iconName="messageIcon" typeTitle={t('SMS')} typeContent={mockData.typeContent} />
-            <Gap gap={20} />
-            <View style={styles.line} />
-            <Gap gap={20} />
-            <Information
-              count={mockData.count_2}
-              countDescription={mockData.countDescription}
-              SMSSize={mockData.SMSSize}
-              callsSize={mockData.callsSize}
-              internetSize={mockData.informationInternetSize}
-            />
-            <Gap gap={20} />
-            <View style={styles.line} />
-            <Gap gap={20} />
-            <Total
-              count={mockData.count_3}
-              countDescription={mockData.countDescription}
-              content={mockData.totalContent}
-            />
-          </Col>
-        </View>
-        <Gap gap={20} />
-        <Category />
+      <Gap gap={20} />
+      <View style={styles.card}>
+        <Col>
+          <Type iconName="messageIcon" typeTitle={t('SMS')} typeContent={mockData.typeContent} />
+          <Gap gap={20} />
+          <View style={styles.line} />
+          <Gap gap={20} />
+          <Information
+            count={mockData.count_2}
+            countDescription={mockData.countDescription}
+            SMSSize={mockData.SMSSize}
+            callsSize={mockData.callsSize}
+            internetSize={mockData.informationInternetSize}
+          />
+          <Gap gap={20} />
+          <View style={styles.line} />
+          <Gap gap={20} />
+          <Total
+            count={mockData.count_3}
+            countDescription={mockData.countDescription}
+            content={mockData.totalContent}
+          />
+        </Col>
+      </View>
+      <Gap gap={20} />
+      <Category />
 
-        <Gap gap={40} />
-        <View style={styles.dotLine} />
+      <Gap gap={40} />
+      <View style={styles.dotLine} />
 
-        <Gap gap={37} />
-        <Footer />
+      <Gap gap={37} />
+      <Footer />
 
-        <Gap gap={62} />
-        <Button
-          variant="primary"
-          size="lg"
-          text={t('saveDocuments')}
-          onPress={() => setShowModal(true)}
-        />
-        <Gap gap={200} />
-      </ScrollContainer>
+      <Gap gap={62} />
+      <Button
+        variant="primary"
+        size="lg"
+        text={t('saveDocuments')}
+        onPress={() => setShowModal(true)}
+      />
+      <Gap gap={200} />
       {showModal && (
         <Document showModal={(val) => setShowModal(val)} onDownload={(val) => setDownload(val)} />
       )}
@@ -132,7 +128,8 @@ const Summary: React.FC = () => {
         />
       )}
       {success && <Success onEmail={(val) => setEmail(val)} onSuccess={(val) => setSuccess(val)} />}
-    </Container>
+    </ScrollContainer>
+    // </Container>
   )
 }
 
