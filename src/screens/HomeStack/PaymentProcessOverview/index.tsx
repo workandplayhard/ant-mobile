@@ -70,34 +70,34 @@ const PaymentProcessOverview = () => {
             <Gap gap={20} />
             <ScrollContainer style={[pos === 'initial' && styles.scrollContainerInitial]}>
               <TextField text={mockData.example} style={styles.progressOverview} />
-
-              <Gap gap={31} />
-
-              <Row isFull style={styles.iconRow}>
-                <Icon name="walletCreditCardIcon" size={40} wrapperStyle={styles.icon} />
-                <Icon
-                  name="nextIndicatorIcon"
-                  wrapperStyle={[styles.indicator, I18nManager.isRTL && styles.isRTL]}
-                />
-                <Icon name="humanIcon" size={40} wrapperStyle={styles.icon} />
-                <Icon
-                  name="nextIndicatorIcon"
-                  wrapperStyle={[styles.indicator, I18nManager.isRTL && styles.isRTL]}
-                />
-                <Icon name="bankIcon" size={40} wrapperStyle={styles.icon} />
-              </Row>
-
-              <Gap gap={60} />
-              <Button
-                variant="primary"
-                size="lg"
-                text={t('next')}
-                onPress={() => {
-                  onCancelModal()
-                  navigation.navigate(NavScreens.home.otherInformationSources)
-                }}
-              />
             </ScrollContainer>
+
+            <Gap gap={31} />
+
+            <Row isFull style={styles.iconRow}>
+              <Icon name="walletCreditCardIcon" size={40} wrapperStyle={styles.icon} />
+              <Icon
+                name="nextIndicatorIcon"
+                wrapperStyle={[styles.indicator, I18nManager.isRTL && styles.isRTL]}
+              />
+              <Icon name="humanIcon" size={40} wrapperStyle={styles.icon} />
+              <Icon
+                name="nextIndicatorIcon"
+                wrapperStyle={[styles.indicator, I18nManager.isRTL && styles.isRTL]}
+              />
+              <Icon name="bankIcon" size={40} wrapperStyle={styles.icon} />
+            </Row>
+
+            <Gap gap={60} />
+            <Button
+              variant="primary"
+              size="lg"
+              text={t('next')}
+              onPress={() => {
+                onCancelModal()
+                navigation.navigate(NavScreens.home.otherInformationSources)
+              }}
+            />
           </Col>
         </Modalize>
       </Portal>

@@ -23,13 +23,16 @@ import settingsIcon from '@/assets/icons/ic_settings.svg'
 import downloadIcon from '@/assets/icons/ic_download.svg'
 import blackCarIcon from '@/assets/icons/ic_black_car.svg'
 import telephoneIcon from '@/assets/icons/ic_telephone.svg'
+import whiteRingIcon from '@/assets/icons/ic_white_ring.svg'
 import arrowNextIcon from '@/assets/icons/ic_arrow_next.svg'
 import arrowDownIcon from '@/assets/icons/ic_arrow_down.svg'
 import arrowPrevIcon from '@/assets/icons/ic_arrow_prev.svg'
 import arrowBackIcon from '@/assets/icons/ic_arrow_back.svg'
+import whiteLightIcon from '@/assets/icons/ic_white_light.svg'
 import balloonHotIcon from '@/assets/icons/ic_balloon_hot.svg'
 import circleCheckIcon from '@/assets/icons/ic_circle_check.svg'
 import reducingBackIcon from '@/assets/icons/ic_reducing_back.svg'
+import whiteMessageIcon from '@/assets/icons/ic_white_message.svg'
 import nextIndicatorIcon from '@/assets/icons/ic_next_indicator.svg'
 import reducingCheckIcon from '@/assets/icons/ic_reducing_check.svg'
 import whiteDownloadIcon from '@/assets/icons/ic_white_download.svg'
@@ -75,11 +78,14 @@ export default {
   arrowPrevIcon,
   arrowDownIcon,
   telephoneIcon,
+  whiteRingIcon,
   arrowBackIcon,
   balloonHotIcon,
+  whiteLightIcon,
   balloonThinIcon,
   circleCheckIcon,
   notificationIcon,
+  whiteMessageIcon,
   reducingBackIcon,
   whiteDownloadIcon,
   tvDefaultPlanIcon,

@@ -12,7 +12,7 @@ import {
 } from '@/theme'
 import { SCREEN_HEIGHT } from '@/constants'
 
-export const modalInitialHeight = RH(550)
+export const modalInitialHeight = RH(562)
 
 export default StyleSheet.create({
   modalizeWrapper: {
@@ -48,7 +48,7 @@ export default StyleSheet.create({
     ...font('rw.bold', 20, WHITE, 28),
   },
   scrollContainerInitial: {
-    maxHeight: RH(360),
+    maxHeight: RH(130),
   },
   progressOverview: {
     ...font('rw.thin', 16, WHITE, 26),

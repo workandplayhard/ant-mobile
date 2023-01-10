@@ -35,6 +35,10 @@ export default StyleSheet.create({
     borderRadius: RW(32),
     paddingVertical: RH(18),
   },
+  custom: {
+    borderRadius: RW(30),
+    paddingVertical: RH(16),
+  },
   xsText: {
     ...font('rw.semibold', 14, WHITE, 20),
   },

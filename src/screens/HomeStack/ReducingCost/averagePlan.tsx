@@ -14,7 +14,7 @@ import styles from './styles'
 
 const AveragePlan = () => {
   const [checked, setChecked] = useState<boolean>(false)
-  const { detail, onDetail, onSuccess, tvOffer, onTVPlan, onTVSuccess } = useReduceCost()
+  const { detail, onDetail, onSuccess, tvOffer, tvPlan, onTVPlan, onTVSuccess } = useReduceCost()
 
   const onPress = useCallback(() => {
     if (detail) {
@@ -39,7 +39,9 @@ const AveragePlan = () => {
 
       <Gap gap={40} />
       <TextField
-        text={tvOffer ? t('tvPlanClosed') : t('averageTelephoneUse')}
+        text={
+          tvOffer ? t('tvPlanClosed') : tvPlan ? t('newTVPlanChosed') : t('averageTelephoneUse')
+        }
         style={styles.averageTitle}
       />
 

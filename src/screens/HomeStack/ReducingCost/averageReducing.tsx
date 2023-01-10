@@ -49,33 +49,38 @@ const AverageReducing = () => {
 
   return (
     <View>
-      <ScrollContainer direction="horizontal" style={styles.averageRow}>
+      <ScrollContainer
+        direction="horizontal"
+        style={styles.averageRow}
+        showHorizontalScrollBar={false}
+      >
         <Button
           variant={button === 1 ? 'primary' : 'pure'}
-          size="md"
+          size="custom"
           text={t('valueForMoney')}
           wrapperStyle={styles.valueButton}
-          buttonStyle={styles.moneyButton}
+          textStyle={styles.textStyle}
           onPress={() => setButton(1)}
         />
         <Gap horizontal gap={15} />
         <Button
           variant={button === 2 ? 'primary' : 'pure'}
-          size="md"
+          size="custom"
           text={t('cheapest')}
           wrapperStyle={styles.customButton}
-          iconStyle={styles.cheapButton}
+          textStyle={styles.textStyle}
           onPress={() => setButton(2)}
         />
         <Gap horizontal gap={15} />
         <Button
           variant={button === 3 ? 'primary' : 'pure'}
-          size="md"
+          size="custom"
           text={t('reactive')}
           wrapperStyle={styles.customButton}
-          iconStyle={styles.cheapButton}
+          textStyle={styles.textStyle}
           onPress={() => setButton(3)}
         />
+        <Gap horizontal gap={60} />
       </ScrollContainer>
 
       <Gap gap={40} />
