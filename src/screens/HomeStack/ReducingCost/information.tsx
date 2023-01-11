@@ -2,13 +2,16 @@ import React from 'react'
 
 import { StyleProp, View, ViewStyle } from 'react-native'
 
-import { Col, ImageView, Row, TextField } from '@/components'
+import { Col, Gap, Icon, ImageView, Row, TextField } from '@/components'
 import { useReduceCost } from '@/hooks'
+
+import IconNames from '@/components/Icon/icons'
 
 import HotMobile from '@/assets/images/img_white_hot_mobile.png'
 import YES from '@/assets/images/img_yes.png'
 
 import styles from './styles'
+import { RW } from '@/theme'
 
 interface IInformation {
   count: number
@@ -17,11 +20,15 @@ interface IInformation {
   callsSize: number
   internetSize: string | number
   style?: StyleProp<ViewStyle>
+  SMSIcon?: keyof typeof IconNames
+  CallsIcon?: keyof typeof IconNames
+  InternetIcon?: keyof typeof IconNames
 }
 
 interface IDetail {
   title: string
   size: string | number
+  icon: keyof typeof IconNames
 }
 
 const Information: React.FC<IInformation> = ({
@@ -31,19 +38,32 @@ const Information: React.FC<IInformation> = ({
   callsSize,
   internetSize,
   style,
+  SMSIcon = 'whiteMessageIcon',
+  CallsIcon = 'whiteRingIcon',
+  InternetIcon = 'whiteLightIcon',
 }) => {
-  const { tvOffer, tvPlan } = useReduceCost()
+  const { tvOffer, tvPlan, detail } = useReduceCost()
   const informationDetails = [
-    { title: 'SMS', size: SMSSize },
-    { title: 'Calls', size: callsSize },
-    { title: 'Internet', size: internetSize },
+    { title: 'SMS', size: SMSSize, icon: SMSIcon },
+    { title: 'Calls', size: callsSize, icon: CallsIcon },
+    { title: 'Internet', size: internetSize, icon: InternetIcon },
   ]
   // eslint-disable-next-line react/no-unstable-nested-components
-  const Detail: React.FC<IDetail> = ({ title, size }) => (
-    <Col style={styles.informationPos}>
-      <TextField text={title} style={styles.informationContentTitle} />
-      <TextField text={size} style={styles.informationContentDescription} />
-    </Col>
+  const Detail: React.FC<IDetail> = ({ title, size, icon }) => (
+    <View>
+      <Col style={styles.informationPos}>
+        {(detail || tvPlan) && (
+          <View>
+            <Icon name={icon} size={RW(20)} />
+
+            <Gap gap={15} />
+          </View>
+        )}
+        <TextField text={title} style={styles.informationContentTitle} />
+        <TextField text={size} style={styles.informationContentDescription} />
+      </Col>
+      <Gap horizontal gap={10} />
+    </View>
   )
   return (
     <Row style={[styles.informationRow, style]}>
@@ -51,14 +71,10 @@ const Information: React.FC<IInformation> = ({
         <TextField text={count} style={styles.informationTitle} />
         <TextField text={countDescription} style={styles.informationContent} />
       </Col>
-      <View>
-        <Row>
-          {informationDetails.map((info, index) => (
-            <Detail key={index} title={info.title} size={info.size} />
-          ))}
-        </Row>
-      </View>
-      <View>
+      {informationDetails.map((info, index) => (
+        <Detail key={index} title={info.title} size={info.size} icon={info.icon} />
+      ))}
+      <View style={[(tvOffer || tvPlan) && styles.yesPos]}>
         <ImageView url={tvOffer || tvPlan ? YES : HotMobile} />
       </View>
     </Row>

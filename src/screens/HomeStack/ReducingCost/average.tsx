@@ -17,7 +17,13 @@ const Average = () => {
   return (
     <View>
       <TextField
-        text={tvPlan ? t('currentTVPlan') : t('averageTelephoneUse')}
+        text={
+          tvOffer
+            ? t('betterTVPlansOffers')
+            : tvPlan
+            ? t('currentTVPlan')
+            : t('averageTelephoneUse')
+        }
         style={styles.averageTitle}
       />
 

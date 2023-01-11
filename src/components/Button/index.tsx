@@ -24,7 +24,7 @@ import { TextStyle } from 'react-native'
 
 type TVariant = 'primary' | 'default' | 'pure'
 
-type TSize = 'xs' | 'sm' | 'md' | 'lg'
+type TSize = 'xs' | 'sm' | 'md' | 'lg' | 'custom'
 
 interface IButton extends TouchableOpacityProps {
   text?: string

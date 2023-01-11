@@ -96,6 +96,8 @@
     "insuranceDetails": "Insurance details",
     "currentPlanReduce": "Current plan",
     "carInsurance": "Car insurance plan",
-    "loremExample": "Lorem Ipsum is simply dummy text printing"
+    "loremExample": "Lorem Ipsum is simply dummy text printing",
+    "betterTVPlansOffers": "Better TV plans offers",
+    "newTVPlanChosed": "New TV plan chosed",
   }
 }

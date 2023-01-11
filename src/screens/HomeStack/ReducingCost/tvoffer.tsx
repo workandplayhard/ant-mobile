@@ -49,31 +49,31 @@ const TVOffer: React.FC = () => {
 
   return (
     <View>
-      <ScrollContainer direction="horizontal" style={styles.averageRow}>
+      <ScrollContainer direction="horizontal" style={styles.averageRow} showScrollBar={false}>
         <Button
           variant={button === t('valueForMoney') ? 'primary' : 'pure'}
-          size="md"
+          size="custom"
           text={t('valueForMoney')}
           wrapperStyle={styles.valueButton}
-          buttonStyle={styles.moneyButton}
+          textStyle={styles.textStyle}
           onPress={() => setButton(t('valueForMoney'))}
         />
         <Gap horizontal gap={15} />
         <Button
           variant={button === t('cheapest') ? 'primary' : 'pure'}
-          size="md"
+          size="custom"
           text={t('cheapest')}
           wrapperStyle={styles.customButton}
-          iconStyle={styles.cheapButton}
+          textStyle={styles.textStyle}
           onPress={() => setButton(t('cheapest'))}
         />
         <Gap horizontal gap={15} />
         <Button
           variant={button === t('reactive') ? 'primary' : 'pure'}
-          size="md"
+          size="custom"
           text={t('reactive')}
           wrapperStyle={styles.customButton}
-          iconStyle={styles.cheapButton}
+          textStyle={styles.textStyle}
           onPress={() => setButton(t('reactive'))}
         />
       </ScrollContainer>

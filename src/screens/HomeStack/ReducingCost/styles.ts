@@ -15,6 +15,7 @@ import {
   BUTTON_GRADIENT_START,
   TEXT_RED,
 } from '@/theme'
+import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   container: {
@@ -95,17 +96,23 @@ export default StyleSheet.create({
   averageRow: {
     width: '100%',
     height: '100%',
+    overflow: 'visible',
   },
   customButton: {
     width: RW(113),
     backgroundColor: ROW_DARK_BG_COLOR,
     borderRadius: RW(30),
+    justifyContent: 'center',
   },
   valueButton: {
     width: RW(166),
+    borderRadius: RW(30),
+    justifyContent: 'center',
+    backgroundColor: ROW_DARK_BG_COLOR,
   },
   informationPos: {
-    paddingLeft: RW(11),
+    paddingLeft: RW(15),
+    alignItems: 'center',
   },
   informationContentTitle: {
     ...font('rw.regular', 12, SUMMARY_HEADER, 20),
@@ -116,8 +123,8 @@ export default StyleSheet.create({
   informationRow: {
     justifyContent: 'space-between',
     backgroundColor: ROW_DARK_BG_COLOR,
-    paddingHorizontal: RH(20),
-    paddingVertical: RH(15),
+    paddingLeft: RH(20),
+    paddingVertical: RH(13),
     borderRadius: RW(12),
     height: RH(88),
   },
@@ -126,6 +133,9 @@ export default StyleSheet.create({
   },
   informationContent: {
     ...font('rw.regular', 14, SUMMARY_HEADER, 20),
+  },
+  yesPos: {
+    paddingRight: RW(20),
   },
   cardBorder: {
     borderWidth: RW(3),
@@ -174,11 +184,7 @@ export default StyleSheet.create({
     ...font('rw.regular', 18, TEXT_RED, 30),
     letterSpacing: RW(1),
   },
-  moneyButton: {
-    width: RW(166),
-    height: RH(48),
-  },
-  cheapButton: {
-    height: RH(48),
+  textStyle: {
+    ...font('rw.semibold', 16, WHITE, 24),
   },
 })

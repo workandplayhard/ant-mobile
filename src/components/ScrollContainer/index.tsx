@@ -9,6 +9,7 @@ interface IScrollContainer {
   contentContainerStyle?: StyleProp<ViewStyle>
   style?: StyleProp<ViewStyle>
   children: React.ReactNode
+  scrollEnabled?: boolean
 }
 
 interface IScrollControl {
@@ -23,6 +24,7 @@ export const ScrollContainer = forwardRef<IScrollControl, IScrollContainer>(
       contentContainerStyle = {},
       style = {},
       children,
+      scrollEnabled = true,
     },
     ref,
   ) => {
@@ -47,10 +49,12 @@ export const ScrollContainer = forwardRef<IScrollControl, IScrollContainer>(
         keyboardDismissMode="on-drag"
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={showScrollBar}
+        showsHorizontalScrollIndicator={showScrollBar}
         style={[styles.container, style]}
         contentContainerStyle={[styles.contentContainerStyle, contentContainerStyle]}
         horizontal={direction === 'horizontal'}
         ref={scrollRef}
+        scrollEnabled={scrollEnabled}
       >
         {children}
       </ScrollView>

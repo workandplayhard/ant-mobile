@@ -13,7 +13,7 @@ import {
   OTHER_INFORMATION_SUB_SOURCE_DROP_BORDER,
   SOURCE_MODAL_BUTTON_BORDER,
 } from '@/theme'
-import { SCREEN_WIDTH } from '@/constants'
+import { IS_IOS, SCREEN_WIDTH } from '@/constants'
 
 export const informationModalHeight = RH(517)
 
@@ -59,7 +59,7 @@ export default StyleSheet.create({
     ...font('rw.semibold', 18, PAGE_TITLE_COLOR, 24),
   },
   dropdownPos: {
-    marginTop: RH(-50),
+    marginTop: IS_IOS ? RH(5) : RH(-50),
   },
   financialRow: {
     justifyContent: 'space-between',
