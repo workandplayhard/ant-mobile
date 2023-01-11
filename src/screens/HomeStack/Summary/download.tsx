@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import { Button, Col, Gap, Modal, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
@@ -14,6 +14,10 @@ interface IProps {
 }
 
 const Download: React.FC<IProps> = ({ onDownload, onEmail }) => {
+  const timeout = useCallback(() => {
+    setTimeout(() => onEmail(true), 1)
+  }, [onEmail])
+
   return (
     <Modal
       modalStyle={styles.downloadModal}
@@ -41,7 +45,7 @@ const Download: React.FC<IProps> = ({ onDownload, onEmail }) => {
           text={t('send')}
           onPress={() => {
             onDownload(false)
-            onEmail(true)
+            timeout()
           }}
         />
       </Col>

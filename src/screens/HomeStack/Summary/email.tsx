@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 
 import { useApp } from '@/hooks'
 import { Button, Col, Gap, Icon, Modal, Row, TextField, TextInput } from '@/components'
@@ -17,9 +17,17 @@ const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
   const [email, setEmail] = React.useState<string>('')
   const { isRTL } = useApp()
 
+  const timeoutSuccess = useCallback(() => {
+    setTimeout(() => onSuccess(true), 1)
+  }, [onSuccess])
+
+  const timeoutBack = useCallback(() => {
+    setTimeout(() => onDownload(true), 1)
+  }, [onDownload])
+
   const onBack = () => {
     onEmail(false)
-    onDownload(true)
+    timeoutBack()
   }
 
   return (
@@ -63,7 +71,7 @@ const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
           text={t('send')}
           onPress={() => {
             onEmail(false)
-            onSuccess(true)
+            timeoutSuccess()
           }}
         />
         <Gap gap={30} />

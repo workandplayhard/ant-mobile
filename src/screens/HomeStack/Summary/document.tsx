@@ -14,9 +14,14 @@ interface IProps {
 }
 
 const Document: React.FC<IProps> = ({ showModal, onDownload }) => {
+  const timeout = useCallback(() => {
+    setTimeout(() => onDownload(true), 1)
+  }, [onDownload])
+
   const onCancelModal = useCallback(() => {
     showModal(false)
-  }, [showModal])
+    timeout()
+  }, [showModal, timeout])
 
   return (
     <Modal
@@ -62,7 +67,6 @@ const Document: React.FC<IProps> = ({ showModal, onDownload }) => {
           size="lg"
           text={t('continue')}
           onPress={() => {
-            onDownload(true)
             onCancelModal()
           }}
         />
