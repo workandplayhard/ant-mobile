@@ -27,7 +27,7 @@ export default StyleSheet.create({
     marginRight: RW(15),
   },
   box: {
-    backgroundColor: WHITE, 
+    backgroundColor: WHITE,
     borderRadius: RW(15),
     shadowColor: DASHBOARD_SHADOW_COLOR,
     shadowOffset: {
@@ -91,7 +91,7 @@ export default StyleSheet.create({
   },
   header: {
     justifyContent: 'center',
-    height: RW(280),
+    height: RH(280),
     borderColor: 'red',
     padding: PAGE_HORIZONTAL_PADDING,
   },

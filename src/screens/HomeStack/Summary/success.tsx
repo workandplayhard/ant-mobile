@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 import { Trans } from 'react-i18next'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -21,9 +21,23 @@ interface IProps {
 const Success: React.FC<IProps> = ({ onEmail, onSuccess }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const { isRTL } = useApp()
+  const timer = useRef<any>(null)
+
+  useEffect(
+    () => () => {
+      if (timer.current) {
+        clearTimeout(timer.current)
+      }
+    },
+    [],
+  )
+
+  const onEmailDebounced = useCallback(() => {
+    timer.current = setTimeout(() => onEmail(true), 10)
+  }, [onEmail])
 
   const onBack = () => {
-    onEmail(true)
+    onEmailDebounced()
     onSuccess(false)
   }
 
