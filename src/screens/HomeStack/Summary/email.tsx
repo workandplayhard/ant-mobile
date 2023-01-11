@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 
 import { useApp } from '@/hooks'
 import { Button, Col, Gap, Icon, Modal, Row, TextField, TextInput } from '@/components'
@@ -16,18 +16,25 @@ interface IProps {
 const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
   const [email, setEmail] = React.useState<string>('')
   const { isRTL } = useApp()
+  const timer = useRef<any>(null)
 
-  const timeoutSuccess = useCallback(() => {
-    setTimeout(() => onSuccess(true), 1)
+  useEffect(() => {
+    if (timer.current) {
+      clearTimeout(timer.current)
+    }
+  }, [])
+
+  const onSuccessDebounced = useCallback(() => {
+    timer.current = setTimeout(() => onSuccess(true), 10)
   }, [onSuccess])
 
-  const timeoutBack = useCallback(() => {
-    setTimeout(() => onDownload(true), 1)
+  const onDoanloadDebounced = useCallback(() => {
+    timer.current = setTimeout(() => onDownload(true), 10)
   }, [onDownload])
 
   const onBack = () => {
     onEmail(false)
-    timeoutBack()
+    onDoanloadDebounced()
   }
 
   return (
@@ -60,7 +67,6 @@ const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
           // eslint-disable-next-line @typescript-eslint/no-shadow
           onChange={(email: string) => setEmail(email)}
           style={styles.input}
-          // containerStyle={styles.emailPlaceholder}
           keyboardType="email-address"
         />
 
@@ -71,7 +77,7 @@ const Email: React.FC<IProps> = ({ onDownload, onSuccess, onEmail }) => {
           text={t('send')}
           onPress={() => {
             onEmail(false)
-            timeoutSuccess()
+            onSuccessDebounced()
           }}
         />
         <Gap gap={30} />

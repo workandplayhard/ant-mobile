@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useRef } from 'react'
 
 import { Button, Col, Gap, Icon, Modal, Row, TextField } from '@/components'
 import { MODAL_BACKDROP_COLOR } from '@/theme'
@@ -14,14 +14,22 @@ interface IProps {
 }
 
 const Document: React.FC<IProps> = ({ showModal, onDownload }) => {
-  const timeout = useCallback(() => {
-    setTimeout(() => onDownload(true), 1)
+  const timer = useRef<any>(null)
+
+  useEffect(() => {
+    if (timer.current) {
+      clearTimeout(timer.current)
+    }
+  }, [])
+
+  const onDoanloadDebounced = useCallback(() => {
+    timer.current = setTimeout(() => onDownload(true), 10)
   }, [onDownload])
 
   const onCancelModal = useCallback(() => {
     showModal(false)
-    timeout()
-  }, [showModal, timeout])
+    onDoanloadDebounced()
+  }, [showModal, onDoanloadDebounced])
 
   return (
     <Modal
