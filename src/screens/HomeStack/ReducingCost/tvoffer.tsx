@@ -49,11 +49,7 @@ const TVOffer: React.FC = () => {
 
   return (
     <View>
-      <ScrollContainer
-        direction="horizontal"
-        style={styles.averageRow}
-        showHorizontalScrollBar={false}
-      >
+      <ScrollContainer direction="horizontal" style={styles.averageRow} showScrollBar={false}>
         <Button
           variant={button === t('valueForMoney') ? 'primary' : 'pure'}
           size="custom"

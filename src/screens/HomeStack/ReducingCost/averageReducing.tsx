@@ -49,11 +49,7 @@ const AverageReducing = () => {
 
   return (
     <View>
-      <ScrollContainer
-        direction="horizontal"
-        style={styles.averageRow}
-        showHorizontalScrollBar={false}
-      >
+      <ScrollContainer direction="horizontal" style={styles.averageRow} showScrollBar={false}>
         <Button
           variant={button === 1 ? 'primary' : 'pure'}
           size="custom"
