@@ -9,6 +9,7 @@ import {
   DROPDOWN_BORDER_COLOR,
   DROPDOWN_ACTIVE_BORDER_COLOR,
   DROPDOWN_BUTTON_BG_COLOR,
+  DASHBOARD_SHADOW_COLOR,
 } from '@/theme'
 
 export default StyleSheet.create({
@@ -32,9 +33,18 @@ export default StyleSheet.create({
     marginLeft: 0,
   },
   dropdownView: {
+    overflow: 'visible',
     backgroundColor: WHITE,
     borderRadius: RW(15),
     paddingHorizontal: RW(20),
+    shadowColor: DASHBOARD_SHADOW_COLOR,
+    shadowOffset: {
+      width: RW(0),
+      height: RW(2),
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: RW(15),
+    elevation: 5,
   },
   row: {
     width: '100%',
