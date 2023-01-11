@@ -94,8 +94,9 @@ export default StyleSheet.create({
     ...font('rw.bold', 26, WHITE, 32),
   },
   averageRow: {
-    width: SCREEN_WIDTH,
+    width: '100%',
     height: '100%',
+    overflow: 'visible',
   },
   customButton: {
     width: RW(113),

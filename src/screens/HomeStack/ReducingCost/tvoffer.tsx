@@ -80,7 +80,6 @@ const TVOffer: React.FC = () => {
           textStyle={styles.textStyle}
           onPress={() => setButton(t('reactive'))}
         />
-        <Gap horizontal gap={60} />
       </ScrollContainer>
 
       <Gap gap={40} />
