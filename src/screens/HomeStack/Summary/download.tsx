@@ -16,11 +16,14 @@ interface IProps {
 const Download: React.FC<IProps> = ({ onDownload, onEmail }) => {
   const timer = useRef<any>(null)
 
-  useEffect(() => {
-    if (timer.current) {
-      clearTimeout(timer.current)
-    }
-  }, [])
+  useEffect(
+    () => () => {
+      if (timer.current) {
+        clearTimeout(timer.current)
+      }
+    },
+    [],
+  )
 
   const onEmailDebounced = useCallback(() => {
     timer.current = setTimeout(() => onEmail(true), 10)

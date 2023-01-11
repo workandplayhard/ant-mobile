@@ -16,11 +16,14 @@ interface IProps {
 const Document: React.FC<IProps> = ({ showModal, onDownload }) => {
   const timer = useRef<any>(null)
 
-  useEffect(() => {
-    if (timer.current) {
-      clearTimeout(timer.current)
-    }
-  }, [])
+  useEffect(
+    () => () => {
+      if (timer.current) {
+        clearTimeout(timer.current)
+      }
+    },
+    [],
+  )
 
   const onDoanloadDebounced = useCallback(() => {
     timer.current = setTimeout(() => onDownload(true), 10)
