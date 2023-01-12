@@ -30,7 +30,7 @@ const Summary: React.FC = () => {
   const [success, setSuccess] = useState<boolean>(false)
 
   return (
-    <ScrollContainer style={styles.scrollContainer}>
+    <ScrollContainer contentContainerStyle={styles.scrollContainer}>
       <Row isFull style={styles.closePos}>
         <Icon
           name="closeIcon"

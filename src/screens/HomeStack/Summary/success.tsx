@@ -23,14 +23,11 @@ const Success: React.FC<IProps> = ({ onEmail, onSuccess }) => {
   const { isRTL } = useApp()
   const timer = useRef<any>(null)
 
-  useEffect(
-    () => () => {
-      if (timer.current) {
-        clearTimeout(timer.current)
-      }
-    },
-    [],
-  )
+  useEffect(() => {
+    if (timer.current) {
+      clearTimeout(timer.current)
+    }
+  }, [])
 
   const onEmailDebounced = useCallback(() => {
     timer.current = setTimeout(() => onEmail(true), 10)
