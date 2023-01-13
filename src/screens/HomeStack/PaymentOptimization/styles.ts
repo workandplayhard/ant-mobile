@@ -14,9 +14,13 @@ import { SCREEN_WIDTH } from '@/constants'
 export default StyleSheet.create({
   scrollContainer: {
     backgroundColor: 'transparent',
+    // flex: 1,
+    // flexShrink: 0,
   },
   contentContainerStyle: {
     alignContent: 'center',
+    // flexDirection: 'column',
+    // flexGrow: 1,
   },
   iconWrapper: {
     alignItems: 'center',

@@ -8,6 +8,7 @@ export default StyleSheet.create({
     height: 'auto',
     maxWidth: RW(200),
     padding: RW(15),
+    // marginTop: RH(10),
   },
   text: {
     ...font('rw.regular', 14, WHITE, 24),
