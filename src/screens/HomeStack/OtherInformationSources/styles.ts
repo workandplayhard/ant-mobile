@@ -76,7 +76,7 @@ export default StyleSheet.create({
     height: RW(20),
   },
   subSourceIconPos: {
-    paddingLeft: RW(15),
+    paddingLeft: RW(11),
   },
   subSourceInformationText: {
     ...font('rw.regular', 16, PAGE_TITLE_COLOR, 24),

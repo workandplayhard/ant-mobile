@@ -7,19 +7,23 @@ import ScreenA from './ScreenA'
 import PersonalDetails from './PersonalDetails'
 import Home from '../HomeStack/Home'
 import Summary from '../HomeStack/Summary'
+import OtherInformationSources from '../HomeStack/OtherInformationSources'
 
 const Stack = createStackNavigator()
 
 const StackScreen = () => {
   return (
     <Stack.Navigator
-      initialRouteName={NavScreens.home.summary}
+      initialRouteName={NavScreens.home.otherInformationSources}
       screenOptions={{
         ...NAV_HEADER_OPTION,
       }}
     >
       <Stack.Screen name={NavScreens.account.screenA} component={ScreenA} />
-      <Stack.Screen name={NavScreens.home.summary} component={Summary} />
+      <Stack.Screen
+        name={NavScreens.home.otherInformationSources}
+        component={OtherInformationSources}
+      />
     </Stack.Navigator>
   )
 }

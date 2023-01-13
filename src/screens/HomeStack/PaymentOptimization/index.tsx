@@ -65,9 +65,9 @@ const PaymentOptimization: React.FC = () => {
               </View>
             </Row>
           </View>
+          <View style={styles.space} />
         </View>
 
-        <Gap gap={40} />
         <Col style={styles.contentContainer}>
           <Row style={styles.contentIconContainer}>
             <Icon
@@ -96,21 +96,24 @@ const PaymentOptimization: React.FC = () => {
             <View style={styles.contentDescriptionImg}>
               <P />
             </View>
+            <Gap horizontal gap={20} />
             <TextField
               text={mockData.contentDescriptionContext}
               style={styles.contentDescriptionContext}
             />
           </Row>
-          <Button
-            variant="primary"
-            text={t('start')}
-            style={styles.contentDescriptionBottom}
-            onPress={() => {
-              navigation.navigate(NavScreens.home.pricing)
-            }}
-          />
         </Col>
       </ScrollContainer>
+      <View style={styles.buttonContainer}>
+        <Button
+          variant="primary"
+          text={t('start')}
+          style={styles.contentDescriptionBottom}
+          onPress={() => {
+            navigation.navigate(NavScreens.home.pricing)
+          }}
+        />
+      </View>
     </WrapperWithBackground>
   )
 }

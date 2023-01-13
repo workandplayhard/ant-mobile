@@ -187,4 +187,7 @@ export default StyleSheet.create({
   textStyle: {
     ...font('rw.semibold', 16, WHITE, 24),
   },
+  questionIconPos: {
+    ...(I18nManager.isRTL ? { left: RW(-4) } : { left: RW(-2) }),
+  },
 })
