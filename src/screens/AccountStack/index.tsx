@@ -4,22 +4,18 @@ import { createNativeStackNavigator as createStackNavigator } from '@react-navig
 import { NavScreens } from '@/navigation'
 import { NAV_HEADER_OPTION } from '@/constants'
 import ScreenA from './ScreenA'
-import PersonalDetails from './PersonalDetails'
-import Home from '../HomeStack/Home'
-import Summary from '../HomeStack/Summary'
 
 const Stack = createStackNavigator()
 
 const StackScreen = () => {
   return (
     <Stack.Navigator
-      initialRouteName={NavScreens.home.summary}
+      initialRouteName={NavScreens.home.screenA}
       screenOptions={{
         ...NAV_HEADER_OPTION,
       }}
     >
       <Stack.Screen name={NavScreens.account.screenA} component={ScreenA} />
-      <Stack.Screen name={NavScreens.home.summary} component={Summary} />
     </Stack.Navigator>
   )
 }

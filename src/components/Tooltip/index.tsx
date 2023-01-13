@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleProp, ViewStyle } from 'react-native'
+import { View } from 'react-native'
 import RNTooltip from 'rn-tooltip'
 
 import { PRIMARY_BG_COLOR, TRANSPARENT, WHITE } from '@/theme'
@@ -12,9 +12,17 @@ interface ITooltip {
   text?: string | undefined
   mode?: 'dark' | 'light'
   children: React.ReactNode
+  offset?: number
+  pointerType?: string
 }
 
-export const Tooltip: React.FC<ITooltip> = ({ text, mode = 'light', children }) => {
+export const Tooltip: React.FC<ITooltip> = ({
+  text,
+  mode = 'light',
+  offset = 0,
+  pointerType = 'other',
+  children,
+}) => {
   if (!text) return <>{children}</>
 
   return (
@@ -26,8 +34,9 @@ export const Tooltip: React.FC<ITooltip> = ({ text, mode = 'light', children }) 
       pointerColor={mode === 'dark' ? WHITE : PRIMARY_BG_COLOR}
       overlayColor={TRANSPARENT}
       height="auto"
+      pointerStyle={pointerType === 'other' ? styles.otherPointerPos : styles.pointerPos}
     >
-      {children}
+      <View style={{ padding: offset }}>{children}</View>
     </RNTooltip>
   )
 }

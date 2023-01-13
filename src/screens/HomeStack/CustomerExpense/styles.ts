@@ -25,7 +25,8 @@ export default StyleSheet.create({
   },
   contentContainer: {
     width: '100%',
-    padding: RW(30),
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingTop: RH(30),
   },
   modal: {
     paddingHorizontal: RW(30),
@@ -46,7 +47,7 @@ export default StyleSheet.create({
   questionCirclePos: {
     width: '100%',
     alignItems: 'flex-end',
-    paddingRight: RW(22),
+    paddingRight: RW(25),
   },
   description: {
     backgroundColor: TEXT_INPUT_DARK_BG_COLOR,

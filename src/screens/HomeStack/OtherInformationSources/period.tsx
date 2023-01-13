@@ -14,7 +14,7 @@ import {
   TextField,
   Tooltip,
 } from '@/components'
-import { MODAL_BACKDROP_COLOR } from '@/theme'
+import { MODAL_BACKDROP_COLOR, RW } from '@/theme'
 
 import { t } from '@/i18n'
 
@@ -106,13 +106,11 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
       <View style={styles.subSource}>
         <Row>
           <TextField text={t('chooseThePeriod')} style={styles.subSourceText} />
-          <Tooltip text={t('lorem')} mode="light">
-            <Icon
-              name="questionCircleIcon"
-              wrapperStyle={styles.subSourceIconPos}
-              iconStyle={styles.subSourceIcon}
-            />
-          </Tooltip>
+          <View style={styles.subSourceIconPos}>
+            <Tooltip text={t('lorem')} mode="light" offset={RW(5)} pointerType={'other'}>
+              <Icon name="questionCircleIcon" iconStyle={styles.subSourceIcon} />
+            </Tooltip>
+          </View>
         </Row>
       </View>
 

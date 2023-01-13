@@ -67,7 +67,7 @@ export const CustomerExpense: React.FC = () => {
 
       <ScrollContainer>
         <View style={styles.questionCirclePos}>
-          <Tooltip text={t('lorem')} mode="dark">
+          <Tooltip text={t('lorem')} mode="dark" offset={RW(5)}>
             <Icon name="questionCircleIcon" size={RW(24)} />
           </Tooltip>
         </View>
@@ -108,7 +108,7 @@ export const CustomerExpense: React.FC = () => {
           ))}
         </View>
 
-        <Gap gap={60} />
+        <Gap gap={30} />
         <View style={styles.buttonContainer}>
           <Button
             variant="primary"
@@ -120,7 +120,7 @@ export const CustomerExpense: React.FC = () => {
             }}
           />
         </View>
-        <Gap gap={150} />
+        <Gap gap={135} />
         {showModal && <OTPVerification showModal={(val) => setShowModal(val)} />}
       </ScrollContainer>
     </Container>

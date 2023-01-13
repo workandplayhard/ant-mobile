@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { I18nManager, StyleSheet } from 'react-native'
 
 import { LABEL_DARK_COLOR, RW, WHITE, font } from '@/theme'
 
@@ -14,5 +14,13 @@ export default StyleSheet.create({
   },
   textDark: {
     color: LABEL_DARK_COLOR,
+  },
+  pointerPos: {
+    position: 'absolute',
+    ...(I18nManager.isRTL ? { left: RW(-18) } : { left: RW(-3) }),
+  },
+  otherPointerPos: {
+    position: 'absolute',
+    ...(I18nManager.isRTL ? { left: RW(-15) } : { left: RW(-1) }),
   },
 })
