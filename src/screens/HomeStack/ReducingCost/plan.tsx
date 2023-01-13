@@ -18,7 +18,7 @@ const Plan: React.FC<IPlan> = ({ title, costs }) => {
     <View>
       <TextField text={title} style={styles.header} />
       <Row>
-        <Tooltip text={t('lorem')} offset={5}>
+        <Tooltip text={t('lorem')} offset={5} pointerType={'reducing'}>
           <Icon name="questionCircleIcon" size={RW(20)} wrapperStyle={styles.questionIconPos} />
         </Tooltip>
       </Row>

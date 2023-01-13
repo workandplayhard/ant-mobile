@@ -17,6 +17,10 @@ export default StyleSheet.create({
   },
   pointerPos: {
     position: 'absolute',
-    ...(I18nManager.isRTL ? { left: RW(-14) } : { left: RW(-3) }),
+    ...(I18nManager.isRTL ? { left: RW(-18) } : { left: RW(-3) }),
+  },
+  otherPointerPos: {
+    position: 'absolute',
+    ...(I18nManager.isRTL ? { left: RW(-15) } : { left: RW(-1) }),
   },
 })

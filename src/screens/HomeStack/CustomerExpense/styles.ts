@@ -47,7 +47,7 @@ export default StyleSheet.create({
   questionCirclePos: {
     width: '100%',
     alignItems: 'flex-end',
-    paddingRight: RW(22),
+    paddingRight: RW(25),
   },
   description: {
     backgroundColor: TEXT_INPUT_DARK_BG_COLOR,

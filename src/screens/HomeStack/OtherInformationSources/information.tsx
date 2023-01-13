@@ -29,7 +29,7 @@ const Information = () => {
         <Row>
           <TextField text={t('typesOfInformation')} style={styles.subSourceText} />
           <View style={styles.subSourceIconPos}>
-            <Tooltip text={t('lorem')} mode="light" offset={5}>
+            <Tooltip text={t('lorem')} mode="light" offset={5} pointerType={'other'}>
               <Icon name="questionCircleIcon" iconStyle={styles.subSourceIcon} />
             </Tooltip>
           </View>

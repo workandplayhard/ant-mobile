@@ -13,9 +13,16 @@ interface ITooltip {
   mode?: 'dark' | 'light'
   children: React.ReactNode
   offset?: number
+  pointerType?: string
 }
 
-export const Tooltip: React.FC<ITooltip> = ({ text, mode = 'light', offset = 0, children }) => {
+export const Tooltip: React.FC<ITooltip> = ({
+  text,
+  mode = 'light',
+  offset = 0,
+  pointerType = 'other',
+  children,
+}) => {
   if (!text) return <>{children}</>
 
   return (
@@ -27,7 +34,7 @@ export const Tooltip: React.FC<ITooltip> = ({ text, mode = 'light', offset = 0, 
       pointerColor={mode === 'dark' ? WHITE : PRIMARY_BG_COLOR}
       overlayColor={TRANSPARENT}
       height="auto"
-      pointerStyle={styles.pointerPos}
+      pointerStyle={pointerType === 'other' ? styles.otherPointerPos : styles.pointerPos}
     >
       <View style={{ padding: offset }}>{children}</View>
     </RNTooltip>

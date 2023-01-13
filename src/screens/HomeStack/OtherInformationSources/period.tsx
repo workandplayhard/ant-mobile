@@ -107,7 +107,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
         <Row>
           <TextField text={t('chooseThePeriod')} style={styles.subSourceText} />
           <View style={styles.subSourceIconPos}>
-            <Tooltip text={t('lorem')} mode="light" offset={5}>
+            <Tooltip text={t('lorem')} mode="light" offset={5} pointerType={'other'}>
               <Icon name="questionCircleIcon" iconStyle={styles.subSourceIcon} />
             </Tooltip>
           </View>
