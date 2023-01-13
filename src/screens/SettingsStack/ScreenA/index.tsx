@@ -144,7 +144,7 @@ const HomeScreenA: React.FC = () => {
               onChange={(c: boolean) => setTheme(c ? 'light' : 'dark')}
             />
             <Gap horizontal gap={20} />
-            <Tooltip text={t('lorem')} mode={theme}>
+            <Tooltip text={t('lorem')} mode={theme} offset={5}>
               <Icon name="questionCircleIcon" size={RW(20)} />
             </Tooltip>
           </Row>
@@ -190,7 +190,27 @@ const HomeScreenA: React.FC = () => {
           <Gap gap={20} />
           <TextMaskInput
             // eslint-disable-next-line prettier/prettier
-            mask={[/\d/, /\d/, /\d/, /\d/, " ", [/\d/], [/\d/], [/\d/], [/\d/], " ", [/\d/], [/\d/], [/\d/], [/\d/], " ", /\d/, /\d/, /\d/, /\d/]}
+            mask={[
+              /\d/,
+              /\d/,
+              /\d/,
+              /\d/,
+              ' ',
+              [/\d/],
+              [/\d/],
+              [/\d/],
+              [/\d/],
+              ' ',
+              [/\d/],
+              [/\d/],
+              [/\d/],
+              [/\d/],
+              ' ',
+              /\d/,
+              /\d/,
+              /\d/,
+              /\d/,
+            ]}
             value={creditCard}
             label="Credit card"
             obfuscationCharacter="X"

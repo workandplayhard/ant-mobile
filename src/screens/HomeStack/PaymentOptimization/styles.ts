@@ -7,11 +7,12 @@ import {
   TITLE_LIGHT_COLOR,
   DASHBOARD_SHADOW_COLOR,
   STEP_INACTIVE_BG_COLOR,
+  TRANSPARENT,
 } from '@/theme'
+import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   scrollContainer: {
-    height: '100%',
     backgroundColor: 'transparent',
   },
   contentContainerStyle: {
@@ -42,7 +43,6 @@ export default StyleSheet.create({
     width: '100%',
     backgroundColor: WHITE,
     borderRadius: RW(15),
-    marginTop: RH(-85),
     shadowColor: DASHBOARD_SHADOW_COLOR,
     shadowOffset: {
       width: 0,
@@ -51,14 +51,21 @@ export default StyleSheet.create({
     shadowOpacity: 0.08,
     shadowRadius: RW(15),
     elevation: 5,
+    zIndex: 1,
+  },
+  space: {
+    width: SCREEN_WIDTH,
+    height: RH(150),
+    backgroundColor: WHITE,
+    position: 'absolute',
+    bottom: 0,
   },
   saveParent: {
-    zIndex: 1,
     width: '100%',
-    height: 0,
     alignItems: 'center',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    backgroundColor: WHITE,
+    backgroundColor: TRANSPARENT,
+    zIndex: 1,
   },
   saveTitle: {
     ...font('rw.regular', 18, BLACK, 28),
@@ -90,10 +97,12 @@ export default StyleSheet.create({
     transform: [{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }],
   },
   header: {
-    justifyContent: 'center',
-    height: RH(280),
-    borderColor: 'red',
-    padding: PAGE_HORIZONTAL_PADDING,
+    justifyContent: 'flex-end',
+    flexGrow: 1,
+    flexShrink: 0,
+    flexDirection: 'column',
+    paddingBottom: RH(30),
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },
   headerGreetings: {
     ...font('rw.regular', 20, WHITE, 35),
@@ -103,8 +112,8 @@ export default StyleSheet.create({
   },
   contentContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-    paddingTop: RH(180),
-    paddingBottom: RH(60),
+    paddingBottom: RH(10),
+    paddingTop: RH(40),
     backgroundColor: WHITE,
     alignItems: 'center',
   },
@@ -112,12 +121,11 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   contentDescriptionContainer: {
-    height: RH(76),
+    alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: RH(30),
     width: '100%',
     padding: RW(5),
-    marginVertical: RH(60),
   },
   contentDescriptionImg: {
     backgroundColor: STEP_INACTIVE_BG_COLOR,
@@ -130,11 +138,15 @@ export default StyleSheet.create({
   },
   contentDescriptionContext: {
     width: RW(250),
-    height: RW(86),
-    padding: RW(20),
     ...font('rw.semibold', 14, BLACK, 24),
   },
   contentDescriptionBottom: {
     marginBottom: RW(80),
+  },
+  buttonContainer: {
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    backgroundColor: WHITE,
+    paddingTop: RH(40),
+    paddingBottom: RH(20),
   },
 })

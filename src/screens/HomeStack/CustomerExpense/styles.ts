@@ -25,7 +25,8 @@ export default StyleSheet.create({
   },
   contentContainer: {
     width: '100%',
-    padding: RW(30),
+    paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingTop: RH(30),
   },
   modal: {
     paddingHorizontal: RW(30),
