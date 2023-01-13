@@ -80,6 +80,7 @@ const HomeScreenA: React.FC = () => {
       isCompleted: false,
     },
   ])
+  const value = 5
 
   const onSelectCountry = useCallback(
     (index: number, isSelected: boolean) => {
@@ -144,7 +145,7 @@ const HomeScreenA: React.FC = () => {
               onChange={(c: boolean) => setTheme(c ? 'light' : 'dark')}
             />
             <Gap horizontal gap={20} />
-            <Tooltip text={t('lorem')} mode={theme} offset={5}>
+            <Tooltip text={t('lorem')} mode={theme} offset={value}>
               <Icon name="questionCircleIcon" size={RW(20)} />
             </Tooltip>
           </Row>

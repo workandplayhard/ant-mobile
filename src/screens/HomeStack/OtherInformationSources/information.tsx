@@ -5,6 +5,7 @@ import { CheckBox, Gap, Icon, Row, TextField, Tooltip } from '@/components'
 
 import { t } from '@/i18n'
 import { IFinance } from '@/types'
+import { RW } from '@/theme'
 
 import mockData from './mockData'
 
@@ -29,7 +30,7 @@ const Information = () => {
         <Row>
           <TextField text={t('typesOfInformation')} style={styles.subSourceText} />
           <View style={styles.subSourceIconPos}>
-            <Tooltip text={t('lorem')} mode="light" offset={5} pointerType={'other'}>
+            <Tooltip text={t('lorem')} mode="light" offset={RW(5)} pointerType={'other'}>
               <Icon name="questionCircleIcon" iconStyle={styles.subSourceIcon} />
             </Tooltip>
           </View>

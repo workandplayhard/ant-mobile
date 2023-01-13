@@ -67,7 +67,7 @@ export const CustomerExpense: React.FC = () => {
 
       <ScrollContainer>
         <View style={styles.questionCirclePos}>
-          <Tooltip text={t('lorem')} mode="dark" offset={5}>
+          <Tooltip text={t('lorem')} mode="dark" offset={RW(5)}>
             <Icon name="questionCircleIcon" size={RW(24)} />
           </Tooltip>
         </View>
