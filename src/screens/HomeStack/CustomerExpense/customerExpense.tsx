@@ -48,10 +48,6 @@ export const CustomerExpense: React.FC = () => {
     scrollRef.current?.scrollTo?.({ y: 0 })
   }, [])
 
-  const onChangeScrollPos = useCallback(() => {
-    onStepChange()
-  }, [onStepChange])
-
   const onCardSelect = useCallback(
     (index: number, isSelected: boolean) => {
       const _c = [...cards]
@@ -133,7 +129,7 @@ export const CustomerExpense: React.FC = () => {
         {showModal && (
           <OTPVerification
             showModal={(val) => setShowModal(val)}
-            onChangeScrollPos={() => onChangeScrollPos()}
+            onChangeScrollPos={() => onStepChange()}
           />
         )}
       </ScrollContainer>
