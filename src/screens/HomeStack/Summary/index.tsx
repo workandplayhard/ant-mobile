@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ElementRef, useCallback, useEffect, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -28,9 +28,14 @@ const Summary: React.FC = () => {
   const [download, setDownload] = useState<boolean>(false)
   const [email, setEmail] = useState<boolean>(false)
   const [success, setSuccess] = useState<boolean>(false)
+  const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
+
+  useEffect(() => {
+    if (showModal) scrollRef.current?.scrollTo?.({ y: 0 })
+  }, [showModal])
 
   return (
-    <ScrollContainer contentContainerStyle={styles.scrollContainer}>
+    <ScrollContainer contentContainerStyle={styles.scrollContainer} ref={scrollRef}>
       <Row isFull style={styles.closePos}>
         <Icon
           name="closeIcon"

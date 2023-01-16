@@ -69,7 +69,8 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     if (cost) onChangeStep(0)
     else if (detail) onChangeStep(1)
     else if (tvSuccess) onChangeStep(2)
-  }, [cost, detail, tvSuccess])
+    else if (success || tvOffer || tvPlan || tvSuccess) onStepChange()
+  }, [cost, detail, tvSuccess, success, tvOffer, tvPlan, tvSuccess])
 
   const onBack = useCallback(() => {
     if (detail) {

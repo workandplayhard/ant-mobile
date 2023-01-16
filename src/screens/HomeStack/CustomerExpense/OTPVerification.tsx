@@ -14,9 +14,10 @@ import styles from './styles'
 
 interface IProps {
   showModal: (val: boolean) => void
+  onChangeScrollPos: () => void
 }
 
-const OTPVerification: React.FC<IProps> = ({ showModal }) => {
+const OTPVerification: React.FC<IProps> = ({ showModal, onChangeScrollPos }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const [code, setCode] = useState<string>('')
   const { onEnable } = useCustomerExpense()
@@ -28,8 +29,9 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
   const onHandleOTP = useCallback(() => {
     onEnable(true)
     onCancelModal()
+    onChangeScrollPos()
     navigation.navigate(NavScreens.home.customerExpense)
-  }, [navigation, onCancelModal, onEnable])
+  }, [navigation, onCancelModal, onEnable, onChangeScrollPos])
 
   return (
     <Modal
