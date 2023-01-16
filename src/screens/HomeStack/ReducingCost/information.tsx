@@ -55,8 +55,6 @@ const Information: React.FC<IInformation> = ({
         {(detail || tvPlan) && (
           <View>
             <Icon name={icon} size={RW(20)} wrapperStyle={{ paddingBottom: RH(0) }} />
-
-            {/* <Gap gap={0} /> */}
           </View>
         )}
         <TextField text={title} style={styles.informationContentTitle} />
