@@ -76,7 +76,7 @@
     "continue": "לְהַמשִׁיך",
     "downloadPDF": "להוריד PDF",
     "send": "שלח",
-    "back": "גַב",
+    "back": "הקודם",
     "insertEmailAddress": "הוסף כתובת דואל כדי לשלוח את המסמכים לדואל שלך",
     "emailID": "זיהוי דוא",
     "success": "כל המסמכים נשלחו בהצלחה",
@@ -96,6 +96,7 @@
     "carInsurance": "תוכנית ביטוח רכב",
     "loremExample": "Lorem Ipsum היא פשוט הדפסת טקסט דמה",
     "betterTVPlansOffers": "תוכניות טלוויזיה טובות יותר מציעות",
-    "newTVPlanChosed": "תוכנית טלוויזיה חדשה נבחרה"
+    "newTVPlanChosed": "תוכנית טלוויזיה חדשה נבחרה",
+    "forward": "הבא"
   }
 }

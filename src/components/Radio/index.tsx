@@ -6,7 +6,7 @@ import styles from './styles'
 
 interface IRadioButton {
   onChange: (e: boolean) => void
-  isOn: boolean
+  isOn?: boolean
 }
 
 export const Radio: React.FC<IRadioButton> = ({ onChange, isOn }) => {

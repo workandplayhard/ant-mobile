@@ -17,11 +17,13 @@ const Plan: React.FC<IPlan> = ({ title, costs }) => {
   return (
     <View>
       <TextField text={title} style={styles.header} />
-      <Row>
-        <Tooltip text={t('lorem')} offset={RW(5)} pointerType={'reducing'}>
-          <Icon name="questionCircleIcon" size={RW(20)} wrapperStyle={styles.questionIconPos} />
-        </Tooltip>
-      </Row>
+      <View style={styles.questionPosContainer}>
+        <Row style={styles.questionPos}>
+          <Tooltip text={t('lorem')} offset={RW(5)} pointerType={'reducing'}>
+            <Icon name="questionCircleIcon" size={RW(20)} wrapperStyle={styles.questionIconPos} />
+          </Tooltip>
+        </Row>
+      </View>
 
       <Gap gap={40} />
       <Row style={styles.planRow}>

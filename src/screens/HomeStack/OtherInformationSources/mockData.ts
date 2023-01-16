@@ -60,10 +60,12 @@ export default {
       {
         label: t('accountBalance'),
         isSelected: false,
+        value: 'balance',
       },
       {
         label: t('accountTransactions'),
         isSelected: false,
+        value: 'transactions',
       },
     ],
     periods: [

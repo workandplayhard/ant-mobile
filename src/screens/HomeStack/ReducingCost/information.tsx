@@ -11,7 +11,7 @@ import HotMobile from '@/assets/images/img_white_hot_mobile.png'
 import YES from '@/assets/images/img_yes.png'
 
 import styles from './styles'
-import { RW } from '@/theme'
+import { RH, RW } from '@/theme'
 
 interface IInformation {
   count: number
@@ -54,9 +54,9 @@ const Information: React.FC<IInformation> = ({
       <Col style={styles.informationPos}>
         {(detail || tvPlan) && (
           <View>
-            <Icon name={icon} size={RW(20)} />
+            <Icon name={icon} size={RW(20)} wrapperStyle={{ paddingBottom: RH(0) }} />
 
-            <Gap gap={15} />
+            {/* <Gap gap={0} /> */}
           </View>
         )}
         <TextField text={title} style={styles.informationContentTitle} />

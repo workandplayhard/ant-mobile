@@ -110,23 +110,23 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
   return (
     <Container style={styles.container}>
       <Gap gap={76} />
-      <Row style={[styles.headerRow, styles.row]}>
+      <Row style={[styles.headerRow, styles.row, styles.opposite]}>
         <TouchableOpacity onPress={onBack} disabled={cost === true}>
           <View>
-            <Row>
-              <Icon name="reducingBackIcon" size={RW(20)} iconStyle={styles.iconDirection} />
+            <Row style={styles.iconOpposite}>
+              <Icon name="reducingBackIcon" size={RW(20)} wrapperStyle={styles.iconOpposite} />
               <Gap horizontal={true} gap={7} />
-              <TextField text="Back" style={styles.back} />
+              <TextField text={t('back')} style={styles.back} />
             </Row>
           </View>
         </TouchableOpacity>
 
         <View>
           <TouchableOpacity disabled={tvSuccess === true}>
-            <Row>
-              <TextField text="Forward" style={styles.forward} />
+            <Row style={styles.iconOpposite}>
+              <TextField text={t('forward')} style={styles.forward} />
               <Gap horizontal={true} gap={7} />
-              <Icon name="reducingForwardIcon" size={RW(20)} iconStyle={styles.iconDirection} />
+              <Icon name="reducingForwardIcon" size={RW(20)} wrapperStyle={styles.iconOpposite} />
             </Row>
           </TouchableOpacity>
         </View>
@@ -166,6 +166,13 @@ const styles = StyleSheet.create({
   },
   headerRow: {
     justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  opposite: {
+    ...(I18nManager.isRTL ? { flexDirection: 'row-reverse' } : { flexDirection: 'row' }),
+  },
+  iconOpposite: {
+    ...(I18nManager.isRTL ? { flexDirection: 'row-reverse' } : { flexDirection: 'row' }),
   },
   headerImage: {
     position: 'absolute',
@@ -182,9 +189,6 @@ const styles = StyleSheet.create({
   },
   row: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
-  },
-  iconDirection: {
-    transform: [{ rotate: I18nManager.isRTL ? '180deg' : '0deg' }],
   },
 })
 

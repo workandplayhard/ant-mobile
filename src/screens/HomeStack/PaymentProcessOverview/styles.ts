@@ -19,9 +19,7 @@ export default StyleSheet.create({
     paddingHorizontal: RW(25),
   },
   modal: {
-    backgroundColor: TRANSPARENT,
-    borderTopLeftRadius: RW(0),
-    borderTopRightRadius: RW(0),
+    alignItems: 'flex-end',
   },
   modalChildren: {
     backgroundColor: PRIMARY_BG_COLOR,
@@ -33,12 +31,14 @@ export default StyleSheet.create({
     height: SCREEN_HEIGHT,
   },
   wrapper: {
+    width: '100%',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    paddingVertical: RH(30),
     flex: 1,
     borderTopLeftRadius: RW(20),
     borderTopRightRadius: RW(20),
-    paddingTop: RH(35),
-    paddingBottom: RH(40),
+    backgroundColor: PRIMARY_BG_COLOR,
+    alignItems: 'center',
   },
   wrapperLg: {
     paddingTop: RH(85),
