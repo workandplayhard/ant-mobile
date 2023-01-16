@@ -15,7 +15,6 @@ import {
   BUTTON_GRADIENT_START,
   TEXT_RED,
 } from '@/theme'
-import { SCREEN_WIDTH } from '@/constants'
 
 export default StyleSheet.create({
   container: {
@@ -189,5 +188,12 @@ export default StyleSheet.create({
   },
   questionIconPos: {
     ...(I18nManager.isRTL ? { left: RW(-4) } : { left: RW(-2) }),
+  },
+  questionPosContainer: {
+    position: 'relative',
+  },
+  questionPos: {
+    position: 'absolute',
+    top: RH(-19),
   },
 })

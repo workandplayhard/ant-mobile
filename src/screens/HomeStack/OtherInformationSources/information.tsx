@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
 
-import { CheckBox, Gap, Icon, Row, TextField, Tooltip } from '@/components'
+import { Gap, Icon, Radio, Row, TextField, Tooltip } from '@/components'
 
 import { t } from '@/i18n'
 import { IFinance } from '@/types'
@@ -49,9 +49,9 @@ const Information = () => {
               ]}
             >
               <TextField text={item.label} style={styles.subSourceInformationText} />
-              <CheckBox
+              <Radio
+                isOn={item.isSelected}
                 onChange={(isChecked: boolean) => onSelectFinancial(index, !isChecked)}
-                isChecked={item.isSelected}
               />
             </Row>
           </TouchableOpacity>
