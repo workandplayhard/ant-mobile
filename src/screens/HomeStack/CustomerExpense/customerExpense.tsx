@@ -20,18 +20,42 @@ import { t } from '@/i18n'
 import { ICard } from '@/types'
 import OTPVerification from './OTPVerification'
 import { NavScreens, RouteParamList } from '@/navigation'
-import { ROW_DARK_BG_COLOR, RW } from '@/theme'
+import { CARD_CHECKBOX_BAN_COLOR, ROW_DARK_BG_COLOR, RW } from '@/theme'
 import { Tooltip } from '@/components/Tooltip'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 import { useApp } from '@/hooks'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 
+const cardInformation = [
+  { label: t('customerEnergy'), iconName: 'energyIcon', isSelected: false, color: '#FF2D39' },
+  {
+    label: t('customerTelephone'),
+    iconName: 'telephoneIcon',
+    isSelected: false,
+    color: '#FFBD6E',
+  },
+  {
+    label: t('customerInsurance'),
+    iconName: 'handsHoldingCircleIcon',
+    isSelected: false,
+    color: '#FFBD6E',
+  },
+  { label: t('customerTV'), iconName: 'tvIcon', isSelected: false, color: '#FFBD6E' },
+  {
+    label: t('customerCarInsurance'),
+    iconName: 'carIcon',
+    isSelected: false,
+    color: '#008037',
+  },
+  { label: t('customerMusic'), iconName: 'musicIcon', isSelected: false, color: '#008037' },
+]
+
 export const CustomerExpense: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
-  const [cards, setCards] = useState<ICard[]>(mockData.data.cards as unknown as ICard[])
+  const [cards, setCards] = useState<ICard[]>(cardInformation as unknown as ICard[])
   const [showModal, setShowModal] = useState<boolean>(false)
   const { enable, onEnable } = useCustomerExpense()
   const isFocused = useIsFocused()
@@ -100,14 +124,16 @@ export const CustomerExpense: React.FC = () => {
                 <Icon name={card.iconName} size={RW(34)} />
                 <Gap gap={20} />
                 <TextField text={card.label} style={styles.cardText} />
-                <View style={styles.cardCheckboxWrapper}>
-                  <View style={styles.cardCheckboxPos}>
-                    <CheckBox
-                      onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
-                      isChecked={cards[index].isSelected}
-                    />
+                {!(enable && card.color === CARD_CHECKBOX_BAN_COLOR) && (
+                  <View style={styles.cardCheckboxWrapper}>
+                    <View style={styles.cardCheckboxPos}>
+                      <CheckBox
+                        onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
+                        isChecked={cards[index].isSelected}
+                      />
+                    </View>
                   </View>
-                </View>
+                )}
               </View>
             </TouchableOpacity>
           ))}

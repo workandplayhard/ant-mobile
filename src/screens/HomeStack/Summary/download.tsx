@@ -35,7 +35,7 @@ const Download: React.FC<IProps> = ({ onDownload, onEmail }) => {
       swipeEnabled
     >
       <Col style={styles.downloadWrapper}>
-        <TextField text={mockData.downloadtitle} style={styles.downloadText} />
+        <TextField text={t('loremExample')} style={styles.downloadText} />
 
         <Gap gap={10} />
         <Button

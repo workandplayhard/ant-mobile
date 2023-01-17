@@ -11,7 +11,7 @@ import { NavScreens, RouteParamList } from '@/navigation'
 
 import Plan from './plan'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 

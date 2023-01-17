@@ -4,6 +4,8 @@ import { StyleProp, View, ViewStyle } from 'react-native'
 
 import { Col, Gap, Icon, ImageView, Row, TextField } from '@/components'
 import { useReduceCost } from '@/hooks'
+import { RH, RW } from '@/theme'
+import { t } from '@/i18n'
 
 import IconNames from '@/components/Icon/icons'
 
@@ -11,7 +13,6 @@ import HotMobile from '@/assets/images/img_white_hot_mobile.png'
 import YES from '@/assets/images/img_yes.png'
 
 import styles from './styles'
-import { RH, RW } from '@/theme'
 
 interface IInformation {
   count: number
@@ -46,7 +47,7 @@ const Information: React.FC<IInformation> = ({
   const informationDetails = [
     { title: 'SMS', size: SMSSize, icon: SMSIcon },
     { title: 'Calls', size: callsSize, icon: CallsIcon },
-    { title: 'Internet', size: internetSize, icon: InternetIcon },
+    { title: t('internet'), size: internetSize, icon: InternetIcon },
   ]
   // eslint-disable-next-line react/no-unstable-nested-components
   const Detail: React.FC<IDetail> = ({ title, size, icon }) => (
@@ -54,7 +55,7 @@ const Information: React.FC<IInformation> = ({
       <Col style={styles.informationPos}>
         {(detail || tvPlan) && (
           <View>
-            <Icon name={icon} size={RW(20)} wrapperStyle={{ paddingBottom: RH(0) }} />
+            <Icon name={icon} size={RW(20)} wrapperStyle={{ paddingBottom: RH(11) }} />
           </View>
         )}
         <TextField text={title} style={styles.informationContentTitle} />

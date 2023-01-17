@@ -56,7 +56,7 @@ const TermsOfUse = () => {
       <PageTitle
         title={t('termUseTitle')}
         titleAlign="center"
-        subTitle={mockData.subTitleExample}
+        subTitle={t('printingAndTypeSettingIndustry')}
         subTitleAlign="center"
       />
       <Gap horizontal={false} gap={100} />

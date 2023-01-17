@@ -9,7 +9,7 @@ import { IAverage } from '@/types'
 
 import Information from './information'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 

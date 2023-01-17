@@ -8,7 +8,7 @@ import { useReduceCost } from '@/hooks'
 
 import Information from './information'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 
@@ -60,26 +60,26 @@ const AveragePlan = () => {
         <Row>
           <Icon name="reducingCheckIcon" size={RW(22)} />
           <Gap horizontal gap={11} />
-          <TextField text={mockData.planTitleExample} style={styles.averagePlanText} />
+          <TextField text={t('loremIpsumIsSimplyDummy')} style={styles.averagePlanText} />
         </Row>
 
         <Gap gap={11} />
         <Row>
           <Icon name="reducingCheckIcon" size={RW(22)} />
           <Gap horizontal gap={11} />
-          <TextField text={mockData.planTitleExample} style={styles.averagePlanText} />
+          <TextField text={t('loremIpsumIsSimplyDummy')} style={styles.averagePlanText} />
         </Row>
 
         <Gap gap={11} />
         <Row>
           <Icon name="reducingCheckIcon" size={RW(22)} />
           <Gap horizontal gap={11} />
-          <TextField text={mockData.planTitleExample} style={styles.averagePlanText} />
+          <TextField text={t('loremIpsumIsSimplyDummy')} style={styles.averagePlanText} />
         </Row>
       </View>
 
       <Gap gap={40} />
-      <TextField text={mockData.planSubTitleExample} style={styles.averagePlanSubTitle} />
+      <TextField text={t('loremIpsumIsSimplyDummy')} style={styles.averagePlanSubTitle} />
 
       <Gap gap={30} />
       <Row>

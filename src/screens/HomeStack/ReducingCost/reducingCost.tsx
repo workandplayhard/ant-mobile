@@ -11,9 +11,42 @@ import Congratulation from './congratulation'
 import Average from './average'
 import Plan from './plan'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
+
+const costsInformation = [
+  {
+    iconName: 'messageIcon',
+    title: 'SMS',
+    cost: '3000',
+  },
+  {
+    iconName: 'ringIcon',
+    title: 'Calls',
+    cost: '3000',
+  },
+  {
+    iconName: 'balloonThinIcon',
+    title: t('internet'),
+    cost: '1000 GB',
+  },
+]
+
+const telephoneInformation = [
+  {
+    title: 'SMS',
+    cost: '3000',
+  },
+  {
+    title: 'Calls',
+    cost: '3000',
+  },
+  {
+    title: t('internet'),
+    cost: '1000 GB',
+  },
+]
 
 const ReducingCost: React.FC = () => {
   const { success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
@@ -23,7 +56,7 @@ const ReducingCost: React.FC = () => {
       {!success && !tvOffer && !tvPlan && !tvSuccess && (
         <View>
           <View style={styles.contentContainer}>
-            <Plan title={t('currentPlan')} costs={mockData.costs as unknown as ICost[]} />
+            <Plan title={t('currentPlan')} costs={costsInformation as unknown as ICost[]} />
 
             <Gap gap={60} />
             <View style={styles.line} />
@@ -31,7 +64,7 @@ const ReducingCost: React.FC = () => {
             <Gap gap={40} />
             <Plan
               title={t('averageTelephoneUseDetail')}
-              costs={mockData.telephone as unknown as ICost[]}
+              costs={telephoneInformation as unknown as ICost[]}
             />
             <Gap gap={60} />
           </View>

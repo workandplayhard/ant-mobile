@@ -8,7 +8,7 @@ import { t } from '@/i18n'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 
@@ -45,7 +45,7 @@ const OTPVerification: React.FC<IProps> = ({ showModal, onChangeScrollPos }) => 
         <Gap gap={20} />
         <TextField text={t('OTP')} style={styles.modalTitle} />
         <Gap horizontal={false} gap={12} />
-        <TextField text={mockData.modalTitleExample} style={styles.modalSubTitle} />
+        <TextField text={t('printingAndTypeSettingIndustry')} style={styles.modalSubTitle} />
 
         <Gap gap={40} />
         <OTPField cellCount={6} value={code} setValue={setCode} isValid={code.length === 6} />

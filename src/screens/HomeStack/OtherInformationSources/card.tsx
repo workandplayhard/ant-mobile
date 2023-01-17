@@ -7,7 +7,9 @@ import { t } from '@/i18n'
 
 import { IOption } from '@/types'
 
-import mockData from './mockData'
+import MizrahiTefahotBank from '@/assets/images/img_mizrahi_tefahot_bank.png'
+import MachineLearning from '@/assets/images/img_machine_learning_islael.png'
+import BankHapoalim from '@/assets/images/img_bank_hapoalim.png'
 
 import styles from './styles'
 
@@ -15,8 +17,29 @@ interface IProps {
   onCardStatus: (count: number) => void
 }
 
+const cardInformation = [
+  {
+    label: t('mizrahiTefahotBank'),
+    value: 'us',
+    isSelected: false,
+    image: MizrahiTefahotBank,
+  },
+  {
+    label: t('machineLearningIsrael'),
+    value: 'cn',
+    isSelected: false,
+    image: MachineLearning,
+  },
+  {
+    label: t('bankHapoalim'),
+    value: 'cn',
+    isSelected: false,
+    image: BankHapoalim,
+  },
+]
+
 const Card: React.FC<IProps> = ({ onCardStatus }) => {
-  const [cards, setCards] = useState<IOption<string>[]>(mockData.data.cards)
+  const [cards, setCards] = useState<IOption<string>[]>(cardInformation)
   const current = cards.filter((card) => card.isSelected === true)
 
   const onSelectCard = useCallback(
@@ -34,7 +57,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
       <View style={styles.paddingHorizontalStandard}>
         <Dropdown<string>
           data={cards}
-          placeholder={t('placeholder')}
+          placeholder={t('selectCreditCards')}
           buttonText={cards
             .filter((item) => item.isSelected)
             .map((item) => item.label)

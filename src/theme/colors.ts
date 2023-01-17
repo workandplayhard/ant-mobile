@@ -91,6 +91,7 @@ export const SUMMARY_HEADER = '#7A7A7D'
 export const CATEGORY_CONTENT = '#EF404A'
 
 export const TOTAL_DESCRIPTION = '#008037'
+export const CARD_CHECKBOX_BAN_COLOR = '#008037'
 
 export const REDUCING_COST_FORWARD_COLOR = '#F15223'
 export const REDUCING_CARD_BORDER = '#FF7350'

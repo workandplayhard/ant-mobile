@@ -14,9 +14,6 @@ const SignUpScreen: React.FC = () => {
   const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [celluarCompany, setCellularCompany] = useState<string>('')
   const [creditCardNumber, setCreditCardNumber] = useState<string>('')
-  // const [password, setPassword] = useState<string>('')
-  // const [confirmPassword, setConfirmPassword] = useState<string>('')
-  // const [email, setEmail] = useState<string>('')
 
   return (
     <WrapperWithBackground>

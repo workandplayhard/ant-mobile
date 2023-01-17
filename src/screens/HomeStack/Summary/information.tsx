@@ -3,6 +3,7 @@ import React from 'react'
 import { View } from 'react-native'
 
 import { Col, ImageView, Row, TextField } from '@/components'
+import { t } from '@/i18n'
 
 import HotMobile from '@/assets/images/img_hot_mobile.png'
 
@@ -31,7 +32,7 @@ const Information: React.FC<IInformation> = ({
   const informationDetails = [
     { title: 'SMS', size: SMSSize },
     { title: 'Calls', size: callsSize },
-    { title: 'Internet', size: internetSize },
+    { title: t('internet'), size: internetSize },
   ]
   // eslint-disable-next-line react/no-unstable-nested-components
   const Detail: React.FC<IDetail> = ({ title, size }) => (

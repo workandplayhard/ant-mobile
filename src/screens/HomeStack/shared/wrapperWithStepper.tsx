@@ -24,7 +24,7 @@ import { IStep } from '@/types'
 import { useReduceCost } from '@/hooks'
 import { t } from '@/i18n'
 
-import mockData from '../ReducingCost/mockData.json'
+import mockData from '../ReducingCost/mockData'
 
 interface Props {
   children: React.ReactNode

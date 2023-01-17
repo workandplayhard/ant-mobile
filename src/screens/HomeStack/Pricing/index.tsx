@@ -32,7 +32,7 @@ const Pricing: React.FC = () => {
         <PageTitle
           title={t('homeTitle')}
           titleAlign="center"
-          subTitle={mockData.homeSubTitle}
+          subTitle={t('printingAndTypeSettingIndustry')}
           subTitleAlign="center"
           mode="dark"
         />
@@ -46,7 +46,7 @@ const Pricing: React.FC = () => {
                   <View style={styles.iconContainer}>
                     <Icon name="circleCheckIcon" iconStyle={styles.icon} />
                   </View>
-                  <TextField text={plan.description} style={styles.planText} />
+                  <TextField text={t('loremIpsumIsSimply')} style={styles.planText} />
                 </Row>
               </View>
               <Gap horizontal={false} gap={20} />
