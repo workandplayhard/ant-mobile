@@ -16,7 +16,7 @@ const Footer = () => {
         <Row style={styles.totalAmounthPos}>
           <TextField text={mockData.count_5} style={styles.totalAmounthCount} />
           <Gap horizontal={true} gap={5} />
-          <TextField text={mockData.countDescription} style={styles.totalAmounthText} />
+          <TextField text={t('reducingLorem')} style={styles.totalAmounthText} />
         </Row>
       </View>
     </Row>

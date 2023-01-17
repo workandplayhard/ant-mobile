@@ -23,7 +23,7 @@ const Catagory = () => {
         </View>
         <Col style={styles.catagoryColEnd}>
           <TextField text={mockData.count_4} style={styles.catagoryResultTitle} />
-          <TextField text={mockData.countDescription} style={styles.catagoryResultContent} />
+          <TextField text={t('reducingLorem')} style={styles.catagoryResultContent} />
         </Col>
       </Row>
 

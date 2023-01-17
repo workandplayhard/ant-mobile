@@ -98,7 +98,7 @@ const PaymentOptimization: React.FC = () => {
             </View>
             <Gap horizontal gap={20} />
             <TextField
-              text={mockData.contentDescriptionContext}
+              text={t('printingAndTypeSettingIndustry')}
               style={styles.contentDescriptionContext}
             />
           </Row>

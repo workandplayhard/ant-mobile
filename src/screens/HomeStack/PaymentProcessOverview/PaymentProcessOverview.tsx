@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback } from 'react'
 import { I18nManager, View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -33,7 +33,6 @@ const PaymentProcessOverview = () => {
     navigation.navigate(NavScreens.home.otherInformationSources)
   }, [navigation, onModal])
 
-  console.log('modal: ', modal)
   return (
     <View style={styles.modalizeWrapper}>
       <NavHeader hasBackButton />
@@ -41,7 +40,7 @@ const PaymentProcessOverview = () => {
       <PageTitle
         title={t('startingProcess')}
         titleAlign="center"
-        subTitle={mockData.subTitleExample}
+        subTitle={t('printingAndTypeSettingIndustry')}
         subTitleAlign="center"
       />
       <Gap gap={100} />
@@ -55,7 +54,7 @@ const PaymentProcessOverview = () => {
         >
           <Col style={styles.wrapper}>
             <Gap gap={20} />
-            <TextField text={mockData.contentTitleExample} style={styles.modalTitle} />
+            <TextField text={t('printingAndTypeSettingIndustry')} style={styles.modalTitle} />
 
             <Gap gap={20} />
             <ScrollContainer style={styles.scrollContainerInitial}>

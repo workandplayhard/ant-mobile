@@ -11,7 +11,7 @@ import { NavScreens, RouteParamList } from '@/navigation'
 
 import Plan from './plan'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 
@@ -19,7 +19,7 @@ import ReducingBackground from '@/assets/images/img_reducing.png'
 
 const Congratulation = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
-  const { onTVOffer, onSuccess, tvSuccess } = useReduceCost()
+  const { success, onTVOffer, onSuccess, tvSuccess } = useReduceCost()
 
   const onPress = useCallback(() => {
     if (!tvSuccess) {
@@ -51,10 +51,15 @@ const Congratulation = () => {
       <View style={styles.contentContainer}>
         <View style={styles.congratulationContainer}>
           <ImageView url={ReducingBackground} style={styles.congratulationBackground} />
-          <TextField text={t('congratulations')} style={styles.congratulationTitle} />
+          <TextField
+            text={success ? t('successCongratulations') : t('congratulations')}
+            style={styles.congratulationTitle}
+          />
 
           <Gap gap={15} />
-          <TextField text={t('bestTelephonePlan')} style={styles.congratulationContent} />
+          {success && (
+            <TextField text={t('bestTelephonePlan')} style={styles.congratulationContent} />
+          )}
 
           <Gap gap={30} />
           <Button variant="primary" size="lg" text={t('next')} onPress={() => onPress()} />

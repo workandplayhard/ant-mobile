@@ -29,7 +29,7 @@ export default StyleSheet.create({
     width: '100%',
   },
   financialGap: {
-    marginTop: RW(26),
+    marginTop: RW(2),
   },
   circle: {
     width: RW(5),

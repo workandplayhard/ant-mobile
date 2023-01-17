@@ -5,11 +5,13 @@ import Card from './card'
 
 import { CheckBox, Dropdown, Gap, ImageView, Row, TextField } from '@/components'
 
-import { t } from '@/i18n'
+import i18n, { t } from '@/i18n'
 
 import { IOption } from '@/types'
 
-import mockData from './mockData'
+import MizrahiTefahotBank from '@/assets/images/img_mizrahi_tefahot_bank.png'
+import MachineLearning from '@/assets/images/img_machine_learning_islael.png'
+import BankHapoalim from '@/assets/images/img_bank_hapoalim.png'
 
 import styles from './styles'
 
@@ -18,8 +20,29 @@ interface IProps {
   onCardStatus: (count: number) => void
 }
 
+const banksInformation = [
+  {
+    label: 'mizrahiTefahotBank',
+    value: 'us',
+    isSelected: false,
+    image: MizrahiTefahotBank,
+  },
+  {
+    label: 'machineLearningIsrael',
+    value: 'cn',
+    isSelected: false,
+    image: MachineLearning,
+  },
+  {
+    label: 'bankHapoalim',
+    value: 'cn',
+    isSelected: false,
+    image: BankHapoalim,
+  },
+]
+
 const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
-  const [banks, setBanks] = useState<IOption<string>[]>(mockData.data.banks)
+  const [banks, setBanks] = useState<IOption<string>[]>(banksInformation)
   const current = useMemo(() => banks.filter((bank) => bank.isSelected === true), [banks])
 
   const onSelectBank = useCallback(
@@ -45,7 +68,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
           placeholder={t('placeholder')}
           buttonText={banks
             .filter((item) => item.isSelected)
-            .map((item) => item.label)
+            .map((item) => t(item.label))
             .join(', ')}
           onChange={(item, index) => onSelectBank(index, !item.isSelected)}
           dropDownStyle={styles.dropdownPos}
@@ -53,7 +76,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
           {(item, index) => (
             <Row style={styles.financialRow} key={index}>
               <ImageView url={item.image} style={styles.image} />
-              <TextField text={item.label} style={styles.dropdownText} />
+              <TextField text={t(item.label)} style={styles.dropdownText} />
               <CheckBox
                 onChange={(isChecked: boolean) => onSelectBank(index, isChecked)}
                 isChecked={banks[index].isSelected}

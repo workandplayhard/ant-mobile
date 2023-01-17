@@ -39,7 +39,6 @@ const OtherInformationSources = () => {
       <View style={styles.paddingHorizontalStandard}>
         <NavHeader hasBackButton />
 
-        <Gap gap={22} />
         <PageTitle title={t('otherInformationSources')} titleAlign="left" />
       </View>
       <ScrollContainer style={styles.scrollContainer}>

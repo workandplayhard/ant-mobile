@@ -8,15 +8,16 @@ import { t } from '@/i18n'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 
 interface IProps {
   showModal: (val: boolean) => void
+  onChangeScrollPos: () => void
 }
 
-const OTPVerification: React.FC<IProps> = ({ showModal }) => {
+const OTPVerification: React.FC<IProps> = ({ showModal, onChangeScrollPos }) => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const [code, setCode] = useState<string>('')
   const { onEnable } = useCustomerExpense()
@@ -28,8 +29,9 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
   const onHandleOTP = useCallback(() => {
     onEnable(true)
     onCancelModal()
+    onChangeScrollPos()
     navigation.navigate(NavScreens.home.customerExpense)
-  }, [navigation, onCancelModal, onEnable])
+  }, [navigation, onCancelModal, onEnable, onChangeScrollPos])
 
   return (
     <Modal
@@ -43,7 +45,7 @@ const OTPVerification: React.FC<IProps> = ({ showModal }) => {
         <Gap gap={20} />
         <TextField text={t('OTP')} style={styles.modalTitle} />
         <Gap horizontal={false} gap={12} />
-        <TextField text={mockData.modalTitleExample} style={styles.modalSubTitle} />
+        <TextField text={t('printingAndTypeSettingIndustry')} style={styles.modalSubTitle} />
 
         <Gap gap={40} />
         <OTPField cellCount={6} value={code} setValue={setCode} isValid={code.length === 6} />

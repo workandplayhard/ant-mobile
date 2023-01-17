@@ -14,6 +14,8 @@ import mockData from './mockData.json'
 
 import styles from './styles'
 
+const subTitles = ['loremIpsumIsSimply', 'lorem', 'loremIpsumIsSimply']
+
 const Pricing: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const isFocused = useIsFocused()
@@ -32,21 +34,21 @@ const Pricing: React.FC = () => {
         <PageTitle
           title={t('homeTitle')}
           titleAlign="center"
-          subTitle={mockData.homeSubTitle}
+          subTitle={t('printingAndTypeSettingIndustry')}
           subTitleAlign="center"
           mode="dark"
         />
         <Gap horizontal={false} gap={40} />
 
         <Col>
-          {mockData.plans.map((plan) => (
+          {mockData.plans.map((plan, index) => (
             <React.Fragment key={plan.id}>
               <View style={styles.plan}>
                 <Row style={styles.planContent}>
                   <View style={styles.iconContainer}>
                     <Icon name="circleCheckIcon" iconStyle={styles.icon} />
                   </View>
-                  <TextField text={plan.description} style={styles.planText} />
+                  <TextField text={t(subTitles[index])} style={styles.planText} />
                 </Row>
               </View>
               <Gap horizontal={false} gap={20} />

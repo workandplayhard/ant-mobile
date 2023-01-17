@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ElementRef, useCallback, useEffect, useRef, useState } from 'react'
 import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -28,9 +28,14 @@ const Summary: React.FC = () => {
   const [download, setDownload] = useState<boolean>(false)
   const [email, setEmail] = useState<boolean>(false)
   const [success, setSuccess] = useState<boolean>(false)
+  const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
+
+  useEffect(() => {
+    if (showModal) scrollRef.current?.scrollTo?.({ y: 0 })
+  }, [showModal])
 
   return (
-    <ScrollContainer contentContainerStyle={styles.scrollContainer}>
+    <ScrollContainer contentContainerStyle={styles.scrollContainer} ref={scrollRef}>
       <Row isFull style={styles.closePos}>
         <Icon
           name="closeIcon"
@@ -57,7 +62,7 @@ const Summary: React.FC = () => {
           <Gap gap={20} />
           <Information
             count={mockData.count}
-            countDescription={mockData.countDescription}
+            countDescription={t('reducingLorem')}
             SMSSize={mockData.SMSSize}
             callsSize={mockData.callsSize}
             internetSize={mockData.informationInternetSize}
@@ -67,8 +72,8 @@ const Summary: React.FC = () => {
           <Gap gap={20} />
           <Total
             count={mockData.count_1}
-            countDescription={mockData.countDescription}
-            content={mockData.totalContent}
+            countDescription={t('reducingLorem')}
+            content={t('loremIpsumIsSimplyDummy')}
           />
         </Col>
       </View>
@@ -82,7 +87,7 @@ const Summary: React.FC = () => {
           <Gap gap={20} />
           <Information
             count={mockData.count_2}
-            countDescription={mockData.countDescription}
+            countDescription={t('reducingLorem')}
             SMSSize={mockData.SMSSize}
             callsSize={mockData.callsSize}
             internetSize={mockData.informationInternetSize}
@@ -92,8 +97,8 @@ const Summary: React.FC = () => {
           <Gap gap={20} />
           <Total
             count={mockData.count_3}
-            countDescription={mockData.countDescription}
-            content={mockData.totalContent}
+            countDescription={t('reducingLorem')}
+            content={t('loremIpsumIsSimplyDummy')}
           />
         </Col>
       </View>

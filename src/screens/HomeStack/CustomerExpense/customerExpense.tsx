@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useEffect, useRef, ElementRef } from 'react'
 import { View } from 'react-native'
 import { useIsFocused, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
@@ -20,28 +20,57 @@ import { t } from '@/i18n'
 import { ICard } from '@/types'
 import OTPVerification from './OTPVerification'
 import { NavScreens, RouteParamList } from '@/navigation'
-import { ROW_DARK_BG_COLOR, RW } from '@/theme'
+import { CARD_CHECKBOX_BAN_COLOR, ROW_DARK_BG_COLOR, RW } from '@/theme'
 import { Tooltip } from '@/components/Tooltip'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
 import { useApp } from '@/hooks'
 
-import mockData from './mockData.json'
+import mockData from './mockData'
 
 import styles from './styles'
 
+const cardInformation = [
+  { label: 'customerEnergy', iconName: 'energyIcon', isSelected: false, color: '#FF2D39' },
+  {
+    label: 'customerTelephone',
+    iconName: 'telephoneIcon',
+    isSelected: false,
+    color: '#FFBD6E',
+  },
+  {
+    label: 'customerInsurance',
+    iconName: 'handsHoldingCircleIcon',
+    isSelected: false,
+    color: '#FFBD6E',
+  },
+  { label: 'customerTV', iconName: 'tvIcon', isSelected: false, color: '#FFBD6E' },
+  {
+    label: 'customerCarInsurance',
+    iconName: 'carIcon',
+    isSelected: false,
+    color: '#008037',
+  },
+  { label: 'customerMusic', iconName: 'musicIcon', isSelected: false, color: '#008037' },
+]
+
 export const CustomerExpense: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
-  const [cards, setCards] = useState<ICard[]>(mockData.data.cards as unknown as ICard[])
+  const [cards, setCards] = useState<ICard[]>(cardInformation as unknown as ICard[])
   const [showModal, setShowModal] = useState<boolean>(false)
   const { enable, onEnable } = useCustomerExpense()
   const isFocused = useIsFocused()
   const { onChangeTheme } = useApp()
+  const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
 
   useEffect(() => {
     if (!isFocused) {
       onChangeTheme({ statusBarStyle: 'dark-content' })
     }
-  }, [onChangeTheme, isFocused])
+  }, [onChangeTheme, isFocused, enable])
+
+  const onStepChange = useCallback(() => {
+    scrollRef.current?.scrollTo?.({ y: 0 })
+  }, [])
 
   const onCardSelect = useCallback(
     (index: number, isSelected: boolean) => {
@@ -65,7 +94,7 @@ export const CustomerExpense: React.FC = () => {
         <PageTitle title={t('constantExpense')} titleAlign="left" mode="dark" />
       </View>
 
-      <ScrollContainer>
+      <ScrollContainer ref={scrollRef}>
         <View style={styles.questionCirclePos}>
           <Tooltip text={t('lorem')} mode="dark" offset={RW(5)}>
             <Icon name="questionCircleIcon" size={RW(24)} />
@@ -94,15 +123,17 @@ export const CustomerExpense: React.FC = () => {
               >
                 <Icon name={card.iconName} size={RW(34)} />
                 <Gap gap={20} />
-                <TextField text={card.label} style={styles.cardText} />
-                <View style={styles.cardCheckboxWrapper}>
-                  <View style={styles.cardCheckboxPos}>
-                    <CheckBox
-                      onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
-                      isChecked={cards[index].isSelected}
-                    />
+                <TextField text={t(card.label)} style={styles.cardText} />
+                {!(enable && card.color === CARD_CHECKBOX_BAN_COLOR) && (
+                  <View style={styles.cardCheckboxWrapper}>
+                    <View style={styles.cardCheckboxPos}>
+                      <CheckBox
+                        onChange={(isChecked: boolean) => onCardSelect(index, isChecked)}
+                        isChecked={cards[index].isSelected}
+                      />
+                    </View>
                   </View>
-                </View>
+                )}
               </View>
             </TouchableOpacity>
           ))}
@@ -121,7 +152,12 @@ export const CustomerExpense: React.FC = () => {
           />
         </View>
         <Gap gap={135} />
-        {showModal && <OTPVerification showModal={(val) => setShowModal(val)} />}
+        {showModal && (
+          <OTPVerification
+            showModal={(val) => setShowModal(val)}
+            onChangeScrollPos={() => onStepChange()}
+          />
+        )}
       </ScrollContainer>
     </Container>
   )

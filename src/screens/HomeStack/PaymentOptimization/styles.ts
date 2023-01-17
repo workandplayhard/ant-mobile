@@ -14,13 +14,9 @@ import { SCREEN_WIDTH } from '@/constants'
 export default StyleSheet.create({
   scrollContainer: {
     backgroundColor: 'transparent',
-    // flex: 1,
-    // flexShrink: 0,
   },
   contentContainerStyle: {
     alignContent: 'center',
-    // flexDirection: 'column',
-    // flexGrow: 1,
   },
   iconWrapper: {
     alignItems: 'center',
@@ -141,7 +137,7 @@ export default StyleSheet.create({
     borderRadius: RW(15),
   },
   contentDescriptionContext: {
-    width: RW(250),
+    width: SCREEN_WIDTH - RW(162),
     ...font('rw.semibold', 14, BLACK, 24),
   },
   contentDescriptionBottom: {

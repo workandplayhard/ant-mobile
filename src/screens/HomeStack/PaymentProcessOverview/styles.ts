@@ -48,7 +48,7 @@ export default StyleSheet.create({
     ...font('rw.bold', 20, WHITE, 28),
   },
   scrollContainerInitial: {
-    maxHeight: RH(130),
+    maxHeight: RH(110),
   },
   progressOverview: {
     ...font('rw.thin', 16, WHITE, 26),

@@ -24,7 +24,7 @@ import { IStep } from '@/types'
 import { useReduceCost } from '@/hooks'
 import { t } from '@/i18n'
 
-import mockData from '../ReducingCost/mockData.json'
+import mockData from '../ReducingCost/mockData'
 
 interface Props {
   children: React.ReactNode
@@ -69,7 +69,8 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
     if (cost) onChangeStep(0)
     else if (detail) onChangeStep(1)
     else if (tvSuccess) onChangeStep(2)
-  }, [cost, detail, tvSuccess])
+    else if (success || tvOffer || tvPlan || tvSuccess) onStepChange()
+  }, [cost, detail, tvSuccess, success, tvOffer, tvPlan, tvSuccess])
 
   const onBack = useCallback(() => {
     if (detail) {
@@ -139,7 +140,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
           <PageTitle title={getTitle()} titleAlign="left" mode="light" />
         </View>
 
-        <Gap gap={40} />
+        <Gap gap={30} />
         <View style={styles.row}>
           <Stepper
             canJumpNext
