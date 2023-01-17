@@ -124,11 +124,11 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
           onChange={(item, idx) => onSelectPeriod(idx, !item.isSelected)}
           buttonText={periods
             .filter((item) => item.isSelected)
-            .map((item) => item.label)
+            .map((item) => t(item.label))
             .join(', ')}
           dropDownStyle={styles.dropdownPos}
         >
-          {(item) => <TextField text={item.label} style={styles.subSourcePeriodText} />}
+          {(item) => <TextField text={t(item.label)} style={styles.subSourcePeriodText} />}
         </Dropdown>
         <Gap gap={40} />
       </View>
@@ -146,7 +146,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
               <View style={styles.handle} />
             </View>
             <Gap gap={30} />
-            <TextField text={periods[index].label} style={styles.modalTitle} />
+            <TextField text={t(periods[index].label)} style={styles.modalTitle} />
             <Gap gap={20} />
             <ScrollContainer style={styles.scrollContainerInitial}>
               <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />

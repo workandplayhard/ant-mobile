@@ -1,19 +1,31 @@
 import React, { useCallback, useState } from 'react'
 import { View } from 'react-native'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import { Gap, Icon, Radio, Row, TextField, Tooltip } from '@/components'
 
-import { t } from '@/i18n'
+import i18n, { t } from '@/i18n'
 import { IFinance } from '@/types'
 import { RW } from '@/theme'
 
-import mockData from './mockData'
-
 import styles from './styles'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+
+const financialInformation = [
+  {
+    label: 'accountBalance',
+    isSelected: false,
+    value: 'balance',
+  },
+  {
+    label: 'accountTransactions',
+    isSelected: false,
+    value: 'transactions',
+  },
+]
 
 const Information = () => {
-  const [financial, setFinancial] = useState<IFinance[]>(mockData.data.financial)
+  const [financial, setFinancial] = useState<IFinance[]>(financialInformation)
+  const labels = t('financialInformation.label', { returnObjects: true })
 
   const onSelectFinancial = useCallback(
     (index: number, isSelected: boolean) => {
@@ -48,7 +60,7 @@ const Information = () => {
                 styles.financialRow,
               ]}
             >
-              <TextField text={item.label} style={styles.subSourceInformationText} />
+              <TextField text={t(item.label)} style={styles.subSourceInformationText} />
               <Radio
                 isOn={item.isSelected}
                 onChange={(isChecked: boolean) => onSelectFinancial(index, !isChecked)}

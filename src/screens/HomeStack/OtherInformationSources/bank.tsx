@@ -5,7 +5,7 @@ import Card from './card'
 
 import { CheckBox, Dropdown, Gap, ImageView, Row, TextField } from '@/components'
 
-import { t } from '@/i18n'
+import i18n, { t } from '@/i18n'
 
 import { IOption } from '@/types'
 
@@ -22,19 +22,19 @@ interface IProps {
 
 const banksInformation = [
   {
-    label: t('mizrahiTefahotBank'),
+    label: 'mizrahiTefahotBank',
     value: 'us',
     isSelected: false,
     image: MizrahiTefahotBank,
   },
   {
-    label: t('machineLearningIsrael'),
+    label: 'machineLearningIsrael',
     value: 'cn',
     isSelected: false,
     image: MachineLearning,
   },
   {
-    label: t('bankHapoalim'),
+    label: 'bankHapoalim',
     value: 'cn',
     isSelected: false,
     image: BankHapoalim,
@@ -68,7 +68,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
           placeholder={t('placeholder')}
           buttonText={banks
             .filter((item) => item.isSelected)
-            .map((item) => item.label)
+            .map((item) => t(item.label))
             .join(', ')}
           onChange={(item, index) => onSelectBank(index, !item.isSelected)}
           dropDownStyle={styles.dropdownPos}
@@ -76,7 +76,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
           {(item, index) => (
             <Row style={styles.financialRow} key={index}>
               <ImageView url={item.image} style={styles.image} />
-              <TextField text={item.label} style={styles.dropdownText} />
+              <TextField text={t(item.label)} style={styles.dropdownText} />
               <CheckBox
                 onChange={(isChecked: boolean) => onSelectBank(index, isChecked)}
                 isChecked={banks[index].isSelected}

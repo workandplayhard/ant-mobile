@@ -19,19 +19,19 @@ interface IProps {
 
 const cardInformation = [
   {
-    label: t('mizrahiTefahotBank'),
+    label: 'mizrahiTefahotBank',
     value: 'us',
     isSelected: false,
     image: MizrahiTefahotBank,
   },
   {
-    label: t('machineLearningIsrael'),
+    label: 'machineLearningIsrael',
     value: 'cn',
     isSelected: false,
     image: MachineLearning,
   },
   {
-    label: t('bankHapoalim'),
+    label: 'bankHapoalim',
     value: 'cn',
     isSelected: false,
     image: BankHapoalim,
@@ -60,7 +60,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
           placeholder={t('selectCreditCards')}
           buttonText={cards
             .filter((item) => item.isSelected)
-            .map((item) => item.label)
+            .map((item) => t(item.label))
             .join(', ')}
           onChange={(item, index) => onSelectCard(index, !item.isSelected)}
           dropDownStyle={styles.dropdownPos}
@@ -68,7 +68,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
           {(item, index) => (
             <Row style={styles.financialRow}>
               <ImageView url={item.image} style={styles.image} />
-              <TextField text={item.label} style={styles.dropdownText} />
+              <TextField text={t(item.label)} style={styles.dropdownText} />
               <CheckBox
                 onChange={(isChecked: boolean) => onSelectCard(index, isChecked)}
                 isChecked={cards[index].isSelected}

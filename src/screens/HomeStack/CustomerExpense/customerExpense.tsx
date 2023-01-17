@@ -30,27 +30,27 @@ import mockData from './mockData'
 import styles from './styles'
 
 const cardInformation = [
-  { label: t('customerEnergy'), iconName: 'energyIcon', isSelected: false, color: '#FF2D39' },
+  { label: 'customerEnergy', iconName: 'energyIcon', isSelected: false, color: '#FF2D39' },
   {
-    label: t('customerTelephone'),
+    label: 'customerTelephone',
     iconName: 'telephoneIcon',
     isSelected: false,
     color: '#FFBD6E',
   },
   {
-    label: t('customerInsurance'),
+    label: 'customerInsurance',
     iconName: 'handsHoldingCircleIcon',
     isSelected: false,
     color: '#FFBD6E',
   },
-  { label: t('customerTV'), iconName: 'tvIcon', isSelected: false, color: '#FFBD6E' },
+  { label: 'customerTV', iconName: 'tvIcon', isSelected: false, color: '#FFBD6E' },
   {
-    label: t('customerCarInsurance'),
+    label: 'customerCarInsurance',
     iconName: 'carIcon',
     isSelected: false,
     color: '#008037',
   },
-  { label: t('customerMusic'), iconName: 'musicIcon', isSelected: false, color: '#008037' },
+  { label: 'customerMusic', iconName: 'musicIcon', isSelected: false, color: '#008037' },
 ]
 
 export const CustomerExpense: React.FC = () => {
@@ -123,7 +123,7 @@ export const CustomerExpense: React.FC = () => {
               >
                 <Icon name={card.iconName} size={RW(34)} />
                 <Gap gap={20} />
-                <TextField text={card.label} style={styles.cardText} />
+                <TextField text={t(card.label)} style={styles.cardText} />
                 {!(enable && card.color === CARD_CHECKBOX_BAN_COLOR) && (
                   <View style={styles.cardCheckboxWrapper}>
                     <View style={styles.cardCheckboxPos}>

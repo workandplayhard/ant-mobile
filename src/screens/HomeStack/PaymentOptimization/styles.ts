@@ -137,7 +137,7 @@ export default StyleSheet.create({
     borderRadius: RW(15),
   },
   contentDescriptionContext: {
-    width: SCREEN_WIDTH - 166,
+    width: SCREEN_WIDTH - RW(162),
     ...font('rw.semibold', 14, BLACK, 24),
   },
   contentDescriptionBottom: {

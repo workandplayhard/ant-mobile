@@ -37,7 +37,10 @@ const Information: React.FC<IInformation> = ({
   // eslint-disable-next-line react/no-unstable-nested-components
   const Detail: React.FC<IDetail> = ({ title, size }) => (
     <Col style={styles.informationPos}>
-      <TextField text={title} style={styles.informationContentTitle} />
+      <TextField
+        text={title === 'Internet' ? t('internet') : title}
+        style={styles.informationContentTitle}
+      />
       <TextField text={size} style={styles.informationContentDescription} />
     </Col>
   )

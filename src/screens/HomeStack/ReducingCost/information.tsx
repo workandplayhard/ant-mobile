@@ -58,7 +58,10 @@ const Information: React.FC<IInformation> = ({
             <Icon name={icon} size={RW(20)} wrapperStyle={{ paddingBottom: RH(11) }} />
           </View>
         )}
-        <TextField text={title} style={styles.informationContentTitle} />
+        <TextField
+          text={title === 'Internet' ? t('internet') : title}
+          style={styles.informationContentTitle}
+        />
         <TextField text={size} style={styles.informationContentDescription} />
       </Col>
       <Gap horizontal gap={10} />

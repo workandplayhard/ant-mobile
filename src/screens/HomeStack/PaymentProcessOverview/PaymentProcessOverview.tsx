@@ -33,7 +33,6 @@ const PaymentProcessOverview = () => {
     navigation.navigate(NavScreens.home.otherInformationSources)
   }, [navigation, onModal])
 
-  console.log('modal: ', modal)
   return (
     <View style={styles.modalizeWrapper}>
       <NavHeader hasBackButton />

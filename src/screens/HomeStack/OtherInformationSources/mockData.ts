@@ -43,17 +43,17 @@ export default {
     ],
     periods: [
       {
-        label: t('oneTimeOnly'),
+        label: 'oneTimeOnly',
         isSelected: false,
         value: 'oneTime',
       },
       {
-        label: t('yearAndHalf'),
+        label: 'yearAndHalf',
         isSelected: false,
         value: 'yearAndHalf',
       },
       {
-        label: t('threeYears'),
+        label: 'threeYears',
         isSelected: false,
         value: 'threeYears',
       },

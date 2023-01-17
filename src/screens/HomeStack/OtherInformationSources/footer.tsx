@@ -9,9 +9,9 @@ import mockData from './mockData'
 import styles from './styles'
 
 const footerListItems = [
-  t('loremIpsumIsSimplyDummy'),
-  t('printingAndTypeSettingIndustry'),
-  t('loremIpsumIsSimplyDummy'),
+  'loremIpsumIsSimplyDummy',
+  'printingAndTypeSettingIndustry',
+  'loremIpsumIsSimplyDummy',
 ]
 
 const Footer = () => {
@@ -19,7 +19,7 @@ const Footer = () => {
     <Row key={index} style={styles.subSourceFooterList}>
       <View style={styles.circle} />
       <TextField
-        text={content}
+        text={t(content)}
         style={[
           I18nManager.isRTL && styles.subSourceFooterListItemRTL,
           styles.subSourceFooterListItem,

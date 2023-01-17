@@ -140,7 +140,7 @@ const WrapperWithStepper: React.FC<Props> = ({ children }) => {
           <PageTitle title={getTitle()} titleAlign="left" mode="light" />
         </View>
 
-        <Gap gap={40} />
+        <Gap gap={30} />
         <View style={styles.row}>
           <Stepper
             canJumpNext
