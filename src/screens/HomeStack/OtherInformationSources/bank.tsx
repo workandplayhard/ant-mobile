@@ -5,7 +5,8 @@ import Card from './card'
 
 import { CheckBox, Dropdown, Gap, ImageView, Row, TextField } from '@/components'
 
-import i18n, { t } from '@/i18n'
+import { t } from '@/i18n'
+import { RH } from '@/theme'
 
 import { IOption } from '@/types'
 
@@ -71,7 +72,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
             .map((item) => t(item.label))
             .join(', ')}
           onChange={(item, index) => onSelectBank(index, !item.isSelected)}
-          dropDownStyle={styles.dropdownPos}
+          dropDownStyle={{ ...styles.dropdownPos, height: banks.length * RH(90) }}
         >
           {(item, index) => (
             <Row style={styles.financialRow} key={index}>
