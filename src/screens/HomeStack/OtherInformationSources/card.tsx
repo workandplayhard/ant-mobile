@@ -4,6 +4,7 @@ import { View } from 'react-native'
 import { CheckBox, Dropdown, Gap, ImageView, Row, TextField } from '@/components'
 
 import { t } from '@/i18n'
+import { RH } from '@/theme'
 
 import { IOption } from '@/types'
 
@@ -63,7 +64,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
             .map((item) => t(item.label))
             .join(', ')}
           onChange={(item, index) => onSelectCard(index, !item.isSelected)}
-          dropDownStyle={styles.dropdownPos}
+          dropDownStyle={{ ...styles.dropdownPos, height: cards.length * RH(90) }}
         >
           {(item, index) => (
             <Row style={styles.financialRow}>

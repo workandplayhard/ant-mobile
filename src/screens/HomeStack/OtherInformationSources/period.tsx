@@ -14,7 +14,7 @@ import {
   TextField,
   Tooltip,
 } from '@/components'
-import { MODAL_BACKDROP_COLOR, RW } from '@/theme'
+import { MODAL_BACKDROP_COLOR, RH, RW } from '@/theme'
 
 import { t } from '@/i18n'
 
@@ -126,7 +126,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
             .filter((item) => item.isSelected)
             .map((item) => t(item.label))
             .join(', ')}
-          dropDownStyle={styles.dropdownPos}
+          dropDownStyle={{ ...styles.dropdownPos, height: periods.length * RH(90) }}
         >
           {(item) => <TextField text={t(item.label)} style={styles.subSourcePeriodText} />}
         </Dropdown>
