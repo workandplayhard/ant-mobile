@@ -50,4 +50,8 @@ export default StyleSheet.create({
     width: '100%',
     height: RH(90),
   },
+  timeRow: {
+    width: '100%',
+    height: RH(64),
+  },
 })

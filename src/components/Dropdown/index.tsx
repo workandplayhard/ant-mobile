@@ -12,6 +12,7 @@ interface IDropdown<T> {
   data: IOption<T>[]
   placeholder?: string
   disabled?: boolean
+  timeDropDown?: boolean
   buttonText?: string
   buttonStyle?: ViewStyle
   onChange: (v: IOption<T>, index: number) => void
@@ -27,6 +28,7 @@ export const Dropdown = <T,>({
   disabled,
   data,
   dropDownStyle = {},
+  timeDropDown = false,
   children,
   iconSelect = 'icon',
   buttonStyle = {},
@@ -50,7 +52,7 @@ export const Dropdown = <T,>({
       }}
       buttonTextStyle={styles.buttonText}
       dropdownStyle={{ ...styles.dropdownView, ...dropDownStyle }}
-      rowStyle={styles.row}
+      rowStyle={timeDropDown ? styles.timeRow : styles.row}
       rowTextForSelection={(item) => item.label}
       renderCustomizedRowChild={(item, index) => children(item, index)}
       renderDropdownIcon={() =>
