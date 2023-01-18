@@ -126,7 +126,8 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
             .filter((item) => item.isSelected)
             .map((item) => t(item.label))
             .join(', ')}
-          dropDownStyle={{ ...styles.dropdownPos, height: periods.length * RH(90) }}
+          dropDownStyle={{ ...styles.dropdownPos, height: periods.length * RH(64) }}
+          rowStyle={{ height: RH(64) }}
         >
           {(item) => <TextField text={t(item.label)} style={styles.subSourcePeriodText} />}
         </Dropdown>

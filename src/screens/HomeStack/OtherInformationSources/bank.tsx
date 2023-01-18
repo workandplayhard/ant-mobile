@@ -73,6 +73,7 @@ const Bank: React.FC<IProps> = ({ onBankStatus, onCardStatus }) => {
             .join(', ')}
           onChange={(item, index) => onSelectBank(index, !item.isSelected)}
           dropDownStyle={{ ...styles.dropdownPos, height: banks.length * RH(90) }}
+          rowStyle={{ height: RH(90) }}
         >
           {(item, index) => (
             <Row style={styles.financialRow} key={index}>

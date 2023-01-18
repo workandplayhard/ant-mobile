@@ -65,6 +65,7 @@ const Card: React.FC<IProps> = ({ onCardStatus }) => {
             .join(', ')}
           onChange={(item, index) => onSelectCard(index, !item.isSelected)}
           dropDownStyle={{ ...styles.dropdownPos, height: cards.length * RH(90) }}
+          rowStyle={{ height: RH(90) }}
         >
           {(item, index) => (
             <Row style={styles.financialRow}>

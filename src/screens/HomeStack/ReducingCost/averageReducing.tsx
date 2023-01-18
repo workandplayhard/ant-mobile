@@ -76,7 +76,6 @@ const AverageReducing = () => {
           textStyle={styles.textStyle}
           onPress={() => setButton(3)}
         />
-        {/* <Gap horizontal gap={60} /> */}
       </ScrollContainer>
 
       <Gap gap={40} />

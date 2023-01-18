@@ -48,6 +48,5 @@ export default StyleSheet.create({
   },
   row: {
     width: '100%',
-    height: RH(90),
   },
 })

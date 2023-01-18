@@ -30,6 +30,7 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
   },
   scrollContainer: {
+    backgroundColor: WHITE,
     width: '100%',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
     paddingTop: RH(66),
@@ -108,9 +109,10 @@ export default StyleSheet.create({
   },
   informationPos: {
     paddingLeft: RW(11),
+    paddingBottom: RH(12),
   },
   informationContentTitle: {
-    ...font('rw.regular', 12, SUMMARY_HEADER, 20),
+    ...font('rw.regular', 12, SUMMARY_HEADER, 30),
   },
   informationContentDescription: {
     ...font('pp.bold', 14, SUMMARY_CONTENT, 28),
@@ -119,7 +121,7 @@ export default StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
     backgroundColor: GRAY,
-    paddingHorizontal: RH(20),
+    paddingLeft: RW(20),
     paddingVertical: RH(15),
     borderRadius: RW(12),
   },

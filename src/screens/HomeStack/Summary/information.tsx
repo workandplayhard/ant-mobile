@@ -50,13 +50,9 @@ const Information: React.FC<IInformation> = ({
         <TextField text={count} style={styles.informationTitle} />
         <TextField text={countDescription} style={styles.informationContent} />
       </Col>
-      <View>
-        <Row>
-          {informationDetails.map((info, index) => (
-            <Detail key={index} title={info.title} size={info.size} />
-          ))}
-        </Row>
-      </View>
+      {informationDetails.map((info, index) => (
+        <Detail key={index} title={info.title} size={info.size} />
+      ))}
       <View>
         <ImageView url={HotMobile} />
       </View>
