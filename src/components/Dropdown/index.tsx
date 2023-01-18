@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SelectDropdown from 'react-native-select-dropdown'
-import { ViewStyle } from 'react-native'
+import { StyleProp, ViewStyle } from 'react-native'
 
 import { IOption } from '@/types'
 import { RH, TRANSPARENT } from '@/theme'
@@ -12,7 +12,7 @@ interface IDropdown<T> {
   data: IOption<T>[]
   placeholder?: string
   disabled?: boolean
-  rowStyle?: boolean
+  rowStyle?: ViewStyle
   buttonText?: string
   buttonStyle?: ViewStyle
   onChange: (v: IOption<T>, index: number) => void
@@ -28,10 +28,10 @@ export const Dropdown = <T,>({
   disabled,
   data,
   dropDownStyle = {},
-  rowStyle = false,
   children,
   iconSelect = 'icon',
   buttonStyle = {},
+  rowStyle = {},
 }: IDropdown<T>) => {
   const [focused, setFocused] = useState<boolean>(false)
 
@@ -52,7 +52,7 @@ export const Dropdown = <T,>({
       }}
       buttonTextStyle={styles.buttonText}
       dropdownStyle={{ ...styles.dropdownView, ...dropDownStyle }}
-      rowStyle={rowStyle ? styles.timeRow : styles.row}
+      rowStyle={{ ...styles.row, ...rowStyle }}
       rowTextForSelection={(item) => item.label}
       renderCustomizedRowChild={(item, index) => children(item, index)}
       renderDropdownIcon={() =>
