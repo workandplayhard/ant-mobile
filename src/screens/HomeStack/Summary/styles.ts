@@ -121,7 +121,7 @@ export default StyleSheet.create({
     width: '100%',
     justifyContent: 'space-between',
     backgroundColor: GRAY,
-    paddingLeft: RH(20),
+    paddingLeft: RW(20),
     paddingVertical: RH(15),
     borderRadius: RW(12),
   },
