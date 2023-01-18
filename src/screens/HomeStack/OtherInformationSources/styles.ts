@@ -65,8 +65,8 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
-    width: RW(30),
-    height: RW(30),
+    width: RW(50),
+    height: RW(50),
   },
   dropdownText: {
     ...font('rw.medium', 16, BLACK, 24),
