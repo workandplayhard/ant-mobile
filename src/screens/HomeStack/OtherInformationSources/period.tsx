@@ -48,8 +48,9 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
 
     _c[0].isSelected = true
     setPeriods(_c)
+    onPeriodStatus(1)
     modalizeRef.current?.close()
-  }, [periods])
+  }, [periods, onPeriodStatus])
 
   const onNext = useCallback(() => {
     let _c = [...periods]

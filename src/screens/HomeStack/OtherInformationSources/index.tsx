@@ -48,7 +48,7 @@ const OtherInformationSources = () => {
         <Gap gap={40} />
         <Information />
 
-        <Gap gap={48} />
+        <Gap gap={38} />
         <Period onPeriodStatus={setPeriodStatus} />
 
         <View style={styles.line} />
@@ -67,7 +67,7 @@ const OtherInformationSources = () => {
           />
         </View>
 
-        <Gap gap={200} />
+        <Gap gap={150} />
       </ScrollContainer>
     </Container>
   )
