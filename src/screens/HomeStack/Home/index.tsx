@@ -103,7 +103,7 @@ const Home: React.FC = () => {
           size="lg"
           text={t('optimizeYourPayments')}
           textStyle={{ ...font('pp.regular', 18, WHITE, 30) }}
-          onPress={() => navigation.navigate(NavScreens.home.paymentOptimization)}
+          onPress={() => navigation.navigate(NavScreens.home.pricing)}
         />
 
         <Gap horizontal={false} gap={200} />

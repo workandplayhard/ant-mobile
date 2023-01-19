@@ -49,7 +49,7 @@ const Information = () => {
         </Row>
       </View>
 
-      <Gap gap={48} />
+      <Gap gap={38} />
       <View style={styles.paddingHorizontalStandard}>
         {financial.map((item, index) => (
           <TouchableOpacity onPress={() => onSelectFinancial(index, !item.isSelected)}>

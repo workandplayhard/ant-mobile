@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { View } from 'react-native'
-import { useIsFocused } from '@react-navigation/native'
+import { useIsFocused, useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import {
   Button,
@@ -14,6 +15,7 @@ import {
 import NavHeader from '@/navigation/components/NavHeader'
 import { t } from '@/i18n'
 import { useApp } from '@/hooks'
+import { NavScreens, NavTabs, RouteParamList } from '@/navigation'
 
 import mask from './mask'
 import mock from './mockData.json'
@@ -29,6 +31,7 @@ const PersonalDetails: React.FC = () => {
   const [email, setEmail] = useState<string>('')
   const isFocused = useIsFocused()
   const { onChangeTheme } = useApp()
+  const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
 
   useEffect(() => {
     if (isFocused) {
@@ -51,7 +54,6 @@ const PersonalDetails: React.FC = () => {
     <Container style={styles.container}>
       <View style={styles.headerContainer}>
         <NavHeader hasBackButton />
-        <Gap gap={22} />
         <PageTitle title={t('personalDetails')} titleAlign="left" />
       </View>
       <Gap gap={40} />
@@ -129,9 +131,16 @@ const PersonalDetails: React.FC = () => {
         />
 
         <Gap gap={60} />
-        <Button variant="primary" size="lg" text={t('next')} />
+        <Button
+          variant="primary"
+          size="lg"
+          text={t('next')}
+          onPress={() =>
+            navigation.navigate(NavTabs.homeTab, { screen: NavScreens.home.paymentFinalization })
+          }
+        />
 
-        <Gap gap={200} />
+        <Gap gap={150} />
       </ScrollContainer>
     </Container>
   )

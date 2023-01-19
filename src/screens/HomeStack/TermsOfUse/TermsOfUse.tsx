@@ -10,7 +10,7 @@ import { t } from '@/i18n'
 import { TRANSPARENT } from '@/theme'
 import { SCREEN_HEIGHT } from '@/constants'
 import NavHeader from '@/navigation/components/NavHeader'
-import { NavScreens, RouteParamList } from '@/navigation'
+import { NavScreens, NavTabs, RouteParamList } from '@/navigation'
 import { useStartProcess } from '@/hooks'
 
 import mockData from './mockData.json'
@@ -38,7 +38,7 @@ const TermsOfUse = () => {
   const onHandleNext = useCallback(() => {
     onCancelModal()
     onModalDebounced()
-    navigation.navigate(NavScreens.home.paymentProgressOverview)
+    navigation.navigate(NavTabs.accountTab, { screen: NavScreens.account.personalDetails })
   }, [navigation, onModalDebounced])
 
   useEffect(() => {

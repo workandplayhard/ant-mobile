@@ -102,6 +102,7 @@ export default StyleSheet.create({
     flexShrink: 0,
     flexDirection: 'column',
     paddingBottom: RH(30),
+    minHeight: RH(150),
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
   },
   headerGreetings: {

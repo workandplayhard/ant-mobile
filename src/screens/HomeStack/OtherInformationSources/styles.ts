@@ -59,6 +59,7 @@ export default StyleSheet.create({
     ...font('rw.semibold', 18, PAGE_TITLE_COLOR, 24),
   },
   dropdownPos: {
+    position: 'absolute',
     marginTop: IS_IOS ? RH(5) : RH(-50),
   },
   financialRow: {

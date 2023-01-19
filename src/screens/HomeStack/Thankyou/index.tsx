@@ -50,7 +50,7 @@ export const Thankyou = () => {
             variant="primary"
             size="lg"
             text={t('backToHomePage')}
-            onPress={() => navigation.navigate(NavScreens.home.home)}
+            onPress={() => navigation.navigate(NavScreens.home.paymentOptimization)}
           />
         </View>
       </View>

@@ -118,7 +118,7 @@ const Summary: React.FC = () => {
         text={t('saveDocuments')}
         onPress={() => setShowModal(true)}
       />
-      <Gap gap={200} />
+      <Gap gap={150} />
       {showModal && (
         <Document showModal={(val) => setShowModal(val)} onDownload={(val) => setDownload(val)} />
       )}

@@ -19,12 +19,13 @@ import ReducingBackground from '@/assets/images/img_reducing.png'
 
 const Congratulation = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
-  const { success, onTVOffer, onSuccess, tvSuccess } = useReduceCost()
+  const { success, onTVOffer, onSuccess, tvSuccess, onTVSuccess } = useReduceCost()
 
   const onPress = useCallback(() => {
     if (!tvSuccess) {
       onSuccess(false)
-      onTVOffer(true)
+      onTVSuccess(true)
+      // onTVOffer(true)
     } else {
       navigation.navigate(NavScreens.home.summary)
     }
