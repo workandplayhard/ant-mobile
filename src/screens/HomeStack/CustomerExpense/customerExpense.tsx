@@ -102,7 +102,7 @@ export const CustomerExpense: React.FC = () => {
         <Gap gap={60} />
         <View style={styles.cardContainer}>
           {cards.map((card, index) => (
-            <TouchableOpacity onPress={() => onCardSelect(index, !card.isSelected)}>
+            <TouchableOpacity key={index} onPress={() => onCardSelect(index, !card.isSelected)}>
               <View
                 key={index}
                 style={[

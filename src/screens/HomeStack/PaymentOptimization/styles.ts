@@ -1,4 +1,4 @@
-import { IS_IOS, SCREEN_HEIGHT } from './../../../constants'
+import { IS_IOS } from './../../../constants'
 import { I18nManager, StyleSheet } from 'react-native'
 
 import { PAGE_HORIZONTAL_PADDING, RW, RH, font } from '@/theme/utils'
@@ -16,7 +16,7 @@ export default StyleSheet.create({
   scrollContainer: {
     backgroundColor: 'transparent',
     zIndex: 1,
-    marginBottom: RH(200),
+    marginBottom: RH(240),
   },
   contentContainerStyle: {
     alignContent: 'center',
@@ -146,7 +146,7 @@ export default StyleSheet.create({
     ...font('rw.semibold', 14, BLACK, 24),
   },
   contentDescriptionBottom: {
-    marginBottom: RW(80),
+    marginBottom: RH(95),
   },
   buttonContainer: {
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
