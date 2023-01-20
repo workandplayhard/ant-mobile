@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { View } from 'react-native'
-import { useIsFocused, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import NavHeader from '@/navigation/components/NavHeader'
@@ -25,14 +25,11 @@ import styles from './styles'
 
 const Home: React.FC = () => {
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
-  const isFocused = useIsFocused()
   const { onChangeTheme } = useApp()
 
   useEffect(() => {
-    if (isFocused) {
-      onChangeTheme({ statusBarStyle: 'light-content' })
-    }
-  }, [onChangeTheme, isFocused])
+    onChangeTheme({ statusBarStyle: 'light-content' })
+  }, [onChangeTheme])
 
   return (
     <Container>

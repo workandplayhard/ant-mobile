@@ -20,6 +20,8 @@ export const Thankyou = () => {
   useEffect(() => {
     if (!isFocused) {
       onChangeTheme({ statusBarStyle: 'light-content' })
+    } else {
+      onChangeTheme({ statusBarStyle: 'dark-content' })
     }
   }, [onChangeTheme, isFocused])
 

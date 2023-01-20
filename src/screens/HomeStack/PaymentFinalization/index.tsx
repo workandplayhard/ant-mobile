@@ -3,9 +3,10 @@ import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { Trans } from 'react-i18next'
 
-import { t } from 'i18next'
 import { NavScreens, RouteParamList } from '@/navigation'
 import { Gap, ImageView, PageTitle, TextField, Col, Container } from '@/components'
+import { useApp } from '@/hooks'
+import { t } from '@/i18n'
 
 import Pig from '@/assets/images/img_pig.png'
 
@@ -15,6 +16,11 @@ export const PaymentFinalization: React.FC = () => {
   const [percentage, setPercentage] = React.useState(0)
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
   const timer = useRef<any>(null)
+  const { onChangeTheme } = useApp()
+
+  useEffect(() => {
+    onChangeTheme({ statusBarStyle: 'light-content', statusBarColor: 'light-content' })
+  }, [onChangeTheme])
 
   useEffect(() => {
     timer.current = setInterval(() => {

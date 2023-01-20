@@ -36,6 +36,8 @@ const PersonalDetails: React.FC = () => {
   useEffect(() => {
     if (isFocused) {
       onChangeTheme({ statusBarStyle: 'dark-content' })
+    } else {
+      onChangeTheme({ statusBarStyle: 'light-content' })
     }
   }, [onChangeTheme, isFocused])
 
