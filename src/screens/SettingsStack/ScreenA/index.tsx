@@ -113,7 +113,7 @@ const HomeScreenA: React.FC = () => {
     <View style={[styles.container, theme === 'light' && styles.containerLight]}>
       <ScrollContainer contentContainerStyle={styles.scrollContent}>
         <PageTitle
-          title="Before we start process"
+          title={t('termUseTitle')}
           subTitle={t('printingAndTypeSettingIndustry')}
           titleAlign="center"
           subTitleAlign="center"

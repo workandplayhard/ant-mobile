@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect, useRef, ElementRef } from 'react'
 import { View } from 'react-native'
-import { useIsFocused, useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
@@ -23,7 +23,6 @@ import { NavScreens, RouteParamList } from '@/navigation'
 import { CARD_CHECKBOX_BAN_COLOR, ROW_DARK_BG_COLOR, RW } from '@/theme'
 import { Tooltip } from '@/components/Tooltip'
 import { useCustomerExpense } from '@/hooks/useCustomerExpense'
-import { useApp } from '@/hooks'
 
 import mockData from './mockData'
 
@@ -58,15 +57,7 @@ export const CustomerExpense: React.FC = () => {
   const [cards, setCards] = useState<ICard[]>(cardInformation as unknown as ICard[])
   const [showModal, setShowModal] = useState<boolean>(false)
   const { enable, onEnable } = useCustomerExpense()
-  const isFocused = useIsFocused()
-  const { onChangeTheme } = useApp()
   const scrollRef = useRef<ElementRef<typeof ScrollContainer>>(null)
-
-  useEffect(() => {
-    if (!isFocused) {
-      onChangeTheme({ statusBarStyle: 'dark-content' })
-    }
-  }, [onChangeTheme, isFocused, enable])
 
   const onStepChange = useCallback(() => {
     scrollRef.current?.scrollTo?.({ y: 0 })
@@ -111,7 +102,7 @@ export const CustomerExpense: React.FC = () => {
         <Gap gap={60} />
         <View style={styles.cardContainer}>
           {cards.map((card, index) => (
-            <TouchableOpacity onPress={() => onCardSelect(index, !card.isSelected)}>
+            <TouchableOpacity key={index} onPress={() => onCardSelect(index, !card.isSelected)}>
               <View
                 key={index}
                 style={[

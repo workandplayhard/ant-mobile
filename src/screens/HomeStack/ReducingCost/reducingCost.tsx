@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View } from 'react-native'
+import { useIsFocused } from '@react-navigation/native'
 
-import { useReduceCost } from '@/hooks'
+import { useApp, useReduceCost } from '@/hooks'
 import { t } from '@/i18n'
 import { Gap } from '@/components'
 import { ICost } from '@/types'
@@ -50,6 +51,12 @@ const telephoneInformation = [
 
 const ReducingCost: React.FC = () => {
   const { success, tvOffer, tvPlan, tvSuccess } = useReduceCost()
+  const isFocused = useIsFocused()
+  const { onChangeTheme } = useApp()
+
+  useEffect(() => {
+    onChangeTheme({ statusBarStyle: 'dark-content' })
+  }, [onChangeTheme])
 
   return (
     <WrapperWithStepper>
