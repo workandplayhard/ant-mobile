@@ -45,8 +45,8 @@
     "otherInformationSources": "בחירת מקורות מידע",
     "chooseBanksAndCards": "הבנקים והכרטיסים שלי",
     "typesOfInformation": "בחירת סוג המידע לשיתוף",
-    "accountBalance": "יתרות בחשבון עו",
-    "accountTransactions": "תנועות בחשבון עו",
+    "accountBalance": "יתרות בחשבון עוש",
+    "accountTransactions": "תנועות בחשבון עוש",
     "placeholder": "בחירה",
     "chooseThePeriod": "בחר את משך תקופת ההסכמה",
     "mizrahiTefahotBank": "מזרחי טפחות",
@@ -101,8 +101,8 @@
     "betterTVPlansOffers": "תוכניות טלוויזיה טובות יותר מציעות",
     "newTVPlanChosed": "תוכנית טלוויזיה חדשה נבחרה",
     "forward": "הבא",
-    "printingAndTypeSettingIndustry": "אתם משתפים כמה אתם משלמים -אנחנו מאתרים את חבילת השירות המשתלמת ביותר! בלי להתמקח עם נציגים, בלי לשלוח מסמכים. למה לשלם יותר על אותו דבר?",
-    "loremIpsumIsSimply": "יעיל ומיידי - תהליך עצמאי",
+    "printingAndTypeSettingIndustry": "עבור התהליך נצטרך לקבל ממך אישור קטן על מנת שנוכל לחסוך לך כמה שיותר כסף",
+    "loremIpsumIsSimply": "פשוט - תהליך מהיר וברור",
     "loremIpsumIsSimplyDummy": "איך משתפים מידע מחשבון אחר?",
     "selectCreditCards": "בחר כרטיסי אשראי",
     "loremScrambled": "בחירה זו תפגע ביכולתנו לחסוך לך כמה שיותר כסף. האם להמשיך?",
@@ -113,6 +113,10 @@
     "customerCarInsurance": "ביטוח רכב",
     "customerMusic": "מוזיקה",
     "internet": "אינטרנט",
-    "reducingLorem": "שח"
+    "reducingLorem": "שח",
+    "dummyText": "סך ההוצאות החודשיות הקבועות שלך בממוצע",
+    "cellCom": "סלקום",
+    "partner": "פרטנר",
+    "hotMobile": "HOT Mobile"
   }
 }

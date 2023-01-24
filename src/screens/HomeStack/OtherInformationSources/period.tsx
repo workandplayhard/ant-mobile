@@ -151,7 +151,7 @@ const Period: React.FC<IProps> = ({ onPeriodStatus }) => {
             <TextField text={t(periods[index].label)} style={styles.modalTitle} />
             <Gap gap={20} />
             <ScrollContainer style={styles.scrollContainerInitial}>
-              <TextField text={mockData.data.modalContentExample} style={styles.modalContent} />
+              <TextField text={t(mockData.data.modalContentExample)} style={styles.modalContent} />
             </ScrollContainer>
 
             <Gap gap={60} />
