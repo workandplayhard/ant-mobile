@@ -6,7 +6,7 @@ import BankHapoalim from '@/assets/images/img_bank_hapoalim.png'
 
 export default {
   data: {
-    modalContentExample: t('loremScrambled'),
+    modalContentExample: 'loremScrambled',
     headingExample: t('loremIpsumIsSimplyDummy'),
     informationModalButton: 'Lorem Ipsum',
     cards: [

@@ -114,5 +114,9 @@
     "customerMusic": "Music",
     "internet": "Internet",
     "reducingLorem": "lorem",
+    "dummyText": "Lorem Ipsum is simply dummy text of the printing",
+    "cellCom": "Cellcom",
+    "partner": "Partner",
+    "hotMobile": "HOT Mobile"
   }
 }

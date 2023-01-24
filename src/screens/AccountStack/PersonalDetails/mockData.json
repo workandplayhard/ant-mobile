@@ -1,10 +1,27 @@
 {
   "placeholder": {
     "fullName": "John Doe",
-    "idNumber": "XXXX XXXX",
+    "idNumber": "XXXXXXXXX",
     "phoneNumber": "+972 00 000 0000",
     "creditCard": "XXXX XXXX XXXX XXXX",
     "cellur": "Cellcom",
     "email": "johndoe@example.com"
-  }
+  },
+  "celluars": [
+    {
+      "label": "cellCom",
+      "isSelected": false,
+      "value": "cellCom"
+    },
+    {
+      "label": "partner",
+      "isSelected": false,
+      "value": "partner"
+    },
+    {
+      "label": "hotMobile",
+      "isSelected": false,
+      "value": "hotMobile"
+    }
+  ]
 }

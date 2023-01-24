@@ -93,7 +93,7 @@ export const CustomerExpense: React.FC = () => {
         </View>
         <View style={styles.contentContainer}>
           <View style={styles.description}>
-            <TextField text={mockData.descriptionHeaderExample} style={styles.descriptionTitle} />
+            <TextField text={t('dummyText')} style={styles.descriptionTitle} />
             <Gap gap={15} />
             <TextField text={mockData.descriptionNumberExample} style={styles.descriptionNumber} />
           </View>

@@ -6,9 +6,11 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import {
   Button,
   Container,
+  Dropdown,
   Gap,
   PageTitle,
   ScrollContainer,
+  TextField,
   TextInput,
   TextMaskInput,
 } from '@/components'
@@ -16,6 +18,8 @@ import NavHeader from '@/navigation/components/NavHeader'
 import { t } from '@/i18n'
 import { useApp } from '@/hooks'
 import { NavScreens, NavTabs, RouteParamList } from '@/navigation'
+import { IOption } from '@/types'
+import { RH } from '@/theme'
 
 import mask from './mask'
 import mock from './mockData.json'
@@ -27,11 +31,24 @@ const PersonalDetails: React.FC = () => {
   const [idNumber, setIdNumber] = useState<string>('')
   const [phoneNumber, setPhoneNumber] = useState<string>('')
   const [creditCard, setCreditCard] = useState<string>('')
-  const [celluar, setCelluar] = useState<string>('')
+  const [celluars, setCelluars] = useState<IOption<string>[]>(mock.celluars)
   const [email, setEmail] = useState<string>('')
   const isFocused = useIsFocused()
   const { onChangeTheme } = useApp()
   const navigation = useNavigation<NativeStackNavigationProp<RouteParamList>>()
+
+  const onSelectCelluar = useCallback(
+    (index: number, isSelected: boolean) => {
+      let _c = [...celluars]
+      _c = _c.map((item) => {
+        item.isSelected = false
+        return item
+      })
+
+      _c[index].isSelected = isSelected
+    },
+    [celluars],
+  )
 
   useEffect(() => {
     if (isFocused) {
@@ -110,15 +127,21 @@ const PersonalDetails: React.FC = () => {
         />
 
         <Gap gap={20} />
-        <TextInput
-          value={celluar}
-          mode="light"
-          label={t('celluar')}
-          placeholder={mock.placeholder.cellur}
-          // eslint-disable-next-line @typescript-eslint/no-shadow
-          onChange={(celluar: string) => setCelluar(celluar)}
-          style={styles.input}
-        />
+        <TextField text={t('celluar')} style={styles.label} />
+        <Gap gap={5} />
+        <Dropdown<string>
+          data={celluars}
+          placeholder={t('placeholder')}
+          buttonText={t(
+            String(celluars.filter((item) => item.isSelected).map((item) => item.label)),
+          )}
+          onChange={(item, index) => onSelectCelluar(index, !item.isSelected)}
+          dropDownStyle={{ ...styles.dropdownPos, height: celluars.length * RH(60) }}
+          rowStyle={{ height: RH(60) }}
+          buttonStyle={{ height: RH(70) }}
+        >
+          {(item) => <TextField text={t(item.label)} style={styles.subSourcePeriodText} />}
+        </Dropdown>
 
         <Gap gap={20} />
         <TextInput
