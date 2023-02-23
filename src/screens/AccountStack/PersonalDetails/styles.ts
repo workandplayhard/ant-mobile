@@ -25,7 +25,6 @@ export default StyleSheet.create({
   },
   headerContainer: {
     width: '100%',
-    // paddingHorizontal: PAGE_HORIZONTAL_PADDING - RW(3),
     paddingHorizontal: PAGE_HORIZONTAL_PADDING - RW(3),
   },
   headerStyle: {
