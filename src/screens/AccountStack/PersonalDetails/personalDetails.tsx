@@ -73,9 +73,13 @@ const PersonalDetails: React.FC = () => {
     <Container style={styles.container}>
       <View style={styles.headerContainer}>
         <NavHeader hasBackButton />
-        <PageTitle title={t('personalDetails')} titleAlign="left" />
+        <PageTitle
+          title={t('personalDetails')}
+          titleAlign="left"
+          style={styles.headerStyle || {}}
+        />
       </View>
-      <Gap gap={40} />
+      <Gap gap={35} />
       <ScrollContainer contentContainerStyle={styles.contentContainer}>
         <TextInput
           value={fullName}
@@ -87,7 +91,7 @@ const PersonalDetails: React.FC = () => {
           style={styles.input}
         />
 
-        <Gap gap={20} />
+        <Gap gap={10} />
         <TextMaskInput
           mask={mask.idNumber}
           mode="light"
@@ -100,7 +104,7 @@ const PersonalDetails: React.FC = () => {
           onChange={(idNumber: string) => setIdNumber(idNumber)}
         />
 
-        <Gap gap={20} />
+        <Gap gap={10} />
         <TextMaskInput
           mask={applyMask}
           mode="light"
@@ -112,7 +116,7 @@ const PersonalDetails: React.FC = () => {
           onChange={(phoneNumber: string) => setPhoneNumber(phoneNumber)}
         />
 
-        <Gap gap={20} />
+        <Gap gap={10} />
         <TextMaskInput
           mask={mask.creditCard}
           mode="light"
@@ -126,7 +130,7 @@ const PersonalDetails: React.FC = () => {
           onChange={(creditCard: string) => setCreditCard(creditCard)}
         />
 
-        <Gap gap={20} />
+        <Gap gap={10} />
         <TextField text={t('celluar')} style={styles.label} />
         <Gap gap={5} />
         <Dropdown<string>
@@ -138,12 +142,12 @@ const PersonalDetails: React.FC = () => {
           onChange={(item, index) => onSelectCelluar(index, !item.isSelected)}
           dropDownStyle={{ ...styles.dropdownPos, height: celluars.length * RH(60) }}
           rowStyle={{ height: RH(60) }}
-          buttonStyle={{ height: RH(70) }}
+          buttonStyle={{ height: RH(50) }}
         >
           {(item) => <TextField text={t(item.label)} style={styles.subSourcePeriodText} />}
         </Dropdown>
 
-        <Gap gap={20} />
+        <Gap gap={10} />
         <TextInput
           value={email}
           mode="light"
@@ -155,7 +159,7 @@ const PersonalDetails: React.FC = () => {
           keyboardType="email-address"
         />
 
-        <Gap gap={60} />
+        <Gap gap={30} />
         <Button
           variant="primary"
           size="lg"

@@ -60,7 +60,7 @@ export const Signature = forwardRef<ISignatureControl, ISignature>(
         timer.current = setTimeout(() => {
           signRef.current?.saveImage()
           setEvent(null)
-        }, 1500)
+        }, 500)
       }
 
       return () => {

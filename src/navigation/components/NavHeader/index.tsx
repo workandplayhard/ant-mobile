@@ -5,7 +5,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 
 import { RouteParamList } from '@/navigation'
 import { Col, Icon, ImageView, Row, TextField } from '@/components'
-import { RW } from '@/theme'
+import { RH, RW } from '@/theme'
 
 import styles from './styles'
 
