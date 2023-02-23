@@ -1,4 +1,5 @@
 import React from 'react'
+import { StyleProp, ViewStyle } from 'react-native'
 
 import { TextField } from '../TextField'
 import { Col } from '../Col'
@@ -12,6 +13,7 @@ interface IPageTitle {
   titleAlign?: 'left' | 'right' | 'center'
   subTitleAlign?: 'left' | 'right' | 'center'
   mode?: 'dark' | 'light'
+  style?: StyleProp<ViewStyle>
 }
 
 export const PageTitle: React.FC<IPageTitle> = ({
@@ -20,9 +22,10 @@ export const PageTitle: React.FC<IPageTitle> = ({
   titleAlign = 'left',
   subTitleAlign = 'left',
   mode = 'light',
+  style = {},
 }) => {
   return (
-    <Col style={styles.container}>
+    <Col style={[styles.container, style]}>
       {!!title && (
         <TextField
           text={title}

@@ -19,10 +19,18 @@ export default StyleSheet.create({
   input: {
     borderWidth: RW(1),
     color: TEXT_LABEL_LIGHT_COLOR,
+    height: RH(50),
+    borderRadius: RW(12),
+    paddingVertical: 0,
   },
   headerContainer: {
     width: '100%',
+    paddingHorizontal: RW(25),
+  },
+  headerStyle: {
+    position: 'absolute',
     paddingHorizontal: PAGE_HORIZONTAL_PADDING,
+    top: RH(85),
   },
   contentContainer: {
     alignContent: 'center',

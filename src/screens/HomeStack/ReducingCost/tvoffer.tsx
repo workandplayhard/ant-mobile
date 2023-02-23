@@ -68,14 +68,6 @@ const TVOffer: React.FC = () => {
           onPress={() => setButton(t('cheapest'))}
         />
         <Gap horizontal gap={15} />
-        <Button
-          variant={button === t('reactive') ? 'primary' : 'pure'}
-          size="custom"
-          text={t('reactive')}
-          wrapperStyle={styles.customButton}
-          textStyle={styles.textStyle}
-          onPress={() => setButton(t('reactive'))}
-        />
       </ScrollContainer>
 
       <Gap gap={40} />

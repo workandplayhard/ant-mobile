@@ -67,15 +67,6 @@ const AverageReducing = () => {
           textStyle={styles.textStyle}
           onPress={() => setButton(2)}
         />
-        <Gap horizontal gap={15} />
-        <Button
-          variant={button === 3 ? 'primary' : 'pure'}
-          size="custom"
-          text={t('reactive')}
-          wrapperStyle={styles.customButton}
-          textStyle={styles.textStyle}
-          onPress={() => setButton(3)}
-        />
       </ScrollContainer>
 
       <Gap gap={40} />
