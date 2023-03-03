@@ -1,5 +1,6 @@
-import { SCREEN_WIDTH } from '@/constants'
 import { Image } from 'react-native'
+
+import { SCREEN_WIDTH } from '@/constants'
 
 export const imageWithCustomDefault = (url: string, defaultImage: any): any => {
   if (!url) return defaultImage

@@ -10,9 +10,8 @@ import { AppProvider, AuthProvider } from '@/contexts'
 import { IS_IOS } from '@/constants'
 import '@/i18n'
 import Splash from '@/screens/Splash'
-import MyApp from './src'
-
 import { client } from '@/apollo/client'
+import MyApp from './src'
 
 initialize()
 
