@@ -4,7 +4,7 @@ import { ServerError } from '@apollo/client/link/utils'
 import { ServerParseError } from '@apollo/client/link/http'
 import * as Sentry from '@sentry/react-native'
 
-import { getStorageValue, removeStorageValue, showToast, TYPE } from '@/helpers'
+import { getStorageValue, removeStorageValue, showToast, TYPE } from '@/utils'
 import { APP_TOKEN_KEY } from '@/constants'
 
 export function isServerError(
