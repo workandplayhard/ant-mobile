@@ -1,5 +1,5 @@
 mutation CreateUser($email: String!, $phoneNumber: String!, $name: String!, $password1: String!, $password2: String!) {
-    createUser(email: $email, phoneNumber: $phoneNumber, name: $name, password1: $password1, password2: $password2) {
-        ...Register
-    }
+	createUser(email: $email, phoneNumber: $phoneNumber, name: $name, password1: $password1, password2: $password2) {
+		success, errors, token
+	}
 }

@@ -1,7 +1,6 @@
 import * as Types from '../../generated/types';
 
 import { gql } from '@apollo/client';
-import { RegisterFragmentDoc } from '../fragments/register.generated';
 import * as Apollo from '@apollo/client';
 const defaultOptions = {} as const;
 export type CreateUserMutationVariables = Types.Exact<{
@@ -25,10 +24,12 @@ export const CreateUserDocument = gql`
     password1: $password1
     password2: $password2
   ) {
-    ...Register
+    success
+    errors
+    token
   }
 }
-    ${RegisterFragmentDoc}`;
+    `;
 export type CreateUserMutationFn = Apollo.MutationFunction<CreateUserMutation, CreateUserMutationVariables>;
 
 /**
