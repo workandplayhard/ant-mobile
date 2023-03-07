@@ -69,7 +69,7 @@ const SignUpScreen: React.FC = () => {
             style={[styles.textField]}
             placeholder={t('idNumber')}
             value={idNumber}
-            onChangeText={(val) => setIDNumber(val)}
+            onChangeText={setIDNumber}
           />
 
           <TextInput
@@ -77,14 +77,14 @@ const SignUpScreen: React.FC = () => {
             style={[styles.textField]}
             placeholder={t('phoneNumber')}
             value={phoneNumber}
-            onChangeText={(val) => setPhoneNumber(val)}
+            onChangeText={setPhoneNumber}
           />
 
           <TextInput
             style={[styles.textField]}
             placeholder={t('celluarCompany')}
             value={celluarCompany}
-            onChangeText={(val) => setCellularCompany(val)}
+            onChangeText={setCellularCompany}
           />
 
           <TextInput
@@ -92,7 +92,7 @@ const SignUpScreen: React.FC = () => {
             style={[styles.textField]}
             placeholder={t('creditCardNumber')}
             value={creditCardNumber}
-            onChangeText={(val) => setCreditCardNumber(val)}
+            onChangeText={setCreditCardNumber}
           />
 
           <Button
