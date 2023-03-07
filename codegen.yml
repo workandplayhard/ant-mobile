@@ -1,12 +1,13 @@
 overwrite: true
-# schema: 'https://app.webiztlv.co.il/api'
+schema: 'http://165.227.151.93:8000/graphql'
 documents: './src/apollo/graphql/**/*.gql'
 generates:
   src/apollo/generated/apollo-helpers.ts:
     plugins:
       - 'typescript-apollo-client-helpers'
   src/apollo/generated/types.ts:
-    - 'typescript'
+    plugins:
+      - 'typescript'
   src/:
     preset: 'near-operation-file'
     presetConfig:

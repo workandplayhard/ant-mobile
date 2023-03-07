@@ -1,0 +1,267 @@
+type ChangePackage {
+  response: ChangePackageResponse
+}
+
+type ChangePackageResponse {
+  code: StatusCode
+  message: String
+}
+
+type CreateScraper {
+  response: CreateScraperResponse
+}
+
+type CreateScraperResponse {
+  code: StatusCode
+  message: String
+}
+
+"""An enumeration."""
+enum CustomUserBank {
+  """Diskont"""
+  BNQ_DYSTVNT
+
+  """Habenleumi"""
+  BNQ_HBYNLVMY
+
+  """Hapoalim"""
+  BNQ_HPV_LYM
+
+  """Leumi"""
+  BNQ_LVMY
+
+  """Mizrahi"""
+  BNQ_MZRKHY
+}
+
+"""An enumeration."""
+enum CustomUserCellularSupplier {
+  """Celcom"""
+  CELCOM
+
+  """Partner"""
+  PARTNER
+
+  """Pelephone"""
+  PELEPHONE
+}
+
+"""
+The `DateTime` scalar type represents a DateTime
+value as specified by
+[iso8601](https://en.wikipedia.org/wiki/ISO_8601).
+"""
+scalar DateTime
+
+"\n    Errors messages and codes mapped to\n    fields or non fields errors.\n    Example:\n    {\n        field_name: [\n            {\n                \"message\": \"error message\",\n                \"code\": \"error_code\"\n            }\n        ],\n        other_field: [\n            {\n                \"message\": \"error message\",\n                \"code\": \"error_code\"\n            }\n        ],\n        nonFieldErrors: [\n            {\n                \"message\": \"error message\",\n                \"code\": \"error_code\"\n            }\n        ]\n    }\n    "
+scalar ExpectedErrorType
+
+type GetAvailablePackagesResponse {
+  code: StatusCode
+  message: String
+  packages: [MobilePackage]
+}
+
+type GetCurrenctPackageResponse {
+  code: StatusCode
+  message: String
+  package: MobilePackage
+}
+
+type LoginResponse {
+  code: StatusCode
+  message: String
+}
+
+type LoginScraper {
+  response: LoginResponse
+}
+
+type MobilePackage {
+  abroadPackage: MobilePackage
+  bandwidth: Int
+  changeFee: Float
+  exitFine: Float
+  minutesCount: Int
+  networkMode: NetworkMode
+  price: Float
+  smsCount: Int
+}
+
+type Mutation {
+  changePackage(packageIndex: String!): ChangePackage
+  createScraper: CreateScraper
+
+  """
+  Register user with fields defined in the settings.
+  
+  If the email field of the user model is part of the
+  registration fields (default), check if there is
+  no user with that email or as a secondary email.
+  
+  If it exists, it does not register the user,
+  even if the email field is not defined as unique
+  (default of the default django user model).
+  
+  When creating the user, it also creates a `UserStatus`
+  related to that user, making it possible to track
+  if the user is archived, verified and has a secondary
+  email.
+  
+  Send account verification email.
+  
+  If allowed to not verified users login, return token.
+  """
+  createUser(email: String!, name: String!, password1: String!, password2: String!, phoneNumber: String!): Register
+  login: LoginScraper
+
+  """
+  Obtain JSON web token for given user.
+  
+  Allow to perform login with different fields,
+  and secondary email if set. The fields are
+  defined on settings.
+  
+  Not verified users can login by default. This
+  can be changes on settings.
+  
+  If user is archived, make it unarchive and
+  return `unarchiving=True` on output.
+  """
+  tokenAuth(email: String, password: String!): ObtainJSONWebToken
+  verifyOtp(otp: String!): VerifyOtpWithScraper
+}
+
+enum NetworkMode {
+  FIVEG
+  FOURG
+  LTE
+  THREEG
+}
+
+"""An object with an ID"""
+interface Node {
+  """The ID of the object."""
+  id: ID!
+}
+
+"""
+Obtain JSON web token for given user.
+
+Allow to perform login with different fields,
+and secondary email if set. The fields are
+defined on settings.
+
+Not verified users can login by default. This
+can be changes on settings.
+
+If user is archived, make it unarchive and
+return `unarchiving=True` on output.
+"""
+type ObtainJSONWebToken {
+  errors: ExpectedErrorType
+  success: Boolean
+  token: String
+  unarchiving: Boolean
+  user: UserNode
+}
+
+type Query {
+  availablePackages(token: String): GetAvailablePackagesResponse
+  currentPackage(token: String): GetCurrenctPackageResponse
+  me: UserNode
+}
+
+"""
+Register user with fields defined in the settings.
+
+If the email field of the user model is part of the
+registration fields (default), check if there is
+no user with that email or as a secondary email.
+
+If it exists, it does not register the user,
+even if the email field is not defined as unique
+(default of the default django user model).
+
+When creating the user, it also creates a `UserStatus`
+related to that user, making it possible to track
+if the user is archived, verified and has a secondary
+email.
+
+Send account verification email.
+
+If allowed to not verified users login, return token.
+"""
+type Register {
+  errors: ExpectedErrorType
+  success: Boolean
+  token: String
+}
+
+enum StatusCode {
+  CODE200
+  CODE201
+  CODE400
+  CODE500
+}
+
+type UserNode implements Node {
+  archived: Boolean
+
+  """"""
+  bank: CustomUserBank
+
+  """"""
+  cellularSupplier: CustomUserCellularSupplier
+
+  """"""
+  dateJoined: DateTime!
+
+  """"""
+  email: String!
+
+  """"""
+  fourDigit: String!
+
+  """The ID of the object."""
+  id: ID!
+
+  """"""
+  idNumber: String!
+
+  """"""
+  isActive: Boolean!
+
+  """"""
+  isPermenant: Boolean!
+
+  """"""
+  isStaff: Boolean!
+
+  """"""
+  lastLogin: DateTime!
+
+  """"""
+  lastTokenUsed: DateTime!
+
+  """"""
+  name: String!
+
+  """"""
+  phoneNumber: String!
+  pk: Int
+  secondaryEmail: String
+
+  """"""
+  token: String!
+  verified: Boolean
+}
+
+type VerifyOtpWithScraper {
+  response: VerifyOtpWithScraperResponse
+}
+
+type VerifyOtpWithScraperResponse {
+  code: StatusCode
+  message: String
+}

@@ -1,0 +1,5 @@
+fragment Register on Register {
+    success
+    errors
+    token
+}
