@@ -1,0 +1,21 @@
+fragment UserNode on UserNode {
+  id
+  email
+  name
+  phoneNumber
+  fourDigit
+  idNumber
+  cellularSupplier
+  bank
+  isStaff
+  isActive
+  token
+  lastTokenUsed
+  dateJoined
+  lastLogin
+  isPermenant
+  pk
+  archived
+  verified
+  secondaryEmail
+}

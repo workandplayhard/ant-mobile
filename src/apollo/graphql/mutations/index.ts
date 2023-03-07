@@ -1,0 +1,6 @@
+export * from './Register.generated'
+export * from './CreateScraper.generated'
+export * from './LoginScraper.generated'
+export * from './VerifyOTP.generated'
+export * from './ChangePackage.generated'
+export * from './TokenAuth.generated'

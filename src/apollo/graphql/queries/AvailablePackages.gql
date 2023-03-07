@@ -1,0 +1,9 @@
+query AvailablePackages($token: String!) {
+  availablePackages(token: $token) {
+    message
+    code
+    packages {
+      ...MobilePackage
+    }
+  }
+}
