@@ -2,25 +2,24 @@ import React, { useState, useEffect, useCallback, createContext, useMemo } from 
 
 import { CreateUserMutationVariables, useCreateUserMutation } from '@/apollo'
 
-import { APP_TOKEN_KEY } from '@/constants'
-
 import { getStorageValue, removeStorageValue, setStorageValue } from '@/utils'
 import { ISignInPayload, TPCallback } from '@/types'
 
+import { APP_TOKEN_KEY } from '@/constants'
 interface IAuthContext {
   authenticated: boolean
+  createUserLoading: boolean
   onSignIn: (params: ISignInPayload, callback?: TPCallback) => void
   onSignUp: (params: CreateUserMutationVariables, callback?: TPCallback) => void
   onSignOut: () => void
-  createUserLoading: boolean
 }
 
 export const AuthContext = createContext<IAuthContext>({
   authenticated: false,
+  createUserLoading: false,
   onSignIn: () => undefined,
   onSignUp: () => undefined,
   onSignOut: () => undefined,
-  createUserLoading: false,
 })
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
