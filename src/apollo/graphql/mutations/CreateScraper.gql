@@ -1,8 +1,8 @@
 mutation CreateScraper {
-	createScraper {
-		response {
-			message
-			code
-		}
-	}
+  createScraper {
+    response {
+      message
+      code
+    }
+  }
 }

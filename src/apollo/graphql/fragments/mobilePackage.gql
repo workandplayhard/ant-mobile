@@ -1,18 +1,18 @@
 fragment MobilePackage on MobilePackage {
-	price
-	bandwidth
-	smsCount
-	minutesCount
-	changeFee
-	exitFine
-	networkMode
-	abroadPackage {
-		price
-		bandwidth
-		smsCount
-		minutesCount
-		changeFee
-		exitFine
-		networkMode
-	}
+  price
+  bandwidth
+  smsCount
+  minutesCount
+  changeFee
+  exitFine
+  networkMode
+  abroadPackage {
+    price
+    bandwidth
+    smsCount
+    minutesCount
+    changeFee
+    exitFine
+    networkMode
+  }
 }

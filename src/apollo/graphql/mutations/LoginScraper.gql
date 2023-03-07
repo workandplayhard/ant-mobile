@@ -1,8 +1,8 @@
 mutation LoginScraper {
-	login {
-		response {
-			message
-			code
-		}
-	}
+  login {
+    response {
+      message
+      code
+    }
+  }
 }

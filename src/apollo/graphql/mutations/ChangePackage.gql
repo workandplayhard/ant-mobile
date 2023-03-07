@@ -1,8 +1,8 @@
 mutation ChangePackage($packageIndex: String!) {
-	changePackage(packageIndex: $packageIndex) {
-		response {
-			message
-			code
-		}
-	}
+  changePackage(packageIndex: $packageIndex) {
+    response {
+      message
+      code
+    }
+  }
 }

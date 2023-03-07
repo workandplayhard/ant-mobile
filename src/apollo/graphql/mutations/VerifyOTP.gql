@@ -1,8 +1,8 @@
 mutation VerifyOTP($otp: String!) {
-	verifyOtp(otp: $otp) {
-		response {
-			message
-			code
-		}
-	}
+  verifyOtp(otp: $otp) {
+    response {
+      message
+      code
+    }
+  }
 }

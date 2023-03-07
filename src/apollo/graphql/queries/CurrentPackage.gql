@@ -1,9 +1,9 @@
 query CurrentPackage($token: String!) {
-	currentPackage(token: $token) {
-		message
-		code
-		package {
-			...MobilePackage
-		}
-	}
+  currentPackage(token: $token) {
+    message
+    code
+    package {
+      ...MobilePackage
+    }
+  }
 }
