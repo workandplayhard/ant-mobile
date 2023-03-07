@@ -1,0 +1,8 @@
+mutation CreateScraper {
+	createScraper {
+		response {
+			message
+			code
+		}
+	}
+}

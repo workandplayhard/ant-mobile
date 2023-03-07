@@ -1,0 +1,8 @@
+mutation LoginScraper {
+	login {
+		response {
+			message
+			code
+		}
+	}
+}
