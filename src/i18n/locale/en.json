@@ -116,6 +116,11 @@
     "dummyText": "Lorem Ipsum is simply dummy text of the printing",
     "cellCom": "Cellcom",
     "partner": "Partner",
-    "hotMobile": "HOT Mobile"
+    "hotMobile": "HOT Mobile",
+    "auth": {
+      "emailEmptyError": "Email can't be blank",
+      "passwordEmptyError": "Email can't be blank",
+      "emailIncorrectError": "Email is incorrect"
+    }
   }
 }

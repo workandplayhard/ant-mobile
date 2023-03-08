@@ -1,16 +1,22 @@
 import React, { useState, useEffect, useCallback, createContext, useMemo } from 'react'
 
-import { CreateUserMutationVariables, useCreateUserMutation } from '@/apollo'
+import {
+  CreateUserMutationVariables,
+  TokenAuthMutationVariables,
+  useCreateUserMutation,
+  useTokenAuthMutation,
+} from '@/apollo'
 
 import { getStorageValue, removeStorageValue, setStorageValue } from '@/utils'
-import { ISignInPayload, TPCallback } from '@/types'
+import { TPCallback } from '@/types'
 
 import { APP_TOKEN_KEY } from '@/constants'
 
 interface IAuthContext {
   authenticated: boolean
   createUserLoading: boolean
-  onSignIn: (params: ISignInPayload, callback?: TPCallback) => void
+  logInLoading: boolean
+  onSignIn: (params: TokenAuthMutationVariables, callback?: TPCallback) => void
   onSignUp: (params: CreateUserMutationVariables, callback?: TPCallback) => void
   onSignOut: () => void
 }
@@ -18,6 +24,7 @@ interface IAuthContext {
 export const AuthContext = createContext<IAuthContext>({
   authenticated: false,
   createUserLoading: false,
+  logInLoading: false,
   onSignIn: () => undefined,
   onSignUp: () => undefined,
   onSignOut: () => undefined,
@@ -25,13 +32,27 @@ export const AuthContext = createContext<IAuthContext>({
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [authenticated, setAuthenticated] = useState<boolean>(false)
+  const [tokenAuth, { loading: logInLoading, error: loginError }] = useTokenAuthMutation()
   const [createUser, { loading: createUserLoading }] = useCreateUserMutation()
 
-  const onSignIn = useCallback((payload: ISignInPayload) => {
-    if (payload.email && payload.password) {
-      setAuthenticated(true)
-    }
-  }, [])
+  const onSignIn = useCallback(
+    (payload: TokenAuthMutationVariables, callback?: TPCallback) => {
+      tokenAuth({
+        variables: payload,
+        fetchPolicy: 'network-only',
+        onCompleted: (res) => {
+          if (res.tokenAuth?.success) {
+            setStorageValue(APP_TOKEN_KEY, `Bearer ${res.tokenAuth.token}`)
+          }
+          callback?.(res.tokenAuth?.success)
+        },
+        onError: (error) => {
+          callback?.(false, error.message)
+        },
+      })
+    },
+    [tokenAuth],
+  )
 
   const onSignUp = useCallback(
     (payload: CreateUserMutationVariables, callback?: TPCallback) => {
@@ -74,8 +95,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       onSignOut,
       authenticated,
       createUserLoading,
+      loginError,
+      logInLoading,
     }),
-    [onSignIn, onSignUp, onSignOut, authenticated, createUserLoading],
+    [onSignIn, onSignUp, onSignOut, authenticated, createUserLoading, loginError, logInLoading],
   )
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

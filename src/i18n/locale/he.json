@@ -116,6 +116,11 @@
     "dummyText": "סך ההוצאות החודשיות הקבועות שלך בממוצע",
     "cellCom": "סלקום",
     "partner": "פרטנר",
-    "hotMobile": "HOT Mobile"
+    "hotMobile": "HOT Mobile",
+    "auth": {
+      "emailEmptyError": "אימייל לא יכול להיות ריק",
+      "passwordEmptyError": "סיסמא לא יכולה להיות ריקה",
+      "emailIncorrectError": "כתובת אימייל לא נכונה"
+    }
   }
 }
